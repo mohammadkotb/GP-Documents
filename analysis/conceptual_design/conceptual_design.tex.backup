@@ -1,0 +1,75 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{multirow}
+\usepackage[pdftex]{graphicx}
+\usepackage{float}
+\newenvironment{my_itemize}
+{\begin{itemize}
+  \setlength{\itemsep}{0cm}
+  \setlength{\parskip}{0cm}}
+{\end{itemize}}
+
+
+\begin{document}
+
+\begin{titlepage}
+\vspace{-1.5cm}
+\begin{center}
+\includegraphics[width=2cm]{Logo_Alexandria_University.jpg}\\
+\vspace{1cm}
+\textbf{\large ALEXANDRIA UNIVERSITY} \\
+\textbf{FACULTY OF ENGINEERING} \\
+{\small  COMPUTER AND SYSTEMS ENGINEERING DEPARTMENT}
+
+\vspace{2.5cm}
+\textbf{\LARGE Conceptualization Document}\\
+\textbf{\small Smart Email Automatic Email Classification and Summarization}\\
+
+\vspace{1cm}
+{ Ahmed El-Sharkasy, Ahmed Kotb, Amr Nabil, Mohammad Kotb, Moustafa Mahmoud }
+\end{center}
+
+\vspace{1ex}
+\textbf{Supervisors:} Prof. Dr. Mohamed Abou-gabal, Dr. Mustafa Elnainany
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+\subsection{Overview Application}
+Email has been an efficient and popular communication mechanism as the number 
+of Internet users increases. Therefore, email management has become an important 
+and growing problem for individuals and organizations because it is prone to misuse.
+
+One of the problems that are most important is disordered email messages, 
+congested and unstructured emails in mail boxes. It may be very hard to 
+find archived email messages, search for previous emails with specified contents 
+or features when the mails are not well structured and organized. Email 
+summarization is another important and challenging problem.
+
+Smart Email is an application addressing these problems by providing automatic 
+email summarization and categorization into folders.
+
+%==============================================================================
+\subsection{Project Objectives}
+The business objectives of this project are listed below. Delivering these 
+objectives will deliver the expected benefits of the application.
+\begin{my_itemize}
+  \item Automatically organizing congested and uncategorized emails into folders.
+  \item Summarizing lengthy email threads into a brief summary describing the 
+	main points in these threads.
+\end{my_itemize}
+
+
+%==============================================================================
+\subsection{Assumptions}
+Some assumptions generally must be made in order to write a succinct definition 
+of the application. Some assumptions are technical (e.g. ``the new system will 
+employ a normalized database schema''), while others are business natured (e.g. 
+``the client will provide an enterprise Oracle environment'').  Assumptions 
+critical to the success of this project are listed below:
+
+\end{document}
