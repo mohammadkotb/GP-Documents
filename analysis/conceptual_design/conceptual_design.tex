@@ -8,6 +8,17 @@
   \setlength{\itemsep}{0cm}
   \setlength{\parskip}{0cm}}
 {\end{itemize}}
+\newenvironment{my_enumerate}
+{\begin{enumerate}
+  \setlength{\itemsep}{0cm}
+  \setlength{\parskip}{0cm}}
+{\end{enumerate}}
+
+\newenvironment{my_description}
+{\begin{description}
+  \setlength{\itemsep}{0cm}
+  \setlength{\parskip}{0cm}}
+{\end{description}}
 
 
 \begin{document}
@@ -109,6 +120,165 @@ some issues may have been discovered, and others may remain open.
   \item Online training for classification models.
   \item Specifications for the web server providing the web service.
 \end{my_itemize}
+
+
+%==============================================================================
+\section{Proposed Workflow}
+\subsection{Overview}
+This section includes a concise description of the features and operation of the 
+proposed solution. It also compares and contrasts the solution with the current 
+process. The context and workflow of the proposed solution are defined in subsequent sections.
+
+Features:
+\begin{my_itemize}
+  \item automatically categorizing incoming emails into predefined categories;
+  \item summarizing long email threads into a brief summary.
+\end{my_itemize}
+
+
+%==============================================================================
+\subsection{Context Diagram}
+The Context Diagram illustrates the modules, business processes, etc that feed 
+or interact with this proposed application.\\ \\
+%add photo
+\includegraphics[width=13cm]{context_diagram.jpeg}
+%==============================================================================
+\subsection{High Level Workflow}
+The workflow required to complete the primary objectives of the proposed 
+application is described below. The workflow is business-centered, and 
+includes ``decision forks'' for decisions the business user, or application, 
+must make to achieve the objective. The workflow omits application faults or exceptions. 
+Individual tasks in the workflow are described.
+
+\begin{my_enumerate}
+  \item Workflow/Process Map \\ \\
+  % add the photo
+  \includegraphics[width=13cm]{workflow_process_map.png}
+  \item Workflow Description
+  \begin{my_itemize}
+    \item Incoming Emails are preprocessed.
+    \item Summarization module checks that email length is greater than predefined threshold:
+    \begin{my_itemize}
+      \item if the length is greater than the threshold, the email is fed to the 
+	    summarizer which outputs the summary;
+      \item short emails are returned.
+    \end{my_itemize}
+    \item Classification module uses the user module to classify the email into a specific label.
+    \item The result is returned by the web service.
+  \end{my_itemize}
+\end{my_enumerate}
+
+
+%==============================================================================
+\section{Business Requirements}
+
+This section identifies, enumerates and explores the business requirements that must 
+be met by the application. Business requirements include capturing the types of users, 
+the basic inputs and outputs, the system's dependencies, and the tasks the system should 
+accomplish. Some business requirement for a web-based retail site might include:
+
+\begin{my_description}
+  \item[Users] ``The system supports public browsers, registered members, 
+	      customer service administrators, and system administrators.''
+  \item[Tasks] ``Users have personalized accounts,” “shopping carts expire in a configurable period, and the default is 10 days''.
+\end{my_description}
+
+It is important to confirm that Task Requirements include all the tasks required to meet the business objectives.
+
+%==============================================================================
+\subsection{Users}
+All applications have users and most have several users of different types. This 
+section identifies, at a high level, the types of users of the system.
+
+\begin{my_enumerate}
+  \item Application User: Requests Classification and summarization of emails.
+  \item Admin: Tune classification and summarization algorithms.
+\end{my_enumerate}
+
+%==============================================================================
+\subsection{Inputs/Outputs}
+This section identifies and describes the inputs to and outputs from the new 
+application. Inputs can include electronic inputs, like RSS and EDI feeds, 
+updates from external databases, etc, as well as human inputs, like 
+``user X keys in results from report Y.'' Output can include electronic feeds, 
+printed reports, ...etc. In this section, all electronic inputs and outputs 
+are captured. Human inputs are omitted from this section.
+
+\begin{my_enumerate}
+  \item Inputs
+  \begin{my_itemize}
+    \item Unclassified Emails.
+    \item Classified Emails (training data).
+    \item Email Threads.
+  \end{my_itemize}
+  \item Outputs
+  \begin{my_itemize}
+    \item Classified emails.
+    \item Summarized email threads.
+    \item Classification model.
+  \end{my_itemize}
+\end{my_enumerate}
+
+
+%==============================================================================
+\subsection{Dependencies}
+Human inputs are also categorized as dependencies.  List all dependencies.
+
+\begin{my_enumerate}
+  \item Request for summarizing an email thread.
+  \item Registeration data.
+\end{my_enumerate}
+
+
+%==============================================================================
+\subsection{Task Requirements}
+Task Requirements correlate to the use cases, above. There should be at least 
+one task for each use case bubble. Each use case should be briefly described. 
+If there are specific requirements related to the use case, they should also 
+be listed. This section captures high-level, basic functional requirements. 
+Detailed requirements will be defined during the Requirements Specification contests.
+
+TODO...
+%==============================================================================
+\subsection{Security Requirements}
+This section documents, at a high level, the basic security requirements of the 
+application. For example, does the system require the user to log in?  Should the 
+user’s identity be authenticated on just this system, or against a central authority?  
+Are there any special or unusual security requirements, like fingerprint scanning?
+
+\begin{my_enumerate}
+  \item The system requires every user to log in with a unique identity (email).
+  \item User Data (email) should be transmitted with a secure connection.
+  \item Administrators shouldn’t have access to user data (email).
+\end{my_enumerate}
+
+
+
+%==============================================================================
+\subsection{Performance Requirements}
+Performance Requirements for the application are defined at a high level below. 
+If there are specific requirements for specific features to perform at a quantifiable 
+level, they too are listed below. These requirements will be developed in more detail when 
+the Requirements Specification is written, in a later phase.
+
+\begin{my_enumerate}
+  \item Web service should respond within a reasonable time.
+  \item Initial training phase should finish within a reasonable time.
+  \item The system will achieve high uptime.
+\end{my_enumerate}
+
+
+%==============================================================================
+\subsection{Data Migration}
+Data Migration describes the data that needs to be moved from an older or external 
+system to the new system, in order for it to operate at launch. Migration also includes 
+data that must be transferred from the new system to another external system. 
+Any data migration requirements are listed below.
+
+\begin{my_enumerate}
+  \item Users classified emails for training phase \\
+	pre-classified emails are needed to build specific user mode, users' emails can be discarded after building the model
+\end{my_enumerate}
 
 
 \end{document}
