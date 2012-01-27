@@ -3,6 +3,9 @@
 \usepackage{multirow}
 \usepackage[pdftex]{graphicx}
 \usepackage{float}
+\usepackage[table]{xcolor}
+
+% environment variables
 \newenvironment{my_itemize}
 {\begin{itemize}
   \setlength{\itemsep}{0cm}
@@ -171,17 +174,183 @@ Individual tasks in the workflow are described.
 \end{my_enumerate}
 
 %==============================================================================
-\subsection{Use case diagrams/User stories}
-TODO...
+\subsection{User stories/Use case diagrams}
+Breaking up the system components to user stories with estimated time to finish
+the story is very good practice. Also use case diagrams may be very useful to understand
+the system functionalities by system users.
 %TODO
+\\
+
+% attach here the use case diagram
+% \\
 
 \begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
-Story Id & \#1 \\ \hline
-User Story & Smart Email Authentication \\ \hline
-Priority & Low \\ \hline
-Description & As a User I can authenticate the Smart Email application \\ \hline
-Estimated time & 1 man-day \\ \hline
+\cellcolor[gray]{0.9} Story Id & \#1 \\ \hline
+\cellcolor[gray]{0.9} User Story & Authentication \\ \hline
+\cellcolor[gray]{0.9} Priority & Low \\ \hline
+\cellcolor[gray]{0.9} Description & 
+      As a \textbf{User}, I can \textbf{authenticate the application}. \\ \hline
+\cellcolor[gray]{0.9} Estimated time & 1 man-day \\ \hline
+\cellcolor[gray]{0.9} Notes & 
+      Authentication is done with email username and password. \\ \hline
+\end{tabular}
+
+.\\
+% attach here the use case diagram
+% \\
+
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\cellcolor[gray]{0.9} Story Id & \#2 \\ \hline
+\cellcolor[gray]{0.9} User Story & Deauthentication \\ \hline
+\cellcolor[gray]{0.9} Priority & Low \\ \hline
+\cellcolor[gray]{0.9} Description & 
+	As a \textbf{User}, I can \textbf{deauthenticate the application}. \\ \hline
+\cellcolor[gray]{0.9} Estimated time & 1 man-day \\ \hline
+\cellcolor[gray]{0.9} Notes & 
+	Authentication is done with email username and password. \\ \hline
+\end{tabular}
+
+
+.\\
+% attach here the use case diagram
+% \\
+
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\cellcolor[gray]{0.9} Story Id & \#3 \\ \hline
+\cellcolor[gray]{0.9} User Story & Label suggestion \\ \hline
+\cellcolor[gray]{0.9} Priority & Medium\\ \hline
+\cellcolor[gray]{0.9} Description & 
+	As a \textbf{User}, I can \textbf{give feedback for the chosen/suggested labels} to
+	\textbf{enhance the classification accuracy}. \\ \hline
+\cellcolor[gray]{0.9} Estimated time & 5 man-days\\ \hline
+\cellcolor[gray]{0.9} Notes & 
+	Build browser extension to support suggestions in gmail. \\ \hline
+\end{tabular}
+
+.\\
+% attach here the use case diagram
+% \\
+
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\cellcolor[gray]{0.9} Story Id & \#4 \\ \hline
+\cellcolor[gray]{0.9} User Story & Email Summarization\\ \hline
+\cellcolor[gray]{0.9} Priority & High\\ \hline
+\cellcolor[gray]{0.9} Description & 
+	As a \textbf{User}, I can \textbf{summarize long emails}. \\ \hline
+\cellcolor[gray]{0.9} Estimated time & 20 man-days\\ \hline
+\cellcolor[gray]{0.9} Notes & 
+	The summary will be presented in UI integrated with the email client. \\ \hline
+\end{tabular}
+
+
+.\\
+% attach here the use case diagram
+% \\
+
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\cellcolor[gray]{0.9} Story Id & \#5 \\ \hline
+\cellcolor[gray]{0.9} User Story & Data pre-processing \\ \hline
+\cellcolor[gray]{0.9} Priority & High\\ \hline
+\cellcolor[gray]{0.9} Description & 
+	As a \textbf{System}, I can \textbf{preprocess the dataset} to
+	\textbf{make it ready for the classification/summarization process}. \\ \hline
+\cellcolor[gray]{0.9} Estimated time & 4 man-days\\ \hline
+\cellcolor[gray]{0.9} Notes & 
+	Preprocessing includes stemming, checking email length/language,
+	removing stop words and identifying the features. \\ \hline
+\end{tabular}
+
+
+.\\
+% attach here the use case diagram
+% \\
+
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\cellcolor[gray]{0.9} Story Id & \#6 \\ \hline
+\cellcolor[gray]{0.9} User Story & Email Classification \\ \hline
+\cellcolor[gray]{0.9} Priority & High\\ \hline
+\cellcolor[gray]{0.9} Description & 
+	As a \textbf{System}, I can \textbf{make online classification to
+	an incoming email}. \\ \hline
+\cellcolor[gray]{0.9} Estimated time & 20 man-days\\ \hline
+\cellcolor[gray]{0.9} Notes & 
+	More than one algorithm will be implemented to choose the one with 
+	the best accuracy. \\ \hline
+\end{tabular}
+
+
+.\\
+% attach here the use case diagram
+% \\
+
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\cellcolor[gray]{0.9} Story Id & \#7 \\ \hline
+\cellcolor[gray]{0.9} User Story & User Classification Model \\ \hline
+\cellcolor[gray]{0.9} Priority & High\\ \hline
+\cellcolor[gray]{0.9} Description & 
+	As a \textbf{System}, I can \textbf{build a user classification 
+	model from the training data}. \\ \hline
+\cellcolor[gray]{0.9} Estimated time & 5 man-days\\ \hline
+\cellcolor[gray]{0.9} Notes & 
+	It will start after user authentication, and can be applied 
+	from time to time to enhance the user model. \\ \hline
+\end{tabular}
+
+.\\
+% attach here the use case diagram
+% \\
+
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\cellcolor[gray]{0.9} Story Id & \#8 \\ \hline
+\cellcolor[gray]{0.9} User Story & Classification Accuracy test \\ \hline
+\cellcolor[gray]{0.9} Priority & Medium \\ \hline
+\cellcolor[gray]{0.9} Description & 
+	As a \textbf{Admin}, I can \textbf{test the accuracy of the 
+	classification algorithm on runtime}. \\ \hline
+\cellcolor[gray]{0.9} Estimated time & 2 man-days\\ \hline
+\cellcolor[gray]{0.9} Notes & 
+	The admin can view the accuracy of the used classification algorithm. \\ \hline
+\end{tabular}
+
+.\\
+% attach here the use case diagram
+% \\
+
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\cellcolor[gray]{0.9} Story Id & \#9 \\ \hline
+\cellcolor[gray]{0.9} User Story & Admin Algorithms Control \\ \hline
+\cellcolor[gray]{0.9} Priority & Medium \\ \hline
+\cellcolor[gray]{0.9} Description & 
+	As a \textbf{Admin}, I can \textbf{change/tune the 
+	classification/summarization algorithms} to
+	\textbf{improve the accuracy}. \\ \hline
+\cellcolor[gray]{0.9} Estimated time & 2 man-days\\ \hline
+\cellcolor[gray]{0.9} Notes & --- \\ \hline
+\end{tabular}
+
+.\\
+% attach here the use case diagram
+% \\
+
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\cellcolor[gray]{0.9} Story Id & \#10 \\ \hline
+\cellcolor[gray]{0.9} User Story & Security \\ \hline
+\cellcolor[gray]{0.9} Priority & Medium \\ \hline
+\cellcolor[gray]{0.9} Description & 
+	As a \textbf{System}, I have to \textbf{ensure a 
+	secure connection between the web-service and the email client}. \\ \hline
+\cellcolor[gray]{0.9} Estimated time & 1 man-days\\ \hline
+\cellcolor[gray]{0.9} Notes & --- \\ \hline
 \end{tabular}
 
 %==============================================================================
