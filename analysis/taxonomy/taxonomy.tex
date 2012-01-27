@@ -2,11 +2,20 @@
 \usepackage{multirow}
 \usepackage[pdftex]{graphicx}
 \usepackage{float}
+
+
 \newenvironment{my_itemize}
 {\begin{itemize}
   \setlength{\itemsep}{0cm}
   \setlength{\parskip}{0cm}}
 {\end{itemize}}
+\newenvironment{my_enumerate}
+{\begin{enumerate}
+  \setlength{\itemsep}{0cm}
+  \setlength{\parskip}{0cm}}
+{\end{enumerate}}
+
+
 
 \begin{document}
 
@@ -27,7 +36,7 @@
 \end{center}
 
 \vspace{1ex}
-\textbf{Supervisors:} Prof. Dr. Mohamed Abou-gabal, Dr. Mustafa Elnainany
+\textbf{Supervisors:} Prof. Dr. Mohamed Abou-gabal, Dr. Mustafa ElNainay
 \end{titlepage}
 
 \newpage
@@ -66,43 +75,32 @@ relations is required.
 In this document we present a survey and taxonomy on recent research topics 
 related to email classification and summarization.
 
+%==============================================================================
 \section{Email Classification Taxonomy}
 The following table classifies some recent research papers in the field of email 
 
-\subsection{classification according to the different learning algorithms used in different papers}
+\subsection{Classification according to the different learning algorithms used in different papers}
 
 \begin{center}
 \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
 \hline
 \multicolumn{6}{|c|}{Learning Algorithm} \\
 \hline
-SVM & Naïve Bayes & Neural Networks & Max. Entropy / Winnow & Nnge / Hoeffing Trees & Graph Mining \\ \hline
-An Innovative Analyser for email classification Based on Grey List Analysis &
-Email Classification with Co-training &
-Email Classification: Solution with Back Propagation Technique & 
-Automatic Categorization of Emails into Folders &
-Using GNUsmail to compare Data Stream Mining Methods for On-line Email Classification &
-A graph Based Approach for Multi-Folder Email Classification \\ \hline
+SVM & Na\"{\i}ve Bayes & Neural Networks & Max. Entropy / Winnow & Nnge / Hoeffing Trees & Graph Mining \\ \hline
+Email Classification with Co-training \cite{SVETLANA01} &
+Email Classification with Co-training \cite{SVETLANA01} &
+Email Classification: Solution with Back Propagation Technique \cite{mous05} & 
+Automatic Categorization of Emails into Folders \cite{RON04} &
+Using GNUsmail to compare Data Stream Mining Methods for On-line Email Classification \cite{JOSE11} &
+A graph Based Approach for Multi-Folder Email Classification \cite{sift02} \\ \hline
 
-Email Classification with Co-training &
-Automatic Categorization of Emails into Folders &
-Email Classification Using Semantic Feature Space & 
+Automatic Categorization of Emails into Folders \cite{RON04} &
+Automatic Categorization of Emails into Folders \cite{RON04} &
+Email Classification Using Semantic Feature Space \cite{YUN08} & 
 &
-&
- \\ \hline
-
-Automatic Categorization of Emails into Folders &
-&
-& 
-&
-&
-
- \\
-\hline
+& \\ \hline
 \end{tabular}
 \end{center}
- 
-.
 \newpage
 
 \subsection{Classification according to the different learning capabilities}
@@ -114,23 +112,23 @@ Automatic Categorization of Emails into Folders &
 \hline
 On-line Learning & Off-Line Learning 
 \\ \hline
-Using GNUsmail to Compare Data Stream Mining Methods
-
-&  An Object Oriented Email Clustering Model Using  Weighted Similarities between Email Attributes
+Using GNUsmail to Compare Data Stream Mining Methods \cite{JOSE11} &
+An Object Oriented Email Clustering Model Using  Weighted Similarities 
+between Email Attributes \cite{NARESH10}
 \\ \hline
 
-GNUsmail: Open Framework for On-line Email Classification
-& Content Based Email Classification System
+GNUsmail: Open Framework for On-line Email Classification \cite{MANUEL11}
+& Content Based Email Classification System by applying Conceptual Maps \cite{BASKARAN09}
 \\ \hline
 
-& E-Classifier: A Bi-Lingual Email Classification System
+& E-Classifier: A Bi-Lingual Email Classification System \cite{NOUF08}
 \\ \hline
 
-& Email classification for contact centers
+& Email classification for contact centers \cite{ANI03}
 \\ \hline
 
 & 
-Automatic Categorization of Email into Folders
+Automatic Categorization of Email into Folders \cite{RON04}
 
 \\ \hline
 
@@ -148,14 +146,18 @@ Automatic Categorization of Email into Folders
 \hline
 Enron & SRI & Pine & Private Dataset & Public Pua
 \\ \hline
-Automatic Categorization of Email into Folders &
-Automatic Categorization of Email into Folders & Email classification for contact centers &
-Enterprise Email Classification Based on Social Network Features & Email Categorization Using Multi-Stage Classification Technique
+Automatic Categorization of Email into Folders \cite{RON04} &
+Automatic Categorization of Email into Folders \cite{RON04} & 
+Email classification for contact centers \cite{ANI03} &
+Enterprise Email Classification Based on Social Network Features \cite{MIN11} & 
+Email Categorization Using Multi-Stage Classification Technique \cite{MD07}
 \\ \hline
-An Object Oriented Email Clustering Model Using  Weighted Similarities between Email Attributes &
-& & E-Classifier: A Bi-Lingual Email Classification System &
+An Object Oriented Email Clustering Model Using  Weighted Similarities 
+  between Email Attributes \cite{NARESH10} &
+& & E-Classifier: A Bi-Lingual Email Classification System \cite{NOUF08} &
 \\ \hline
-Using GNUsmail to Compare Data Stream Mining Methods & & &Automatically tagging email by leveraging other users folders & 
+Using GNUsmail to Compare Data Stream Mining Methods \cite{JOSE11} & & &
+Automatically tagging email by leveraging other users folders \cite{YEHUDA11} & 
 \\ \hline
 \end{tabular}
 \end{center}
@@ -163,55 +165,53 @@ Using GNUsmail to Compare Data Stream Mining Methods & & &Automatically tagging 
 \newpage
 \subsection{Chronological sort of classification papers}
 \subparagraph{2011}
-\begin{itemize}
-\item Using GNUsmail to Compare Data Stream Mining Methods for On-line Email Classification
-\item Enterprise Email Classification Based on Social Network Features
-\item Automatically tagging email by leveraging other users folders
-\item Feature Extraction for Multi-label Learning in the Domain of Email Classification
-\end{itemize}
+\begin{my_itemize}
+  \item Using GNUsmail to Compare Data Stream Mining Methods for On-line Email Classification \cite{JOSE11}
+  \item Enterprise Email Classification Based on Social Network Features \cite{MIN11}
+  \item Automatically tagging email by leveraging other users folders \cite{YEHUDA11}
+\end{my_itemize}
 
 \subparagraph{2010}
-\begin{itemize}
-\item An Object Oriented Email Clustering Model Using Weighted Similarities between Emails Attributes
-\item A Graph-Based Approach for Multi-Folder Email Classification
-\end{itemize}
+\begin{my_itemize}
+  \item An Object Oriented Email Clustering Model Using Weighted Similarities between Emails Attributes \cite{NARESH10}
+  \item A Graph-Based Approach for Multi-Folder Email Classification \cite{sift02}
+\end{my_itemize}
 
 \subparagraph{2009}
-\begin{itemize}
-\item Content Based Email Classification System by applying Conceptual Maps
-\item Email Classification: Solution with Back Propagation Technique
-\end{itemize}
+\begin{my_itemize}
+  \item Content Based Email Classification System by applying Conceptual Maps \cite{BASKARAN09}
+  \item Email Classification: Solution with Back Propagation Technique \cite{mous05}
+\end{my_itemize}
 
 \subparagraph{2008}
-\begin{itemize}
-\item A new approach to Email classification using Concept Vector Space Model
-\item E-Classifier: A Bi-Lingual Email Classification System
-\item Ontology based classification and categorization of email
-\item Applying Machine learning Algorithms for Email Management
-\end{itemize}
+\begin{my_itemize}
+  \item A new approach to Email classification using Concept Vector Space Model \cite{CHAO08}
+  \item E-Classifier: A Bi-Lingual Email Classification System \cite{NOUF08}
+  \item Ontology based classification and categorization of email \cite{BALAKUMAR08}
+  \item Applying Machine learning Algorithms for Email Management \cite{mous03}
+\end{my_itemize}
 
 \subparagraph{2007}
-\begin{itemize}
-\item Email Classification and Summarization: A Machine Learning Approach
-\item Email Categorization Using Multi-Stage Classification Technique
-\end{itemize}
+\begin{my_itemize}
+  \item Email Categorization Using Multi-Stage Classification Technique \cite{MD07}
+\end{my_itemize}
 
 \subparagraph{2005}
-\begin{itemize}
-\item An Email Classification Model Based on Rough Set Theory
-\item eMailSift: Email Classification Based on Structure and Content
-\end{itemize}
+\begin{my_itemize}
+  \item An Email Classification Model Based on Rough Set Theory \cite{WENQING05}
+  \item eMailSift: Email Classification Based on Structure and Content \cite{sift01}
+\end{my_itemize}
 
 \subparagraph{2004}
-\begin{itemize}
-\item Automatic Categorization of Email into Folders
-\item Co-training with a Single Natural Feature Set Applied to Email Classification
-\end{itemize}
+\begin{my_itemize}
+  \item Automatic Categorization of Email into Folders \cite{RON04}
+  \item Co-training with a Single Natural Feature Set Applied to Email Classification \cite{mous04}
+\end{my_itemize}
 
 \subparagraph{2003}
-\begin{itemize}
-\item Email Classifications For Contact Centers
-\end{itemize}
+\begin{my_itemize}
+  \item Email Classifications For Contact Centers \cite{ANI03}
+\end{my_itemize}
 
 \newpage
 %==============================================================================
@@ -221,13 +221,13 @@ TODO...
 \subsection{Chronological sort of summarization papers}
 \subparagraph{2004}
 \begin{itemize}
-\item Detection of question-answer pairs in email conversations
+  \item Detection of question-answer pairs in email conversations \cite{LOKESH04}
 \end{itemize}
 
 \subparagraph{2007}
 \begin{itemize}
-\item Using Question-Answer Pairs in Extractive Summarization of Email Conversations
-\item Summarizing email conversations with clue words
+  \item Using Question-Answer Pairs in Extractive Summarization of Email Conversations \cite{KATHLEEN07}
+  \item Summarizing email conversations with clue words \cite{GIUSEPPE07}
 \end{itemize}
 
 
@@ -918,7 +918,8 @@ graph representing the senders and recipients as vertixes and the sending events
  \item Manual classification of emails is based on personal preferences.
  \item Each users’ mailbox is different and is constantly evolving (temporal factor).
  \item The information content of emails vary significantly and not as rich as text documents.
- \item The characteristics of folders may vary from dense to relatively sparse. A classification system needs to perform reasonably well in both and degrades gracefully.
+ \item The characteristics of folders may vary from dense to relatively sparse. 
+	A classification system needs to perform reasonably well in both and degrades gracefully.
  \item Emails are typically classified into sub-folders within a folder.
 \end{my_itemize}
 
@@ -927,7 +928,8 @@ graph representing the senders and recipients as vertixes and the sending events
  \item Rule Based Classification: use rules to classify emails into folders
  \begin{itemize}
   \item William Cohen: RIPPER learning algorithm
-  \item i-ems: Rule based classification system that learns rules based only on sender information and keywords
+  \item i-ems: Rule based classification system that learns rules based 
+	only on sender information and keywords
   \item Ishmail: Rule-based classifier integrated with the Emacs mail program Rmail.
  \end{itemize}
 
@@ -948,7 +950,9 @@ graph representing the senders and recipients as vertixes and the sending events
 \paragraph{Relevant Work in Graph Mining}
 \begin{my_itemize}
  \item Subdue Substructure Discovery System by Cook and Holder:
-The Subdue graph based mining algorithm accepts as input a forest of graphs and identifies the best subgraph that minimizes the input forest using the minimum description length (MDL) principle. 
+      The Subdue graph based mining algorithm accepts as input a forest of 
+      graphs and identifies the best subgraph that minimizes the input 
+      forest using the minimum description length (MDL) principle. 
 \end{my_itemize}
 
 \paragraph{Algorithm Phases}
@@ -957,12 +961,15 @@ The Subdue graph based mining algorithm accepts as input a forest of graphs and 
  \item Preprocessing:
  \begin{my_itemize}
   \item Elimination of stop words.
-  \item Words are ranked based on their occurrence frequency across all emails in a folder and those whose frequencies account for more than f\% of the sum of all frequencies are retained.
+  \item Words are ranked based on their occurrence frequency across 
+	all emails in a folder and those whose frequencies account for more 
+	than f\% of the sum of all frequencies are retained.
  \end{my_itemize}
 
  \item Graph Representation:
  \begin{my_itemize}
-  \item Choose a graph representation that is appropriate for the email domain and use it for representing the emails in a folder.
+  \item Choose a graph representation that is appropriate for the email domain 
+	and use it for representing the emails in a folder.
  \end{my_itemize}
 
  \item Substructure Extraction: 
@@ -972,30 +979,40 @@ The Subdue graph based mining algorithm accepts as input a forest of graphs and 
 
  \item Representative Substructure Pruning: 
  \begin{my_itemize}
-  \item The output of the discovery process may contain a large number of substructures. The goal of pruning is to identify the subset needed for discriminating incoming emails during classification.
+  \item The output of the discovery process may contain a large number of substructures. 
+	The goal of pruning is to identify the subset needed for discriminating incoming 
+	emails during classification.
  \end{my_itemize}
 
  \item Representative Substructure Ranking: 
  \begin{my_itemize}
-  \item Each representative substructure is ranked to indicate its representativeness and the associated rank is used in classifying incoming emails.
+  \item Each representative substructure is ranked to indicate its representativeness 
+	and the associated rank is used in classifying incoming emails.
  \end{my_itemize}
 
  \item Classification: 
  \begin{my_itemize}
-  \item The incoming email is compared with the representative substructures of a folder to determine if it matches any of the representative substructures. For multiple folder classification, in case of more than one match, it is classified into the folder with the highest ranked substructure match.
+  \item The incoming email is compared with the representative substructures of a 
+	folder to determine if it matches any of the representative substructures. 
+	For multiple folder classification, in case of more than one match, it is 
+	classified into the folder with the highest ranked substructure match.
  \end{my_itemize}
 
 \end{enumerate}
 
 \paragraph{Results} 
 \begin{my_itemize}
- \item The performance of eMailSift is much better than naive Bayes and it is consistent in successfully classifying incoming emails.
+ \item The performance of eMailSift is much better than naive Bayes and it is 
+	consistent in successfully classifying incoming emails.
 \end{my_itemize}
 
 \paragraph{Notes}
 \begin{my_itemize}
- \item The eMailSift classifier works well on folders of all sizes. With an increase in folder size, leading to an increase in the heterogeneity of a folder, the classification accuracy remains good.
- \item New trend: To the best of the authors’ knowledge (in 2005), this is the first attempt to assess the applicability of graph mining for classification. 
+ \item The eMailSift classifier works well on folders of all sizes. With an increase 
+	in folder size, leading to an increase in the heterogeneity of a folder, the 
+	classification accuracy remains good.
+ \item New trend: To the best of the authors’ knowledge (in 2005), this is the first 
+      attempt to assess the applicability of graph mining for classification. 
 \end{my_itemize}
 
 %==============================================================================
@@ -1007,53 +1024,77 @@ The Subdue graph based mining algorithm accepts as input a forest of graphs and 
 
 \paragraph{Abstract}
 \begin{my_itemize}
- \item This paper presents a supervised learning model that leverages graph mining techniques for multi-folder email classification. A ranking formula is presented for ordering the representative substructures generated from pre-classified emails. These ranked representative substructures are then used for categorizing incoming emails.
+ \item This paper presents a supervised learning model that leverages graph mining 
+	techniques for multi-folder email classification. A ranking formula is presented 
+	for ordering the representative substructures generated from pre-classified emails. 
+	These ranked representative substructures are then used for categorizing incoming emails.
 \end{my_itemize}
 
 \paragraph{Problem}
 \begin{my_itemize}
- \item Other existing techniques (e.g., SVM, TFIDF, n-gram) rely heavily on extracting high-frequency keywords, thus ignoring the inherent structural aspects of an email which can play a critical role in classification.  Moreover, they fail to take into account the differences between an email and a normal text document and hence not utilize the characteristics of email for classification. They also fail to take advantage of the structural characteristics provided by an email.
+ \item Other existing techniques (e.g., SVM, TFIDF, n-gram) rely heavily on extracting
+       high-frequency keywords, thus ignoring the inherent structural aspects of an email 
+      which can play a critical role in classification.  Moreover, they fail to take into 
+      account the differences between an email and a normal text document and hence not 
+      utilize the characteristics of email for classification. They also fail to take 
+      advantage of the structural characteristics provided by an email.
 \end{my_itemize}
 
 \paragraph{Solution}
 \begin{my_itemize}
- \item Data representation in the form of a graph preserves the structural information of the data which may otherwise be lost if it is translated into other representation schemes. 
+  \item Data representation in the form of a graph preserves the structural information 
+	of the data which may otherwise be lost if it is translated into other 
+	representation schemes. 
 \end{my_itemize}
 
 \paragraph{Challenges}
 \begin{my_itemize}
- \item Classification of emails is based on personal preferences	
- \item Each mailbox is different and is constantly evolving; folder contents vary from time to time.
- \item The information content of emails vary significantly, and other factors, such as the sender, group the email is addressed to, play an important role in classification	 	
- \item The characteristics of folders may vary from dense (more number of emails) to relatively sparse
- \item Emails within a folder may not be cohesive i.e., the contents may be disparate and not have many common words or a theme
- \item Emails are typically classified into subfolders within a folder.
+  \item Classification of emails is based on personal preferences	
+  \item Each mailbox is different and is constantly evolving; folder contents 
+	vary from time to time.
+  \item The information content of emails vary significantly, and other factors, 
+	such as the sender, group the email is addressed to, play an important 
+	role in classification	 	
+  \item The characteristics of folders may vary from dense (more number of emails)
+	to relatively sparse
+  \item Emails within a folder may not be cohesive i.e., the contents may be 
+	disparate and not have many common words or a theme
+  \item Emails are typically classified into subfolders within a folder.
 \end{my_itemize}
 
 \paragraph{Related Work}
 \begin{my_itemize}
  \item Binary classification of documents based on graph mining
- \item Usage of TF-IDF (Term Frequency - Inverse Documnent Frequency) for email classification
+ \item Usage of TF-IDF (Term Frequency - Inverse Documnent Frequency) for email 
+      classification
  \item Rule-based classification techniques
- \item Employing temporal features (e.g., day of the week, time of the day, etc.) in order to classify email messages into classes.
+ \item Employing temporal features (e.g., day of the week, time of the day, etc.) 
+	in order to classify email messages into classes.
 \end{my_itemize}
 	 	
 \paragraph{Pre-processing}
 \begin{my_itemize}
  \item Stop-word Elimination
  \item Stemming
- \item Feature Selection: a technique commonly used in machine learning for selecting a subset of relevant features in order to build the learning model.
+ \item Feature Selection: a technique commonly used in machine learning for 
+	selecting a subset of relevant features in order to build the learning model.
 \end{my_itemize}
 	 	
 \paragraph{Results}
 \begin{my_itemize}
- \item Graph Mining vs. Na\"{\i}ve Bayes: performance comparison between the m-InfoSift approach and the Probabilistic Bayesian approach clearly show a significant improvement as compared to Bayesian. Accuracy improvement is 10% at the lowest and 70% at the highest. 
+ \item Graph Mining vs. Na\"{\i}ve Bayes: performance comparison between the m-InfoSift 
+      approach and the Probabilistic Bayesian approach clearly show a significant 
+      improvement as compared to Bayesian. Accuracy improvement is 10\% at the lowest 
+      and 70\% at the highest. 
 \end{my_itemize}
 
 \paragraph{Future Work}
 \begin{my_itemize}
- \item Investigating incremental generation of representative substructures as the folders change over a period of time. 
- \item Investigating how representative substructures change over a period of time and whether that information can be used to develop heuristics/rules to describe the manual classification process.
+ \item Investigating incremental generation of representative substructures as the 
+      folders change over a period of time. 
+ \item Investigating how representative substructures change over a period of time and 
+      whether that information can be used to develop heuristics/rules to describe 
+      the manual classification process.
 \end{my_itemize}
 
 %==============================================================================
@@ -1068,23 +1109,34 @@ This paper presents the design and implementation of a new system to:
  \item Group emails
  \item Summarize email messages.
 \end{my_itemize}
-The system uses not only subjects and headers fields but also content of email messages to classify emails based on users’ activities and generate summaries of each incoming message with unsupervised learning approach.
+The system uses not only subjects and headers fields but also content of email 
+messages to classify emails based on users’ activities and generate summaries 
+of each incoming message with unsupervised learning approach.
 
 \paragraph{Introduction}
 \begin{my_itemize}
- \item In this paper, machine learning based techniques were developed to reduce email overload, solve email  reply prediction, email groupings and email summarization.
+ \item In this paper, machine learning based techniques were developed to 
+      reduce email overload, solve email  reply prediction, email groupings 
+      and email summarization.
 \end{my_itemize}
 
 \paragraph{Email Reply Prediction}
 \begin{my_itemize}
- \item One novelty is: if the BCC or CC contains email addresses, it implies that emails copied to others. Such mails may require a reply.
- \item The second novelty is to check email message content as well as the subject field for “special words” (e.g “MUST, MEET, URGENT” etc.) this indicates that the email may require a reply
- \item The third novelty is to check if email message contains multiples of question marks (?) or single question mark, and if there is any, such a mail indicates a request and such a mail will require a personal attention.
+ \item One novelty is: if the BCC or CC contains email addresses, it implies 
+      that emails copied to others. Such mails may require a reply.
+ \item The second novelty is to check email message content as well as the 
+      subject field for “special words” (e.g ``MUST, MEET, URGENT, ...etc''.) 
+      this indicates that the email may require a reply
+ \item The third novelty is to check if email message contains multiples of 
+      question marks (?) or single question mark, and if there is any, such a 
+      mail indicates a request and such a mail will require a personal attention.
 \end{my_itemize}
 
 \paragraph{Email Grouping}
 \begin{my_itemize}
- \item Email grouping based on the users’ activities or based on the intent of the sender. Our approach analyzed the word taxonomy of email content. Taxonomy allows classification of content into categories and subcategories
+ \item Email grouping based on the users’ activities or based on the intent of 
+      the sender. Our approach analyzed the word taxonomy of email content. 
+      Taxonomy allows classification of content into categories and subcategories
  \item The suggest grouping works similar to vector space model method but with a new Idea
  \item The suggested grouping procedure can be divided into three stages:
  \begin{enumerate}
@@ -1096,7 +1148,9 @@ The system uses not only subjects and headers fields but also content of email m
 
 \paragraph{Email Summarization}
 \begin{my_itemize}
- \item This algorithm extracts important words in email messages so that the summarizer can generate a more useful summary from the message. The algorithm works logically based on the techniques as shown below:
+ \item This algorithm extracts important words in email messages so that the summarizer 
+      can generate a more useful summary from the message. The algorithm works logically 
+      based on the techniques as shown below:
  \begin{my_itemize}
  \item Input: N, M, Msg Output: Sentence list
   \begin{enumerate}
@@ -1119,36 +1173,55 @@ The system uses not only subjects and headers fields but also content of email m
 \paragraph{Abstract}
 \begin{my_itemize}
  \item Using co-training technique to help build more accurate classifiers. 
- \item Co-training allows classifiers to learn with fewer labelled documents by taking advantage of the more abundant unclassified documents. 
- \item Conventional co-training requires the dataset to be described by two disjoint and natural feature sets that are sufficiently redundant, which is not practical.
- \item This paper shows that when only a single natural feature set is used, the performance of co-training is beneficial in the application of email classification.
+ \item Co-training allows classifiers to learn with fewer labelled documents by 
+      taking advantage of the more abundant unclassified documents. 
+ \item Conventional co-training requires the dataset to be described by two disjoint 
+      and natural feature sets that are sufficiently redundant, which is not practical.
+ \item This paper shows that when only a single natural feature set is used, the 
+      performance of co-training is beneficial in the application of email classification.
 \end{my_itemize}
 
 \paragraph{Problem}
 \begin{my_itemize}
- \item Effective classifiers can be build but using a sufficiently large set of training examples. However, obtaining labelled Web pages or emails is very costly, because it usually requires a great deal of human effort to classify unlabelled documents.
- \item A new technique to overcome this problem, called cotraining. But one of the main requirements that were stated for co-training to be successful was that the dataset must be described by two disjoint sets of natural features that were redundantly sufficient.
+ \item Effective classifiers can be build but using a sufficiently large set 
+      of training examples. However, obtaining labelled Web pages or emails 
+      is very costly, because it usually requires a great deal of human effort 
+      to classify unlabelled documents.
+ \item A new technique to overcome this problem, called cotraining. But one of 
+      the main requirements that were stated for co-training to be successful 
+      was that the dataset must be described by two disjoint sets of natural 
+      features that were redundantly sufficient.
 \end{my_itemize}
 
 \paragraph{The Co-training Algorithm}
 \begin{enumerate}
  \item Input a document with 2 disjoint feature sets.
- \item Cotraining employs two classifiers in a loop to label all the unlabelled examples. Each classifier takes turns to select the most confidently predicted examples and add these into the training set
+ \item Cotraining employs two classifiers in a loop to label all the unlabelled 
+      examples. Each classifier takes turns to select the most confidently 
+      predicted examples and add these into the training set
  \item Both classifiers then re-learn on the enlarged training.
- \item The loop is then repeated for a number of iterations to maximize performance on a separate validation set.
+ \item The loop is then repeated for a number of iterations to maximize 
+      performance on a separate validation set.
 \end{enumerate}
 
 \paragraph{Dataset}
 \begin{my_itemize}
- \item Email classification tests were applied on the LingSpam1 corpus. This dataset consists of 2883 emails of which 479 are spam and 2404 are genuine emails.
+ \item Email classification tests were applied on the LingSpam1 corpus. This 
+      dataset consists of 2883 emails of which 479 are spam and 2404 are 
+      genuine emails.
 \end{my_itemize}
 
 \paragraph{Preprocessing and Classifiers Used}
 \begin{my_itemize}
- \item Each email is broken up into two sections: the text found in the subject header of the email and the words found in the main body of the message.
- \item After applying a stop list, a word count of each word type was kept with a distinction made between the words that appeared in the subject header and those that appeared in the body.
- \item Upon inspection of the word lists, it was decided that the top 100 words was a suitable cut-off
- \item Each of the email documents was then represented using the term frequencies of the selected 100 features.
+ \item Each email is broken up into two sections: the text found in the subject 
+      header of the email and the words found in the main body of the message.
+ \item After applying a stop list, a word count of each word type was kept 
+      with a distinction made between the words that appeared in the subject 
+      header and those that appeared in the body.
+ \item Upon inspection of the word lists, it was decided that the top 100 words 
+      was a suitable cut-off
+ \item Each of the email documents was then represented using the term 
+      frequencies of the selected 100 features.
 \end{my_itemize}
 
 \paragraph{Experiments Investigated}
@@ -1159,8 +1232,13 @@ The system uses not only subjects and headers fields but also content of email m
 
 \paragraph{Notes}
 \begin{my_itemize}
- \item It was found that the performance of cotraining is sensitive to the learning algorithm used. In particular, co-training with naïve Bayes (NB) worsens performance, while Support Vector Machines (SVM) improves it.
- \item This paper investigates the performance of co-training with only one natural feature set in comparison to the use of two natural feature sets. The main question that is addressed is: how useful is co-training with a single natural feature set?
+ \item It was found that the performance of cotraining is sensitive to the 
+      learning algorithm used. In particular, co-training with Na\"{\i}ve Bayes 
+      (NB) worsens performance, while Support Vector Machines (SVM) improves it.
+ \item This paper investigates the performance of co-training with only one 
+      natural feature set in comparison to the use of two natural feature sets. 
+      The main question that is addressed is: how useful is co-training with a 
+      single natural feature set?
  \item Three types of classifiers were tested: Decision Tree (DT), NB and SVM.
  \item Implementations of these classifiers were obtained from WEKA.
 \end{my_itemize}
@@ -1173,33 +1251,54 @@ The system uses not only subjects and headers fields but also content of email m
 \paragraph{Abstract}
 \begin{my_itemize}
  \item Using neural network for email content classification with back propagation
- \item This paper proposes a new email classification model using a teaching process of multi-layer neural network to implement back propagation algorithm. Contributions are: the use of empirical analysis to select an optimum, novel collection of features of a user’s email message and a demonstration of the effectiveness of two equal sets of emails (training and testing data).
+ \item This paper proposes a new email classification model using a teaching process 
+      of multi-layer neural network to implement back propagation algorithm. 
+      Contributions are: the use of empirical analysis to select an optimum, 
+      novel collection of features of a user’s email message and a 
+      demonstration of the effectiveness of two equal sets of emails (training 
+      and testing data).
 \end{my_itemize}
 
 \paragraph{Related Work}
 \begin{my_itemize}
- \item Yukun et al proposed a new email classification model using a linear neural network trained by Perception Learning algorithm (PLA) and a nonlinear neural network trained by Back Propagation Neural Network (BPNN). A Semantic Feature Space (SFS) method was also introduced in this classification model.
+ \item Yukun et al proposed a new email classification model using a linear
+      neural network trained by Perception Learning algorithm (PLA) and a 
+      nonlinear neural network trained by Back Propagation Neural Network (BPNN). 
+      A Semantic Feature Space (SFS) method was also introduced in this classification model.
 \end{my_itemize}
 
 \paragraph{Solution Heuristics}
 \begin{my_itemize}
- \item If the email is about: loss of life, vital incident, accident, etc, then our classifier should, then it should be categroized as 'critical'
- \item If the email is about: meeting deadlines, reminder of vital appointments, interview appointment, visa embassy appointment. In summary, if such a mail is about time and deadline, then it should be categorized as 'urgent'
- \item If the email is about: conference invites, paper presentations, reminder of events, meeting reminder, tasks to perform daily ... etc, then it should be categorized as 'very important'
- \item If there is not timing and deadline in such a mail, if it is not about loss of life, illness, reminder of meeting, messages from friend and family, and the likes, then it should be categorized as 'others'
+ \item If the email is about: loss of life, vital incident, accident, ...etc, 
+      then our classifier should, then it should be categroized as `critical'.
+ \item If the email is about: meeting deadlines, reminder of vital appointments, 
+      interview appointment, visa embassy appointment. In summary, if such a mail 
+      is about time and deadline, then it should be categorized as `urgent'.
+ \item If the email is about: conference invites, paper presentations, reminder 
+      of events, meeting reminder, tasks to perform daily ...etc, then it 
+      should be categorized as `very important'.
+ \item If there is not timing and deadline in such a mail, if it is not about 
+      loss of life, illness, reminder of meeting, messages from friend and 
+      family, and the likes, then it should be categorized as `others'.
 \end{my_itemize}
 
 \paragraph{Algorithm}
 \begin{my_itemize}
- \item Neural network (NN) with back propagation techniques. 
- \item They implemented search for collections of important words in email corpus from Enron, the refined problem then becomes the task of searching this corpus for email datasets that the query retrieval system considers relevant to what the mail user entered as the query.
+ \item Neural network (NN) with back propagation techniques.
+ \item They implemented search for collections of important words in email 
+	corpus from Enron, the refined problem then becomes the task of searching 
+	this corpus for email datasets that the query retrieval system considers relevant 
+	to what the mail user entered as the query.
 \end{my_itemize}
 
 \paragraph{Notes}
 \begin{my_itemize}
- \item Sample categories for this paper are: Critical, Urgent, Very important, and Others
- \item Back propagation is a popular type of network that can be trained to recognize different patterns including images, signals, and text. 
- \item The input of the NN is the word importance in email messages and the output is the importance.
+ \item Sample categories for this paper are: Critical, Urgent, Very important, 
+      and Others.
+ \item Back propagation is a popular type of network that can be trained to 
+      recognize different patterns including images, signals, and text. 
+ \item The input of the NN is the word importance in email messages and the 
+      output is the importance.
 \end{my_itemize}
 
 %==============================================================================
@@ -1320,7 +1419,7 @@ The system uses not only subjects and headers fields but also content of email m
 
 \paragraph{Problem} 
 Proposing a new framework to summarize emails by capturing email conversations 
-and giving weights to sentences. Their algorithm allows the user to specify the size of the summary
+and giving weights to sentences. Their algorithm allows the user to specify the size of the summary.
 
 \paragraph{Related Work}
 \begin{my_itemize}
@@ -1353,9 +1452,51 @@ analysis and also evaluating the algorithm with different datasets.
 %=============================================================================================
 
 \section{Conclusions}\label{conclusions}
-We worked hard, and achieved very little.
+\begin{my_enumerate}
+  \item Email Classification 
+  \begin{my_enumerate}
+    \item Algorithms
+    \begin{my_enumerate}
+      \item The basic form of Na\"{\i}ve Bayes algorithm has the simplest implementation but has very 
+	    low classification accuracy compared to other algorithms.
+      \item SVM achieved High accuracy in most of the papers, however it is 
+	    computationally expensive and harder to implement.
+    \end{my_enumerate}
+    \item Emails differ from other documents due to the time factor, for example 
+	  the main topic of a user folder may drift with time which require including 
+	  the time factor in the classification process.
+    \item GNUsmail framework can be used to improve learning performance. The most 
+	  outstanding improvement is the reduction of time used to train the model, 
+	  keeping or even getting better results in the rest of the measures.
+    \item Data preprocessing is a vital factor in the resulting classification accuracy.
+    \item Most of the papers assumed that each email has one category, however few papers 
+	  proposed another approaches for multi-label classification.
+    \item Enron dataset was used in most papers for classification experiments.
+    \item Current online learning algorithm implementations have an important
+	  limitation that affects the learning process: learning attributes have to
+	  be fixed before beginning the induction of the algorithm. They need
+	  to know all the attributes, values, and classes before the learning itself,
+	  since it is not possible to start using a new attribute in the middle of
+	  the lifetime of a learning model. Future methods should support online
+	  addition of new features.
+  \end{my_enumerate}
+  \item Email Summarization
+  \begin{my_enumerate}
+    \item Email summarization can't be applied on email messages, it must be applied
+	  on email threads to receive good results.
+    \item Short emails can't be summarized, hence a threshold will be calculated
+	  to summarize emails bigger than this threshold.
+    \item Extractive summarization can't be applied directly to email threads,
+	  as it is a special type of documents that contain dialogic structure, so a good
+	  approach is to try QA pairs detection and augment it with extractive summarization
+	  results.
+  \end{my_enumerate}
 
 
+\end{my_enumerate}
+
+%=============================================================================================
+% References
 \begin{thebibliography}{99}
 \bibitem{RON04}
   Ron Bekkerman,
@@ -1496,6 +1637,28 @@ We worked hard, and achieved very little.
   Xiaodong Zhou,
   \emph{Summarizing Email Conversations with Clue Words},
   2007.
+
+\bibitem{SVETLANA01}
+  Svetlana Kiritchenko,
+  Stan Matwin,
+  \emph{Email Classification with Co-Training},
+  2001.
+
+\bibitem{YUN08}
+  Yun Fei Yi,
+  Cheng Hua Li,
+  Wei Song,
+  \emph{Email classification Using Semantic Feature Space},
+  2008.
+
+\bibitem{MANUEL11}
+  Jose M. Carmona-Cejudo,
+  Manuel Baena-Garcia,
+  Jose del Campo-Avila,
+  Rafael Morales-Bueno,
+  Albert Bifet,
+  \emph{GNUsmail: Open Framework for On-line Email Classification},
+  2011.
 \end{thebibliography}
 
 
