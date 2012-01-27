@@ -58,7 +58,7 @@ and growing problem for individuals and organizations because it is prone to mis
 One of the problems that are most important is disordered email messages, 
 congested and unstructured emails in mail boxes. It may be very hard to 
 find archived email messages, search for previous emails with specified contents 
-or features when the mails are not well structured and organized. Email 
+or features when the mails are not well structured and organized. Also, email 
 summarization is another important and challenging problem.
 
 Smart Email is an application addressing these problems by providing automatic 
@@ -70,7 +70,7 @@ The business objectives of this project are listed below. Delivering these
 objectives will deliver the expected benefits of the application.
 \begin{my_itemize}
   \item Automatically organizing congested and uncategorized emails into folders.
-  \item Summarizing lengthy email threads into a brief summary describing the 
+  \item Summarizing long email threads into a brief summary describing the 
 	main points in these threads.
 \end{my_itemize}
 
@@ -93,7 +93,7 @@ critical to the success of this project are listed below:
   \item the servers providing the web service have to provide sufficient 
 	processing power for achieving reasonable response time;
   \item email classification will be based on the email subject and content. 
-	Other features can be used as well, such as the email sender and receiver. 
+	Other features can be used as well, such as the email sender(s) and recepient(s). 
 	However, email attachment will not be considered as a classification feature for the email.
 \end{my_itemize}
 
@@ -105,7 +105,7 @@ are assumptions on the extent of feature scope. Others are restrictions on resou
 or methods for achieving the objectives. The limitations of this project are listed below:
 
 \begin{my_itemize}
-  \item sufficient number of emails is needed for each email category to achieve 
+  \item sufficient number of emails is needed for each email label to achieve 
 	a reasonable classification accuracy;
   \item emails with size less than a specified threshold will not be summarized.
 \end{my_itemize}
@@ -127,10 +127,7 @@ some issues may have been discovered, and others may remain open.
 \section{Proposed Workflow}
 \subsection{Overview}
 This section includes a concise description of the features and operation of the 
-proposed solution. It also compares and contrasts the solution with the current 
-process. The context and workflow of the proposed solution are defined in subsequent sections.
-
-%TODO reformat the previous paragraph
+proposed solution. The context and workflow of the proposed solution are defined in subsequent sections.
 
 Features:
 \begin{my_itemize}
@@ -160,11 +157,11 @@ Individual tasks in the workflow are described.
   \item Workflow Description
   \begin{my_itemize}
     \item Incoming Emails are preprocessed.
-    \item Summarization module checks that email length is greater than predefined threshold:
+    \item Summarization module checks that email length is greater than a predefined threshold:
     \begin{my_itemize}
       \item if the length is greater than the threshold, the email is fed to the 
 	    summarizer which outputs the summary;
-      \item short emails are returned.
+      \item short emails are returned without summarization.
     \end{my_itemize}
     \item Classification module uses the user module to classify the email into a specific label.
     \item The result is returned by the web service.
@@ -181,27 +178,17 @@ TODO...
 This section identifies, enumerates and explores the business requirements that must 
 be met by the application. Business requirements include capturing the types of users, 
 the basic inputs and outputs, the system's dependencies, and the tasks the system should 
-accomplish. Some business requirement for a web-based retail site might include:
-
-\begin{my_description}
-  \item[Users] ``The system supports public browsers, registered members, 
-	      customer service administrators, and system administrators.''
-  \item[Tasks] ``Users have personalized accounts,'' ``shopping carts expire 
-	      in a configurable period, and the default is 10 days''.
-\end{my_description}
-
-It is important to confirm that Task Requirements include all the tasks 
+accomplish. It is important to confirm that Task Requirements include all the tasks 
 required to meet the business objectives.
 
-%TODO ... refactor the previous paragraph!!!
 %==============================================================================
 \subsection{Users}
 All applications have users and most have several users of different types. This 
 section identifies, at a high level, the types of users of the system.
 
 \begin{my_enumerate}
-  \item Application User: Requests Classification and summarization of emails.
-  \item Admin: Tune classification and summarization algorithms.
+  \item Application User: requests emails' classification and summarization.
+  \item Admin: tunes classification and summarization algorithms and observes the results.
 \end{my_enumerate}
 
 %==============================================================================
@@ -214,28 +201,28 @@ printed reports, ...etc. In this section, all electronic inputs and outputs
 are captured. Human inputs are omitted from this section.
 
 \begin{my_enumerate}
-  \item Inputs
+  \item Inputs:
   \begin{my_itemize}
-    \item Unclassified Emails.
-    \item Classified Emails (training data).
-    \item Email Threads.
+    \item unclassified Emails;
+    \item classified Emails (training data);
+    \item email Threads.
   \end{my_itemize}
-  \item Outputs
+  \item Outputs:
   \begin{my_itemize}
-    \item Classified emails.
-    \item Summarized email threads.
-    \item Classification model.
+    \item classified emails;
+    \item summarized email threads;
+    \item classification model.
   \end{my_itemize}
 \end{my_enumerate}
 
 
 %==============================================================================
 \subsection{Dependencies}
-Human inputs are also categorized as dependencies.  List all dependencies.
+Human inputs are also categorized as dependencies. List all dependencies.
 
 \begin{my_enumerate}
-  \item Request for summarizing an email thread.
   \item Registeration data.
+  \item Request for summarizing an email thread.
 \end{my_enumerate}
 
 
@@ -244,8 +231,7 @@ Human inputs are also categorized as dependencies.  List all dependencies.
 Task Requirements correlate to the use cases, above. There should be at least 
 one task for each use case bubble. Each use case should be briefly described. 
 If there are specific requirements related to the use case, they should also 
-be listed. This section captures high-level, basic functional requirements. 
-Detailed requirements will be defined during the Requirements Specification contests.
+be listed. This section captures high-level, basic functional requirements.
 
 %TODO
 TODO...
@@ -258,7 +244,7 @@ Are there any special or unusual security requirements, like fingerprint scannin
 
 \begin{my_enumerate}
   \item The system requires every user to log in with a unique identity (email).
-  \item User Data (email) should be transmitted with a secure connection.
+  \item User Data (email) should be transmitted through a secure connection.
   \item Administrators shouldn’t have access to user data (email).
 \end{my_enumerate}
 
@@ -286,8 +272,8 @@ data that must be transferred from the new system to another external system.
 Any data migration requirements are listed below.
 
 \begin{my_enumerate}
-  \item Users classified emails for training phase \\
-	pre-classified emails are needed to build specific user mode, users' emails can be discarded after building the model
+  \item Users' classified emails for training phase as pre-classified emails are needed to build users' models.
+  \item Users' email threads which needed to be summarized.
 \end{my_enumerate}
 
 
