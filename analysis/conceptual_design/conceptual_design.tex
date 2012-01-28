@@ -54,7 +54,7 @@
 \section{Introduction}
 
 \subsection{Overview Application}
-Email has been an efficient and popular communication mechanism as the number 
+Email has become an efficient and popular communication mechanism as the number 
 of Internet users increases. Therefore, email management has become an important 
 and growing problem for individuals and organizations because it is prone to misuse.
 
@@ -64,7 +64,7 @@ find archived email messages, search for previous emails with specified contents
 or features when the mails are not well structured and organized. Also, email 
 summarization is another important and challenging problem.
 
-Smart Email is an application addressing these problems by providing automatic 
+`Smart Email' is an application addressing these problems by providing automatic 
 email summarization and categorization into folders.
 
 %==============================================================================
@@ -81,9 +81,7 @@ objectives will deliver the expected benefits of the application.
 %==============================================================================
 \subsection{Assumptions}
 Some assumptions generally must be made in order to write a succinct definition 
-of the application. Some assumptions are technical (e.g. ``the new system will 
-employ a normalized database schema''), while others are business natured (e.g. 
-``the client will provide an enterprise Oracle environment'').  Assumptions 
+of the application. Some assumptions are technical, while others are business natured.  Assumptions 
 critical to the success of this project are listed below:
 \begin{my_itemize}
   \item each user will have his own trained classification and summarization 
@@ -92,35 +90,33 @@ critical to the success of this project are listed below:
 	classification and summarization support for different mail 
 	servers (Example: Google, Hotmail, Yahoo);
   \item english language will be supported by default;
-  \item email summarization will be provided as on-demand service by the application user;
+  \item email summarization will be provided as an on-demand service by the application user;
   \item the servers providing the web service have to provide sufficient 
 	processing power for achieving reasonable response time;
   \item email classification will be based on the email subject and content. 
-	Other features can be used as well, such as the email sender(s) and recepient(s). 
-	However, email attachment will not be considered as a classification feature for the email.
+	Other features can be used as well, such as the email sender and recepient(s). 
+	However, email attachments will not be considered as a classification feature for the email.
 \end{my_itemize}
 
 %==============================================================================
 \subsection{Limitations}
-Every project has limitations on the scope of the problem it attempts to solve, 
-on the capabilities of the implementation technology, ...etc. Some limitations 
-are assumptions on the extent of feature scope. Others are restrictions on resources 
+Some limitations are assumptions on the extent of feature scope. Others are restrictions on resources 
 or methods for achieving the objectives. The limitations of this project are listed below:
 
 \begin{my_itemize}
   \item sufficient number of emails is needed for each email label to achieve 
 	a reasonable classification accuracy;
-  \item emails with size less than a specified threshold will not be summarized.
+  \item emails with size less than a specified threshold cannot be summarized.
 \end{my_itemize}
 
 %==============================================================================
 \subsection{Open items and Risks}
 During the conceptualization of the project and in the process of writing this document, 
-some issues may have been discovered, and others may remain open.
+some issues remain open.
 \begin{my_itemize}
   \item Multi-label classification.
   \item Arabic support.
-  \item The need of a client side application to assist the server side.
+  \item The need for a client side application to assist the server side.
   \item Online training for classification models.
   \item Specifications for the web server providing the web service.
 \end{my_itemize}
@@ -168,7 +164,7 @@ Individual tasks in the workflow are described.
 	    summarizer which outputs the summary;
       \item short emails are returned without summarization.
     \end{my_itemize}
-    \item Classification module uses the user module to classify the email into a specific label.
+    \item Classification module uses the user model to classify the email into a specific label.
     \item The result is returned by the web service.
   \end{my_itemize}
 \end{my_enumerate}
@@ -313,8 +309,8 @@ the system functionalities by system users.
 \cellcolor[gray]{0.9} User Story & Classification Accuracy test \\ \hline
 \cellcolor[gray]{0.9} Priority & Medium \\ \hline
 \cellcolor[gray]{0.9} Description & 
-	As a \textbf{Admin}, I can \textbf{test the accuracy of the 
-	classification algorithm on runtime}. \\ \hline
+	As an \textbf{Admin}, I can \textbf{test the accuracy of the 
+	classification algorithm at runtime}. \\ \hline
 \cellcolor[gray]{0.9} Estimated time & 2 man-days\\ \hline
 \cellcolor[gray]{0.9} Notes & 
 	The admin can view the accuracy of the used classification algorithm. \\ \hline
@@ -330,7 +326,7 @@ the system functionalities by system users.
 \cellcolor[gray]{0.9} User Story & Admin Algorithms Control \\ \hline
 \cellcolor[gray]{0.9} Priority & Medium \\ \hline
 \cellcolor[gray]{0.9} Description & 
-	As a \textbf{Admin}, I can \textbf{change/tune the 
+	As an \textbf{Admin}, I can \textbf{change/tune the 
 	classification/summarization algorithms} to
 	\textbf{improve the accuracy}. \\ \hline
 \cellcolor[gray]{0.9} Estimated time & 2 man-days\\ \hline
