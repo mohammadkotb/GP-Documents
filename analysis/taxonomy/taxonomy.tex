@@ -1473,6 +1473,39 @@ analysis and also evaluating the algorithm with different datasets.
 
 
 %=============================================================================================
+%=============================================================================================
+
+\subsubsection{Combining Linguistic and Machine Learning Techniques for Email
+Summarization \cite{SMAR01}}
+
+\paragraph{Year} 2001
+\paragraph{Citations} 37
+
+\paragraph{Problem} 
+This paper shows that linguistic techniques along with machine learning can extract high quality noun phrases for the purpose of providing a summary of email messages. The paper describes a set of comparative experiments using several machine learning algorithms for the task of salient noun phrase extraction.
+
+\paragraph{Related Work}
+Machine learning has been successfully applied to different natural language tasks, including text summarization. Prior work in document summarization has been mostly based on sentence extraction. Kupiec et al. (1995) use machine learning for extracting the most important sentences of the document. But extractive summarization relies on the properties of source text that emails typically do not have: coherence, grammaticality, well defined structure. Berger and Mittal (2000) present a summarization system, named OCELOT that provides the gist of the web documents based on probabilistic models. Their approach is closed related with statistical machine translation.
+
+\paragraph{Algorithms}
+\begin{my_itemize}
+  \item Symbolic machine learning in conjunction with many NLP applications (syntactic and semantic parsing, POS tagging, text categorization, word sense disambiguation)
+  \item Rule Induction Classifiers
+  \item Decision Tree Classifiers
+\end{my_itemize}
+
+\paragraph{Conclusion}
+\begin{my_itemize}
+\item linguistic knowledge can enhance machine learning by evaluating the impact of linguistic filtering before applying the learning scheme.
+\item the modifiers of a noun phrase can be as semantically important as the head for the task of gisting.
+
+\end{my_itemize}
+
+\paragraph{Future Work}
+Performing a task-based evaluation of noun-phrases and n-gram representations for the document content to test usability.
+
+
+%=============================================================================================
 
 \section{Conclusions}\label{conclusions}
 \begin{my_enumerate}
@@ -1660,6 +1693,14 @@ analysis and also evaluating the algorithm with different datasets.
   Xiaodong Zhou,
   \emph{Summarizing Email Conversations with Clue Words},
   2007.
+
+\bibitem{SMAR01}
+  Smaranda Muresan,
+  Evelyne Tzoukermann,
+  Judith L. Klavans,
+  \emph{Combining Linguistic and Machine Learning Techniques for Email
+Summarization},
+  2001.
 
 \bibitem{SVETLANA01}
   Svetlana Kiritchenko,
