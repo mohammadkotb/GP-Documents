@@ -1473,7 +1473,6 @@ analysis and also evaluating the algorithm with different datasets.
 
 
 %=============================================================================================
-%=============================================================================================
 
 \subsubsection{Combining Linguistic and Machine Learning Techniques for Email
 Summarization \cite{SMAR01}}
@@ -1504,6 +1503,33 @@ Machine learning has been successfully applied to different natural language tas
 \paragraph{Future Work}
 Performing a task-based evaluation of noun-phrases and n-gram representations for the document content to test usability.
 
+
+%=============================================================================================
+%=============================================================================================
+
+\subsubsection{Regression-Based Summarization of Email Conversations
+ \cite{JAN09}}
+
+\paragraph{Year} 2009
+\paragraph{Citations} 4
+
+\paragraph{Problem} 
+This paper presents a regression-based machine learning approach to email thread summarization. The regression model is able to take advantage of multiple annotations for training purposes, in contrast to most work with binary classifiers. This paper also introduces a newly created and publicly available email corpus for summarization research.
+
+\paragraph{Data Set}
+\begin{my_itemize}
+\item BC3 corpus;
+\item Enron dataset.
+\end{my_itemize}
+
+\paragraph{Algorithms}
+\begin{my_itemize}
+  \item Bagging regression-based classifiers;
+  \item Gaussian Processes regression-based classifiers.
+\end{my_itemize}
+
+\paragraph{Conclusion}
+The paper shows that the best regression-based classifiers for email thread summarization perform better than binary classifiers because they preserve more information. In the comparison between different classifiers, the Bagging and Gaussian Processes have the highest weighted recall, but Bagging is more efficient. The results on our new dataset show that speech acts are a very useful feature if they can be generated with higher accuracy at the sentence level. Meta sentences and subjectivity were also shown to be useful features for email summarization.
 
 %=============================================================================================
 
@@ -1701,6 +1727,14 @@ Performing a task-based evaluation of noun-phrases and n-gram representations fo
   \emph{Combining Linguistic and Machine Learning Techniques for Email
 Summarization},
   2001.
+
+\bibitem{JAN09}
+Jan Ulrich,
+Giuseppe Carenini,
+Gabriel Murray,
+Raymond Ng
+  \emph{Regression-Based Summarization of Email Conversations},
+  2009.
 
 \bibitem{SVETLANA01}
   Svetlana Kiritchenko,
