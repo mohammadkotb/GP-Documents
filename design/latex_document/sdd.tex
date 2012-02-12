@@ -14,7 +14,11 @@
   \setlength{\itemsep}{0cm}
   \setlength{\parskip}{0cm}}
 {\end{enumerate}}
-
+\newenvironment{my_desc}
+{\begin{description}
+  \setlength{\itemsep}{0cm}
+  \setlength{\parskip}{0cm}}
+{\end{description}}
 
 
 \begin{document}
@@ -72,6 +76,10 @@ Each of these modules will be described in details in the upcoming subsections.
 
 \begin{my_itemize}
   \item ClassificationManager class
+  \begin{my_desc}
+   \item[Purpose] test
+   \item[Function] test
+  \end{my_desc}
   \item PreprocessingManager class
   \item FilterManager class
   \item FilterCreatorManager class
