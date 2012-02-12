@@ -104,9 +104,45 @@ Each of these modules will be described in details in the upcoming subsections.
 \subsubsection{Classification module interface}
 \begin{my_itemize}
   \item Classifier class
+  \begin{my_desc}
+   \item[Purpose] All schemes for documents classification extend this class. Note that a classifier MUST either implement distributionForInstance() or classifyInstance() methods.
+   \item[Function] The Classifier abstarct class defines the following functions:
+	\begin{my_itemize}
+		\item classifyInstance(Instance instance) : classifies a given instance;
+		\item buildClassifier(Instances trainingData) : builds the classification model from the given set of training data;
+		\item getClassifierByName(String name, String[] options) : returns an instance of the classifier given the classifier name;
+		\item distributionForInstance(Instance instance): returns the destribution for each class attribute for the given instance.
+	\end{my_itemize}
+  \end{my_desc}
+
   \item Preprocessor interface
+  \begin{my_desc}
+   \item[Purpose] Performs some pre-processing actions on the email before classifiaction. Pre-processing may include removing stop words and stemming. 
+   \item[Function] The Preprocessor interface defines the following function:
+	\begin{my_itemize}
+	\item process(Email email): Performs some pre-processing action on the given email such as stemming or removing stop words.
+	\end{my_itemize}
+  \end{my_desc}
+
   \item Filter class
+  \begin{my_desc}
+   \item[Purpose] Defines an abstract class for filtering an email. A filter is used to extract a set of features from the email such as the email sender, email label and word frequencies in an email.
+   \item[Function] The filter abstract class defines the following set of functions:
+	\begin{my_itemize}
+	\item makeFeatureInstance(Email email): creates a feature instance from the given email.
+	\item getAttributes(): returns the set of attributes for the given filter.
+	\end{my_itemize}
+  \end{my_desc}
+
   \item FilterCreator interface
+  \begin{my_desc}
+   \item[Purpose] Defines an interface for creating a filter.
+   \item[Function] The FilterCreator interface defines the following function:
+	\begin{my_itemize}
+	\item createFilter(List<Email> emails): creates a filter given the list of emails.
+	\end{my_itemize}
+  \end{my_desc}
+
 \end{my_itemize}
 
 \subsubsection{Summarization moudle interface}
