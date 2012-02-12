@@ -77,15 +77,77 @@ Each of these modules will be described in details in the upcoming subsections.
 \begin{my_itemize}
   \item ClassificationManager class
   \begin{my_desc}
-   \item[Purpose] test
-   \item[Function] test
+    \item[Purpose] Used to manage and control the classification process flow
+      with the dataset and classification algorithms.
+    \item[Functions] TODO
   \end{my_desc}
   \item PreprocessingManager class
+  \begin{my_desc}
+    \item[Purpose] Used to manage preprocessing phase by applying selected data preprocessors
+      to given raw emails.
+    \item[Functions] \hfill
+    \begin{my_itemize}
+      \item apply(email:Email) used to apply the selected preprocessors on a given email.
+    \end{my_itemize}
+  \end{my_desc}
+
   \item FilterManager class
+  \begin{my_desc}
+    \item[Purpose] Used to manage feature extraction phase from preprocessed emails by applying
+      specified set of filters.
+    \item[Functions] \hfill
+    \begin{my_itemize}
+      \item getInstances(emails:List<Email>) given a set of emails returns a prepared dataset (Instances object)
+      \item getInstance(email:Email) given an email return a prepared feature vector (Instance object)
+    \end{my_itemize}
+
+  \end{my_desc}
+
   \item FilterCreatorManager class
+  \begin{my_desc}
+    \item[Purpose] Used to manage all Filter creators to create specified filters given a list of emails
+    \item[Functions] \hfill
+    \begin{my_itemize}
+      \item getFilters(emails:List<Email>) create all supported filters using given emails
+    \end{my_itemize}
+
+  \end{my_desc}
+
+
   \item Instances class
+  \begin{my_desc}
+    \item[Purpose] Used to gather all instances of the emails and treated as the classifier
+      dataset.
+    \item[Fuctions] \hfill
+    \begin{my_itemize}
+      \item add(instance:Instance) add new instance to the dataset.
+      \item getAttribute(index:int) get Attribute at given index.
+      \item getAttribute(name:String) get Attribute with the given name.
+      \item checkInstance(instance:Instance) check if the given instance is in the dataset or not.
+      \item getClassAttribute() return the class attribute of the dataset.
+    \end{my_itemize}
+
+  \end{my_desc}
+
   \item Instance class
+  \begin{my_desc}
+    \item[Purpose] Used to encapsulate the feature vector of a certain email.
+    \item[Functions] \hfill
+    \begin{my_itemize}
+      \item getClassIndex() returns the index of the class attribute
+      \item setClassIndex(index:int) set the index of the class attribute
+      \item isMissingClass() check if the feature vector contains value of the class attribute or not
+      \item getValue(index:int) return the value for the ith attribute
+    \end{my_itemize}
+
+  \end{my_desc}
+
   \item Attribute class
+  \begin{my_desc}
+    \item[Purpose] Used to encapsulate the dataset attribute with its type
+    \item[Functions] TODO
+  \end{my_desc}
+
 \end{my_itemize}
 
 \subsubsection{Summarization Module}
