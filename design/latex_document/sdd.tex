@@ -72,14 +72,26 @@ This software design document provides the design details of smart email. Smart 
   \begin{my_desc}
 \item[IEEE]  IEEE Std. 1016-1998 IEEE Recommended Practice for Software Design 
 Description.
-\item[D. Delaney] "Document Templates For Student Projects in Software Engineering" 
+\item[D. Delaney] ``Document Templates For Student Projects in Software Engineering''
 National University of Irelan, 2002
   \end{my_desc}
 
 \section{Decomposition description}
-This project is being designed using an incremental approach. There are three primary stages to the design development which consists of Phase 1 (Classification Module), due March 1, 2012, Phase 2 (Summarization Module), due the week of April 1, 2012 and Phase 3 (Web Service Module), due the week of May 1, 2012.
+This project is being designed using an incremental approach. There are three primary 
+stages to the design development which consists of Phase 1 (Classification Module), 
+due March 1, 2012, Phase 2 (Summarization Module), due the week of April 1, 2012 
+and Phase 3 (Web Service Module), due the week of May 1, 2012.
 
-The classification module can be divided into three layers. The data layer will be responsible for retrieving emails from file systems or using IMAP protocol. The second layer is the preprocessing and email filtering layer. This layer is responsible for filtering emails and extracting classification features from the email. The third and last layer will be responsible for classifying emails and testing the classifier performance.
+The classification module can be divided into three layers. The data layer will be 
+responsible for retrieving emails from file systems or using IMAP protocol. The 
+second layer is the preprocessing and email filtering layer. This layer is 
+responsible for filtering emails and extracting classification features from the 
+email. The third and last layer will be responsible for classifying emails and 
+testing the classifier performance.
+
+The detailed design for each design entity is illustrated in the detailed class 
+diagram attached with this SDD document.
+
 
 \subsection{System decomposition}
 The system is divided into main modules as follows:
