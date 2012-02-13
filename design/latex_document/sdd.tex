@@ -109,7 +109,7 @@ Each of these modules will be described in details in the upcoming subsections.
   \begin{my_desc}
     \item[Purpose] Used to manage and control the classification process flow
       with the dataset and classification algorithms.
-    \item[Functions] TODO
+    \item[Functions] TBD
   \end{my_desc}
   \item PreprocessingManager class
   \begin{my_desc}
@@ -127,7 +127,7 @@ Each of these modules will be described in details in the upcoming subsections.
       specified set of filters.
     \item[Functions] \hfill
     \begin{my_itemize}
-      \item getInstances(emails:List<Email>) given a set of emails returns a prepared dataset (Instances object)
+      \item getInstances(emails:List$\langle$Email$\rangle$) given a set of emails returns a prepared dataset (Instances object)
       \item getInstance(email:Email) given an email return a prepared feature vector (Instance object)
     \end{my_itemize}
 
@@ -138,7 +138,7 @@ Each of these modules will be described in details in the upcoming subsections.
     \item[Purpose] Used to manage all Filter creators to create specified filters given a list of emails
     \item[Functions] \hfill
     \begin{my_itemize}
-      \item getFilters(emails:List<Email>) create all supported filters using given emails
+      \item getFilters(emails:List$\langle$Email$rangle$) create all supported filters using given emails
     \end{my_itemize}
 
   \end{my_desc}
@@ -175,7 +175,18 @@ Each of these modules will be described in details in the upcoming subsections.
   \item Attribute class
   \begin{my_desc}
     \item[Purpose] Used to encapsulate the dataset attribute with its type
-    \item[Functions] TODO
+    \item[Functions] \hfill
+    \begin{my_itemize}
+      \item Attribute(name:String) \\
+      used to create a new Attribute instance with the given name.
+      \item Attribute(name:String,nominals:ArrayList$\langle$String$\rangle$) \\
+      used to create a new Attribute instance with the given name and possible values.
+      \item getValue(int:index): String \\
+      returns the attribute possible value of the given index
+      \item getIndexofValue(value:String): int \\
+      returns the index of the given attribute possible value
+    \end{my_itemize}
+
   \end{my_desc}
 
 \end{my_itemize}
@@ -254,7 +265,7 @@ The interface description provides everything designers, programmers and testers
    \item[Purpose] Defines an interface for creating a filter.
    \item[Function] The FilterCreator interface defines the following function:
 	\begin{my_itemize}
-	\item createFilter(List<Email> emails): creates a filter given the list of emails.
+	\item createFilter(emails:List$\langle$Email$\rangle$): creates a filter given the list of emails.
 	\end{my_itemize}
   \end{my_desc}
 
@@ -270,19 +281,8 @@ TBD
 
 \subsection{Classification module detailed design}
 
-\begin{my_itemize}
-  \item ClassificationManager class
-  \item Classifier class
-  \item PreprocessingManager class
-  \item Preprocessor interface
-  \item FilterManager class
-  \item Filter class
-  \item FilterCreatorManager class
-  \item FilterCreator interface
-  \item Instances class
-  \item Instance class
-  \item Attribute class
-\end{my_itemize}
+\includegraphics[width=12cm]{design.jpeg}\\
+
 
 
 \subsection{Summarization module detailed design}
