@@ -56,12 +56,29 @@ The SDD shows how the smart email software system will be structured to satisfy 
 structure, software components, interfaces, and data necessary for the implementation phase. In essence, the SDD is a detailed blueprint for the implementation activity.
 
 \subsection{Scope}
+
 \subsection{Definitions and acronyms}
+  \begin{my_desc}
+    \item[SDD] Software Design Description
+    \item[TBD] To Be Defined
+    \item[IMAP] Internet message access protocol
+    \item[WEKA] Collection of machine learning algorithms for solving data mining problems implemented in Java and open sourced under the GPL.
+    \item[MOA] Massive Online Analysis (MOA) is a software environment for implementing algorithms and running experiments for online learning from evolving data streams.
+  \end{my_desc}
+
 
 \section{References}
+  \begin{my_desc}
+\item[IEEE]  IEEE Std. 1016-1998 IEEE Recommended Practice for Software Design 
+Description.
+\item[D. Delaney] "Document Templates For Student Projects in Software Engineering" 
+National University of Irelan, 2002
+  \end{my_desc}
 
 \section{Decomposition description}
-This project is being designed using an incremental approach. There are three primary stages to the design development which consists of Phase 1 (Classification Phase), due March 1, 2012, Phase 2 (Summarization Phase), due the week of April 1, 2012 and Phase 3 (Web Service Phase), due the week of May 1, 2012.
+This project is being designed using an incremental approach. There are three primary stages to the design development which consists of Phase 1 (Classification Module), due March 1, 2012, Phase 2 (Summarization Module), due the week of April 1, 2012 and Phase 3 (Web Service Module), due the week of May 1, 2012.
+
+The classification module can be divided into three layers. The data layer will be responsible for retrieving emails from file systems or using IMAP protocol. The second layer is the preprocessing and email filtering layer. This layer is responsible for filtering emails and extracting classification features from the email. The third and last layer will be responsible for classifying emails and testing the classifier performance.
 
 \subsection{System decomposition}
 The system is divided into main modules as follows:
@@ -151,7 +168,10 @@ Each of these modules will be described in details in the upcoming subsections.
 \end{my_itemize}
 
 \subsubsection{Summarization Module}
+The summarization module will be responsible for summarizing a thread of emails and identifies the significent phrases in long email threads. The design for this module will be complemeted before the expected start date for this phase (The first of March).
+
 \subsubsection{Web Service Module}
+The web service module will be responsible for providing the clients with ability to classify and summarize their emails. The web service will be supported for Gmail mail servers as a first step. The detailed design for this module will be complemeted before the expected start date for this phase (The first of April).
 
 \subsection{Data decomposition}
 \subsubsection{IMAP data access object}
