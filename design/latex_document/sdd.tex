@@ -52,10 +52,11 @@
 This software design description document is a model of the smart email software system to be created. The model provides the precise design information needed for planning, analysis, and implementation of the software system. The document represents a partitioning of the system into design entities and describe the important properties and relationships among those entities.
 
 \subsection{Purpose}
-The SDD shows how the smart email software system will be structured to satisfy the requirements identiﬁed in the conceptual design document and software requirements speciﬁcation. It is a translation of requirements into a description of the software
-structure, software components, interfaces, and data necessary for the implementation phase. In essence, the SDD is a detailed blueprint for the implementation activity.
+This SDD document shows how the smart email software system will be structured to satisfy the requirements identiﬁed in the conceptual design document and software requirements speciﬁcation. It is a translation of requirements into a description of the software
+structure, software components, interfaces, and data necessary for the implementation phase. This SDD is a detailed blueprint for the implementation activity.
 
 \subsection{Scope}
+This software design document provides the design details of smart email. Smart email will provide automated email classification and summarization service. This document describes how the system will be divided into modules and the design details for each module.
 
 \subsection{Definitions and acronyms}
   \begin{my_desc}
@@ -174,14 +175,34 @@ The summarization module will be responsible for summarizing a thread of emails 
 The web service module will be responsible for providing the clients with ability to classify and summarize their emails. The web service will be supported for Gmail mail servers as a first step. The detailed design for this module will be complemeted before the expected start date for this phase (The first of April).
 
 \subsection{Data decomposition}
+The data layer is responsible for retrieving emails either from the file system or using the IMAP protocol. The enron data set will be used as the data source for training and testing the email classifier.
+
+\subsubsection{Data access object}
+  \begin{my_desc}
+   \item[Purpose] This class is responsible for retrieving emails using the IMAP protocol.
+   \item[Function] This class inherits from the data access object class.
+  \end{my_desc}
+
 \subsubsection{IMAP data access object}
+  \begin{my_desc}
+   \item[Purpose] This class is responsible for retrieving emails using the IMAP protocol.
+   \item[Function] This class inherits from the data access object class.
+  \end{my_desc}
+
+
 \subsubsection{File system data access object}
+  \begin{my_desc}
+   \item[Purpose] This class is responsible for retrieve emails from the file system.
+   \item[Function] This class inherits from the data access object class.
+  \end{my_desc}
 
 \section{Dependency description}
 \subsection{Intermodule dependencies}
 \subsection{Data dependencies}
 
 \section{Interface description}
+The interface description provides everything designers, programmers and testers need to know to correctly use the functions provided by the system entities. This description includes the details of external and internal interfaces not provided in the software requirements speciﬁcation.
+
 \subsection{Module interface}
 \subsubsection{Classification module interface}
 \begin{my_itemize}
@@ -228,7 +249,10 @@ The web service module will be responsible for providing the clients with abilit
 \end{my_itemize}
 
 \subsubsection{Summarization moudle interface}
+TBD
+
 \subsubsection{Web service moudle interface}
+TBD
 
 \section{Detailed design}
 
@@ -250,7 +274,11 @@ The web service module will be responsible for providing the clients with abilit
 
 
 \subsection{Summarization module detailed design}
+TBD
+
 \subsection{Web service module detailed design}
+TBD
+
 \subsection{Data detailed design}
 
 \begin{my_itemize}
