@@ -50,6 +50,8 @@ and organizes recent research results in the novel way that integrates and
 adds understanding to work in the field of email classification and 
 summarization. It emphasizes the classification of the existing literature, 
 developing a perspective on the area, and evaluating different trends.
+We have collected more than 40 papers from different technical sources like IEEE Xplore , ACM Digital Libary and Google Scholar,filtered these
+papers and chose 25 which are presented here. These 25 are the main papers of concern and the most related to our work.
 
 \paragraph{Keywords}
 Email, Classification, Summarization, Machine Learning.
@@ -138,30 +140,38 @@ Automatic Categorization of Email into Folders \cite{RON04}
 
 \newpage
 
-\subsection{Classification according to used dataset}
+\subsection{Datasets used in Email Classification}
+\subparagraph{Enron Dataset}
+    \begin{my_itemize}
+        \item Automatic Categorization of Email into Folders \cite{RON04}
+        \item An Object Oriented Email Clustering Model Using  Weighted Similarities 
+  between Email Attributes \cite{NARESH10}
+        \item Using GNUsmail to Compare Data Stream Mining Methods \cite{JOSE11}
+    \end{my_itemize}
+\subparagraph{SRI Dataset}
+    \begin{my_itemize}
+        \item Automatic Categorization of Email into Folders \cite{RON04}
+    \end{my_itemize}
+\subparagraph{Pine Dataset}
+    \begin{my_itemize}
+        \item Email classification for contact centers \cite{ANI03}
+    \end{my_itemize}
+\subparagraph{Private Dataset}
+    \begin{my_itemize}
+        \item Enterprise Email Classification Based on Social Network Features \cite{MIN11}
+        \item E-Classifier: A Bi-Lingual Email Classification System \cite{NOUF08} 
+        \item Automatically tagging email by leveraging other users folders \cite{YEHUDA11}
+    \end{my_itemize}
+\subparagraph{Public Pua}
+    \begin{my_itemize}
+        \item Email Categorization Using Multi-Stage Classification Technique \cite{MD07}
+    \end{my_itemize}
 
-\begin{center}
-\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
-\hline
-\multicolumn{5}{|c|}{Datasets} \\
-\hline
-Enron & SRI & Pine & Private Dataset & Public Pua
-\\ \hline
-Automatic Categorization of Email into Folders \cite{RON04} &
-Automatic Categorization of Email into Folders \cite{RON04} & 
-Email classification for contact centers \cite{ANI03} &
-Enterprise Email Classification Based on Social Network Features \cite{MIN11} & 
-Email Categorization Using Multi-Stage Classification Technique \cite{MD07}
-\\ \hline
-An Object Oriented Email Clustering Model Using  Weighted Similarities 
-  between Email Attributes \cite{NARESH10} &
-& & E-Classifier: A Bi-Lingual Email Classification System \cite{NOUF08} &
-\\ \hline
-Using GNUsmail to Compare Data Stream Mining Methods \cite{JOSE11} & & &
-Automatically tagging email by leveraging other users folders \cite{YEHUDA11} & 
-\\ \hline
-\end{tabular}
-\end{center}
+\subsection{Different features used for email classification}
+    \subparagraph{Email Features}
+    \subparagraph{Attachment Features}
+    \subparagraph{Email Receiver Features}
+    
 
 \newpage
 \subsection{Chronological sort of classification papers}
@@ -212,6 +222,17 @@ Automatically tagging email by leveraging other users folders \cite{YEHUDA11} &
 \subparagraph{2003}
 \begin{my_itemize}
   \item Email Classifications For Contact Centers \cite{ANI03}
+\end{my_itemize}
+
+
+\subsection{Conclusion}
+\begin{my_itemize}
+    \item SVM Achieved the best results in most papers, but it is computationally expensive and has the hardest implementation.
+    \item The aasic form of Na\"{\i}ve Bayes algorithm has the simplest implementation but has very low classification accuracy compared to other algorithms.
+    \item Online learning techniques are still under development, they are very hard to implement but characterized by their
+    ability to classify new coming email without rebuilding the model.
+    \item Offline learning techniques are used in most papers.
+    \item Enron dataset is the most commonly used.
 \end{my_itemize}
 
 \newpage
@@ -277,16 +298,16 @@ Summarization \cite{SMAR01}
 \paragraph{Introduction}
 \begin{my_itemize}
   \item Users get alot of emails this days, not just spam but a large number of 
-	legitmate emails also that they need to process in a short time.
+    legitmate emails also that they need to process in a short time.
   \item The paper shows the results of an extensive benchmark on two large corpora 
-	(Enron, SRI) of 4 classification algorithms.
+    (Enron, SRI) of 4 classification algorithms.
   \item The paper shows an enhancement to the exponential gradient method (winnow).
 \end{my_itemize}
 
 \paragraph{Related Work}
 \begin{my_itemize}
   \item Clark and Niblet 1989: proposed a rule inductive algorithm CN2 and 
-	showed that it can outperform KNN.
+    showed that it can outperform KNN.
   \item Cohen 1996: proposed the RIPPER classifier and showed that it 
 	can outperfrom an TF-IDF classifier.
   \item Provost 1999: showed that Na\"{\i}ve Bayes can outperform RIPPER.
@@ -1542,54 +1563,36 @@ This paper presents a regression-based machine learning approach to email thread
 \paragraph{Conclusion}
 The paper shows that the best regression-based classifiers for email thread summarization perform better than binary classifiers because they preserve more information. In the comparison between different classifiers, the Bagging and Gaussian Processes have the highest weighted recall, but Bagging is more efficient. The results on our new dataset show that speech acts are a very useful feature if they can be generated with higher accuracy at the sentence level. Meta sentences and subjectivity were also shown to be useful features for email summarization.
 
+\subsection{Conclusion}
+\begin{my_itemize}
+    \item Email Classification 
+        \begin{my_itemize}
+            \item Emails differ from other documents due to the time factor, for example  the main topic of a user folder may drift with time which require including the time factor in the classification process.
+            \item Emails have their own structure (e.g from, to, subject .. etc), such structure can be used to enhance the classification accuracy.
+            \item GNUsmail framework can be used to improve learning performance. The most outstanding improvement is the reduction of time used to train the model, keeping or even getting better results in the rest of the measures.
+            \item Data preprocessing is a vital factor in the resulting classification accuracy.
+            \item Most of the papers assumed that each email has one category, however few papers proposed another approaches for multi-label classification.
+            \item Current online learning algorithm implementations have an important limitation that affects the learning process: learning attributes have to be fixed before beginning the induction of the algorithm. They need to know all the attributes, values, and classes before the learning itself, since it is not possible to start using a new attribute in the middle of the lifetime of a learning model. Future methods should support online addition of new features.
+            \item Graph mining is a relatively new trend in classification. It achived good result compared to Na\"{\i}ve Bayes, but it is more complicated than other algorithms.
+        \end{my_itemize}
+    \item Email Summarization
+        \begin{my_itemize}
+            \item Email summarization can't be applied on email messages, it must be applied on email threads to receive good results.
+            \item Short emails can't be summarized, hence a threshold will be calculated to summarize emails bigger than this threshold.
+            \item Extractive summarization can't be applied directly to email threads,as it is a special type of documents that contain dialogic structure, so a good approach is to try QA pairs detection and augment it with extractive summarization results.
+        \end{my_itemize}
+\end{my_itemize}
 %=============================================================================================
 
 \section{Conclusions}\label{conclusions}
-\begin{my_enumerate}
-  \item Email Classification 
-  \begin{my_enumerate}
-    \item Algorithms
-    \begin{my_enumerate}
-      \item The basic form of Na\"{\i}ve Bayes algorithm has the simplest implementation but has very 
-	    low classification accuracy compared to other algorithms.
-      \item SVM achieved High accuracy in most of the papers, however it is 
-	    computationally expensive and harder to implement.
-    \end{my_enumerate}
-    \item Emails differ from other documents due to the time factor, for example 
-	  the main topic of a user folder may drift with time which require including 
-	  the time factor in the classification process.
-    \item Emails have their own structure (e.g from, to, subject .. etc). Such structure 
-          can be used to enhance the classification accuracy.
-    \item GNUsmail framework can be used to improve learning performance. The most 
-	  outstanding improvement is the reduction of time used to train the model, 
-	  keeping or even getting better results in the rest of the measures.
-    \item Data preprocessing is a vital factor in the resulting classification accuracy.
-    \item Most of the papers assumed that each email has one category, however few papers 
-	  proposed another approaches for multi-label classification.
-    \item Enron dataset was used in most papers for classification experiments.
-    \item Current online learning algorithm implementations have an important
-	  limitation that affects the learning process: learning attributes have to
-	  be fixed before beginning the induction of the algorithm. They need
-	  to know all the attributes, values, and classes before the learning itself,
-	  since it is not possible to start using a new attribute in the middle of
-	  the lifetime of a learning model. Future methods should support online
-	  addition of new features.
-    \item Graph mining is a relatively new trend in classification. It achived good result compared to Na\"{\i}ve Bayes, but it is more complicated than other algorithms.
-  \end{my_enumerate}
-  \item Email Summarization
-  \begin{my_enumerate}
-    \item Email summarization can't be applied on email messages, it must be applied
-	  on email threads to receive good results.
-    \item Short emails can't be summarized, hence a threshold will be calculated
-	  to summarize emails bigger than this threshold.
-    \item Extractive summarization can't be applied directly to email threads,
-	  as it is a special type of documents that contain dialogic structure, so a good
-	  approach is to try QA pairs detection and augment it with extractive summarization
-	  results.
-  \end{my_enumerate}
+    \begin{my_itemize}
+        \item We will implement two classification algorithms and compare their results: SVM and Na\"{\i}ve Bayes.
+        \item We will make use of the Enron dataset in learning and training phases.
+        \item We will adopt an offline classification technique at the begining and will see if we can try an online technique later on.
+        \item We will make use of all the features implemented in the above papers and try combining some of them to reach the best result.o
+        \item We will use Weka (Waikato Environment for Knowledge Analysis) which is a collection of machine learning algorithms for data mining tasks , not to reimplement the classifications algrithms from the beginning 
 
-
-\end{my_enumerate}
+    \end{my_itemize}
 
 %=============================================================================================
 % References
