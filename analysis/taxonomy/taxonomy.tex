@@ -169,6 +169,7 @@ Automatic Categorization of Email into Folders \cite{RON04}
 
 %================================= FEATURES
 \subsection{Different features used for email classification}
+This section summarizes the different features used for email classification in different research papers
     \subparagraph{Automatic Categorization of Email into Folders \cite{RON04}}
 	\begin{my_itemize}
 		\item bag-of-words document representation: messages are represented as vectors of word counts.
@@ -193,8 +194,21 @@ Automatic Categorization of Email into Folders \cite{RON04}
 					\item Dictionaries.
 				\end{itemize}
 		\end{my_itemize}
-    \subparagraph{Email Receiver Features}
-    
+
+	\subparagraph{Using GNUsmail to Compare Data Stream Mining Methods for On-line Email \cite{JOSE11}}
+		\begin{my_itemize}
+			\item The main feature of the text preprocessing module is a multi-layer filter structure, responsible for performing feature extraction tasks.
+			\item The Inbox and Sent folders are skipped in the learning process because they can be thought of as non-specific folders.
+			\item Every mail belonging to any other folder (that is, to any topical folder ) goes through a pipeline of linguistic operators which extract relevant features from it.
+			\item As the number of possible features is prohibitively large, only the most relevant ones are selected.
+		\end{my_itemize}
+   
+	\subparagraph{Content Based Email Classification System by applying Conceptual Maps \cite{BASKARAN09}}
+		\begin{my_itemize}
+			\item Unstructured text: consists of fields like the subject and body.
+			\item Categorical text: includes fields such as "to" and "from".
+			\item Numeric data: Includes such features as the message size, number of recipients and counts of particular characters.
+		\end{my_itemize}
 
 \newpage
 \subsection{Chronological sort of classification papers}
