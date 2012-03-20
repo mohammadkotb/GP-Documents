@@ -167,9 +167,32 @@ Automatic Categorization of Email into Folders \cite{RON04}
         \item Email Categorization Using Multi-Stage Classification Technique \cite{MD07}
     \end{my_itemize}
 
+%================================= FEATURES
 \subsection{Different features used for email classification}
-    \subparagraph{Email Features}
-    \subparagraph{Attachment Features}
+    \subparagraph{Automatic Categorization of Email into Folders \cite{RON04}}
+	\begin{my_itemize}
+		\item bag-of-words document representation: messages are represented as vectors of word counts.
+		\item Words are downcased.
+		\item 100 most frequent words and words that appear only once in the training set are removed, and the remaining words are counted in each message to compose a vector.
+		\item In future work, richer representations will be considered, including the following:
+			\begin{itemize}
+				\item Different sections of each email can be treated differently. For example, the system could create distinct features for words appearing in the header, body, signature, attachments, etc.
+				\item Named entities may be highly relevant features.
+			\end{itemize}
+	\end{my_itemize}
+
+    \subparagraph{Email Classifications For Contact Centers \cite{ANI03}}
+		\begin{my_itemize}
+			\item Feature sets used for experiments included:
+				\begin{itemize}
+					\item Non-inflected words.
+					\item Noun phrases.
+					\item Verb phrases.
+					\item Punctuation.
+					\item Length of the Email.
+					\item Dictionaries.
+				\end{itemize}
+		\end{my_itemize}
     \subparagraph{Email Receiver Features}
     
 
