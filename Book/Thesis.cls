@@ -179,7 +179,7 @@
 %	defined as \examname above so you cite it as \examname
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Samrt Email: Applying Machine Learning Algorithms for Email Classification} % Your thesis title - this is used in the title and abstract
+\thesistitle{Smart Email: Applying Machine Learning Algorithms for Email Classification} % Your thesis title - this is used in the title and abstract
 %-------------------------------------------------  
 \supervisor{Prof. Dr. Mohamed Abou-gabal, Dr. Mustafa ElNainay} % You supervisor's name - this is used in the title page
 %-------------------------------------------------   
