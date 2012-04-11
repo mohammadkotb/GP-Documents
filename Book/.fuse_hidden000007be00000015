@@ -1,0 +1,337 @@
+\relax 
+\ifx\hyper@anchor\@undefined
+\global \let \oldcontentsline\contentsline
+\gdef \contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global \let \oldnewlabel\newlabel
+\gdef \newlabel#1#2{\newlabelxx{#1}#2}
+\gdef \newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\let \contentsline\oldcontentsline
+\let \newlabel\oldnewlabel}
+\else
+\global \let \hyper@last\relax 
+\fi
+
+\@writefile{toc}{\contentsline {chapter}{Declaration of Authorship}{i}{dummy.1}}
+\@writefile{toc}{\vspace  {1em}}
+\@writefile{toc}{\contentsline {chapter}{Abstract}{ii}{dummy.2}}
+\@writefile{toc}{\vspace  {1em}}
+\citation{RON04}
+\citation{ANI03}
+\citation{JOSE11}
+\citation{BASKARAN09}
+\citation{RON04}
+\citation{ANI03}
+\citation{JOSE11}
+\citation{NOUF08}
+\citation{NARESH10}
+\citation{BASKARAN09}
+\citation{CHAO08}
+\citation{BALAKUMAR08}
+\citation{MIN11}
+\citation{MD07}
+\citation{YEHUDA11}
+\citation{WENQING05}
+\citation{sift01}
+\citation{sift02}
+\citation{mous03}
+\citation{mous04}
+\citation{mous05}
+\@writefile{toc}{\contentsline {chapter}{List of Figures}{viii}{dummy.4}}
+\@writefile{toc}{\contentsline {chapter}{List of Tables}{ix}{dummy.6}}
+\gdef \LT@i {\LT@entry 
+    {1}{38.94902pt}\LT@entry 
+    {1}{130.6858pt}}
+\@writefile{toc}{\contentsline {chapter}{Abbreviations}{x}{dummy.8}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.11}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{Chapter1}{{1}{1}{Introduction\relax }{chapter.11}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Survey and Taxonomy for Email Classification and Summarization Research Papers}{2}{chapter.12}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{Chapter2}{{2}{2}{Survey and Taxonomy for Email Classification and Summarization Research Papers\relax }{chapter.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Introduction}{2}{section.13}}
+\citation{SVETLANA01}
+\citation{SVETLANA01}
+\citation{mous05}
+\citation{RON04}
+\citation{JOSE11}
+\citation{sift02}
+\citation{RON04}
+\citation{RON04}
+\citation{YUN08}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Email Classification Taxonomy}{4}{section.14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Classification according to the different learning algorithms used in different papers}{4}{subsection.15}}
+\citation{JOSE11}
+\citation{NARESH10}
+\citation{MANUEL11}
+\citation{BASKARAN09}
+\citation{NOUF08}
+\citation{ANI03}
+\citation{RON04}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Classification according to the different learning capabilities}{5}{subsection.16}}
+\citation{RON04}
+\citation{NARESH10}
+\citation{JOSE11}
+\citation{RON04}
+\citation{ANI03}
+\citation{MIN11}
+\citation{NOUF08}
+\citation{YEHUDA11}
+\citation{MD07}
+\citation{RON04}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Datasets used in Email Classification}{6}{subsection.17}}
+\@writefile{toc}{\contentsline {subparagraph}{Enron Dataset}{6}{section*.18}}
+\@writefile{toc}{\contentsline {subparagraph}{SRI Dataset}{6}{section*.19}}
+\@writefile{toc}{\contentsline {subparagraph}{Pine Dataset}{6}{section*.20}}
+\@writefile{toc}{\contentsline {subparagraph}{Private Dataset}{6}{section*.21}}
+\@writefile{toc}{\contentsline {subparagraph}{Public Pua}{6}{section*.22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Different features used for email classification}{6}{subsection.23}}
+\citation{ANI03}
+\citation{JOSE11}
+\@writefile{toc}{\contentsline {subparagraph}{Automatic Categorization of Email into Folders \cite  {RON04}}{7}{section*.24}}
+\@writefile{toc}{\contentsline {subparagraph}{Email Classifications For Contact Centers \cite  {ANI03}}{7}{section*.25}}
+\@writefile{toc}{\contentsline {subparagraph}{Using GNUsmail to Compare Data Stream Mining Methods for On-line Email \cite  {JOSE11}}{7}{section*.26}}
+\citation{BASKARAN09}
+\@writefile{toc}{\contentsline {subparagraph}{Content Based Email Classification System by applying Conceptual Maps \cite  {BASKARAN09}}{8}{section*.27}}
+\citation{JOSE11}
+\citation{MIN11}
+\citation{YEHUDA11}
+\citation{NARESH10}
+\citation{sift02}
+\citation{BASKARAN09}
+\citation{mous05}
+\citation{CHAO08}
+\citation{NOUF08}
+\citation{BALAKUMAR08}
+\citation{mous03}
+\citation{MD07}
+\citation{WENQING05}
+\citation{sift01}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}Chronological sort of classification papers}{9}{subsection.28}}
+\@writefile{toc}{\contentsline {subparagraph}{2011}{9}{section*.29}}
+\@writefile{toc}{\contentsline {subparagraph}{2010}{9}{section*.30}}
+\@writefile{toc}{\contentsline {subparagraph}{2009}{9}{section*.31}}
+\@writefile{toc}{\contentsline {subparagraph}{2008}{9}{section*.32}}
+\@writefile{toc}{\contentsline {subparagraph}{2007}{9}{section*.33}}
+\@writefile{toc}{\contentsline {subparagraph}{2005}{9}{section*.34}}
+\citation{RON04}
+\citation{mous04}
+\citation{ANI03}
+\@writefile{toc}{\contentsline {subparagraph}{2004}{10}{section*.35}}
+\@writefile{toc}{\contentsline {subparagraph}{2003}{10}{section*.36}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.6}Conclusion}{10}{subsection.37}}
+\citation{LOKESH04}
+\citation{KATHLEEN07}
+\citation{GIUSEPPE07}
+\citation{KATHLEEN07}
+\citation{SMAR01}
+\citation{LOKESH04}
+\citation{KATHLEEN07}
+\citation{GIUSEPPE07}
+\citation{JAN09}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Email Summarization Taxonomy}{11}{section.38}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Summarization taxonomy according to different techniques}{11}{subsection.39}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Chronological sort of summarization papers}{11}{subsection.40}}
+\@writefile{toc}{\contentsline {subparagraph}{2001}{11}{section*.41}}
+\@writefile{toc}{\contentsline {subparagraph}{2004}{11}{section*.42}}
+\@writefile{toc}{\contentsline {subparagraph}{2007}{11}{section*.43}}
+\@writefile{toc}{\contentsline {subparagraph}{2009}{11}{section*.44}}
+\bibcite{RON04}{{1}{}{{}}{{}}}
+\bibcite{ANI03}{{2}{}{{}}{{}}}
+\bibcite{JOSE11}{{3}{}{{}}{{}}}
+\bibcite{NOUF08}{{4}{}{{}}{{}}}
+\bibcite{NARESH10}{{5}{}{{}}{{}}}
+\bibcite{BASKARAN09}{{6}{}{{}}{{}}}
+\bibcite{CHAO08}{{7}{}{{}}{{}}}
+\bibcite{BALAKUMAR08}{{8}{}{{}}{{}}}
+\bibcite{MIN11}{{9}{}{{}}{{}}}
+\bibcite{MD07}{{10}{}{{}}{{}}}
+\bibcite{YEHUDA11}{{11}{}{{}}{{}}}
+\bibcite{WENQING05}{{12}{}{{}}{{}}}
+\bibcite{sift01}{{13}{}{{}}{{}}}
+\bibcite{sift02}{{14}{}{{}}{{}}}
+\bibcite{mous03}{{15}{}{{}}{{}}}
+\bibcite{mous04}{{16}{}{{}}{{}}}
+\bibcite{mous05}{{17}{}{{}}{{}}}
+\bibcite{LOKESH04}{{18}{}{{}}{{}}}
+\bibcite{KATHLEEN07}{{19}{}{{}}{{}}}
+\bibcite{GIUSEPPE07}{{20}{}{{}}{{}}}
+\bibcite{SMAR01}{{21}{}{{}}{{}}}
+\bibcite{JAN09}{{22}{}{{}}{{}}}
+\bibcite{SVETLANA01}{{23}{}{{}}{{}}}
+\bibcite{YUN08}{{24}{}{{}}{{}}}
+\bibcite{MANUEL11}{{25}{}{{}}{{}}}
+\@writefile{toc}{\vspace  {2em}}
+\citation{RON04}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Summary for Email Classification Research Papers}{15}{appendix.46}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{AppendixA}{{A}{15}{Summary for Email Classification Research Papers\relax }{appendix.46}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.1}Automatic Categorization of Email into Folders \cite  {RON04}}{15}{subsubsection.47}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{15}{section*.48}}
+\@writefile{toc}{\contentsline {paragraph}{Citations}{15}{section*.49}}
+\@writefile{toc}{\contentsline {paragraph}{Introduction}{15}{section*.50}}
+\@writefile{toc}{\contentsline {paragraph}{Related Work}{15}{section*.51}}
+\@writefile{toc}{\contentsline {paragraph}{Algorithms Benchmarked}{16}{section*.52}}
+\@writefile{toc}{\contentsline {paragraph}{Challenges in mail classification}{16}{section*.53}}
+\@writefile{toc}{\contentsline {paragraph}{Dataset pre-processing}{16}{section*.54}}
+\@writefile{toc}{\contentsline {paragraph}{Training/test set splits}{16}{section*.55}}
+\@writefile{toc}{\contentsline {paragraph}{Features Extraction}{17}{section*.56}}
+\@writefile{toc}{\contentsline {paragraph}{Datasets}{17}{section*.57}}
+\@writefile{toc}{\contentsline {paragraph}{Critique}{17}{section*.58}}
+\citation{ANI03}
+\@writefile{toc}{\contentsline {paragraph}{Conclusion}{18}{section*.59}}
+\@writefile{toc}{\contentsline {paragraph}{Future Work}{18}{section*.60}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.2}Email Classifications For Contact Centers \cite  {ANI03}}{18}{subsubsection.61}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{18}{section*.62}}
+\@writefile{toc}{\contentsline {paragraph}{Citations}{18}{section*.63}}
+\@writefile{toc}{\contentsline {paragraph}{Main Topic}{18}{section*.64}}
+\@writefile{toc}{\contentsline {paragraph}{Tools used}{19}{section*.65}}
+\@writefile{toc}{\contentsline {paragraph}{Dataset}{19}{section*.66}}
+\@writefile{toc}{\contentsline {paragraph}{Pre-processing}{19}{section*.67}}
+\@writefile{toc}{\contentsline {paragraph}{Features (for SVM algorithm)}{19}{section*.68}}
+\citation{JOSE11}
+\@writefile{toc}{\contentsline {paragraph}{Conclusion}{20}{section*.69}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.3}Using GNUsmail to Compare Data Stream Mining Methods for On-line Email \cite  {JOSE11}}{20}{subsubsection.70}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{20}{section*.71}}
+\@writefile{toc}{\contentsline {paragraph}{Citations}{20}{section*.72}}
+\@writefile{toc}{\contentsline {paragraph}{Main Topic}{20}{section*.73}}
+\@writefile{toc}{\contentsline {paragraph}{Evaluation methods}{20}{section*.74}}
+\@writefile{toc}{\contentsline {paragraph}{Dataset}{20}{section*.75}}
+\citation{NOUF08}
+\@writefile{toc}{\contentsline {paragraph}{Algorithms}{21}{section*.76}}
+\@writefile{toc}{\contentsline {paragraph}{Tools}{21}{section*.77}}
+\@writefile{toc}{\contentsline {paragraph}{Result}{21}{section*.78}}
+\@writefile{toc}{\contentsline {paragraph}{Future Work}{21}{section*.79}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.4}E-Classifier: A Bi-Lingual Email Classification System \cite  {NOUF08}}{21}{subsubsection.80}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{21}{section*.81}}
+\@writefile{toc}{\contentsline {paragraph}{Citations}{21}{section*.82}}
+\@writefile{toc}{\contentsline {paragraph}{Problem}{21}{section*.83}}
+\@writefile{toc}{\contentsline {paragraph}{Related Work}{22}{section*.84}}
+\@writefile{toc}{\contentsline {paragraph}{Dataset}{22}{section*.85}}
+\@writefile{toc}{\contentsline {paragraph}{Pre-processing}{22}{section*.86}}
+\citation{NARESH10}
+\@writefile{toc}{\contentsline {paragraph}{Results}{23}{section*.87}}
+\@writefile{toc}{\contentsline {paragraph}{Critique}{23}{section*.88}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.5}An Object Oriented Email Clustering Model Using Weighted Similarities between Emails Attributes \cite  {NARESH10}}{23}{subsubsection.89}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{23}{section*.90}}
+\@writefile{toc}{\contentsline {paragraph}{Citations}{23}{section*.91}}
+\@writefile{toc}{\contentsline {paragraph}{Description}{23}{section*.92}}
+\@writefile{toc}{\contentsline {paragraph}{Algorithms}{23}{section*.93}}
+\citation{BASKARAN09}
+\@writefile{toc}{\contentsline {paragraph}{Datasets}{24}{section*.94}}
+\@writefile{toc}{\contentsline {paragraph}{Dataset pre-processing}{24}{section*.95}}
+\@writefile{toc}{\contentsline {paragraph}{Tools/programming languages used}{24}{section*.96}}
+\@writefile{toc}{\contentsline {paragraph}{Future work}{24}{section*.97}}
+\@writefile{toc}{\contentsline {paragraph}{Conclusion}{24}{section*.98}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.6}Content Based Email Classification System by applying Conceptual Maps \cite  {BASKARAN09}}{24}{subsubsection.99}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{24}{section*.100}}
+\citation{CHAO08}
+\@writefile{toc}{\contentsline {paragraph}{Citations}{25}{section*.101}}
+\@writefile{toc}{\contentsline {paragraph}{Main Topic}{25}{section*.102}}
+\@writefile{toc}{\contentsline {paragraph}{Major steps of processing on subject and body fields}{25}{section*.103}}
+\@writefile{toc}{\contentsline {paragraph}{Related Work}{25}{section*.104}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.7}A new approach to Email classification using Concept Vector Space Model \cite  {CHAO08}}{25}{subsubsection.105}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{25}{section*.106}}
+\@writefile{toc}{\contentsline {paragraph}{Citations}{25}{section*.107}}
+\@writefile{toc}{\contentsline {paragraph}{Algorithms}{25}{section*.108}}
+\@writefile{toc}{\contentsline {paragraph}{Dataset}{26}{section*.109}}
+\@writefile{toc}{\contentsline {paragraph}{Results}{26}{section*.110}}
+\citation{BALAKUMAR08}
+\@writefile{toc}{\contentsline {paragraph}{Future work}{27}{section*.111}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.8}Ontology based classification and categorization of email \cite  {BALAKUMAR08}}{27}{subsubsection.112}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{27}{section*.113}}
+\@writefile{toc}{\contentsline {paragraph}{Citations}{27}{section*.114}}
+\@writefile{toc}{\contentsline {paragraph}{Problem}{27}{section*.115}}
+\@writefile{toc}{\contentsline {paragraph}{Algorithms}{27}{section*.116}}
+\@writefile{toc}{\contentsline {paragraph}{Results}{27}{section*.117}}
+\citation{MIN11}
+\citation{MD07}
+\@writefile{toc}{\contentsline {paragraph}{Conclusion}{28}{section*.118}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.9}Enterprise Email Classification Based on Social Network Features \cite  {MIN11}}{28}{subsubsection.119}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{28}{section*.120}}
+\@writefile{toc}{\contentsline {paragraph}{Citations}{28}{section*.121}}
+\@writefile{toc}{\contentsline {paragraph}{Problem}{28}{section*.122}}
+\@writefile{toc}{\contentsline {paragraph}{Algorithms}{28}{section*.123}}
+\@writefile{toc}{\contentsline {paragraph}{Results}{28}{section*.124}}
+\@writefile{toc}{\contentsline {paragraph}{Related Work}{28}{section*.125}}
+\@writefile{toc}{\contentsline {paragraph}{Future work}{28}{section*.126}}
+\citation{YEHUDA11}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.10}Email Categorization Using Multi-Stage Classification Technique \cite  {MD07}}{29}{subsubsection.127}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{29}{section*.128}}
+\@writefile{toc}{\contentsline {paragraph}{Citations}{29}{section*.129}}
+\@writefile{toc}{\contentsline {paragraph}{Problem}{29}{section*.130}}
+\@writefile{toc}{\contentsline {paragraph}{Algorithms}{29}{section*.131}}
+\@writefile{toc}{\contentsline {paragraph}{Results}{29}{section*.132}}
+\@writefile{toc}{\contentsline {paragraph}{Datasets}{29}{section*.133}}
+\@writefile{toc}{\contentsline {paragraph}{Future work}{29}{section*.134}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.11}Automatically tagging email by leveraging other users folders \cite  {YEHUDA11}}{30}{subsubsection.135}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{30}{section*.136}}
+\@writefile{toc}{\contentsline {paragraph}{Citations}{30}{section*.137}}
+\@writefile{toc}{\contentsline {paragraph}{Problem}{30}{section*.138}}
+\@writefile{toc}{\contentsline {paragraph}{Algorithms}{30}{section*.139}}
+\@writefile{toc}{\contentsline {paragraph}{Datasets}{30}{section*.140}}
+\@writefile{toc}{\contentsline {paragraph}{Conclusion}{30}{section*.141}}
+\citation{WENQING05}
+\@writefile{toc}{\contentsline {paragraph}{Future work}{31}{section*.142}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.12}An Email Classification Model Based on Rough Set Theory \cite  {WENQING05}}{31}{subsubsection.143}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{31}{section*.144}}
+\@writefile{toc}{\contentsline {paragraph}{Citations}{31}{section*.145}}
+\@writefile{toc}{\contentsline {paragraph}{Problem}{31}{section*.146}}
+\@writefile{toc}{\contentsline {paragraph}{Related work}{31}{section*.147}}
+\@writefile{toc}{\contentsline {paragraph}{Datasets}{31}{section*.148}}
+\@writefile{toc}{\contentsline {paragraph}{Results}{31}{section*.149}}
+\citation{sift01}
+\@writefile{toc}{\contentsline {paragraph}{Conclusion}{32}{section*.150}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.13}eMailSift: Email Classification Based on Structure and Content \cite  {sift01}}{32}{subsubsection.151}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{32}{section*.152}}
+\@writefile{toc}{\contentsline {paragraph}{Citations}{32}{section*.153}}
+\@writefile{toc}{\contentsline {paragraph}{Problem}{32}{section*.154}}
+\@writefile{toc}{\contentsline {paragraph}{Challenges}{32}{section*.155}}
+\@writefile{toc}{\contentsline {paragraph}{Related Work}{32}{section*.156}}
+\@writefile{toc}{\contentsline {paragraph}{Relevant Work in Graph Mining}{33}{section*.157}}
+\@writefile{toc}{\contentsline {paragraph}{Algorithm Phases}{33}{section*.158}}
+\citation{sift02}
+\@writefile{toc}{\contentsline {paragraph}{Results}{34}{section*.165}}
+\@writefile{toc}{\contentsline {paragraph}{Notes}{34}{section*.166}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.14}A Graph-Based Approach for Multi-Folder Email Classification \cite  {sift02}}{34}{subsubsection.167}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{34}{section*.168}}
+\@writefile{toc}{\contentsline {paragraph}{Citations}{34}{section*.169}}
+\@writefile{toc}{\contentsline {paragraph}{Abstract}{35}{section*.170}}
+\@writefile{toc}{\contentsline {paragraph}{Problem}{35}{section*.171}}
+\@writefile{toc}{\contentsline {paragraph}{Solution}{35}{section*.172}}
+\@writefile{toc}{\contentsline {paragraph}{Challenges}{35}{section*.173}}
+\citation{mous03}
+\@writefile{toc}{\contentsline {paragraph}{Related Work}{36}{section*.174}}
+\@writefile{toc}{\contentsline {paragraph}{Pre-processing}{36}{section*.175}}
+\@writefile{toc}{\contentsline {paragraph}{Results}{36}{section*.176}}
+\@writefile{toc}{\contentsline {paragraph}{Future Work}{36}{section*.177}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.15}Applying Machine learning Algorithms for Email Management \cite  {mous03}}{36}{subsubsection.178}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{36}{section*.179}}
+\@writefile{toc}{\contentsline {paragraph}{Abstract}{37}{section*.180}}
+\@writefile{toc}{\contentsline {paragraph}{Introduction}{37}{section*.181}}
+\@writefile{toc}{\contentsline {paragraph}{Email Reply Prediction}{37}{section*.182}}
+\@writefile{toc}{\contentsline {paragraph}{Email Grouping}{37}{section*.183}}
+\citation{mous04}
+\@writefile{toc}{\contentsline {paragraph}{Email Summarization}{38}{section*.187}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.16}Co-training with a Single Natural Feature Set Applied to Email Classification \cite  {mous04}}{38}{subsubsection.192}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{38}{section*.193}}
+\@writefile{toc}{\contentsline {paragraph}{Citations}{38}{section*.194}}
+\@writefile{toc}{\contentsline {paragraph}{Abstract}{38}{section*.195}}
+\@writefile{toc}{\contentsline {paragraph}{Problem}{39}{section*.196}}
+\@writefile{toc}{\contentsline {paragraph}{The Co-training Algorithm}{39}{section*.197}}
+\@writefile{toc}{\contentsline {paragraph}{Dataset}{39}{section*.202}}
+\@writefile{toc}{\contentsline {paragraph}{Preprocessing and Classifiers Used}{39}{section*.203}}
+\citation{mous05}
+\@writefile{toc}{\contentsline {paragraph}{Experiments Investigated}{40}{section*.204}}
+\@writefile{toc}{\contentsline {paragraph}{Notes}{40}{section*.207}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.2.17}Email Classification: Solution with Back Propagation Technique \cite  {mous05}}{40}{subsubsection.208}}
+\@writefile{toc}{\contentsline {paragraph}{Year}{40}{section*.209}}
+\@writefile{toc}{\contentsline {paragraph}{Abstract}{40}{section*.210}}
+\@writefile{toc}{\contentsline {paragraph}{Related Work}{41}{section*.211}}
+\@writefile{toc}{\contentsline {paragraph}{Solution Heuristics}{41}{section*.212}}
+\@writefile{toc}{\contentsline {paragraph}{Algorithm}{41}{section*.213}}
+\@writefile{toc}{\contentsline {paragraph}{Notes}{41}{section*.214}}
+\@writefile{toc}{\vspace  {2em}}
+\providecommand\NAT@force@numbers{}\NAT@force@numbers

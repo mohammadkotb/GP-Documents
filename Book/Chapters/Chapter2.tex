@@ -1,0 +1,478 @@
+% Chapter 2
+\newenvironment{my_itemize}
+{\begin{itemize}
+  \setlength{\itemsep}{0cm}
+  \setlength{\parskip}{0cm}}
+{\end{itemize}}
+\newenvironment{my_enumerate}
+{\begin{enumerate}
+  \setlength{\itemsep}{0cm}
+  \setlength{\parskip}{0cm}}
+{\end{enumerate}}
+
+\chapter{Survey and Taxonomy for Email Classification and Summarization Research Papers} % Main chapter title
+
+\label{Chapter2} % For referencing the chapter elsewhere, use \ref{Chapter2} 
+
+\lhead{Chapter 2. \emph{Survey and Taxonomy}} % This is for the header on each page - perhaps a shortened title
+
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+Email has been an efficient and popular communication mechanism as the 
+number of Internet users increases. Therefore, email management has become 
+an important and growing problem for individuals and organizations because 
+it is prone to misuse. One of the problems that are most important is disordered 
+email message, congested and unstructured emails in mail boxes. It may be very 
+hard to find archived email message, search for previous emails with specified 
+contents or features when the mails are not well structured and organized.
+
+Many machine learning approaches have been applied in this field, the most 
+State-of-the-Art algorithms in email classification include: support vector 
+machines, neural network, Na\"{\i}ve Bayes classifiers and entropy-based approach. 
+
+Email summarization is another important and challenging problem. We can think 
+of automatic summarization as a type of information compression. To achieve such 
+compression, better modelling and understanding of document structures and internal 
+relations is required. 
+
+In this chapter we present a survey and taxonomy on recent research topics 
+related to email classification and summarization.
+
+%==============================================================================
+\newpage
+\section{Email Classification Taxonomy}
+The following table classifies some recent research papers in the field of email classification.
+
+\subsection{Classification according to the different learning algorithms used in different papers}
+
+\begin{center}
+\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+\hline
+\multicolumn{6}{|c|}{Learning Algorithm} \\
+\hline
+SVM & Na\"{\i}ve Bayes & Neural Networks & Max. Entropy / Winnow & Nnge / Hoeffing Trees & Graph Mining \\ \hline
+Email Classification with Co-training \cite{SVETLANA01} &
+Email Classification with Co-training \cite{SVETLANA01} &
+Email Classification: Solution with Back Propagation Technique \cite{mous05} & 
+Automatic Categorization of Emails into Folders \cite{RON04} &
+Using GNUsmail to compare Data Stream Mining Methods for On-line Email Classification \cite{JOSE11} &
+A graph Based Approach for Multi-Folder Email Classification \cite{sift02} \\ \hline
+
+Automatic Categorization of Emails into Folders \cite{RON04} &
+Automatic Categorization of Emails into Folders \cite{RON04} &
+Email Classification Using Semantic Feature Space \cite{YUN08} & 
+&
+& \\ \hline
+\end{tabular}
+\end{center}
+\newpage
+
+\subsection{Classification according to the different learning capabilities}
+
+\begin{center}
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\multicolumn{2}{|c|}{Learning Capability} \\
+\hline
+On-line Learning & Off-Line Learning 
+\\ \hline
+Using GNUsmail to Compare Data Stream Mining Methods \cite{JOSE11} &
+An Object Oriented Email Clustering Model Using  Weighted Similarities 
+between Email Attributes \cite{NARESH10}
+\\ \hline
+
+GNUsmail: Open Framework for On-line Email Classification \cite{MANUEL11}
+& Content Based Email Classification System by applying Conceptual Maps \cite{BASKARAN09}
+\\ \hline
+
+& E-Classifier: A Bi-Lingual Email Classification System \cite{NOUF08}
+\\ \hline
+
+& Email classification for contact centers \cite{ANI03}
+\\ \hline
+
+& 
+Automatic Categorization of Email into Folders \cite{RON04}
+
+\\ \hline
+
+\end{tabular}
+\end{center}
+
+\newpage
+
+\subsection{Datasets used in Email Classification}
+\subparagraph{Enron Dataset}
+    \begin{my_itemize}
+        \item Automatic Categorization of Email into Folders \cite{RON04}
+        \item An Object Oriented Email Clustering Model Using  Weighted Similarities 
+  between Email Attributes \cite{NARESH10}
+        \item Using GNUsmail to Compare Data Stream Mining Methods \cite{JOSE11}
+    \end{my_itemize}
+\subparagraph{SRI Dataset}
+    \begin{my_itemize}
+        \item Automatic Categorization of Email into Folders \cite{RON04}
+    \end{my_itemize}
+\subparagraph{Pine Dataset}
+    \begin{my_itemize}
+        \item Email classification for contact centers \cite{ANI03}
+    \end{my_itemize}
+\subparagraph{Private Dataset}
+    \begin{my_itemize}
+        \item Enterprise Email Classification Based on Social Network Features \cite{MIN11}
+        \item E-Classifier: A Bi-Lingual Email Classification System \cite{NOUF08} 
+        \item Automatically tagging email by leveraging other users folders \cite{YEHUDA11}
+    \end{my_itemize}
+\subparagraph{Public Pua}
+    \begin{my_itemize}
+        \item Email Categorization Using Multi-Stage Classification Technique \cite{MD07}
+    \end{my_itemize}
+
+%================================= FEATURES
+\subsection{Different features used for email classification}
+This section summarizes the different features used for email classification in different research papers
+    \subparagraph{Automatic Categorization of Email into Folders \cite{RON04}}
+	\begin{my_itemize}
+		\item bag-of-words document representation: messages are represented as vectors of word counts.
+		\item Words are downcased.
+		\item 100 most frequent words and words that appear only once in the training set are removed, and the remaining words are counted in each message to compose a vector.
+		\item In future work, richer representations will be considered, including the following:
+			\begin{itemize}
+				\item Different sections of each email can be treated differently. For example, the system could create distinct features for words appearing in the header, body, signature, attachments, etc.
+				\item Named entities may be highly relevant features.
+			\end{itemize}
+	\end{my_itemize}
+
+    \subparagraph{Email Classifications For Contact Centers \cite{ANI03}}
+		\begin{my_itemize}
+			\item Feature sets used for experiments included:
+				\begin{itemize}
+					\item Non-inflected words.
+					\item Noun phrases.
+					\item Verb phrases.
+					\item Punctuation.
+					\item Length of the Email.
+					\item Dictionaries.
+				\end{itemize}
+		\end{my_itemize}
+
+	\subparagraph{Using GNUsmail to Compare Data Stream Mining Methods for On-line Email \cite{JOSE11}}
+		\begin{my_itemize}
+			\item The main feature of the text preprocessing module is a multi-layer filter structure, responsible for performing feature extraction tasks.
+			\item The Inbox and Sent folders are skipped in the learning process because they can be thought of as non-specific folders.
+			\item Every mail belonging to any other folder (that is, to any topical folder ) goes through a pipeline of linguistic operators which extract relevant features from it.
+			\item As the number of possible features is prohibitively large, only the most relevant ones are selected.
+		\end{my_itemize}
+   
+	\subparagraph{Content Based Email Classification System by applying Conceptual Maps \cite{BASKARAN09}}
+		\begin{my_itemize}
+			\item Unstructured text: consists of fields like the subject and body.
+			\item Categorical text: includes fields such as "to" and "from".
+			\item Numeric data: includes such features as the message size, number of
+recipients and counts of particular characters.
+		\end{my_itemize}
+
+\newpage
+\subsection{Chronological sort of classification papers}
+\subparagraph{2011}
+\begin{my_itemize}
+  \item Using GNUsmail to Compare Data Stream Mining Methods for On-line Email Classification \cite{JOSE11}
+  \item Enterprise Email Classification Based on Social Network Features \cite{MIN11}
+  \item Automatically tagging email by leveraging other users folders \cite{YEHUDA11}
+\end{my_itemize}
+
+\subparagraph{2010}
+\begin{my_itemize}
+  \item An Object Oriented Email Clustering Model Using Weighted Similarities between Emails Attributes \cite{NARESH10}
+  \item A Graph-Based Approach for Multi-Folder Email Classification \cite{sift02}
+\end{my_itemize}
+
+\subparagraph{2009}
+\begin{my_itemize}
+  \item Content Based Email Classification System by applying Conceptual Maps \cite{BASKARAN09}
+  \item Email Classification: Solution with Back Propagation Technique \cite{mous05}
+\end{my_itemize}
+
+\subparagraph{2008}
+\begin{my_itemize}
+  \item A new approach to Email classification using Concept Vector Space Model \cite{CHAO08}
+  \item E-Classifier: A Bi-Lingual Email Classification System \cite{NOUF08}
+  \item Ontology based classification and categorization of email \cite{BALAKUMAR08}
+  \item Applying Machine learning Algorithms for Email Management \cite{mous03}
+\end{my_itemize}
+
+\subparagraph{2007}
+\begin{my_itemize}
+  \item Email Categorization Using Multi-Stage Classification Technique \cite{MD07}
+\end{my_itemize}
+
+\subparagraph{2005}
+\begin{my_itemize}
+  \item An Email Classification Model Based on Rough Set Theory \cite{WENQING05}
+  \item eMailSift: Email Classification Based on Structure and Content \cite{sift01}
+\end{my_itemize}
+
+\subparagraph{2004}
+\begin{my_itemize}
+  \item Automatic Categorization of Email into Folders \cite{RON04}
+  \item Co-training with a Single Natural Feature Set Applied to Email Classification \cite{mous04}
+\end{my_itemize}
+
+\subparagraph{2003}
+\begin{my_itemize}
+  \item Email Classifications For Contact Centers \cite{ANI03}
+\end{my_itemize}
+
+
+\subsection{Conclusion}
+\begin{my_itemize}
+    \item SVM Achieved the best results in most papers, but it is computationally expensive and has the hardest implementation.
+    \item The aasic form of Na\"{\i}ve Bayes algorithm has the simplest implementation but has very low classification accuracy compared to other algorithms.
+    \item Online learning techniques are still under development, they are very hard to implement but characterized by their
+    ability to classify new coming email without rebuilding the model.
+    \item Offline learning techniques are used in most papers.
+    \item Enron dataset is the most commonly used.
+\end{my_itemize}
+
+\newpage
+%==============================================================================
+\section{Email Summarization Taxonomy}
+
+\subsection{Summarization taxonomy according to different techniques}
+
+\begin{center}
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\multicolumn{2}{|c|}{Summarization Techniques} \\
+\hline
+Extractive Summarization & Question-Answer Pairs detection
+\\ \hline
+Detection of question-answer pairs in email conversations \cite{LOKESH04} &
+Using Question-Answer Pairs in Extractive Summarization of Email Conversations \cite{KATHLEEN07} 
+\\ \hline
+
+Summarizing email conversations with clue words \cite{GIUSEPPE07} &
+Using Question-Answer Pairs in Extractive Summarization of Email Conversations \cite{KATHLEEN07}
+\\ \hline
+
+\end{tabular}
+\end{center}
+
+
+%==============================================================================
+\subsection{Chronological sort of summarization papers}
+
+\subparagraph{2001}
+\begin{itemize}
+  \item Combining Linguistic and Machine Learning Techniques for Email
+Summarization \cite{SMAR01}
+\end{itemize}
+
+\subparagraph{2004}
+\begin{itemize}
+  \item Detection of question-answer pairs in email conversations \cite{LOKESH04}
+\end{itemize}
+
+\subparagraph{2007}
+\begin{itemize}
+  \item Using Question-Answer Pairs in Extractive Summarization of Email Conversations \cite{KATHLEEN07}
+  \item Summarizing email conversations with clue words \cite{GIUSEPPE07}
+\end{itemize}
+
+\subparagraph{2009}
+\begin{itemize}
+  \item Regression-Based Summarization of Email Conversations \cite{JAN09}
+\end{itemize}
+
+\section{Conclusions}\label{conclusions}
+    \begin{my_itemize}
+        \item We will implement two classification algorithms and compare their results: SVM and Na\"{\i}ve Bayes.
+        \item We will make use of the Enron dataset in learning and training phases.
+        \item We will adopt an offline classification technique at the begining and will see if we can try an online technique later on.
+        \item We will make use of all the features implemented in the above papers and try combining some of them to reach the best result.o
+        \item We will use Weka (Waikato Environment for Knowledge Analysis) which is a collection of machine learning algorithms for data mining tasks , not to reimplement the classifications algrithms from the beginning 
+
+    \end{my_itemize}
+
+%=============================================================================================
+% References
+\begin{thebibliography}{99}
+\bibitem{RON04}
+  Ron Bekkerman,
+  Andrew McCallum,
+  Gary Huang,
+  \emph{Automatic Categorization of Email into Folders: Benchmark Experiments on Enron and SRI Corpora},
+  2004.
+
+\bibitem{ANI03}
+  Ani Nenkova,
+  Amit Bagga,
+  \emph{Email Classification for Contact Centers},
+  2003.
+
+\bibitem{JOSE11}
+  Jose M. Carmona-Cejudo,
+  Manuel Baena-Garcia,
+  Jose del Campo-Avila,
+  Rafael Morales-Bueno,
+  Joao Gama,
+  Albert Bifet,
+  \emph{Using GNUsmail to Compare Data Stream Mining Methods for On-line Email Classification},
+  2011.
+
+\bibitem{NOUF08}
+  Nouf Al Fe'ar,
+  Einas Al Turki,
+  Asma Al Zaid,
+  Mashael Al Duwais,
+  Mona Al Sheddi,
+  Nora Al khamees,
+  Nouf Al Drees,
+  \emph{E-Classifier: A Bi-Lingual Email Classification System},
+  2008.
+
+\bibitem{NARESH10}
+  Naresh Kumar Nagwani,
+  Ashok Bhansali,
+  \emph{An Object Oriented Email Clustering Model Using Weighted Similarities between Emails Attributes},
+  2010.
+
+
+\bibitem{BASKARAN09}
+  S. Baskaran,
+  \emph{Content Based Email Classification System by applying Conceptual Maps},
+  2009.
+
+\bibitem{CHAO08}
+  Chao Zeng,
+  Zhao Lu,
+  Junzhong Gu,
+  \emph{A new approach to Email classification using Concept Vector Space Model},
+  2009.
+
+\bibitem{BALAKUMAR08}
+  M.Balakumar,
+  V.Vaidehi,
+  \emph{Ontology based classification and categorization of email},
+  2008.
+
+\bibitem{MIN11}
+  Min-Feng Wang,
+  Sie-Long Jheng,
+  Meng-Feng Tsai,
+  Cheng-Hsien Tang,
+  \emph{Enterprise Email Classification Based on Social Network Features},
+  2011.
+
+\bibitem{MD07}
+  Md Rafiqul Islam,
+  Wanlei Zhou,
+  \emph{Email Categorization Using Multi-Stage Classification Technique},
+  2007.
+
+\bibitem{YEHUDA11}
+  Yehuda Koren,
+  Edo Liberty,
+  Yoelle Maarek,
+  Roman Sandler,
+  \emph{Automatically Tagging Email by Leveraging Other Users' Folders},
+  2011.
+
+\bibitem{WENQING05}
+  Wenqing Zhao,
+  Zili Zhang,
+  \emph{An Email Classification Model Based on Rough Set Theory},
+  2005.
+
+\bibitem{sift01}
+  Lokesh Shrestha,
+  Kathleen McKeown,
+  \emph{eMailSift: Email Classification Based on Structure and Content},
+  2004.
+
+\bibitem{sift02}
+  Sharma Chakravarthy,
+  Aravind Venkatachalam,
+  Aditya Telang,
+  \emph{ A Graph-Based Approach for Multi-Folder Email Classification},
+  2010.
+
+\bibitem{mous03}
+  Taiwo Ayodele,
+  Shikun Zhou,
+  \emph{Applying Machine learning Algorithms for Email Management},
+  2008.
+
+\bibitem{mous04}
+  Jason Chan,
+  Irena Koprinska,
+  Josiah Poon,
+  \emph{Co-training with a Single Natural Feature Set Applied to Email Classification},
+  2004.
+
+\bibitem{mous05}
+  Jason Chan,
+  Irena Koprinska,
+  Josiah Poon,
+  \emph{Email Classification: Solution with Back Propagation Technique},
+  2009.
+
+\bibitem{LOKESH04}
+  Lokesh Shrestha,
+  Kathleen McKeown,
+  \emph{Detection of question-answer pairs in email conversations},
+  2004.
+
+\bibitem{KATHLEEN07}
+  Kathleen McKeown,
+  Lokesh Shrestha,
+  Owen Rambow,
+  \emph{Using Question-Answer Pairs in Extractive Summarization of Email Conversations},
+  2007.
+
+\bibitem{GIUSEPPE07}
+  Giuseppe Carenini,
+  Raymond T. Ng,
+  Xiaodong Zhou,
+  \emph{Summarizing Email Conversations with Clue Words},
+  2007.
+
+\bibitem{SMAR01}
+  Smaranda Muresan,
+  Evelyne Tzoukermann,
+  Judith L. Klavans,
+  \emph{Combining Linguistic and Machine Learning Techniques for Email
+Summarization},
+  2001.
+
+\bibitem{JAN09}
+Jan Ulrich,
+Giuseppe Carenini,
+Gabriel Murray,
+Raymond Ng
+  \emph{Regression-Based Summarization of Email Conversations},
+  2009.
+
+\bibitem{SVETLANA01}
+  Svetlana Kiritchenko,
+  Stan Matwin,
+  \emph{Email Classification with Co-Training},
+  2001.
+
+\bibitem{YUN08}
+  Yun Fei Yi,
+  Cheng Hua Li,
+  Wei Song,
+  \emph{Email classification Using Semantic Feature Space},
+  2008.
+
+\bibitem{MANUEL11}
+  Jose M. Carmona-Cejudo,
+  Manuel Baena-Garcia,
+  Jose del Campo-Avila,
+  Rafael Morales-Bueno,
+  Albert Bifet,
+  \emph{GNUsmail: Open Framework for On-line Email Classification},
+  2011.
+\end{thebibliography}
