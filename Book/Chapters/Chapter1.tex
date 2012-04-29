@@ -7,3 +7,29 @@
 \lhead{Chapter 1. \emph{Introduction}} % This is for the header on each page - perhaps a shortened title
 
 %----------------------------------------------------------------------------------------
+\section{Motivation}
+
+The invention of email permanently changed the way communications take place. Email messages provide fast, free and reliable method for communication. That's why email has become the most frequently used method for communication nowadays.
+
+With the increasing popularity of emails, users spend a significant portion of their time reading and replying to emails in their inbox folder . One solution is to organize emails into several folders -one folder for each topic- rather than one big congested folder which is the inbox. This facilitates the process of managing, prioritizing and facilitating the search process for emails. The problem is that the process of email categorization has to be done manually , which tends to be a tedious and time consuming for most users.
+
+Several machine learning techniques have been applied for solving different email related problems such as spam detection. In our work, the problem of automatic email categorization into folders is addressed, that is, assigning email messages into user-specific folders automatically. This task provides a valuable addition to email clients by avoiding mailboxes cluttering and providing a better automated way for managing and structuring of incoming email messages.
+
+	Email classification introduces new challenges not found in ordinary text classification. This is related to the special nature of email messages. Email messages tend to be small in size compared to ordinary text documents. User created folders don’t necessarily correspond to a single semantic topic, folders might contain email messages for unfinished todos, or emails based on a certain sender or recipient. Email message also arrive in a stream over time which causes more difficulties because the main topic may drift over time.
+
+	Smart Email was created to address those problems. Smart Email will train on the existing user folders and try to automatically classify new incoming emails into the best folder they could belong to. Smart Email works as a web service that keep monitoring the user email account for new incoming emails that need to be classified. The web service allows each user to register with one or more email accounts and provides the user with a central place to monitor and control the classification procedure for his emails.
+
+\section{Scope of Work}
+
+In the previous section we have introduced the problem of automatic email categorization into folders.Smart Email is an application that provides a solution for this problem.
+
+Users receive new emails every day , So Smart Email monitors the user's account and triggers the classification procedure on any new emails. The Smart Email main server downloads the new email and perform the classification procedure to know the best category for this new email. The new Email is moved to the predicted category folder, when the user opens his mail account he will notice the new changes right away. No raw emails is stored at the server side after the classification procedure has taken place.
+
+The user provides feedback on the performance of the classification so that the classifier can re-learn from the misclassified emails. The server side maintains a classification model for each user which can be updated and improved incrementally based on the user feedback.
+
+	Smart email also enables the user to register with multiple email addresses and provides him with a central view to monitor and control everything related to the email classification procedure.
+
+
+\section{Organization of the Report}
+
+The report is organized into 6 chapters. In chapter 2, a background about email classification techniques will be discussed; related work which tried to solve the problem will be presented in section 1.1 will also be presented. In chapter 3, the proposed email classifier , its main features and a comparison with the related work will be introduced. The project conceptualization will be introduced in chapter 4 together with the proposed workflow for the project. Chapter 5 will include the architecture and design for the Smart Email. Chapter 6 will include the performance evaluation for the email classifier.

@@ -10,37 +10,123 @@
   \setlength{\parskip}{0cm}}
 {\end{enumerate}}
 
-\chapter{Survey and Taxonomy for Email Classification and Summarization Research Papers} % Main chapter title
+\chapter{Email Classification and Related Work} % Main chapter title
 
 \label{Chapter2} % For referencing the chapter elsewhere, use \ref{Chapter2} 
 
-\lhead{Chapter 2. \emph{Survey and Taxonomy}} % This is for the header on each page - perhaps a shortened title
+\lhead{Chapter 2. \emph{Email Classification and Related Work}} % This is for the header on each page - perhaps a shortened title
 
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
-Email has been an efficient and popular communication mechanism as the 
-number of Internet users increases. Therefore, email management has become 
-an important and growing problem for individuals and organizations because 
-it is prone to misuse. One of the problems that are most important is disordered 
-email message, congested and unstructured emails in mail boxes. It may be very 
-hard to find archived email message, search for previous emails with specified 
-contents or features when the mails are not well structured and organized.
-
-Many machine learning approaches have been applied in this field, the most 
-State-of-the-Art algorithms in email classification include: support vector 
-machines, neural network, Na\"{\i}ve Bayes classifiers and entropy-based approach. 
-
-Email summarization is another important and challenging problem. We can think 
-of automatic summarization as a type of information compression. To achieve such 
-compression, better modelling and understanding of document structures and internal 
-relations is required. 
-
-In this chapter we present a survey and taxonomy on recent research topics 
-related to email classification and summarization.
+In chapter 1, a general description of the problem was presented, the motivation to develop Smart Email, and the scope of work were introduced.
 
 %==============================================================================
 \newpage
+
+\section{Machine Learning in Automated Text Categorization}
+\subsection{Definition of Text Categorization}
+Text categorization is the task of assigning a Boolean value to each pair $\langle$ d$_{j}$,c$_{i}$ $\rangle$ $\in$ D X C,  where D is a domain of documents and C = \{c$_{1}$, . . . , c $_{|C|}$\} is a set of predefined categories. A value of T assigned to $\langle$ d$_{j}$,c$_{i}$ $\rangle$ indicates a decision to file d$_{j}$ under c$_{i}$, while a value of F indicates a decision not to file d$_{j}$ under c$_{i}$. More formally, the task is to approximate the unknown target function $\theta$ : D ×C $\rightarrow$ \{T, F\} (that describes how documents ought to be classified) by means of a function $\phi$ : D × C $\rightarrow$ \{T, F\} called the classifier (aka rule, or hypothesis, or model ) such that $\theta$ and $\phi$ coincide as much as possible.\cite{Sebastiani2002}
+
+\subsection{Single-label vs Multi-label Text Categorization}
+Classification is a very important topic within supervised learning field. Although the most popular task for classification usually deals with single-label datasets, where every example
+is associated with a single label $\lambda$ from a set of disjoint labels L, the multi-label datasets are emerging and gaining interest due to their increasing application to real problems. Multilabel datasets are used when the examples are associated with a set of labels Y $\subseteq$ L, as occurs with email classification, image annotation, or genomics.
+
+Two main tasks can be defined when learning from multilabel
+data: 
+\begin{itemize}
+\item Multi-label classification (MLC) that returns a subset of labels to be associated with a given example (it can be considered as a bipartition of the label set considering relevant and irrelevant elements);
+\item label ranking (LR) that returns an ordering of the labels according to their relation with the example. \cite{Carmona2011}
+\end{itemize}
+
+\subsection{Category Pivoted vs Document-Pivoted Text Categorization}
+
+\subsection{Hard Categorization vs Ranking Categorization}
+\section{Applications of Text Categorization}
+\subsection{Automatic Indexing for Boolean Information Retrieval Systems}
+\section{The Machine Learning Approach for Text Classification}
+\subsection{Training Set}
+\section{Construction of Text Classifier}
+\section{Classifier Evaluation}
+
+%\section{Related Work}
+%In the past decade text categorization has been a highly popular machine learning application. In addition to the standard problem of categorizing documents into semantic topics (Lewis, 1992), a variety of other problem domains have been explored, including catego-
+%rization by genre (Finn et al., 2002), by authorship (Diederich et al., 2003) and even by
+%author's gender (Koppel et al., 2003).
+%In the domain of personal email messages, text categorization methods have been widely
+%applied to the problem of spam ¯ltering (see, e.g., Drucker et al., 1999). Other email related
+%problems have also been tackled, such as extracting email threads (Lewis and Knowles, 1997)
+%and automatically creating new folders (Giacoletto and Aberer, 2003). However, there has been little study of categorizing email into folders|also termed \email foldering". There
+%are only a few notable exceptions.
+%Payne and Edwards (1997) use a rule induction algorithm CN2 (Clark and Niblett,
+%1989) and a k nearest neighbor (k-NN) classi¯er for foldering their own email and argued
+%that CN2 outperforms k-NN on this task. Cohen (1996) considers a number of binary
+%classi¯cation problems of one folder vs. all the others; he compares his RIPPER classi¯er
+%(which also belongs to the rule induction family) with a t¯df classi¯er and demonstrates
+%RIPPER's superior performance. However, Provost (1999) shows that the Naive Bayes
+%classi¯er can outperform RIPPER on the email classi¯cation task. Rennie (2000) uses the
+%Naive Bayes for constructing a real-world email foldering system that suggests three most
+%appropriate folders for each incoming message. With very high precision the desired folder
+%can be found among the three suggested ones, which dramatically simpli¯es the process
+%of manual foldering. Kiritchenko and Matwin (2001) ¯rst use the popular Support Vector
+%Machine (SVM) for the email classi¯cation task and show its advantage over the Naive Bayes
+%classi¯er. We extend the previous research work by comparing email classi¯cation results
+%of four classi¯ers (Maximum Entropy, Naive Bayes, SVM and Winnow), using original
+%evaluation methodology.
+%Email foldering is a rich and multi-faceted problem, with many di±culties that make it
+%di®erent from traditional topic-based categorization. Email users create new folders, and
+%let other folders fall out of use. Email folders do not necessarily correspond to simple se-
+%mantic topics|sometimes they correspond to un¯nished todo tasks, project groups, certain
+%recipients, or loose agglomerations of topics. It is also interesting to note that email content
+%and foldering habits di®er drastically from one email user to another|so while automated
+%methods may perform well for one user, they may fail horribly for another.
+%Furthermore, email arrives in a stream over time, and this causes other signi¯cant
+%di±culties. Some email messages only make sense in the context of previous messages.
+%Occasionally all messages in a thread should go to the same folder, but other times the
+%topic in a thread drifts. The topic associated with a certain email folder can also shift over
+%time. For example, a folder about funding opportunities may at ¯rst contain only messages
+%about the National Science Foundation, but later only get new messages about industrial
+%partnerships, each of which may have very di®erent word distributions. Ironically, in all
+%but one related work the temporal aspect of email is missed, only Segal and Kephart (2000)
+%apply the t¯df classi¯er in a time-based incremental setup for foldering email.
+%A likely reason that the problem of automatic email foldering has not drawn signi¯cant
+%attention in the research community is the fact that there has been no standard, publicly-
+%available real-world email dataset on which foldering methods could be evaluated, and on
+%which the work of multiple researchers could be compared.
+%However, a large corpus of real-world email messages subpoenaed from Enron Corpora-
+%tion was placed in the public record, and recently made available to researchers electron-
+%ically.1 The data consists of over 500,000 email messages from the email accounts of 150
+%people. Furthermore, a smaller but also signi¯cant corpus of real-world, foldered email has
+%been created as part of the CALO DARPA/SRI research project.2 This corpus contains
+%snapshots of the email folders of 196 users, containing approximately 22,000 messages.
+%
+%In a recent work, Klimt and Yang (2004) present some basic statistics on the Enron
+%dataset and provide useful insights on email classi¯cation and thread recognition on this
+%data. They report a classi¯cation result that is averaged over all the Enron users and
+%achieved on an unnatural 50/50 training/test split. Klimt and Yang's work cannot be used
+%as a baseline for comparing various email classi¯cation methods.
+%In this paper we present a benchmark case study of email foldering on both the Enron
+%and SRI email datasets. We concentrate on foldering email of particular users and establish
+%a framework for further email foldering experiments. Our resulting graphs and preprocessed
+%portions of the Enron dataset are available online at http://www.cs.umass.edu/»ronb/. We
+%provide a wide performance comparison across several popular classi¯ers: Maximum En-
+%tropy (MaxEnt), Naive Bayes (NB), Support Vector Machine (SVM), as well as an enhanced
+%variant of Winnow. To our knowledge, this paper is the ¯rst work in which MaxEnt and
+%Winnow are applied to email classi¯cation. We show that the Winnow classi¯er is not only
+%computationally attractive and easy to implement, but achieves surprisingly good results
+%on the email foldering task, in many cases achieving statistically similar performance as
+%the well-established SVM classi¯er. We provide detailed description of the enhancements
+%to Winnow used here. We also propose a novel evaluation method for classi¯cation per-
+%formance particularly appropriate to the email domain. The method involves dividing a
+%dataset into time-based data chunks and incrementally testing classi¯cation performance
+%on each chunk while training on all the previous chunks.
+%The rest of the paper is organized as follows: in Section 2 we state the email foldering
+%problem; in Section 3 we discuss various design choices for our experimental setup, and how
+%they di®er from the standard text categorization setting; in Section 4 we brie°y overview
+%the classi¯ers we apply; in Section 5 we describe the datasets used for evaluation; in Section
+%6 we report and discuss our results; ¯nally, in Section 7 we conclude and outline some open
+%problems.
+
 \section{Email Classification Taxonomy}
 The following table classifies some recent research papers in the field of email classification.
 
