@@ -108,13 +108,13 @@ The following subsection represents the different data sets used  in different r
 
 \section{Construction of Text Classifier}
 The construction of text classifiers has been tackled in a variety of ways.
-In this section we will deal only with the methods that have been most popular in text classification. We start by discussing the general form that a text classifier has.  In Sections 2.1 to 2.3 we discuss number of approaches that have been applied in the text classification literature. In general we will assume. The presentation of the algorithms will focus on the methods for classifier learning rather than on the effectiveness and efficiency of the classifiers built by means of them.\cite{Sebastiani2002}
+In this section we will deal only with the methods that have been most popular in text classification. We start by discussing the general form that a text classifier has.  In subsections 2.5.1 to 2.5.3 we discuss number of approaches that have been applied in the text classification literature. In general we will assume. The presentation of the algorithms will focus on the methods for classifier learning rather than on the effectiveness and efficiency of the classifiers built by means of them.\cite{Sebastiani2002}
 
 \subsection{Probabilistic classifiers}
 The construction of a ranking classifier for category c$_{i}$ $\in$ C usually
 consists in the definition of a function CSV$_{i}$ : D $\rightarrow$ [0, 1] that, given a document d$_{j}$ , returns a categorization status value for it, i.e. a number between 0 and 1 that, roughly speaking, represents the evidence for the fact that d$_{j}$ $\in$ c$_{i}$.
 
-Probabilistic classifiers view CSV$_{i}$(d$_{j}$) in terms of P(c$_{i}$ | d$_{j}$), i.e. the probability that a document d$_{j}$ belongs to c$_{i}$, and compute this probability by an application of Bayes’ theorem, given by \[ P(c_{i}|d_{j}) = \frac{P(c_{i})P(d_{j}|c_{i})}{P(d_{j})} \]
+Probabilistic classifiers view CSV$_{i}$(d$_{j}$) in terms of $P(c_{i} | d_{j})$, i.e. the probability that a document d$_{j}$ belongs to c$_{i}$, and compute this probability by an application of Bayes’ theorem, given by \[ P(c_{i}|d_{j}) = \frac{P(c_{i})P(d_{j}|c_{i})}{P(d_{j})} \]
 
 In order to alleviate this problem it is common to make the assumption that any two coordinates of the document vector are, when viewed as random variables, statistically independent of each other; this independence assumption is encoded by the equation
 \[ P(d_{j}|c_{i}) = \prod_{k=1}^{|\tau|} P(w_{kj}|c_{i}) \]
@@ -135,14 +135,15 @@ negatives are linearly separable, in which case the decision surfaces are
 
 In the 2-dimensional case , various lines may be chosen as decision surfaces. The SVM method chooses the middle element from the “widest” set of parallel lines, i.e. from the set in which the maximum distance between two elements in the set is highest. It is noteworthy that this “best” decision surface is determined by only a small set of training examples, called the support vectors.
 
-\section{Classifier Evaluation}
+\subsection{On-line Methods}
+Methods for learning linear classifiers are often partitioned in two broad classes, batch methods and on-line methods.
 
+Batch methods build a classifier by analysing the training set all at once. On-line (aka incremental) methods build a classifier soon after examining the first training document, and incrementally refine it as they examine new ones. This may be an advantage in the applications in which the 'meaning' of the category may change in time, as e.g. in adaptive filtering. This is also suitable for applications (e.g. semi-automated classification, adaptive filtering) in which we may expect the user of a classifier to provide feedback on how test documents have been classified, as in this case further training may be performed during the operating phase by exploiting user feedback.
 
-\section{Email Classification Taxonomy}
-The following table classifies some recent research papers in the field of email classification.
-
-\subsection{Classification according to the different learning algorithms used in different papers}
-
+\section{Related Work}
+\subsection{Classification according to the different learning algorithms used in different 
+papers}
+The following table classifies some recent research papers in the field of email classification according to the different learning algorithms for email classification.
 \begin{center}
 \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
 \hline
@@ -166,6 +167,7 @@ Email Classification Using Semantic Feature Space \cite{YUN08} &
 \newpage
 
 \subsection{Classification according to the different learning capabilities}
+The following table classifies some recent research papers in the field of email classification according to the different learning capabilities (on-line or off-line) for email classification.
 
 \begin{center}
 \begin{tabular}{|p{6cm}|p{6cm}|}
@@ -197,7 +199,6 @@ Automatic Categorization of Email into Folders \cite{RON04}
 \end{tabular}
 \end{center}
 
-\newpage
 
 
 %================================= FEATURES
