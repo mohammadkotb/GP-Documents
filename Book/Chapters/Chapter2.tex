@@ -22,7 +22,6 @@
 In chapter 1, a general description of the problem was presented, the motivation to develop Smart Email, and the scope of work were introduced.
 
 %==============================================================================
-\newpage
 
 \section{Machine Learning in Automated Text Categorization}
 \subsection{Definition of Text Categorization}
@@ -78,7 +77,7 @@ The advantages of the ML approach over the KE approach are evident. The engineer
 The ML approach relies on the availability of an initial corpus = \{d$_{1}$, . . . , d$_{|\Omega|}$\} $\subset$ D of documents preclassified under C = \{c$_{1}$, . . . , c$_{|C|}$\}. That is, the values of the total function $\theta$ : D X C $\rightarrow$ \{T, F\} are known for every pair $\langle$ d$_{j}$ , c$_{i}$ $\rangle$ $\in$   $\Omega$ X C. A document d$_{j}$ is a positive example of c$_{i}$ if (d$_{j}$ , c$_{i}$) = T , a negative example of c$_{i}$ if
 (d$_{j}$ , c$_{i}$) = F.
 
-The following subsections represents the different data sets used  in different research papers for email classification:
+The following subsection represents the different data sets used  in different research papers for email classification:
 
 \subsubsection{Datasets used in Email Classification}
 \subparagraph{Enron Dataset}
@@ -108,6 +107,34 @@ The following subsections represents the different data sets used  in different 
     \end{my_itemize}
 
 \section{Construction of Text Classifier}
+The construction of text classifiers has been tackled in a variety of ways.
+In this section we will deal only with the methods that have been most popular in text classification. We start by discussing the general form that a text classifier has.  In Sections 2.1 to 2.3 we discuss number of approaches that have been applied in the text classification literature. In general we will assume. The presentation of the algorithms will focus on the methods for classifier learning rather than on the effectiveness and efficiency of the classifiers built by means of them.\cite{Sebastiani2002}
+
+\subsection{Probabilistic classifiers}
+The construction of a ranking classifier for category c$_{i}$ $\in$ C usually
+consists in the definition of a function CSV$_{i}$ : D $\rightarrow$ [0, 1] that, given a document d$_{j}$ , returns a categorization status value for it, i.e. a number between 0 and 1 that, roughly speaking, represents the evidence for the fact that d$_{j}$ $\in$ c$_{i}$.
+
+Probabilistic classifiers view CSV$_{i}$(d$_{j}$) in terms of P(c$_{i}$ | d$_{j}$), i.e. the probability that a document d$_{j}$ belongs to c$_{i}$, and compute this probability by an application of Bayes’ theorem, given by \[ P(c_{i}|d_{j}) = \frac{P(c_{i})P(d_{j}|c_{i})}{P(d_{j})} \]
+
+In order to alleviate this problem it is common to make the assumption that any two coordinates of the document vector are, when viewed as random variables, statistically independent of each other; this independence assumption is encoded by the equation
+\[ P(d_{j}|c_{i}) = \prod_{k=1}^{|\tau|} P(w_{kj}|c_{i}) \]
+
+Probabilistic classifiers that use this assumption are called Naive Bayes classifiers, and account for most of the probabilistic approaches to TC in the literature.
+
+\subsection{Building classifiers by support vector machines}
+The support vector machine (SVM) method has been introduced in TC by Joachims [1998, 1999] and subsequently used in [Drucker et al. 1999; Dumais et al. 1998; Du- mais and Chen 2000; Klinkenberg and Joachims 2000; Taira and Haruno 1999;
+
+Yang and Liu 1999]. In geometrical terms, it may be seen as the attempt to
+find, among all the surfaces $\sigma 1$,$ \sigma 2$, ... in $|T|$ -dimensional
+space that separate the positive from the negative training examples (decision
+        surfaces), the $\sigma i$ that separates the positives from the negatives by the widest possible margin, i.e. such that the separation property is invariant with respect to the widest possible traslation of $\sigma i$ .
+
+This idea is best understood in the case in which the positives and the
+negatives are linearly separable, in which case the decision surfaces are
+($|T|$-1)-hyperplanes.
+
+In the 2-dimensional case , various lines may be chosen as decision surfaces. The SVM method chooses the middle element from the “widest” set of parallel lines, i.e. from the set in which the maximum distance between two elements in the set is highest. It is noteworthy that this “best” decision surface is determined by only a small set of training examples, called the support vectors.
+
 \section{Classifier Evaluation}
 
 
@@ -278,245 +305,3 @@ recipients and counts of particular characters.
     \item Offline learning techniques are used in most papers.
     \item Enron dataset is the most commonly used.
 \end{my_itemize}
-
-\newpage
-%==============================================================================
-\section{Email Summarization Taxonomy}
-
-\subsection{Summarization taxonomy according to different techniques}
-
-\begin{center}
-\begin{tabular}{|p{6cm}|p{6cm}|}
-\hline
-\multicolumn{2}{|c|}{Summarization Techniques} \\
-\hline
-Extractive Summarization & Question-Answer Pairs detection
-\\ \hline
-Detection of question-answer pairs in email conversations \cite{LOKESH04} &
-Using Question-Answer Pairs in Extractive Summarization of Email Conversations \cite{KATHLEEN07} 
-\\ \hline
-
-Summarizing email conversations with clue words \cite{GIUSEPPE07} &
-Using Question-Answer Pairs in Extractive Summarization of Email Conversations \cite{KATHLEEN07}
-\\ \hline
-
-\end{tabular}
-\end{center}
-
-
-%==============================================================================
-\subsection{Chronological sort of summarization papers}
-
-\subparagraph{2001}
-\begin{itemize}
-  \item Combining Linguistic and Machine Learning Techniques for Email
-Summarization \cite{SMAR01}
-\end{itemize}
-
-\subparagraph{2004}
-\begin{itemize}
-  \item Detection of question-answer pairs in email conversations \cite{LOKESH04}
-\end{itemize}
-
-\subparagraph{2007}
-\begin{itemize}
-  \item Using Question-Answer Pairs in Extractive Summarization of Email Conversations \cite{KATHLEEN07}
-  \item Summarizing email conversations with clue words \cite{GIUSEPPE07}
-\end{itemize}
-
-\subparagraph{2009}
-\begin{itemize}
-  \item Regression-Based Summarization of Email Conversations \cite{JAN09}
-\end{itemize}
-
-\section{Conclusions}\label{conclusions}
-    \begin{my_itemize}
-        \item We will implement two classification algorithms and compare their results: SVM and Na\"{\i}ve Bayes.
-        \item We will make use of the Enron dataset in learning and training phases.
-        \item We will adopt an offline classification technique at the begining and will see if we can try an online technique later on.
-        \item We will make use of all the features implemented in the above papers and try combining some of them to reach the best result.o
-        \item We will use Weka (Waikato Environment for Knowledge Analysis) which is a collection of machine learning algorithms for data mining tasks , not to reimplement the classifications algrithms from the beginning 
-
-    \end{my_itemize}
-
-%=============================================================================================
-% References
-%\begin{thebibliography}{99}
-%\bibitem{RON04}
-%  Ron Bekkerman,
-%  Andrew McCallum,
-%  Gary Huang,
-%  \emph{Automatic Categorization of Email into Folders: Benchmark Experiments on Enron and SRI Corpora},
-%  2004.
-%
-%\bibitem{ANI03}
-%  Ani Nenkova,
-%  Amit Bagga,
-%  \emph{Email Classification for Contact Centers},
-%  2003.
-%
-%\bibitem{JOSE11}
-%  Jose M. Carmona-Cejudo,
-%  Manuel Baena-Garcia,
-%  Jose del Campo-Avila,
-%  Rafael Morales-Bueno,
-%  Joao Gama,
-%  Albert Bifet,
-%  \emph{Using GNUsmail to Compare Data Stream Mining Methods for On-line Email Classification},
-%  2011.
-%
-%\bibitem{NOUF08}
-%  Nouf Al Fe'ar,
-%  Einas Al Turki,
-%  Asma Al Zaid,
-%  Mashael Al Duwais,
-%  Mona Al Sheddi,
-%  Nora Al khamees,
-%  Nouf Al Drees,
-%  \emph{E-Classifier: A Bi-Lingual Email Classification System},
-%  2008.
-%
-%\bibitem{NARESH10}
-%  Naresh Kumar Nagwani,
-%  Ashok Bhansali,
-%  \emph{An Object Oriented Email Clustering Model Using Weighted Similarities between Emails Attributes},
-%  2010.
-%
-%
-%\bibitem{BASKARAN09}
-%  S. Baskaran,
-%  \emph{Content Based Email Classification System by applying Conceptual Maps},
-%  2009.
-%
-%\bibitem{CHAO08}
-%  Chao Zeng,
-%  Zhao Lu,
-%  Junzhong Gu,
-%  \emph{A new approach to Email classification using Concept Vector Space Model},
-%  2009.
-%
-%\bibitem{BALAKUMAR08}
-%  M.Balakumar,
-%  V.Vaidehi,
-%  \emph{Ontology based classification and categorization of email},
-%  2008.
-%
-%\bibitem{MIN11}
-%  Min-Feng Wang,
-%  Sie-Long Jheng,
-%  Meng-Feng Tsai,
-%  Cheng-Hsien Tang,
-%  \emph{Enterprise Email Classification Based on Social Network Features},
-%  2011.
-%
-%\bibitem{MD07}
-%  Md Rafiqul Islam,
-%  Wanlei Zhou,
-%  \emph{Email Categorization Using Multi-Stage Classification Technique},
-%  2007.
-%
-%\bibitem{YEHUDA11}
-%  Yehuda Koren,
-%  Edo Liberty,
-%  Yoelle Maarek,
-%  Roman Sandler,
-%  \emph{Automatically Tagging Email by Leveraging Other Users' Folders},
-%  2011.
-%
-%\bibitem{WENQING05}
-%  Wenqing Zhao,
-%  Zili Zhang,
-%  \emph{An Email Classification Model Based on Rough Set Theory},
-%  2005.
-%
-%\bibitem{sift01}
-%  Lokesh Shrestha,
-%  Kathleen McKeown,
-%  \emph{eMailSift: Email Classification Based on Structure and Content},
-%  2004.
-%
-%\bibitem{sift02}
-%  Sharma Chakravarthy,
-%  Aravind Venkatachalam,
-%  Aditya Telang,
-%  \emph{ A Graph-Based Approach for Multi-Folder Email Classification},
-%  2010.
-%
-%\bibitem{mous03}
-%  Taiwo Ayodele,
-%  Shikun Zhou,
-%  \emph{Applying Machine learning Algorithms for Email Management},
-%  2008.
-%
-%\bibitem{mous04}
-%  Jason Chan,
-%  Irena Koprinska,
-%  Josiah Poon,
-%  \emph{Co-training with a Single Natural Feature Set Applied to Email Classification},
-%  2004.
-%
-%\bibitem{mous05}
-%  Jason Chan,
-%  Irena Koprinska,
-%  Josiah Poon,
-%  \emph{Email Classification: Solution with Back Propagation Technique},
-%  2009.
-%
-%\bibitem{LOKESH04}
-%  Lokesh Shrestha,
-%  Kathleen McKeown,
-%  \emph{Detection of question-answer pairs in email conversations},
-%  2004.
-%
-%\bibitem{KATHLEEN07}
-%  Kathleen McKeown,
-%  Lokesh Shrestha,
-%  Owen Rambow,
-%  \emph{Using Question-Answer Pairs in Extractive Summarization of Email Conversations},
-%  2007.
-%
-%\bibitem{GIUSEPPE07}
-%  Giuseppe Carenini,
-%  Raymond T. Ng,
-%  Xiaodong Zhou,
-%  \emph{Summarizing Email Conversations with Clue Words},
-%  2007.
-%
-%\bibitem{SMAR01}
-%  Smaranda Muresan,
-%  Evelyne Tzoukermann,
-%  Judith L. Klavans,
-%  \emph{Combining Linguistic and Machine Learning Techniques for Email
-%Summarization},
-%  2001.
-%
-%\bibitem{JAN09}
-%Jan Ulrich,
-%Giuseppe Carenini,
-%Gabriel Murray,
-%Raymond Ng
-%  \emph{Regression-Based Summarization of Email Conversations},
-%  2009.
-%
-%\bibitem{SVETLANA01}
-%  Svetlana Kiritchenko,
-%  Stan Matwin,
-%  \emph{Email Classification with Co-Training},
-%  2001.
-%
-%\bibitem{YUN08}
-%  Yun Fei Yi,
-%  Cheng Hua Li,
-%  Wei Song,
-%  \emph{Email classification Using Semantic Feature Space},
-%  2008.
-%
-%\bibitem{MANUEL11}
-%  Jose M. Carmona-Cejudo,
-%  Manuel Baena-Garcia,
-%  Jose del Campo-Avila,
-%  Rafael Morales-Bueno,
-%  Albert Bifet,
-%  \emph{GNUsmail: Open Framework for On-line Email Classification},
-%  2011.
-%\end{thebibliography}
