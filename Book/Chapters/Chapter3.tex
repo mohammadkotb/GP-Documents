@@ -155,6 +155,28 @@ subject & String & 40 Characters & The Subject of the email\tabularnewline
 content & Text & - & The body of the email\tabularnewline
 \hline
 \end{tabular}
+
+\newpage
+
+\begin{tabular}{|>{\centering}p{3cm}|>{\centering}p{3cm}|>{\centering}p{2.5cm}|>{\centering}p{3cm}|}
+\hline 
+\textbf{Project}: \underbar{Smart Email} & \textbf{Subject}: \underbar{Classifier Features} & \multicolumn{2}{>{\centering}p{5.5cm}|}{\textbf{Page}: 1/1}\tabularnewline
+\hline
+\hline 
+\textbf{Entity}: \underbar{ATTACHMENT} & \textbf{Date}: \underbar{Thursday,}
+
+\underbar{March 1, 2012} & \multicolumn{2}{>{\centering}p{5.5cm}|}{\textbf{Analyst}:}\tabularnewline
+\hline 
+\textbf{Attribute} & \textbf{Type} & \textbf{Size} & \textbf{Validation / desc}\tabularnewline
+\hline 
+Id & Integer & 4 Bytes & Primary Key, system maintained, used to identify different attachments\tabularnewline
+\hline 
+email\_id & Integer & 4 Bytes & Foreign key to EMAIL.id\tabularnewline
+\hline 
+file\_name & String & 40 Characters & Name of the attachment\tabularnewline
+\hline
+\end{tabular}
+
 %-------------------------------------------------------------------------
 
 
