@@ -177,7 +177,188 @@ file\_name & String & 40 Characters & Name of the attachment\tabularnewline
 \hline
 \end{tabular}
 
+\newpage
+
+\begin{tabular}{|>{\centering}p{3cm}|>{\centering}p{3cm}|>{\centering}p{2.5cm}|>{\centering}p{3cm}|}
+\hline 
+\textbf{Project}: \underbar{Smart Email} & \textbf{Subject}: \underbar{Classifier Features} & \multicolumn{2}{>{\centering}p{5.5cm}|}{\textbf{Page}: 1/1}\tabularnewline
+\hline
+\hline 
+\textbf{Entity}: \underbar{RECEIVER} & \textbf{Date}: \underbar{Thursday,}
+
+\underbar{March 1, 2012} & \multicolumn{2}{>{\centering}p{5.5cm}|}{\textbf{Analyst}:}\tabularnewline
+\hline 
+\textbf{Attribute} & \textbf{Type} & \textbf{Size} & \textbf{Validation / desc}\tabularnewline
+\hline 
+Id & Integer & 4 Bytes & Primary Key, system maintained, used to identify different recipients\tabularnewline
+\hline 
+receiver\_email & String & 40 Characters & Email of the receiver\tabularnewline
+\hline 
+receiver\_name & String & 40 Characters & Name of the receiver\tabularnewline
+\hline 
+receiver\_domain & String & 40 Characters & Domain of the receiver\tabularnewline
+\hline
+\end{tabular}
+
+\newpage
+
+
+\begin{tabular}{|>{\centering}p{3.2cm}|>{\centering}p{3cm}|>{\centering}p{2.5cm}|>{\centering}p{3cm}|}
+\hline 
+\textbf{Project}: \underbar{Smart Email} & \textbf{Subject}: \underbar{Classifier Features} & \multicolumn{2}{>{\centering}p{5.5cm}|}{\textbf{Page}: 1/1}\tabularnewline
+\hline
+\hline 
+\textbf{Entity}:
+
+\underbar{EMAIL\_RECEIV}
+
+\underbar{ER} & \textbf{Date}: \underbar{Thursday,}
+
+\underbar{March 1, 2012} & \multicolumn{2}{>{\centering}p{5.5cm}|}{\textbf{Analyst}:}\tabularnewline
+\hline 
+\textbf{Attribute} & \textbf{Type} & \textbf{Size} & \textbf{Validation / desc}\tabularnewline
+\hline 
+email\_id & Integer & 4 Bytes & Composite Primary Key, system maintained, used to identify different
+email/receiver tuple\tabularnewline
+\cline{1-3} 
+receiver\_id & Integer & 4 Byte & \tabularnewline
+\hline 
+is\_cc & Boolean & 1 Byte & Used to indicate whether this receiver is mentioned in cc header or
+not\tabularnewline
+\hline
+
+\end{tabular}
+
 %-------------------------------------------------------------------------
+\newpage
+\section {Tuple of the classifier Features Warehouse (Classifier Input)}
+
+\begin{center}
+\begin{tabular}{|c|}
+\hline 
+email\_id\tabularnewline
+\hline
+date\tabularnewline
+\hline 
+sender\_email\tabularnewline
+\hline 
+sender\_username\tabularnewline
+\hline 
+Domain of sender\tabularnewline
+\hline 
+is\_bbc\tabularnewline
+\hline 
+subject\tabularnewline
+\hline 
+Subject\_length\tabularnewline
+\hline 
+content\tabularnewline
+\hline 
+content\_mime\_version\tabularnewline
+\hline 
+body\_length\tabularnewline
+\hline 
+signature\tabularnewline
+\hline 
+number\_of\_receivers\tabularnewline
+\hline 
+Percentage\_of\_capital\_letters\tabularnewline
+\hline 
+Number\_of\_punctuation\_letters\tabularnewline
+\hline 
+language\tabularnewline
+\hline 
+has\_attachments\tabularnewline
+\hline 
+number\_of\_attachments\tabularnewline
+\hline
+\end{tabular}
+\end{center}
+
+\newpage
 
 
+
+
+\begin{tabular}{|>{\centering}p{3.2cm}|>{\centering}p{3cm}|>{\centering}p{2.5cm}|>{\centering}p{4.5cm}|}
+\hline 
+\textbf{Project}: \underbar{Smart Email} & \textbf{Subject}: \underbar{Classifier Features} & \multicolumn{2}{>{\centering}p{7cm}|}{\textbf{Page}: 1/2}\tabularnewline
+\hline
+\hline 
+\textbf{Entity}: \underbar{Feature\_tuple} & \textbf{Date}: \underbar{Thursday,}
+
+\underbar{March 1, 2012} & \multicolumn{2}{>{\centering}p{7cm}|}{\textbf{Analyst}:}\tabularnewline
+\hline 
+\textbf{Attribute} & \textbf{Type} & \textbf{Size} & \textbf{Validation / desc}\tabularnewline
+\hline 
+Id & Integer & 4 Bytes & Primary Key, system maintained, used to identify different feature\_tuples\tabularnewline
+\hline 
+email\_id & Integer & 4 Bytes & Foreign key to EMAIL.Id\tabularnewline
+\hline 
+date & Date & - & Date of sending the email in the long representation\tabularnewline
+\hline 
+sender\_email & String & 40 Characters & Email of the sender\tabularnewline
+\hline 
+sender\_user\_name & String & 40 Characters & Name of the sender as it appears in the contacts list\tabularnewline
+\hline 
+domain\_of\_sender & String & 40 Characters & Email Service Provider for the sender\tabularnewline
+\hline 
+ is\_bcc & Boolean & 1 Byte & Indicates whether the user received this email as a recipient or as
+a Bcc recipient\tabularnewline
+\hline 
+subject & String & 40 Characters & The Subject of the email\tabularnewline
+\hline 
+subject\_length & Integer & 4 Bytes & Length of the email subject\tabularnewline
+\hline 
+content & Text & - & Email body\tabularnewline
+\hline 
+content\_type & String & 40 Characters & Content type of the email\tabularnewline
+\hline 
+content\_mime\_
+
+version & Integer & 4 Bytes & MIME version of the email\tabularnewline
+\hline 
+body\_length & Integer & 4 Bytes & Length of the email body\tabularnewline
+\hline 
+signature & String & 512 Characters & Sender's signature at the end of the email message\tabularnewline
+\hline 
+number\_of\_attac
+
+hments & Integer & 4 Bytes & Number of attachments in the email\tabularnewline
+\hline
+
+
+\end{tabular}
+
+\newpage
+
+
+\begin{tabular}{|>{\centering}p{3.2cm}|>{\centering}p{3cm}|>{\centering}p{2.5cm}|>{\centering}p{4.5cm}|}
+\hline 
+\textbf{Project}: Smart \underbar{Email} & \textbf{Subject}: \underbar{Classifier Features} & \multicolumn{2}{>{\centering}p{7cm}|}{\textbf{Page}: 2/2}\tabularnewline
+\hline
+\hline 
+\textbf{Entity}: \underbar{Feature\_tuple} & \textbf{Date}: \underbar{Thursday,}
+
+\underbar{March 1, 2012} & \multicolumn{2}{>{\centering}p{7cm}|}{\textbf{Analyst}:}\tabularnewline
+\hline 
+\textbf{Attribute} & \textbf{Type} & \textbf{Size} & \textbf{Validation / desc}\tabularnewline
+\hline 
+number\_of\_recei
+
+vers & Integer & 4 Bytes & Number of email recipients\tabularnewline
+\hline 
+percentage\_of\_c
+
+apital\_letters & Double & 8 Bytes & Percentage of capital letters in the email body\tabularnewline
+\hline 
+number\_of\_punc
+
+tuation & Integer & 4 Bytes & Number of punctuation letters in the email body\tabularnewline
+\hline 
+language & String & 40 Characters & Dominant language of the email body\tabularnewline
+\hline 
+has\_attachments & Boolean & 1 Byte & True if the email has attachments, false otherwise\tabularnewline
+\hline
+\end{tabular}
 %\includegraphics{Features.pdf}\\
