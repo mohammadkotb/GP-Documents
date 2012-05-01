@@ -6,6 +6,13 @@
 
 \lhead{Chapter 4. \emph{Project conceptualization}} % This is for the header on each page - perhaps a shortened title
 
+\section{Introduction}
+In Chapter 3, the main features used for email classification by Smart Email were introduced. At the end of the chapter, At the end of the chapter, the tuple of the classifier features was presented. This tuple is used as an input for the Smart Email classifier.
+
+In this chapter, project conceptualization and proposed workflow are to be discussed. In section 4.2, project objectives, assumptions and limitations are discussed. Section 4.2 introduces the proposed workflow together with the proposed user stories. In section 4.3, the business requirements are discussed. 
+
+\section{Overview}
+
 %==============================================================================
 \subsection{Project Objectives}
 The business objectives of this project are listed below. Delivering these 
@@ -18,6 +25,7 @@ objectives will deliver the expected benefits of the application.
 
 
 %==============================================================================
+
 \subsection{Assumptions}
 Some assumptions generally must be made in order to write a succinct definition 
 of the application. Some assumptions are technical, while others are business natured.  Assumptions 
@@ -78,11 +86,17 @@ Features:
 
 %==============================================================================
 \subsection{Context Diagram}
-The Context Diagram illustrates the modules, business processes, etc that feed 
+The Context Diagram int figure 4.1 illustrates the modules, business processes, etc that feed 
 or interact with this proposed application.
-\\ 
-\\
-\includegraphics[width=13cm]{context_diagram.jpeg}
+\begin{figure}
+  \centering
+  \includegraphics[width=13cm]{context_diagram.jpeg}
+  \caption[The Context Diagram illustrates the modules, business processes, etc that feed 
+or interact with this proposed application.] {The Context Diagram illustrates the modules, business processes, etc that feed 
+or interact with this proposed application.}
+\end{figure}
+
+
 %==============================================================================
 \subsection{High Level Workflow}
 The workflow required to complete the primary objectives of the proposed 
@@ -93,8 +107,14 @@ Individual tasks in the workflow are described.
 
 \newpage
 \begin{my_enumerate}
-  \item Workflow/Process Map \\ \\
-	\includegraphics[width=13cm]{workflow_process_map.png}
+  \item Workflow/Process Map 
+	
+\begin{figure}
+  \centering
+\includegraphics[width=13cm]{workflow_process_map.png}
+  \caption[Workflow Process] {Workflow Process}
+\end{figure}
+
   \item Workflow Description
   \begin{my_itemize}
     \item Incoming Emails are preprocessed.
@@ -361,3 +381,7 @@ Any data migration requirements are listed below.
   \item Users' classified emails for training phase as pre-classified emails are needed to build users' models.
   \item Users' email threads which needed to be summarized.
 \end{my_enumerate}
+
+\section{Conclusion}
+In this chapter the project conceptualization and proposed workflow were presented. At the end of the chapter, the business requirements were introduced. In next chapter, software design description for the project will be discussed.
+

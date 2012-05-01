@@ -21,6 +21,10 @@
 \section{Introduction}
 In chapter 1, a general description of the problem was presented, the motivation to develop Smart Email, and the scope of work were introduced.
 
+In this chapter, a background about text and email classification is introduced in
+sections 2.2. In section 2.3, applications of email categorization is presented. The machine learning approach for text classification is discussed in section 2.4. In section 2.5, construction of text classifier and different types of classifiers are presented. In section 2.6 related work to Smart Email is presented with features of each. Then, the need to
+extend related work is explained in section 2.7.
+
 %==============================================================================
 
 \section{Machine Learning in Automated Text Categorization}
@@ -141,6 +145,21 @@ Methods for learning linear classifiers are often partitioned in two broad class
 Batch methods build a classifier by analysing the training set all at once. On-line (aka incremental) methods build a classifier soon after examining the first training document, and incrementally refine it as they examine new ones. This may be an advantage in the applications in which the 'meaning' of the category may change in time, as e.g. in adaptive filtering. This is also suitable for applications (e.g. semi-automated classification, adaptive filtering) in which we may expect the user of a classifier to provide feedback on how test documents have been classified, as in this case further training may be performed during the operating phase by exploiting user feedback.
 
 \section{Related Work}
+
+\subsection{POPFile}
+POPFile is a free, open source, cross-platform mail filter originally written in Perl by John Graham-Cumming and maintained by a team of volunteers. It uses a naive Bayes classifier to filter mail. This allows the filter to "learn" and classify mail according to the user's preferences. Typically it is used to filter spam mail. It can also be used to sort mail into other user defined "buckets" or categories - for example, the user may define a bucket into which work email is sorted.
+
+The program works in several different modes. In the most popular mode, it sets itself up as a proxy between the email client and the POP3 server. As mail is downloaded via POP3, the filter identifies and classifies mail and makes a user defined modification to the subject line, appending the name of the appropriate bucket. The user then sets up rules in the mail client to sort the mail based on the subject line modification. An HTML based interface can be used to instruct POPFile, allowing users to correct errors in classifications and thus train the system to be sensitive to the user's specific requirements.
+
+As an alternative to the subject-line modification (or as a supplement to it), the system can also be configured to use custom mail headers instead.
+
+In another possible mode, POPFile can work as an IMAP client that monitors an IMAP server for incoming mail and also for messages moved by the user. Incoming emails are categorized and then immediately moved to the folder corresponding to the categorization. To train POPFile in this mode, the user only needs to move the message to the correct folder, i.e. to the folder where POPFile should have moved the message.
+
+\subsection{Gmail Priority Inbox}
+Gmail priority inbox is an algorithmic-based filtering system that predicts which messages are most important to the recipient and displays them atop the inbox queue.
+
+Gmail uses a variety of signals to identify important email, including which messages the user opens and which messages he replies to.
+
 \subsection{Classification according to the different learning algorithms used in different 
 papers}
 The following table classifies some recent research papers in the field of email classification according to the different learning algorithms for email classification.
@@ -297,7 +316,7 @@ recipients and counts of particular characters.
 \end{my_itemize}
 
 
-\subsection{Conclusion}
+\section{Need To Extend Related Work}
 \begin{my_itemize}
     \item SVM Achieved the best results in most papers, but it is computationally expensive and has the hardest implementation.
     \item The aasic form of Na\"{\i}ve Bayes algorithm has the simplest implementation but has very low classification accuracy compared to other algorithms.
@@ -306,3 +325,8 @@ recipients and counts of particular characters.
     \item Offline learning techniques are used in most papers.
     \item Enron dataset is the most commonly used.
 \end{my_itemize}
+
+\section{Conclusion}
+In this chapter, text and email classification were explained and many related techniques and technologies were discussed. Also related applications to Smart Email were introduced.
+
+In the next chapter, the main features used for email classifier will be introduced. These features are based on the related work presented in this chapter.
