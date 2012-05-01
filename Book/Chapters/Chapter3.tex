@@ -1,4 +1,4 @@
-% Chapter 3
+﻿% Chapter 3
 
 \chapter{Classifier Features and Logical Schema} % Main chapter title
 
@@ -18,39 +18,39 @@ of emails into folders)}
 \cline{2-4} 
  & Email & Receiver & Attachment\tabularnewline
 \cline{2-4} 
- & Email ID {[}7{]} & Domain of receiver {[}1{]} {[}9{]} &  Attachment  type {[}1{]} {[}9{]}\tabularnewline
+ & Email ID \cite{Anatomy00} & Domain of receiver \cite{Carmona2011} \cite{MANUEL11} &  Attachment  type \cite{Carmona2011} \cite{MANUEL11}\tabularnewline
 \cline{2-4} 
- & Body Length {[}1{]} {[}9{]} & Number of CC {[}1{]} {[}9{]} & Has an attachment {[}1{]} {[}9{]}\tabularnewline
+ & Body Length \cite{Carmona2011} \cite{MANUEL11} & Number of CC \cite{Carmona2011} \cite{MANUEL11} & Has an attachment \cite{Carmona2011} \cite{MANUEL11}\tabularnewline
 \cline{2-4} 
- & Content Type {[}7{]} & Number of receivers {[}1{]} {[}9{]} & Number of attachments {[}1{]} {[}9{]}\tabularnewline
+ & Content Type \cite{Anatomy00} & Number of receivers \cite{Carmona2011} \cite{MANUEL11} & Number of attachments \cite{Carmona2011} \cite{MANUEL11}\tabularnewline
 \cline{2-4} 
- & Domain of sender {[}1{]} {[}9{]} & Number of To {[}1{]} {[}9{]} & \tabularnewline
+ & Domain of sender \cite{Carmona2011} \cite{MANUEL11} & Number of To \cite{Carmona2011} \cite{MANUEL11} & \tabularnewline
 \cline{2-4} 
- & Email Date {[}3{]} {[}7{]} & Receiver Username {[}1{]} {[}9{]} & \tabularnewline
+ & Email Date \cite{KIRI2004} \cite{Anatomy00} & Receiver Username \cite{Carmona2011} \cite{MANUEL11} & \tabularnewline
 \cline{2-4} 
- & Email Sender {[}1{]} {[}2{]} {[}7{]} {[}9{]} &  & \tabularnewline
+ & Email Sender \cite{Carmona2011} \cite{RON04} \cite{Anatomy00} \cite{MANUEL11} &  & \tabularnewline
 \cline{2-4} 
- & Email Signature {[}9{]} &  & \tabularnewline
+ & Email Signature \cite{MANUEL11} &  & \tabularnewline
 \cline{2-4} 
- & Email Subject {[}1{]} {[}2{]} {[}9{]} &  & \tabularnewline
+ & Email Subject \cite{Carmona2011} \cite{RON04} \cite{MANUEL11} &  & \tabularnewline
 \cline{2-4} 
- & Is Bcc {[}1{]} {[}2{]} {[}9{]} &  & \tabularnewline
+ & Is Bcc \cite{Carmona2011} \cite{RON04} \cite{MANUEL11} &  & \tabularnewline
 \cline{2-4} 
- & Is distribution List {[}1{]} {[}9{]} &  & \tabularnewline
+ & Is distribution List \cite{Carmona2011} \cite{MANUEL11} &  & \tabularnewline
 \cline{2-4} 
- & Language {[}1{]} {[}9{]} &  & \tabularnewline
+ & Language \cite{Carmona2011} \cite{MANUEL11} &  & \tabularnewline
 \cline{2-4} 
- & MIME Version {[}7{]} &  & \tabularnewline
+ & MIME Version \cite{Anatomy00} &  & \tabularnewline
 \cline{2-4} 
- & Number of punctuation Letters {[}1{]} {[}9{]} &  & \tabularnewline
+ & Number of punctuation Letters \cite{Carmona2011} \cite{MANUEL11} &  & \tabularnewline
 \cline{2-4} 
- & Percentage of capital letters {[}1{]} {[}9{]} &  & \tabularnewline
+ & Percentage of capital letters \cite{Carmona2011} \cite{MANUEL11} &  & \tabularnewline
 \cline{2-4} 
- & Sender Username {[}1{]} {[}9{]} &  & \tabularnewline
+ & Sender Username \cite{Carmona2011} \cite{MANUEL11} &  & \tabularnewline
 \cline{2-4} 
- & Subject Length {[}1{]} {[}9{]} &  & \tabularnewline
+ & Subject Length \cite{Carmona2011} \cite{MANUEL11} &  & \tabularnewline
 \cline{2-4} 
- & Wordgram Frequency {[}1{]} {[}2{]} {[}9{]} &  & \tabularnewline
+ & Wordgram Frequency \cite{Carmona2011} \cite{RON04} \cite{MANUEL11} &  & \tabularnewline
 \hline
 \end{longtable}
 %----------------------------------------------------------------------
@@ -61,62 +61,62 @@ of emails into folders)}
 Category & Feature & Description & Values & Source (preparation)\tabularnewline
 \hline
 \hline 
-Email & Email ID {[}7{]} & Identifier for the email message & Long & System maintained primary key\tabularnewline
+Email & Email ID \cite{Anatomy00} & Identifier for the email message & Long & System maintained primary key\tabularnewline
 \hline 
- & Domain of sender {[}1{]} {[}9{]} & Mail Service Provider (gmail.com, hotmail.com, ..etc) & String & Obtained from the sender's email, by taking the substring after the
+ & Domain of sender \cite{Carmona2011} \cite{MANUEL11} & Mail Service Provider (gmail.com, hotmail.com, ..etc) & String & Obtained from the sender's email, by taking the substring after the
 '@' character\tabularnewline
 \hline 
- & Language {[}1{]} {[}9{]} & Dominant language in the email body & String & Use a special module to detect the language type of the email body\tabularnewline
+ & Language \cite{Carmona2011} \cite{MANUEL11} & Dominant language in the email body & String & Use a special module to detect the language type of the email body\tabularnewline
 \hline 
- & Email Sender {[}1{]} {[}2{]} {[}7{]} {[}9{]} & Email address of the sender & String & Obtained directly from the email header\tabularnewline
+ & Email Sender \cite{Carmona2011} \cite{RON04} \cite{Anatomy00} \cite{MANUEL11} & Email address of the sender & String & Obtained directly from the email header\tabularnewline
 \hline 
- & Content Type {[}7{]} & Content type  & String & Obtained directly from the email header\tabularnewline
+ & Content Type \cite{Anatomy00} & Content type  & String & Obtained directly from the email header\tabularnewline
 \hline 
- & Email Date {[}3{]} {[}7{]} & Date of sending the email represented as the number of milliseconds
+ & Email Date \cite{KIRI2004} \cite{Anatomy00} & Date of sending the email represented as the number of milliseconds
 since January 1, 1970, 00:00:00 GMT & Long & The date is obtained directly from the email header and then transformed
 to the long representation\tabularnewline
 \hline 
- & MIME Version {[}7{]} & MIME is an internet standard to extend the format of the email to
+ & MIME Version \cite{Anatomy00} & MIME is an internet standard to extend the format of the email to
 support non-ASCII data & Integer & Obtained directly from the email header\tabularnewline
 \hline 
- & Bcc {[}1{]} {[}2{]} {[}9{]} & List of email receivers as Bcc & Each recipient is represented as a boolean attribute in the feature
+ & Bcc \cite{Carmona2011} \cite{RON04} \cite{MANUEL11} & List of email receivers as Bcc & Each recipient is represented as a boolean attribute in the feature
 tuple. & Obtained directly from the email header \tabularnewline
 \hline 
- & Number of punctuation Letters {[}1{]} {[}9{]} & Number of punctuation characters in the body & Integer & Count the number of punctuation letters in the email body\tabularnewline
+ & Number of punctuation Letters \cite{Carmona2011} \cite{MANUEL11} & Number of punctuation characters in the body & Integer & Count the number of punctuation letters in the email body\tabularnewline
 \hline 
- & Is distribution List {[}1{]} {[}9{]} & Flag to indicate whether the client received this email from a group/distribution
+ & Is distribution List \cite{Carmona2011} \cite{MANUEL11} & Flag to indicate whether the client received this email from a group/distribution
 list or not & Boolean & Obtained directly from email header\tabularnewline
 \hline 
- & Email Signature {[}9{]} & Signature of the email sender, at the end of the email & String & The signature is extracted from email body\tabularnewline
+ & Email Signature \cite{MANUEL11} & Signature of the email sender, at the end of the email & String & The signature is extracted from email body\tabularnewline
 \hline 
- & Wordgram Frequency {[}1{]} {[}2{]} {[}9{]} & Email Wordgram Frequency & Integer & Count the number of wordgrams in the email\tabularnewline
+ & Wordgram Frequency \cite{Carmona2011} \cite{RON04} \cite{MANUEL11} & Email Wordgram Frequency & Integer & Count the number of wordgrams in the email\tabularnewline
 \hline 
- & Subject Length {[}1{]} {[}9{]} & Length of the email subject & Integer & Calculate the size of the subject string\tabularnewline
+ & Subject Length \cite{Carmona2011} \cite{MANUEL11} & Length of the email subject & Integer & Calculate the size of the subject string\tabularnewline
 \hline 
- & Percentage of capital letters {[}1{]} {[}9{]} & Percentage of the capital letters to the letters in the email body & Double & Count the number of capital letters and divide it by the sum of the
+ & Percentage of capital letters \cite{Carmona2011} \cite{MANUEL11} & Percentage of the capital letters to the letters in the email body & Double & Count the number of capital letters and divide it by the sum of the
 sizes of all ASCII words in the email body\tabularnewline
 \hline 
- & Body Length {[}1{]} {[}9{]} & Size of the email body & Integer & Calculate the size of the body string\tabularnewline
+ & Body Length \cite{Carmona2011} \cite{MANUEL11} & Size of the email body & Integer & Calculate the size of the body string\tabularnewline
 \hline 
- & Sender Username {[}1{]} {[}9{]} & Name of Sender & String & Obtained directly from email header\tabularnewline
+ & Sender Username \cite{Carmona2011} \cite{MANUEL11} & Name of Sender & String & Obtained directly from email header\tabularnewline
 \hline 
  & Total Number of words & Number of words in the email body & Integer & Calculate the number of words in the email body\tabularnewline
 \hline 
- & Email Subject {[}1{]} {[}2{]} {[}9{]} & Subject of the email & String & Obtained directly from the email header\tabularnewline
+ & Email Subject \cite{Carmona2011} \cite{RON04} \cite{MANUEL11} & Subject of the email & String & Obtained directly from the email header\tabularnewline
 \hline 
-Receiver & Receiver Username {[}1{]} {[}9{]} & Name of receiver & String & Obtained directly from email header\tabularnewline
+Receiver & Receiver Username \cite{Carmona2011} \cite{MANUEL11} & Name of receiver & String & Obtained directly from email header\tabularnewline
 \hline 
- & Number of receivers {[}1{]} {[}9{]} & Number of email receivers & Integer & Count the number of receivers obtained from email header\tabularnewline
+ & Number of receivers \cite{Carmona2011} \cite{MANUEL11} & Number of email receivers & Integer & Count the number of receivers obtained from email header\tabularnewline
 \hline 
- & Number of CC {[}1{]} {[}9{]} & Number of CC recipients & Integer & Count the number of CC recipients obtained from email header\tabularnewline
+ & Number of CC \cite{Carmona2011} \cite{MANUEL11} & Number of CC recipients & Integer & Count the number of CC recipients obtained from email header\tabularnewline
 \hline 
- & Number of To {[}1{]} {[}9{]} & Number of CC & Integer & Count the number of receivers mentioned in the TO header\tabularnewline
+ & Number of To \cite{Carmona2011} \cite{MANUEL11} & Number of CC & Integer & Count the number of receivers mentioned in the TO header\tabularnewline
 \hline 
- & Domain of receiver {[}1{]} {[}9{]} & Mail Service Provider(s) for the receiver(s) & String & Obtained directly from email header\tabularnewline
+ & Domain of receiver \cite{Carmona2011} \cite{MANUEL11} & Mail Service Provider(s) for the receiver(s) & String & Obtained directly from email header\tabularnewline
 \hline 
-Attachment & Number of attachments {[}1{]} {[}9{]} & Number of attached files in the email  & Integer & Count the number of attachments obtained from the IMAP interface\tabularnewline
+Attachment & Number of attachments \cite{Carmona2011} \cite{MANUEL11} & Number of attached files in the email  & Integer & Count the number of attachments obtained from the IMAP interface\tabularnewline
 \hline 
- &  Attachment  type {[}1{]} {[}9{]} & Type of attachment & String & 	Has an attachment {[}1{]} {[}9{]}	Flag to denote whether the email
+ &  Attachment  type \cite{Carmona2011} \cite{MANUEL11} & Type of attachment & String & 	Has an attachment \cite{Carmona2011} \cite{MANUEL11}	Flag to denote whether the email
 has an attachment	Boolean 	If the number of attachment is zero, return
 false, else return true
 \tabularnewline
