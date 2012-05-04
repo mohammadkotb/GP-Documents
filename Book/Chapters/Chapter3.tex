@@ -66,62 +66,62 @@ of emails into folders)}
 \hline 
 Category & Feature & Description & Values & Source (preparation)\tabularnewline
 \hline
-\hline 
+\hline
 Email & Email ID \cite{Anatomy00} & Identifier for the email message & Long & System maintained primary key\tabularnewline
-\hline 
+\cline{2-5}
  & Domain of sender \cite{Carmona2011} \cite{MANUEL11} & Mail Service Provider (gmail.com, hotmail.com, ..etc) & String & Obtained from the sender's email, by taking the substring after the
 '@' character\tabularnewline
-\hline 
+\cline{2-5}
  & Language \cite{Carmona2011} \cite{MANUEL11} & Dominant language in the email body & String & Use a special module to detect the language type of the email body\tabularnewline
-\hline 
+\cline{2-5}
  & Email Sender \cite{Carmona2011} \cite{RON04} \cite{Anatomy00} \cite{MANUEL11} & Email address of the sender & String & Obtained directly from the email header\tabularnewline
-\hline 
+\cline{2-5}
  & Content Type \cite{Anatomy00} & Content type  & String & Obtained directly from the email header\tabularnewline
-\hline 
+\cline{2-5}
  & Email Date \cite{KIRI2004} \cite{Anatomy00} & Date of sending the email represented as the number of milliseconds
 since January 1, 1970, 00:00:00 GMT & Long & The date is obtained directly from the email header and then transformed
 to the long representation\tabularnewline
-\hline 
+\cline{2-5}
  & MIME Version \cite{Anatomy00} & MIME is an internet standard to extend the format of the email to
 support non-ASCII data & Integer & Obtained directly from the email header\tabularnewline
-\hline 
+\cline{2-5}
  & Bcc \cite{Carmona2011} \cite{RON04} \cite{MANUEL11} & List of email receivers as Bcc & Each recipient is represented as a boolean attribute in the feature
 tuple. & Obtained directly from the email header \tabularnewline
-\hline 
+\cline{2-5}
  & Number of punctuation Letters \cite{Carmona2011} \cite{MANUEL11} & Number of punctuation characters in the body & Integer & Count the number of punctuation letters in the email body\tabularnewline
-\hline 
+\cline{2-5}
  & Is distribution List \cite{Carmona2011} \cite{MANUEL11} & Flag to indicate whether the client received this email from a group/distribution
 list or not & Boolean & Obtained directly from email header\tabularnewline
-\hline 
+\cline{2-5}
  & Email Signature \cite{MANUEL11} & Signature of the email sender, at the end of the email & String & The signature is extracted from email body\tabularnewline
-\hline 
+\cline{2-5}
  & Wordgram Frequency \cite{Carmona2011} \cite{RON04} \cite{MANUEL11} & Email Wordgram Frequency & Integer & Count the number of wordgrams in the email\tabularnewline
-\hline 
+\cline{2-5}
  & Subject Length \cite{Carmona2011} \cite{MANUEL11} & Length of the email subject & Integer & Calculate the size of the subject string\tabularnewline
-\hline 
+\cline{2-5}
  & Percentage of capital letters \cite{Carmona2011} \cite{MANUEL11} & Percentage of the capital letters to the letters in the email body & Double & Count the number of capital letters and divide it by the sum of the
 sizes of all ASCII words in the email body\tabularnewline
-\hline 
+\cline{2-5}
  & Body Length \cite{Carmona2011} \cite{MANUEL11} & Size of the email body & Integer & Calculate the size of the body string\tabularnewline
-\hline 
+\cline{2-5}
  & Sender Username \cite{Carmona2011} \cite{MANUEL11} & Name of Sender & String & Obtained directly from email header\tabularnewline
-\hline 
+\cline{2-5}
  & Total Number of words & Number of words in the email body & Integer & Calculate the number of words in the email body\tabularnewline
-\hline 
+\cline{2-5}
  & Email Subject \cite{Carmona2011} \cite{RON04} \cite{MANUEL11} & Subject of the email & String & Obtained directly from the email header\tabularnewline
 \hline 
 Receiver & Receiver Username \cite{Carmona2011} \cite{MANUEL11} & Name of receiver & String & Obtained directly from email header\tabularnewline
-\hline 
+\cline{2-5}
  & Number of receivers \cite{Carmona2011} \cite{MANUEL11} & Number of email receivers & Integer & Count the number of receivers obtained from email header\tabularnewline
-\hline 
+\cline{2-5}
  & Number of CC \cite{Carmona2011} \cite{MANUEL11} & Number of CC recipients & Integer & Count the number of CC recipients obtained from email header\tabularnewline
-\hline 
+\cline{2-5}
  & Number of To \cite{Carmona2011} \cite{MANUEL11} & Number of CC & Integer & Count the number of receivers mentioned in the TO header\tabularnewline
-\hline 
+\cline{2-5}
  & Domain of receiver \cite{Carmona2011} \cite{MANUEL11} & Mail Service Provider(s) for the receiver(s) & String & Obtained directly from email header\tabularnewline
 \hline 
 Attachment & Number of attachments \cite{Carmona2011} \cite{MANUEL11} & Number of attached files in the email  & Integer & Count the number of attachments obtained from the IMAP interface\tabularnewline
-\hline 
+\cline{2-5}
  &  Attachment  type \cite{Carmona2011} \cite{MANUEL11} & Type of attachment & String & 	Has an attachment \cite{Carmona2011} \cite{MANUEL11}	Flag to denote whether the email
 has an attachment	Boolean 	If the number of attachment is zero, return
 false, else return true
