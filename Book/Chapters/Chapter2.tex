@@ -70,12 +70,14 @@ At this stage new effective method for managing information in email, reducing e
 
 In the 80s the most popular approach (at least in operational settings) for the
 creation of automatic document classiﬁers consisted in manually building, by means
-of knowledge engineering (KE) techniques, an expert system capable of taking Text Categorization (TC) decisions. Such an expert system would typically consist of a set of manually deﬁned logical rules.
+of knowledge engineering (KE) techniques, an expert system capable of taking
+Text Categorization (TC) decisions. Such an expert system would typically
+consist of a set of manually defined logical rules.
 
 Since the early 90s, the Machine Learning (ML) approach to TC has gained popularity and has eventually become the dominant one. In ML terminology, the classification problem is an activity of supervised learning, since the learning process is 'supervised' by the knowledge of
 the categories and of the training instances that belong to them.
 
-The advantages of the ML approach over the KE approach are evident. The engineering eﬀort goes towards the construction not of a classiﬁer, but of an automatic builder of classiﬁers (the learner ). \cite{Sebastiani2002}
+The advantages of the ML approach over the KE approach are evident. The engineering effort goes towards the construction not of a classiﬁer, but of an automatic builder of classiﬁers (the learner ). \cite{Sebastiani2002}
 
 \subsection{Training Set, Test Set, and Validation Set}
 The ML approach relies on the availability of an initial corpus = \{d$_{1}$, . . . , d$_{|\Omega|}$\} $\subset$ D of documents preclassified under C = \{c$_{1}$, . . . , c$_{|C|}$\}. That is, the values of the total function $\theta$ : D X C $\rightarrow$ \{T, F\} are known for every pair $\langle$ d$_{j}$ , c$_{i}$ $\rangle$ $\in$   $\Omega$ X C. A document d$_{j}$ is a positive example of c$_{i}$ if (d$_{j}$ , c$_{i}$) = T , a negative example of c$_{i}$ if
@@ -112,7 +114,7 @@ The following subsection represents the different data sets used  in different r
 
 \section{Construction of Text Classifier}
 The construction of text classifiers has been tackled in a variety of ways.
-In this section we will deal only with the methods that have been most popular in text classification. We start by discussing the general form that a text classifier has.  In subsections 2.5.1 to 2.5.3 we discuss number of approaches that have been applied in the text classification literature. In general we will assume. The presentation of the algorithms will focus on the methods for classifier learning rather than on the effectiveness and efficiency of the classifiers built by means of them.\cite{Sebastiani2002}
+In this section we will deal only with the methods that have been most popular in text classification. We start by discussing the general form that a text classifier has.  In subsections 2.5.1 to 2.5.3 we discuss number of approaches that have been applied in the text classification literature. In general we will assume the presentation of the algorithms will focus on the methods for classifier learning rather than on the effectiveness and efficiency of the classifiers built by means of them.\cite{Sebastiani2002}
 
 \subsection{Probabilistic classifiers}
 The construction of a ranking classifier for category c$_{i}$ $\in$ C usually
