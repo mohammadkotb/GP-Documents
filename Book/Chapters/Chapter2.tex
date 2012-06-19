@@ -1,0 +1,352 @@
+% Chapter 2
+\newenvironment{my_itemize}
+{\begin{itemize}
+  \setlength{\itemsep}{0cm}
+  \setlength{\parskip}{0cm}}
+{\end{itemize}}
+\newenvironment{my_enumerate}
+{\begin{enumerate}
+  \setlength{\itemsep}{0cm}
+  \setlength{\parskip}{0cm}}
+{\end{enumerate}}
+
+\chapter{Email Classification and Related Work} % Main chapter title
+
+\label{Chapter2} % For referencing the chapter elsewhere, use \ref{Chapter2} 
+
+\lhead{Chapter 2. \emph{Email Classification and Related Work}} % This is for the header on each page - perhaps a shortened title
+
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+In chapter 1, a general description of the problem was presented, the motivation to develop Smart Email, and the scope of work were introduced.
+
+In this chapter, a background about text and email classification is introduced in
+sections 2.2. In section 2.3, applications of email categorization is presented. The machine learning approach for text classification is discussed in section 2.4. In section 2.5, construction of text classifier and different types of classifiers are presented. In section 2.6 related work to Smart Email is presented with features of each. Then, the need to
+extend related work is explained in section 2.7.
+
+%==============================================================================
+
+\section{Machine Learning in Automated Text Categorization}
+\subsection{Definition of Text Categorization}
+Text categorization is the task of assigning a Boolean value to each pair $\langle$ d$_{j}$,c$_{i}$ $\rangle$ $\in$ D X C,  where D is a domain of documents and C = \{c$_{1}$, . . . , c $_{|C|}$\} is a set of predefined categories. A value of T assigned to $\langle$ d$_{j}$,c$_{i}$ $\rangle$ indicates a decision to file d$_{j}$ under c$_{i}$, while a value of F indicates a decision not to file d$_{j}$ under c$_{i}$. More formally, the task is to approximate the unknown target function $\theta$ : D ×C $\rightarrow$ \{T, F\} (that describes how documents ought to be classified) by means of a function $\phi$ : D × C $\rightarrow$ \{T, F\} called the classifier (aka rule, or hypothesis, or model ) such that $\theta$ and $\phi$ coincide as much as possible.\cite{Sebastiani2002}
+
+\subsection{Single-label vs Multi-label Text Categorization}
+Classification is a very important topic within supervised learning field. Although the most popular task for classification usually deals with single-label datasets, where every example
+is associated with a single label $\lambda$ from a set of disjoint labels L, the multi-label datasets are emerging and gaining interest due to their increasing application to real problems. Multilabel datasets are used when the examples are associated with a set of labels Y $\subseteq$ L, as occurs with email classification, image annotation, or genomics.
+
+Two main tasks can be defined when learning from multilabel
+data: 
+\begin{itemize}
+\item Multi-label classification (MLC) that returns a subset of labels to be associated with a given example (it can be considered as a bipartition of the label set considering relevant and irrelevant elements);
+\item label ranking (LR) that returns an ordering of the labels according to their relation with the example. \cite{Carmona2011}
+\end{itemize}
+
+\subsection{Category Pivoted vs Document Pivoted Text Categorization}
+There are two different ways of using a text classifier. Given d$_{j}$ $\in$ D, we might want
+to find all the c$_{i}$ $\in$ C under which it should be filed (document-pivoted categorization
+– DPC); alternatively, given c$_{i}$ $\in$ C, we might want to find all the d$_{j}$ $\in$ D that should be filed under it (category-pivoted categorization – CPC).
+DPC is thus suitable when documents become available at different moments in time, e.g. in filtering e-mail. CPC is instead suitable when: 
+\begin{itemize}
+\item a new category c$_{|C|+1}$ may be added to an existing set C = \{c$_{1}$, . . . , c$_{|C|}$\} after a number of documents have already been classified under C;
+\item these documents need to be reconsidered for classification under c$_{|C|+1}$.
+\end{itemize}. DPC is used more often than CPC, as the former situation is more common than the latter. \cite{Sebastiani2002}
+
+\section{Applications of Email Categorization}
+\subsection{Spam Detection}
+Spam remains a serious problem today because it continues to be a very profitable business for spammers. Spam takes on various forms from adult content, selling products/services, pharmaceuticals to stock promotions, job offers, etc.
+
+Applying machine learning techniques for spam email detections plays a major role in protecting end users from spam email messages.\cite{peifeng2007}
+
+\subsection{Email Organization}
+Email has been an efficient and popular communication mechanism as the number of
+Internet users’ increases. Therefore, email management has become an important and growing problem for individuals and organizations because it is prone to misuse. One of the problems that are most paramount is disordered email message, congested and un-structured emails in mail boxes.
+
+It may be very hard to find archived email message, search for previous emails with specified contents or features when the mails are not well structured and organized.
+
+At this stage new effective method for managing information in email, reducing email overloads is developed by classifying emails based on important words. \cite{taiwo2007}
+
+\section{The Machine Learning Approach for Text Classification}
+
+In the 80s the most popular approach (at least in operational settings) for the
+creation of automatic document classiﬁers consisted in manually building, by means
+of knowledge engineering (KE) techniques, an expert system capable of taking Text Categorization (TC) decisions. Such an expert system would typically consist of a set of manually deﬁned logical rules.
+
+Since the early 90s, the Machine Learning (ML) approach to TC has gained popularity and has eventually become the dominant one. In ML terminology, the classification problem is an activity of supervised learning, since the learning process is 'supervised' by the knowledge of
+the categories and of the training instances that belong to them.
+
+The advantages of the ML approach over the KE approach are evident. The engineering eﬀort goes towards the construction not of a classiﬁer, but of an automatic builder of classiﬁers (the learner ). \cite{Sebastiani2002}
+
+\subsection{Training Set, Test Set, and Validation Set}
+The ML approach relies on the availability of an initial corpus = \{d$_{1}$, . . . , d$_{|\Omega|}$\} $\subset$ D of documents preclassified under C = \{c$_{1}$, . . . , c$_{|C|}$\}. That is, the values of the total function $\theta$ : D X C $\rightarrow$ \{T, F\} are known for every pair $\langle$ d$_{j}$ , c$_{i}$ $\rangle$ $\in$   $\Omega$ X C. A document d$_{j}$ is a positive example of c$_{i}$ if (d$_{j}$ , c$_{i}$) = T , a negative example of c$_{i}$ if
+(d$_{j}$ , c$_{i}$) = F.
+
+The following subsection represents the different data sets used  in different research papers for email classification:
+
+\subsubsection{Datasets used in Email Classification}
+\subparagraph{Enron Dataset}
+    \begin{my_itemize}
+        \item Automatic Categorization of Email into Folders \cite{RON04}
+        \item An Object Oriented Email Clustering Model Using  Weighted Similarities 
+  between Email Attributes \cite{NARESH10}
+        \item Using GNUsmail to Compare Data Stream Mining Methods \cite{JOSE11}
+    \end{my_itemize}
+\subparagraph{SRI Dataset}
+    \begin{my_itemize}
+        \item Automatic Categorization of Email into Folders \cite{RON04}
+    \end{my_itemize}
+\subparagraph{Pine Dataset}
+    \begin{my_itemize}
+        \item Email classification for contact centers \cite{ANI03}
+    \end{my_itemize}
+\subparagraph{Private Dataset}
+    \begin{my_itemize}
+        \item Enterprise Email Classification Based on Social Network Features \cite{MIN11}
+        \item E-Classifier: A Bi-Lingual Email Classification System \cite{NOUF08} 
+        \item Automatically tagging email by leveraging other users folders \cite{YEHUDA11}
+    \end{my_itemize}
+\subparagraph{Public Pua}
+    \begin{my_itemize}
+        \item Email Categorization Using Multi-Stage Classification Technique \cite{MD07}
+    \end{my_itemize}
+
+\section{Construction of Text Classifier}
+The construction of text classifiers has been tackled in a variety of ways.
+In this section we will deal only with the methods that have been most popular in text classification. We start by discussing the general form that a text classifier has.  In subsections 2.5.1 to 2.5.3 we discuss number of approaches that have been applied in the text classification literature. In general we will assume. The presentation of the algorithms will focus on the methods for classifier learning rather than on the effectiveness and efficiency of the classifiers built by means of them.\cite{Sebastiani2002}
+
+\subsection{Probabilistic classifiers}
+The construction of a ranking classifier for category c$_{i}$ $\in$ C usually
+consists in the definition of a function CSV$_{i}$ : D $\rightarrow$ [0, 1] that, given a document d$_{j}$ , returns a categorization status value for it, i.e. a number between 0 and 1 that, roughly speaking, represents the evidence for the fact that d$_{j}$ $\in$ c$_{i}$.
+
+Probabilistic classifiers view CSV$_{i}$(d$_{j}$) in terms of $P(c_{i} | d_{j})$, i.e. the probability that a document d$_{j}$ belongs to c$_{i}$, and compute this probability by an application of Bayes’ theorem, given by \[ P(c_{i}|d_{j}) = \frac{P(c_{i})P(d_{j}|c_{i})}{P(d_{j})} \]
+
+In order to alleviate this problem it is common to make the assumption that any two coordinates of the document vector are, when viewed as random variables, statistically independent of each other; this independence assumption is encoded by the equation
+\[ P(d_{j}|c_{i}) = \prod_{k=1}^{|\tau|} P(w_{kj}|c_{i}) \]
+
+Probabilistic classifiers that use this assumption are called Naive Bayes classifiers, and account for most of the probabilistic approaches to TC in the literature.
+
+\subsection{Building classifiers by support vector machines}
+The support vector machine (SVM) method has been introduced in TC by Joachims [1998, 1999] and subsequently used in [Drucker et al. 1999; Dumais et al. 1998; Du- mais and Chen 2000; Klinkenberg and Joachims 2000; Taira and Haruno 1999;
+
+Yang and Liu 1999]. In geometrical terms, it may be seen as the attempt to
+find, among all the surfaces $\sigma 1$,$ \sigma 2$, ... in $|T|$ -dimensional
+space that separate the positive from the negative training examples (decision
+        surfaces), the $\sigma i$ that separates the positives from the negatives by the widest possible margin, i.e. such that the separation property is invariant with respect to the widest possible traslation of $\sigma i$ .
+
+This idea is best understood in the case in which the positives and the
+negatives are linearly separable, in which case the decision surfaces are
+($|T|$-1)-hyperplanes.
+
+In the 2-dimensional case , various lines may be chosen as decision surfaces. The SVM method chooses the middle element from the “widest” set of parallel lines, i.e. from the set in which the maximum distance between two elements in the set is highest. It is noteworthy that this “best” decision surface is determined by only a small set of training examples, called the support vectors.
+
+\subsection{On-line Methods}
+Methods for learning linear classifiers are often partitioned in two broad classes, batch methods and on-line methods.
+
+Batch methods build a classifier by analysing the training set all at once. On-line (aka incremental) methods build a classifier soon after examining the first training document, and incrementally refine it as they examine new ones. This may be an advantage in the applications in which the 'meaning' of the category may change in time, as e.g. in adaptive filtering. This is also suitable for applications (e.g. semi-automated classification, adaptive filtering) in which we may expect the user of a classifier to provide feedback on how test documents have been classified, as in this case further training may be performed during the operating phase by exploiting user feedback.
+
+\section{Related Work}
+
+\subsection{POPFile}
+POPFile is a free, open source, cross-platform mail filter originally written in Perl by John Graham-Cumming and maintained by a team of volunteers. It uses a naive Bayes classifier to filter mail. This allows the filter to "learn" and classify mail according to the user's preferences. Typically it is used to filter spam mail. It can also be used to sort mail into other user defined "buckets" or categories - for example, the user may define a bucket into which work email is sorted.
+
+The program works in several different modes. In the most popular mode, it sets itself up as a proxy between the email client and the POP3 server. As mail is downloaded via POP3, the filter identifies and classifies mail and makes a user defined modification to the subject line, appending the name of the appropriate bucket. The user then sets up rules in the mail client to sort the mail based on the subject line modification. An HTML based interface can be used to instruct POPFile, allowing users to correct errors in classifications and thus train the system to be sensitive to the user's specific requirements.
+
+As an alternative to the subject-line modification (or as a supplement to it), the system can also be configured to use custom mail headers instead.
+
+In another possible mode, POPFile can work as an IMAP client that monitors an IMAP server for incoming mail and also for messages moved by the user. Incoming emails are categorized and then immediately moved to the folder corresponding to the categorization. To train POPFile in this mode, the user only needs to move the message to the correct folder, i.e. to the folder where POPFile should have moved the message.
+
+\subsection{Gmail Priority Inbox}
+Gmail priority inbox is an algorithmic-based filtering system that predicts which messages are most important to the recipient and displays them atop the inbox queue.
+
+Gmail uses a variety of signals to identify important email, including which messages the user opens and which messages he replies to.
+
+\subsection{Classification according to the different learning algorithms used in different 
+papers}
+The following table classifies some recent research papers in the field of email classification according to the different learning algorithms for email classification.
+\begin{center}
+\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+\hline
+\multicolumn{6}{|c|}{Learning Algorithm} \\
+\hline
+SVM & Na\"{\i}ve Bayes & Neural Networks & Max. Entropy / Winnow & Nnge / Hoeffing Trees & Graph Mining \\ \hline
+Email Classification with Co-training \cite{SVETLANA01} &
+Email Classification with Co-training \cite{SVETLANA01} &
+Email Classification: Solution with Back Propagation Technique \cite{mous05} & 
+Automatic Categorization of Emails into Folders \cite{RON04} &
+Using GNUsmail to compare Data Stream Mining Methods for On-line Email Classification \cite{JOSE11} &
+A graph Based Approach for Multi-Folder Email Classification \cite{sift02} \\ \hline
+
+Automatic Categorization of Emails into Folders \cite{RON04} &
+Automatic Categorization of Emails into Folders \cite{RON04} &
+Email Classification Using Semantic Feature Space \cite{YUN08} & 
+&
+& \\ \hline
+\end{tabular}
+\end{center}
+\newpage
+
+\subsection{Classification according to the different learning capabilities}
+The following table classifies some recent research papers in the field of email classification according to the different learning capabilities (on-line or off-line) for email classification.
+
+\begin{center}
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\multicolumn{2}{|c|}{Learning Capability} \\
+\hline
+On-line Learning & Off-Line Learning 
+\\ \hline
+Using GNUsmail to Compare Data Stream Mining Methods \cite{JOSE11} &
+An Object Oriented Email Clustering Model Using  Weighted Similarities 
+between Email Attributes \cite{NARESH10}
+\\ \hline
+
+GNUsmail: Open Framework for On-line Email Classification \cite{MANUEL11}
+& Content Based Email Classification System by applying Conceptual Maps \cite{BASKARAN09}
+\\ \hline
+
+& E-Classifier: A Bi-Lingual Email Classification System \cite{NOUF08}
+\\ \hline
+
+& Email classification for contact centers \cite{ANI03}
+\\ \hline
+
+& 
+Automatic Categorization of Email into Folders \cite{RON04}
+
+\\ \hline
+
+\end{tabular}
+\end{center}
+
+
+
+%================================= FEATURES
+\subsection{Different features used for email classification}
+This section summarizes the different features used for email classification in different research papers
+    \subparagraph{Automatic Categorization of Email into Folders \cite{RON04}}
+	\begin{my_itemize}
+		\item bag-of-words document representation: messages are represented as vectors of word counts.
+		\item Words are downcased.
+		\item 100 most frequent words and words that appear only once in the training set are removed, and the remaining words are counted in each message to compose a vector.
+		\item In future work, richer representations will be considered, including the following:
+			\begin{itemize}
+				\item Different sections of each email can be treated differently. For example, the system could create distinct features for words appearing in the header, body, signature, attachments, etc.
+				\item Named entities may be highly relevant features.
+			\end{itemize}
+	\end{my_itemize}
+
+    \subparagraph{Email Classifications For Contact Centers \cite{ANI03}}
+		\begin{my_itemize}
+			\item Feature sets used for experiments included:
+				\begin{itemize}
+					\item Non-inflected words.
+					\item Noun phrases.
+					\item Verb phrases.
+					\item Punctuation.
+					\item Length of the Email.
+					\item Dictionaries.
+				\end{itemize}
+		\end{my_itemize}
+
+	\subparagraph{Using GNUsmail to Compare Data Stream Mining Methods for On-line Email \cite{JOSE11}}
+		\begin{my_itemize}
+			\item The main feature of the text preprocessing module is a multi-layer filter structure, responsible for performing feature extraction tasks.
+			\item The Inbox and Sent folders are skipped in the learning process because they can be thought of as non-specific folders.
+			\item Every mail belonging to any other folder (that is, to any topical folder ) goes through a pipeline of linguistic operators which extract relevant features from it.
+			\item As the number of possible features is prohibitively large, only the most relevant ones are selected.
+		\end{my_itemize}
+   
+	\subparagraph{Content Based Email Classification System by applying Conceptual Maps \cite{BASKARAN09}}
+		\begin{my_itemize}
+			\item Unstructured text: consists of fields like the subject and body.
+			\item Categorical text: includes fields such as "to" and "from".
+			\item Numeric data: includes such features as the message size, number of
+recipients and counts of particular characters.
+		\end{my_itemize}
+
+\newpage
+\subsection{Chronological sort of classification papers}
+\subparagraph{2011}
+\begin{my_itemize}
+  \item Using GNUsmail to Compare Data Stream Mining Methods for On-line Email Classification \cite{JOSE11}
+  \item Enterprise Email Classification Based on Social Network Features \cite{MIN11}
+  \item Automatically tagging email by leveraging other users folders \cite{YEHUDA11}
+\end{my_itemize}
+
+\subparagraph{2010}
+\begin{my_itemize}
+  \item An Object Oriented Email Clustering Model Using Weighted Similarities between Emails Attributes \cite{NARESH10}
+  \item A Graph-Based Approach for Multi-Folder Email Classification \cite{sift02}
+\end{my_itemize}
+
+\subparagraph{2009}
+\begin{my_itemize}
+  \item Content Based Email Classification System by applying Conceptual Maps \cite{BASKARAN09}
+  \item Email Classification: Solution with Back Propagation Technique \cite{mous05}
+\end{my_itemize}
+
+\subparagraph{2008}
+\begin{my_itemize}
+  \item A new approach to Email classification using Concept Vector Space Model \cite{CHAO08}
+  \item E-Classifier: A Bi-Lingual Email Classification System \cite{NOUF08}
+  \item Ontology based classification and categorization of email \cite{BALAKUMAR08}
+  \item Applying Machine learning Algorithms for Email Management \cite{mous03}
+\end{my_itemize}
+
+\subparagraph{2007}
+\begin{my_itemize}
+  \item Email Categorization Using Multi-Stage Classification Technique \cite{MD07}
+\end{my_itemize}
+
+\subparagraph{2005}
+\begin{my_itemize}
+  \item An Email Classification Model Based on Rough Set Theory \cite{WENQING05}
+  \item eMailSift: Email Classification Based on Structure and Content \cite{sift01}
+\end{my_itemize}
+
+\subparagraph{2004}
+\begin{my_itemize}
+  \item Automatic Categorization of Email into Folders \cite{RON04}
+  \item Co-training with a Single Natural Feature Set Applied to Email Classification \cite{mous04}
+\end{my_itemize}
+
+\subparagraph{2003}
+\begin{my_itemize}
+  \item Email Classifications For Contact Centers \cite{ANI03}
+\end{my_itemize}
+
+
+\subsection{Conclusion}
+From the research papers related to email classification we conclude the following:
+\begin{my_itemize}
+    \item SVM Achieved the best results in most papers, but it is computationally expensive and has the hardest implementation.
+    \item The basic form of Na\"{\i}ve Bayes algorithm has the simplest implementation but has very low classification accuracy compared to other algorithms.
+    \item Online learning techniques are still under development, they are very hard to implement but characterized by their
+    ability to classify new coming email without rebuilding the model.
+    \item Offline learning techniques are used in most papers.
+    \item Enron dataset is the most commonly used.
+\end{my_itemize}
+
+In section 2.6 related work was introduced that tries to solve the problem, but most of them targets only enterprises which will not be the case in Smart Email.
+
+%=======================================================================================
+\section{Need To Extend Related Work}
+\begin{my_itemize}
+    \item Although the problem of email categorization has been studied several
+    times in research literature , there are no widely used convenient
+    applications implemented yet.
+    \item Most available applications are client side which might not be
+    suitable for most of the users' end systems due to the expensive calculations
+    needed by the classifier algorithms.
+    \item Most available applications doesn't offer to the user the ability to 
+    register with several email accounts.
+    \item Smart Email offers a web-service for email end users to register with
+    one or more account and filter emails according to different criteria and
+    it is not only limited to spam detection.
+\end{my_itemize}
+
+%=======================================================================================
+\section{Conclusion}
+In this chapter, text and email classification were explained and many related techniques and technologies were discussed. Also related applications to Smart Email were introduced.
+
+In the next chapter, the main features used for email classifier will be introduced. These features are based on the related work presented in this chapter.

@@ -68,6 +68,8 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 \usepackage{vmargin}
+\usepackage{pdfpages} 
+\usepackage[table]{xcolor}
 %----------------------------------------------------------------------------------------
 %	MARGINS
 %----------------------------------------------------------------------------------------
@@ -181,7 +183,7 @@
 
 \thesistitle{Smart Email: Applying Machine Learning Algorithms for Email Classification} % Your thesis title - this is used in the title and abstract
 %-------------------------------------------------  
-\supervisor{Prof. Dr. Mohamed Abou-gabal, Dr. Mustafa ElNainay} % You supervisor's name - this is used in the title page
+\supervisor{Prof. Dr. Mohamed S. Abougabal, Dr. Mustafa Y. ElNainay} % You supervisor's name - this is used in the title page
 %-------------------------------------------------   
 \examiner{} % Your examiner's name - this is not currently used anywhere in the template, cite it with \examname if you want it
 %-------------------------------------------------   
