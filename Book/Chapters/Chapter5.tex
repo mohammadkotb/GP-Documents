@@ -12,39 +12,33 @@
 \lhead{Chapter 5. \emph{Classifier Features}} % This is for the header on each page - perhaps a shortened title
 
 \section{Introduction}
-In Chapter 4, the project conceptualization was introduced as well as the proposed workflow and business requirements.
+In Chapter 4, the project conceptualization was introduced as well as the 
+proposed workflow and business requirements.
 
-In this chapter, system architecture, main components and their functionalities, and how diﬀerent components interact are to be discussed in section 5.3 . In section 5.4, the module interface for each component will be introduced.
+In this chapter, system architecture, main components and their functionalities, 
+and how different components interaction is to be discussed in section 5.3. 
+In section 5.4, the module interface for each component will be introduced.
 %----------------------------------------------------------------------------------------
 \section{Overview}
 
 \subsection{Purpose}
-This chapter shows how the smart email software system will be structured to satisfy the requirements identiﬁed in the conceptual design document and software requirements speciﬁcation. It is a translation of requirements into a description of the software
-structure, software components, interfaces, and data necessary for the implementation phase.
+This chapter shows how the smart email software system will be 
+structured to satisfy the requirements identified in the conceptual 
+design document and software requirements specification. It is 
+a translation of requirements into a description of the software
+structure, software components, interfaces, and data necessary for 
+the implementation phase.
 
 \subsection{Scope}
-Smart email will provide automated email classification and foldering service for email clients. This chapter describes how the system will be divided into modules and the design details for each module.
+Smart email will provide automated email classification and foldering 
+service for email clients. This chapter describes how the system will 
+be divided into modules and the design details for each module.
 
-\subsection{Definitions and acronyms}
-  \begin{my_desc}
-    \item[SDD] Software Design Description
-    \item[TBD] To Be Defined
-    \item[IMAP] Internet message access protocol
-    \item[WEKA] Collection of machine learning algorithms for solving data mining problems implemented in Java and open sourced under the GPL.
-    \item[MOA] Massive Online Analysis (MOA) is a software environment for implementing algorithms and running experiments for online learning from evolving data streams.
-  \end{my_desc}
-
-
-\section{References}
-  \begin{my_desc}
-\item[IEEE]  IEEE Std. 1016-1998 IEEE Recommended Practice for Software Design 
-Description.
-\item[D. Delaney] ``Document Templates For Student Projects in Software Engineering''
-National University of Irelan, 2002
-  \end{my_desc}
 
 \section{Decomposition description}
-This project is designed using an incremental approach. There are two primary  stages to the design development which consists of Phase 1 (Classification Module) and Phase 2 (Web Service Module).
+This project is designed using an incremental approach. There are two
+primary  stages to the design development which consists of Phase 1 
+(Classification Web Service Module) and Phase 2 (Email Monitoring Web Service Module).
 
 The classification module can be divided into three layers. The data layer will be 
 responsible for retrieving emails from file systems or using IMAP protocol. The 
@@ -59,19 +53,20 @@ diagram at the end of this chapter.
 \subsection{System decomposition}
 The system is divided into main modules as follows:
 \begin{my_itemize}
-\item Classification Module;
-\item Web Service Moudle.
+\item classification web service module;
+\item email monitoring web service moudle.
 \end{my_itemize}
 Each of these modules will be described in details in the upcoming subsections.
 
-\subsubsection{Classification Module}
+\subsubsection{Classification Web Service Module}
 
 \begin{my_itemize}
   \item ClassificationManager class
   \begin{my_desc}
     \item[Purpose] Used to manage and control the classification process flow
       with the dataset and classification algorithms.
-    \item[Functions] TBD
+% TODO
+%     \item[Functions] TBD
   \end{my_desc}
   \item PreprocessingManager class
   \begin{my_desc}
@@ -153,11 +148,39 @@ Each of these modules will be described in details in the upcoming subsections.
 
 \end{my_itemize}
 
-\subsubsection{Web Service Module}
-The web service module will be responsible for providing the clients with ability to classify their emails. The web service will be supported for Gmail mail servers as a first step. The detailed design for this module will be complemeted before the expected start date for this phase (The first of April).
+\subsubsection{Email Monitoring Web Service Module}
+
+Email Monitoring Web Service is a web service implemented in rails framework which integrates 
+with a classification web service for classification of emails. The web service monitors 
+users emails and sends every new email to the classification service through a rest API 
+which returns a response with the email label, the web service then applies  the label to the user’s email.
+
+\begin{itemize}
+ \item Features
+ \begin{itemize}
+    \item Users registrations.
+    \item Adding more than email account.
+    \item Continuous monitoring of emails accounts for new emails.
+    \item Providing statistics about the classification process.
+ \end{itemize}
+ \item Future Work
+  \begin{itemize}
+    \item Support providers other than Gmail: Yahoo, Hotmail, ...etc.
+    \item Classifying users into active and non-active ones based on 
+	  their email account activity to decrease the load and increase 
+	  the performance of the monitoring process.
+    \item Increasing performance and security.
+    \item Authenticating gmail accounts using Oauth.
+  \end{itemize}
+
+
+\end{itemize}
+
 
 \subsection{Data decomposition}
-The data layer is responsible for retrieving emails either from the file system or using the IMAP protocol. The enron data set will be used as the data source for training and testing the email classifier.
+The data layer is responsible for retrieving emails either from the file system or using 
+the IMAP protocol. The enron data set will be used as the data source for training and 
+testing the email classifier.
 
 \subsubsection{Data access object}
   \begin{my_desc}
@@ -180,7 +203,10 @@ The data layer is responsible for retrieving emails either from the file system 
 
 
 \section{Interface description}
-The interface description provides everything designers, programmers and testers need to know to correctly use the functions provided by the system entities. This description includes the details of external and internal interfaces not provided in the software requirements speciﬁcation.
+The interface description provides everything designers, programmers and 
+testers need to know to correctly use the functions provided by the system 
+entities. This description includes the details of external and internal 
+interfaces not provided in the software requirements specification.
 
 \subsection{Module interface}
 \subsubsection{Classification module interface}
@@ -227,8 +253,15 @@ The interface description provides everything designers, programmers and testers
 
 \end{my_itemize}
 
-\subsubsection{Web service moudle interface}
-TBD
+\subsubsection{Email Monitoring Web Service Moudle interface}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=12cm]{account_example.png}
+  \caption[Example for MVC in action handling a user request to view his account]{Example for MVC in action handling a user request to view his account}
+\end{figure}
+
+
 
 \section{Detailed design}
 
@@ -242,9 +275,13 @@ TBD
 
 
 
-
 \subsection{Web service module detailed design}
-TBD
+\begin{figure}
+  \centering
+  \includegraphics[width=15cm]{mvc2.png}
+  \caption[Smart Email MVC Design]{Smart Email MVC Design}
+\end{figure}
+
 
 \section{Conclusion}
 In this chapter, the system architecture was introduced and the abstract system design using was illustrated.

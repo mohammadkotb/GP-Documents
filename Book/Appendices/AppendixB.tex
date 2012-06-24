@@ -1,231 +1,81 @@
-% Appendix B
-\chapter{Summary for Email Summarization Research Papers} % Main appendix title
+% Appendix Template
 
-\label{AppendixB} % For referencing this appendix elsewhere, use \ref{AppendixA}
+\chapter{Technical Background for Email Monitoring Web Service} % Main appendix title
 
-\lhead{Appendix B. \emph{Email Summarization Papers Summary}} % This is for the header on each page - perhaps a shortened title
+\label{AppendixC} % Change X to a consecutive letter; for referencing this appendix elsewhere, use \ref{AppendixX}
 
-\subsubsection{Detection of question-answer pairs in email conversations \cite{LOKESH04}}
-
-\paragraph{Year} 2004
-\paragraph{Citations} 41
-
-\paragraph{Problem}
-\begin{my_itemize}
-  \item The sentence extraction summarization method can't be applied in all 
-	types of documents.
-  \item Using it in summarizing email threads is not efficient, as it is a very
-	special type of documents, as sentences and words are written relative 
-	to previous emails, so using sentence extraction will not be useful in this
-	case.
-  \item This paper is trying to solve this problem by extracting pairs of 
-	questions and answers to summarize email threads.
-\end{my_itemize}
-
-\paragraph{Conclusion}
-\begin{my_itemize}
-  \item Good approach to extract question-answer pairs in the email conversation 
-	in case of interrogative questions.
-  \item Declarative and rhetorical questions can't be detected such as 
-	``Please let  me know ...'', ``I was wondering if ...'', 
-	``If you could ..., that would be great''.
-  \item Future work is to investigate these types of questions.
-\end{my_itemize}
+\lhead{Appendix C. \emph{Technical Background for Email Monitoring Web Service}} % Change X to a consecutive letter; this is for the header on each page - perhaps a shortened title
 
 
+\section{Heroku Deployment Server}
+Heroku is a cloud application platform which provides a platform as a service for 
+building, deploying and running cloud applications. Deployment is done by pushing 
+to a git repo for continuous deployment.
 
-%=============================================================================================
+Also an addon named logentries integrated with heroku is used, this addon is a 
+complete log management system for  giving alerts when serious errors occured to 
+the application, logging all applications events and requests and this beside 
+the normal log management features such as Tail, Search, Visualization, and Notifications.
 
-\subsubsection{Using Question-Answer Pairs in Extractive Summarization of Email Conversations \cite{KATHLEEN07}}
+\section{Ruby on Rails Web Framework}
+\begin{itemize}
+ \item Ruby On Rails is an open source full stack web application framework the ruby 
+      programming language. Like many other frameworks, Rails uses the 
+      Model/View/Controller (MVC) architecture pattern to organize application 
+      programming which makes it easier to develop, maintain and deploy web applications.
+  \item Smart Email application uses Rails 3.2 and Ruby 1.9.2
+\end{itemize}
 
-\paragraph{Year} 2007
-\paragraph{Citations} 12
+\section{Database}
+\begin{itemize}
+ \item Production:
+  \begin{itemize}
+   \item PostgreSQL: it is a powerful open source object relational database system 
+      with architecture that have proven reliability, data integrity, and correctness. 
+      PostgreSQL runs on almost all major platforms including Linux, Windows and Mac OS.
+  \end{itemize}
+ \item Development:
+ \begin{itemize}
+  \item MySQL: it is the world’s most popular open source database because of it’s performance,
+      high reliability and ease of use. MySQL runs on more than 20 platforms including Linux, Windows and Mac OS.
+ \end{itemize}
+\end{itemize}
 
-\paragraph{Problem}
-\begin{my_itemize}
-  \item After 3 years from the previous paper, they thought for a new approach 
-	to make a hybrid solution by extractive summarization of email threads 
-	with automatically detected QA pairs.
-  \item This approach is better than extracting QA pairs only, as due to some 
-	statistics they made on their dataset that:
-  \begin{my_itemize}
-    \item 20\% of emails are question-answer exchange;
-    \item 40\% of all email threads involve question-answer exchange of some form.
-  \end{my_itemize}
-  \item Sentence extraction may be very useful if augmented with email specific 
-	features as dialogic structure.
-\end{my_itemize}
+\section{RESTful Web Service}
+REST is a style of software architecture for distributed systems which uses noun and verbs to describe 
+web pages. Rest describes six constraints applied to the architecture:
+\begin{itemize}
+ \item Client-Server: a uniform interface which separate server from client and accessed with HTTP Get, Post, Put, and Delete.
+ \item Stateless.
+ \item Cache-able.
+ \item Layered System.
+ \item Named Resources.
+ \item Hyperlinks.
+\end{itemize}
 
-\paragraph{Algorithms}
-\begin{my_itemize}
-  \item Extractive summarization:
-  \begin{my_itemize}
-    \item represent each sentence in the SEQA threadset with a feature vector 
-	  along with its binary classification, which represents wether or not a
-	  sentence should be in a summary;
-    \item features used are length, position in the document, TF-IDF scores, ...etc.
-  \end{my_itemize}
-  \item QA Pair detection:
-  \begin{my_itemize}
-    \item train a classifer on QA detection on the data corpus.
-  \end{my_itemize}
-  \item Integrating QA Pairs with Extractive summarization:
-  \begin{my_itemize}
-    \item 3 different approaches:
-    \begin{my_itemize}
-      \item SE+A: a sentence figures as an answer to a question asked earlier 
-	    in the thread as an additional feature in our machine learning-based 
-	    extractive summarization approach;
-      \item SE+QA: to add automatically detected answers to questions in 
-	    extractive summaries and add detected questions to answers in extractive 
-	    summaries not in the summaries;
-      \item QA+SE: start with automatically detected question-answer pair sentences 
-	    which are then augmented with extractive sentences that do not 
-	    appear already in the question-answer pair sentences.
-    \end{my_itemize}
-  \end{my_itemize}
-\end{my_itemize}
+Also REST have some advantages over SOAP:
+\begin{itemize}
+ \item Simpler.
+ \item Caching.
+ \item Easier state transitions with hyperlinks and no intermediate stubs as in SOAP i.e data goes directly from client to server.
+\end{itemize}
 
+\section{Resque-Redis Job Scheduler}
+\begin{itemize}
+ \item Redis is an open source, advanced key-value store which is often refers to as a data structure server.
+ \item Resque is a redis backed library for creating background jobs, placing these jobs in queues and 
+      later processing them. Resque queues are persistent, provide visibility to their content and 
+      store jobs as simple JSON packages.
+ \item Resque is used  in Smart Email to schedule the monitor job which monitors the users emails every 30 minutes. 
+\end{itemize}
 
-\paragraph{Datasets}
-\begin{my_itemize}
-  \item Corpus contains 300 email thread, each thread contains on average 3.25 email message.
-  \item Dataset was prepared manually concerning these points:
-  \begin{my_itemize}
-    \item write summaries of email threads of the corpus;
-    \item highlight and link QA pairs in the email thread
-    \begin{my_itemize}
-      \item Highlight only the questions that seek information (wether it is 
-	    interogative or declarative questions, with or without question mark, 
-	    but not rhetorical questions).
-      \item Link question with its answer if it was found in the same thread.
-    \end{my_itemize}
-  \end{my_itemize}
-  \item SEQA threadset is set of email threads containing QA pairs identified manually of size 44 email thread.
-\end{my_itemize}
-
-\paragraph{Results}
-\begin{my_itemize}
-  \item 14\% to 17\% improvement in the performance by integrating the QA pairs 
-	detection with extractive summarization compared to the human performance
-	for the datasets.
-\end{my_itemize}
-
-%=============================================================================================
-
-\subsubsection{Summarizing email conversations with clue words \cite{GIUSEPPE07}}
-
-\paragraph{Year} 2007
-\paragraph{Citations} 48
-
-\paragraph{Problem} 
-Proposing a new framework to summarize emails by capturing email conversations 
-and giving weights to sentences. Their algorithm allows the user to specify the size of the summary.
-
-\paragraph{Related Work}
-\begin{my_itemize}
-  \item Multi-Document summarization method.
-  \item Ripper classifier.
-  \item And more.
-\end{my_itemize}
-
-\paragraph{Algorithms}
-\begin{my_itemize}
-  \item Clue Word Summarizer (CWS).
-  \item Porter’s stemming algorithm.
-  \item MEAD Summarizer.
-\end{my_itemize}
-
-\paragraph{Dataset} Enron Dataset.
-
-\paragraph{Conclusion}
-This papers introduces the fragment quotation graph which represents the 
-conversation structure of the emails. This graph includes hidden emails and can 
-represent the conversation in more details than a simple threading structure.
-Based on the fragment quotation graph, a new summarization approach CWS has 
-been developed to select important sentences from an email conversation.
-
-\paragraph{Future Work}
-Improving the fragment quotation graph generation with more sophisticated linguistic
-analysis and also evaluating the algorithm with different datasets.
-
-
-%=============================================================================================
-
-\subsubsection{Combining Linguistic and Machine Learning Techniques for Email
-Summarization \cite{SMAR01}}
-
-\paragraph{Year} 2001
-\paragraph{Citations} 37
-
-\paragraph{Problem} 
-This paper shows that linguistic techniques along with machine learning can extract high quality noun phrases for the purpose of providing a summary of email messages. The paper describes a set of comparative experiments using several machine learning algorithms for the task of salient noun phrase extraction.
-
-\paragraph{Related Work}
-Machine learning has been successfully applied to different natural language tasks, including text summarization. Prior work in document summarization has been mostly based on sentence extraction. Kupiec et al. (1995) use machine learning for extracting the most important sentences of the document. But extractive summarization relies on the properties of source text that emails typically do not have: coherence, grammaticality, well defined structure. Berger and Mittal (2000) present a summarization system, named OCELOT that provides the gist of the web documents based on probabilistic models. Their approach is closed related with statistical machine translation.
-
-\paragraph{Algorithms}
-\begin{my_itemize}
-  \item Symbolic machine learning in conjunction with many NLP applications (syntactic and semantic parsing, POS tagging, text categorization, word sense disambiguation)
-  \item Rule Induction Classifiers
-  \item Decision Tree Classifiers
-\end{my_itemize}
-
-\paragraph{Conclusion}
-\begin{my_itemize}
-\item linguistic knowledge can enhance machine learning by evaluating the impact of linguistic filtering before applying the learning scheme.
-\item the modifiers of a noun phrase can be as semantically important as the head for the task of gisting.
-
-\end{my_itemize}
-
-\paragraph{Future Work}
-Performing a task-based evaluation of noun-phrases and n-gram representations for the document content to test usability.
-
-
-%=============================================================================================
-%=============================================================================================
-
-\subsubsection{Regression-Based Summarization of Email Conversations
- \cite{JAN09}}
-
-\paragraph{Year} 2009
-\paragraph{Citations} 4
-
-\paragraph{Problem} 
-This paper presents a regression-based machine learning approach to email thread summarization. The regression model is able to take advantage of multiple annotations for training purposes, in contrast to most work with binary classifiers. This paper also introduces a newly created and publicly available email corpus for summarization research.
-
-\paragraph{Data Set}
-\begin{my_itemize}
-\item BC3 corpus;
-\item Enron dataset.
-\end{my_itemize}
-
-\paragraph{Algorithms}
-\begin{my_itemize}
-  \item Bagging regression-based classifiers;
-  \item Gaussian Processes regression-based classifiers.
-\end{my_itemize}
-
-\paragraph{Conclusion}
-The paper shows that the best regression-based classifiers for email thread summarization perform better than binary classifiers because they preserve more information. In the comparison between different classifiers, the Bagging and Gaussian Processes have the highest weighted recall, but Bagging is more efficient. The results on our new dataset show that speech acts are a very useful feature if they can be generated with higher accuracy at the sentence level. Meta sentences and subjectivity were also shown to be useful features for email summarization.
-
-\subsection{Conclusion}
-\begin{my_itemize}
-    \item Email Classification 
-        \begin{my_itemize}
-            \item Emails differ from other documents due to the time factor, for example  the main topic of a user folder may drift with time which require including the time factor in the classification process.
-            \item Emails have their own structure (e.g from, to, subject .. etc), such structure can be used to enhance the classification accuracy.
-            \item GNUsmail framework can be used to improve learning performance. The most outstanding improvement is the reduction of time used to train the model, keeping or even getting better results in the rest of the measures.
-            \item Data preprocessing is a vital factor in the resulting classification accuracy.
-            \item Most of the papers assumed that each email has one category, however few papers proposed another approaches for multi-label classification.
-            \item Current online learning algorithm implementations have an important limitation that affects the learning process: learning attributes have to be fixed before beginning the induction of the algorithm. They need to know all the attributes, values, and classes before the learning itself, since it is not possible to start using a new attribute in the middle of the lifetime of a learning model. Future methods should support online addition of new features.
-            \item Graph mining is a relatively new trend in classification. It achived good result compared to Na\"{\i}ve Bayes, but it is more complicated than other algorithms.
-        \end{my_itemize}
-    \item Email Summarization
-        \begin{my_itemize}
-            \item Email summarization can't be applied on email messages, it must be applied on email threads to receive good results.
-            \item Short emails can't be summarized, hence a threshold will be calculated to summarize emails bigger than this threshold.
-            \item Extractive summarization can't be applied directly to email threads,as it is a special type of documents that contain dialogic structure, so a good approach is to try QA pairs detection and augment it with extractive summarization results.
-        \end{my_itemize}
-\end{my_itemize}
-%=============================================================================================
+\section{IMAP}
+\begin{itemize}
+ \item An application layer internet protocol that allows an email client to access emails on a remote mail server.
+ \item IMAP is used to access users email accounts in the classification web service and application web service.
+ \item IMAP-IDLE:
+ \begin{itemize}
+  \item IMAP feature which enables the email client connected to the mail server to be notified when a new email arrives.
+  \item It is used in Smart Email to monitor users emails to be able to send the email to the classification service as soon as the email arrives.
+ \end{itemize}
+\end{itemize}
