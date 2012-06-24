@@ -15,7 +15,22 @@ is a web service that provides automatic email categorization into
 user-defined folders based on machine learning and data mining
 classification techniques.
 
-A classification web service was built with REST API \cite{REST}
+A classification web service was built with REST API \cite{REST} that receives
+classification requests with the required email to be classified and returns
+the most suitable category for this mail.
+
+An Email monitoring web service was built as a client for the classification
+web service mentioned above. Users can register in this web servers to have
+their email accounts continuously monitored and their incoming emails automatically
+classified to the best category.
+
+A Google Chrome Browser \cite{CHROME} Extension was built as another example of a
+classification web service client. The Extension provides google chrome users
+with a graphical user interface that is integrated with gmail web interface.
+Using this extension , Users can send email classification requests on demand.
+The extension also detects manual classification done by the user to be sent
+for the classification web service as a feedback on the classifier to learn
+from the users classification pattern.
 %================================================
 \section{Future Work}
 
