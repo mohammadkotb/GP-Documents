@@ -157,6 +157,11 @@ Last Accessed 22 June 2012.
 \bibitem{CHROME}
 Last Accessed 25 June 2012.
 \newblock Google Chrome Browser.
-\newblock \url{www.google.com/chrome}.
+\newblock \url{http://www.google.com/chrome}.
+
+\bibitem{POPFILE}
+Last Accessed 25 June 2012.
+\newblock PopFile Application.
+\newblock \url{http://www.getpopfile.org}.
 
 \end{thebibliography}
