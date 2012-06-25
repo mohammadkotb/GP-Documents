@@ -1,0 +1,162 @@
+\begin{thebibliography}{10}
+
+\bibitem{RON04}
+Gary~Huang Ron~Bekkerman, Andrew~McCallum.
+\newblock Automatic categorization of email into folders: Benchmark experiments
+  on enron and sri corpora.
+\newblock 2004.
+
+\bibitem{ANI03}
+Amit~Bagga Ani~Nenkova.
+\newblock Email classification for contact centers.
+\newblock 2003.
+
+\bibitem{JOSE11}
+Jose del Campo-Avila Rafael Morales-Bueno Joao Gama Albert~Bifet Jose M.
+  Carmona-Cejudo, Manuel Baena-Garcia.
+\newblock Using gnusmail to compare data stream mining methods for on-line
+  email classification.
+\newblock 2011.
+
+\bibitem{BASKARAN09}
+S.~Baskaran.
+\newblock Content based email classification system by applying conceptual
+  maps.
+\newblock 2009.
+
+\bibitem{sift01}
+Kathleen~McKeown Lokesh~Shrestha.
+\newblock emailsift: Email classification based on structure and content.
+\newblock 2004.
+
+\bibitem{Sebastiani2002}
+F~Sebastiani.
+\newblock Machine learning in automated text categorization.
+\newblock 2002.
+
+\bibitem{Carmona2011}
+M.~; del Campo-Avila J. ; Morales-Bueno~R. Carmona-Cejudo, J.M. ; Baena-Garcia.
+\newblock Feature extraction for multi-label learning in the domain of email
+  classification.
+\newblock {\em Computational Intelligence and Data Mining (CIDM), IEEE}, 2011.
+
+\bibitem{peifeng2007}
+Jinhui~LI Peifeng~LI.
+\newblock An approach to email categorization with the me model.
+\newblock 2007.
+
+\bibitem{taiwo2007}
+Rinat~Khusainov Taiwo~Ayodele, Shikun~Zhou.
+\newblock Email classification: Solution with back propagation technique.
+\newblock 2007.
+
+\bibitem{NARESH10}
+Ashok~Bhansali Naresh Kumar~Nagwani.
+\newblock An object oriented email clustering model using weighted similarities
+  between emails attributes.
+\newblock 2010.
+
+\bibitem{MIN11}
+Meng-Feng Tsai Cheng-Hsien~Tang Min-Feng~Wang, Sie-Long~Jheng.
+\newblock Enterprise email classification based on social network features.
+\newblock 2011.
+
+\bibitem{NOUF08}
+Asma Al Zaid Mashael Al Duwais Mona Al Sheddi Nora Al khamees Nouf Al~Drees
+  Nouf Al~Fe'ar, Einas Al~Turki.
+\newblock E-classifier: A bi-lingual email classification system.
+\newblock 2008.
+
+\bibitem{YEHUDA11}
+Yoelle Maarek Roman~Sandler Yehuda~Koren, Edo~Liberty.
+\newblock Automatically tagging email by leveraging other users' folders.
+\newblock 2011.
+
+\bibitem{MD07}
+Wanlei~Zhou Md~Rafiqul~Islam.
+\newblock Email categorization using multi-stage classification technique.
+\newblock 2007.
+
+\bibitem{SVETLANA01}
+Stan~Matwin Svetlana~Kiritchenko.
+\newblock Email classification with co-training.
+\newblock 2001.
+
+\bibitem{mous05}
+Josiah~Poon Jason~Chan, Irena~Koprinska.
+\newblock Email classification: Solution with back propagation technique.
+\newblock 2009.
+
+\bibitem{sift02}
+Aditya~Telang Sharma~Chakravarthy, Aravind~Venkatachalam.
+\newblock A graph-based approach for multi-folder email classification.
+\newblock 2010.
+
+\bibitem{YUN08}
+Stan~Matwin Svetlana~Kiritchenko.
+\newblock Email classification using semantic feature space.
+\newblock 2008.
+
+\bibitem{MANUEL11}
+Jose del Campo-Avila Rafael Morales-Bueno Albert~Bifet Jose M. Carmona-Cejudo,
+  Manuel Baena-Garcia.
+\newblock Gnusmail: Open framework for on-line email classification.
+\newblock 2011.
+
+\bibitem{CHAO08}
+Junzhong~Gu Chao~Zeng, Zhao~Lu.
+\newblock A new approach to email classification using concept vector space
+  model.
+\newblock 2009.
+
+\bibitem{BALAKUMAR08}
+V.Vaidehi M.Balakumar.
+\newblock Ontology based classification and categorization of email.
+\newblock 2008.
+
+\bibitem{mous03}
+Shikun~Zhou Taiwo~Ayodele.
+\newblock Applying machine learning algorithms for email management.
+\newblock 2008.
+
+\bibitem{WENQING05}
+Zili~Zhang Wenqing~Zhao.
+\newblock An email classification model based on rough set theory.
+\newblock 2005.
+
+\bibitem{mous04}
+Josiah~Poon Jason~Chan, Irena~Koprinska.
+\newblock Co-training with a single natural feature set applied to email
+  classification.
+\newblock 2004.
+
+\bibitem{Anatomy00}
+http://www.rickconner.net/spamweb/anatomy.html.
+\newblock Anatomy of an email message.
+
+\bibitem{KIRI2004}
+S~Matwin S~Kiritchenko.
+\newblock Email classification with temporal features.
+\newblock 2004.
+
+\bibitem{REST}
+Fielding, Roy T.; Taylor, Richard N.
+\newblock Principled Design of the Modern Web Architecture.
+\newblock 2002.
+
+\bibitem{ROR}
+Last Accessed 22 June 2012.
+\newblock Ruby On Rails Framework.
+\newblock \url{http://rubyonrails.org/}.
+
+\bibitem{HEROKU}
+Last Accessed 22 June 2012.
+\newblock Heroku.
+\newblock \url{http://www.heroku.com/}.
+
+\bibitem{CHROME}
+Last Accessed 25 June 2012.
+\newblock Google Chrome Browser.
+\newblock \url{www.google.com/chrome}.
+
+\end{thebibliography}
