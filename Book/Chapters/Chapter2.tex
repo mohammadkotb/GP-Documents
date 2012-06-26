@@ -10,11 +10,11 @@
   \setlength{\parskip}{0cm}}
 {\end{enumerate}}
 
-\chapter{Email Classification and Related Work} % Main chapter title
+\chapter{Background and Related Work} % Main chapter title
 
 \label{Chapter2} % For referencing the chapter elsewhere, use \ref{Chapter2} 
 
-\lhead{Chapter 2. \emph{Email Classification and Related Work}} % This is for the header on each page - perhaps a shortened title
+\lhead{Chapter 2. \emph{Background and Related Work}} % This is for the header on each page - perhaps a shortened title
 
 %----------------------------------------------------------------------------------------
 
@@ -22,8 +22,8 @@
 In chapter 1, a general description of the problem was presented, the motivation to develop Smart Email, and the scope of work were introduced.
 
 In this chapter, a background about text and email classification is introduced in
-sections 2.2. In section 2.3, applications of email categorization is presented. The machine learning approach for text classification is discussed in section 2.4. In section 2.5, construction of text classifier and different types of classifiers are presented. In section 2.6 related work to Smart Email is presented with features of each. Then, the need to
-extend related work is explained in section 2.7.
+sections 2.2, 2.3, 2.4 and 2.5 successively . In section 2.3, applications of email categorization is presented. The machine learning approach for text classification is discussed in section 2.4. In section 2.5, construction of text classifier and different types of classifiers are presented. In section 2.6 related work to Smart Email is presented with features of each. Then, the need to
+extend related work is explained in section 2.7. The chapter is concluded in section 2.8.
 
 %==============================================================================
 
@@ -162,10 +162,10 @@ Gmail priority inbox is an algorithmic-based filtering system that predicts whic
 
 Gmail uses a variety of signals to identify important email, including which messages the user opens and which messages he replies to.
 
-\subsection{Classification according to the different learning algorithms used in different 
-papers}
+\subsection{Classification according to the different learning algorithms used in different papers}
 The following table classifies some recent research papers in the field of email classification according to the different learning algorithms for email classification.
 \begin{center}
+\begin{table}
 \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
 \hline
 \multicolumn{6}{|c|}{Learning Algorithm} \\
@@ -184,6 +184,8 @@ Email Classification Using Semantic Feature Space \cite{YUN08} &
 &
 & \\ \hline
 \end{tabular}
+\caption{Classification according to the different learning algorithms used in different papers.}
+\end{table}
 \end{center}
 \newpage
 
@@ -191,6 +193,7 @@ Email Classification Using Semantic Feature Space \cite{YUN08} &
 The following table classifies some recent research papers in the field of email classification according to the different learning capabilities (on-line or off-line) for email classification.
 
 \begin{center}
+\begin{table}
 \begin{tabular}{|p{6cm}|p{6cm}|}
 \hline
 \multicolumn{2}{|c|}{Learning Capability} \\
@@ -218,6 +221,8 @@ Automatic Categorization of Email into Folders \cite{RON04}
 \\ \hline
 
 \end{tabular}
+\caption{classification for research papers in the field of email classification according to the different learning capabilities .}
+\end{table}
 \end{center}
 
 
@@ -346,6 +351,20 @@ In section 2.6 related work was introduced that tries to solve the problem, but 
     one or more account and filter emails according to different criteria and
     it is not only limited to spam detection.
 \end{my_itemize}
+
+\begin{center}
+    \begin{tabular}{ | l | l | l | l | p{2cm} |}
+    \hline
+    F/P              & Outlook Rules & Gmail Filters & Yahoo Filters & PopFile \cite{POPFILE} \\ \hline
+    Static Features  &    Yes        &    Yes        &    Yes      &    Yes  \\ \hline     
+    Dynamic Features &    No        &    No         &    No        &    Yes  \\ \hline
+    On-line Learning &    No        &    No         &    No        &    Yes  \\ \hline
+    Server Side      &    No        &    Yes        &    Yes       &    No   \\ \hline
+    Several Algorithms &    No        &    No &    No       &    No   \\ \hline
+    Multi-Label support &    No        &    No &    No       &    No   \\ \hline
+    Summarization support&    No        &    No &    No       &    No   \\ \hline
+    \end{tabular}
+\end{center}  
 
 %=======================================================================================
 \section{Conclusion}

@@ -181,15 +181,15 @@
 %	defined as \examname above so you cite it as \examname
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Smart Email: Applying Machine Learning Algorithms for Email Classification} % Your thesis title - this is used in the title and abstract
+\thesistitle{Smart Email: Application of Text Mining Techniques in Email Classification} % Your thesis title - this is used in the title and abstract
 %-------------------------------------------------  
-\supervisor{Prof. Dr. Mohamed S. Abougabal, Dr. Mustafa Y. ElNainay} % You supervisor's name - this is used in the title page
+\supervisor{Prof. Dr. Mohamed S. Abougabal\\Dr. Mustafa Y. ElNainay} % You supervisor's name - this is used in the title page
 %-------------------------------------------------   
 \examiner{} % Your examiner's name - this is not currently used anywhere in the template, cite it with \examname if you want it
 %-------------------------------------------------   
 \degree{Bachelor of Science} % Your degree name - this is currently used in the title page and abstract
 %-------------------------------------------------   
-\authors{Ahmed El-Sharkasy, Ahmed Kotb, Amr Sharaf, Mohammad Kotb, Moustafa
+\authors{Ahmed El-Sharkasy\\Ahmed Kotb\\Amr Sharaf\\Mohammad Kotb\\Moustafa
 Mahmoud} % Your name - this is used in the title page and abstract
 %-------------------------------------------------   
 \addresses{} % Your address - this is not currently used anywhere in the template, cite it with \addressnames if you want it
@@ -375,7 +375,7 @@ Mahmoud} % Your name - this is used in the title page and abstract
     \cleardoublepage
 }\end{spacing}
 }
-\newcommand\listsymbolname{Abbreviations}
+\newcommand\listsymbolname{List of Acronyms}
 \usepackage{longtable}
 \newcommand\listofsymbols[2]{
 \btypeout{\listsymbolname}

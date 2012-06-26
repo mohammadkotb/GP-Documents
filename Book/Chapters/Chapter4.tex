@@ -1,20 +1,26 @@
 % Chapter 4
+\newenvironment{my_desc}
+{\begin{description}
+  \setlength{\itemsep}{0cm}
+  \setlength{\parskip}{0cm}}
+{\end{description}}
 
-\chapter{Project Conceptualization} % Main chapter title
+\chapter{Smart Email Architecture and Design} % Main chapter title
 
 \label{Chapter4} % For referencing the chapter elsewhere, use \ref{Chapter4} 
 
-\lhead{Chapter 4. \emph{Project conceptualization}} % This is for the header on each page - perhaps a shortened title
+\lhead{Chapter 4. \emph{Smart Email Architecture and Design}} % This is for the header on each page - perhaps a shortened title
 
-\section{Introduction}
+\section{Project Conceptualization} % Main chapter title
+\subsection{Introduction}
 In Chapter 3, the main features used for email classification by Smart Email were introduced. At the end of the chapter, At the end of the chapter, the tuple of the classifier features was presented. This tuple is used as an input for the Smart Email classifier.
 
 In this chapter, project conceptualization and proposed workflow are to be discussed. In section 4.2, project objectives, assumptions and limitations are discussed. Section 4.2 introduces the proposed workflow together with the proposed user stories. In section 4.3, the business requirements are discussed. 
 
-\section{Overview}
+\subsection{Overview}
 
 %==============================================================================
-\subsection{Project Objectives}
+\subsubsection{Project Objectives}
 The business objectives of this project are listed below. Delivering these 
 objectives will deliver the expected benefits of the application.
 \begin{my_itemize}
@@ -26,7 +32,7 @@ objectives will deliver the expected benefits of the application.
 
 %==============================================================================
 
-\subsection{Assumptions}
+\subsubsection{Assumptions}
 Some assumptions generally must be made in order to write a succinct definition 
 of the application. Some assumptions are technical, while others are business natured.  Assumptions 
 critical to the success of this project are listed below:
@@ -46,7 +52,7 @@ critical to the success of this project are listed below:
 \end{my_itemize}
 
 %==============================================================================
-\subsection{Limitations}
+\subsubsection{Limitations}
 Some limitations are assumptions on the extent of feature scope. Others are restrictions on resources 
 or methods for achieving the objectives. The limitations of this project are listed below:
 
@@ -57,7 +63,7 @@ or methods for achieving the objectives. The limitations of this project are lis
 \end{my_itemize}
 
 %==============================================================================
-\subsection{Open items and Risks}
+\subsubsection{Open items and Risks}
 During the conceptualization of the project and in the process of writing this document, 
 some issues remain open.
 \begin{my_itemize}
@@ -71,9 +77,9 @@ some issues remain open.
 
 %==============================================================================
 \newpage
-\section{Proposed Workflow}
+\subsection{Proposed Workflow}
 %==============================================================================
-\subsection{Overview}
+\subsubsection{Overview}
 This section includes a concise description of the features and operation of the 
 proposed solution. The context and workflow of the proposed solution are defined in subsequent sections.
 
@@ -85,7 +91,7 @@ Features:
 
 
 %==============================================================================
-\subsection{Context Diagram}
+\subsubsection{Context Diagram}
 The Context Diagram int figure 4.1 illustrates the modules, business processes, etc that feed 
 or interact with this proposed application.
 \begin{figure}
@@ -98,18 +104,18 @@ or interact with this proposed application.}
 
 
 %==============================================================================
-\subsection{High Level Workflow}
+\newpage
+\subsubsection{High Level Workflow}
 The workflow required to complete the primary objectives of the proposed 
 application is described below. The workflow is business-centered, and 
 includes ``decision forks'' for decisions the business user, or application, 
 must make to achieve the objective. The workflow omits application faults or exceptions. 
 Individual tasks in the workflow are described.
 
-\newpage
 \begin{my_enumerate}
   \item Workflow/Process Map 
 	
-\begin{figure}
+\begin{figure}[!htpd]
   \centering
 \includegraphics[width=13cm]{workflow_process_map.png}
   \caption[Workflow Process] {Workflow Process}
@@ -130,7 +136,7 @@ Individual tasks in the workflow are described.
 \end{my_enumerate}
 
 %==============================================================================
-\subsection{User stories}
+\subsubsection{User stories}
 Breaking up the system components to user stories with estimated time (in terms
 of man-days = 4 hours) to finish the story is very good practice.
 \\
@@ -288,7 +294,7 @@ of man-days = 4 hours) to finish the story is very good practice.
 
 %==============================================================================
 \newpage
-\section{Business Requirements}
+\subsection{Business Requirements}
 
 This section identifies, enumerates and explores the business requirements that must 
 be met by the application. Business requirements include capturing the types of users, 
@@ -297,7 +303,7 @@ accomplish. It is important to confirm that Task Requirements include all the ta
 required to meet the business objectives.
 
 %==============================================================================
-\subsection{Users}
+\subsubsection{Users}
 All applications have users and most have several users of different types. This 
 section identifies, at a high level, the types of users of the system.
 
@@ -307,7 +313,7 @@ section identifies, at a high level, the types of users of the system.
 \end{my_enumerate}
 
 %==============================================================================
-\subsection{Inputs/Outputs}
+\subsubsection{Inputs/Outputs}
 This section identifies and describes the inputs to and outputs from the new 
 application. Inputs can include electronic inputs, like RSS and EDI feeds, 
 updates from external databases, etc, as well as human inputs, like 
@@ -332,7 +338,7 @@ are captured. Human inputs are omitted from this section.
 
 
 %==============================================================================
-\subsection{Dependencies}
+\subsubsection{Dependencies}
 Human inputs are also categorized as dependencies. List all dependencies.
 
 \begin{my_enumerate}
@@ -342,7 +348,7 @@ Human inputs are also categorized as dependencies. List all dependencies.
 
 
 %==============================================================================
-\subsection{Security Requirements}
+\subsubsection{Security Requirements}
 This section documents, at a high level, the basic security requirements of the 
 application. For example, does the system require the user to log in?  Should the 
 user’s identity be authenticated on just this system, or against a central authority?  
@@ -357,7 +363,7 @@ Are there any special or unusual security requirements, like fingerprint scannin
 
 
 %==============================================================================
-\subsection{Performance Requirements}
+\subsubsection{Performance Requirements}
 Performance Requirements for the application are defined at a high level below. 
 If there are specific requirements for specific features to perform at a quantifiable 
 level, they too are listed below. These requirements will be developed in more detail when 
@@ -371,7 +377,7 @@ the Requirements Specification is written, in a later phase.
 
 
 %==============================================================================
-\subsection{Data Migration}
+\subsubsection{Data Migration}
 Data Migration describes the data that needs to be moved from an older or external 
 system to the new system, in order for it to operate at launch. Migration also includes 
 data that must be transferred from the new system to another external system. 
@@ -382,6 +388,283 @@ Any data migration requirements are listed below.
   \item Users' email threads which needed to be summarized.
 \end{my_enumerate}
 
-\section{Conclusion}
+\subsection{Conclusion}
 In this chapter the project conceptualization and proposed workflow were presented. At the end of the chapter, the business requirements were introduced. In next chapter, software design description for the project will be discussed.
 
+%==============================================================================
+
+\section{Software Design Description (SDD)}
+
+\subsection{Introduction}
+In Chapter 4, the project conceptualization was introduced as well as the 
+proposed workflow and business requirements.
+
+In this chapter, system architecture, main components and their functionalities, 
+and how different components interaction is to be discussed in section 5.3. 
+In section 5.4, the module interface for each component will be introduced.
+%----------------------------------------------------------------------------------------
+\subsection{Overview}
+
+\subsubsection{Purpose}
+This chapter shows how the smart email software system will be 
+structured to satisfy the requirements identified in the conceptual 
+design document and software requirements specification. It is 
+a translation of requirements into a description of the software
+structure, software components, interfaces, and data necessary for 
+the implementation phase.
+
+\subsubsection{Scope}
+Smart email will provide automated email classification and foldering 
+service for email clients. This chapter describes how the system will 
+be divided into modules and the design details for each module.
+
+
+\subsection{Decomposition description}
+This project is designed using an incremental approach. There are two
+primary  stages to the design development which consists of Phase 1 
+(Classification Web Service Module) and Phase 2 (Email Monitoring Web Service Module).
+
+The classification module can be divided into three layers. The data layer will be 
+responsible for retrieving emails from file systems or using IMAP protocol. The 
+second layer is the preprocessing and email filtering layer. This layer is 
+responsible for filtering emails and extracting classification features from the 
+email. The third and last layer will be responsible for classifying emails and 
+testing the classifier performance.
+
+The detailed design for each design entity is illustrated in the detailed class 
+diagram at the end of this chapter.
+
+\subsubsection{System decomposition}
+The system is divided into main modules as follows:
+\begin{my_itemize}
+\item classification web service module;
+\item email monitoring web service moudle.
+\end{my_itemize}
+Each of these modules will be described in details in the upcoming subsections.
+
+\paragraph{Classification Web Service Module}
+
+\begin{my_itemize}
+  \item ClassificationManager class
+  \begin{my_desc}
+    \item[Purpose] Used to manage and control the classification process flow
+      with the dataset and classification algorithms.
+% TODO
+%     \item[Functions] TBD
+  \end{my_desc}
+  \item PreprocessingManager class
+  \begin{my_desc}
+    \item[Purpose] Used to manage preprocessing phase by applying selected data preprocessors
+      to given raw emails.
+    \item[Functions] \hfill
+    \begin{my_itemize}
+      \item apply(email:Email) used to apply the selected preprocessors on a given email.
+    \end{my_itemize}
+  \end{my_desc}
+
+  \item FilterManager class
+  \begin{my_desc}
+    \item[Purpose] Used to manage feature extraction phase from preprocessed emails by applying
+      specified set of filters.
+    \item[Functions] \hfill
+    \begin{my_itemize}
+      \item getInstances(emails:List$\langle$Email$\rangle$) given a set of emails returns a prepared dataset (Instances object)
+      \item getInstance(email:Email) given an email return a prepared feature vector (Instance object)
+    \end{my_itemize}
+
+  \end{my_desc}
+
+  \item FilterCreatorManager class
+  \begin{my_desc}
+    \item[Purpose] Used to manage all Filter creators to create specified filters given a list of emails
+    \item[Functions] \hfill
+    \begin{my_itemize}
+      \item getFilters(emails:List$\langle$Email$\rangle$) create all supported filters using given emails
+    \end{my_itemize}
+
+  \end{my_desc}
+
+
+  \item Instances class
+  \begin{my_desc}
+    \item[Purpose] Used to gather all instances of the emails and treated as the classifier
+      dataset.
+    \item[Fuctions] \hfill
+    \begin{my_itemize}
+      \item add(instance:Instance) add new instance to the dataset.
+      \item getAttribute(index:int) get Attribute at given index.
+      \item getAttribute(name:String) get Attribute with the given name.
+      \item checkInstance(instance:Instance) check if the given instance is in the dataset or not.
+      \item getClassAttribute() return the class attribute of the dataset.
+    \end{my_itemize}
+
+  \end{my_desc}
+
+  \item Instance class
+  \begin{my_desc}
+    \item[Purpose] Used to encapsulate the feature vector of a certain email.
+    \item[Functions] \hfill
+    \begin{my_itemize}
+      \item getClassIndex() returns the index of the class attribute
+      \item setClassIndex(index:int) set the index of the class attribute
+      \item isMissingClass() check if the feature vector contains value of the class attribute or not
+      \item getValue(index:int) return the value for the ith attribute
+    \end{my_itemize}
+
+  \end{my_desc}
+
+  \item Attribute class
+  \begin{my_desc}
+    \item[Purpose] Used to encapsulate the dataset attribute with its type
+    \item[Functions] \hfill
+    \begin{my_itemize}
+      \item Attribute(name:String) \\
+      used to create a new Attribute instance with the given name.
+      \item Attribute(name:String,nominals:ArrayList$\langle$String$\rangle$) \\
+      used to create a new Attribute instance with the given name and possible values.
+      \item getValue(int:index): String \\
+      returns the attribute possible value of the given index
+      \item getIndexofValue(value:String): int \\
+      returns the index of the given attribute possible value
+    \end{my_itemize}
+
+  \end{my_desc}
+
+\end{my_itemize}
+
+\paragraph{Email Monitoring Web Service Module}
+
+Email Monitoring Web Service is a web service implemented in rails \cite{ROR} framework which integrates 
+with a classification web service for classification of emails. The web service monitors 
+users emails and sends every new email to the classification service through a rest API 
+which returns a response with the email label, the web service then applies the label to the user’s email.
+
+\begin{itemize}
+ \item Features
+ \begin{itemize}
+    \item Users registrations.
+    \item Adding more than email account.
+    \item Continuous monitoring of emails accounts for new emails.
+    \item Providing statistics about the classification process.
+ \end{itemize}
+ \item Future Work
+  \begin{itemize}
+    \item Support providers other than Gmail: Yahoo, Hotmail, ...etc.
+    \item Classifying users into active and non-active ones based on 
+	  their email account activity to decrease the load and increase 
+	  the performance of the monitoring process.
+    \item Increasing performance and security.
+    \item Authenticating gmail accounts using Oauth.
+  \end{itemize}
+
+
+\end{itemize}
+
+
+\subsubsection{Data decomposition}
+The data layer is responsible for retrieving emails either from the file system or using 
+the IMAP protocol. The enron data set will be used as the data source for training and 
+testing the email classifier.
+
+\paragraph{Data access object}
+  \begin{my_desc}
+   \item[Purpose] This class is responsible for retrieving emails using the IMAP protocol.
+   \item[Function] This class inherits from the data access object class.
+  \end{my_desc}
+
+\paragraph{IMAP data access object}
+  \begin{my_desc}
+   \item[Purpose] This class is responsible for retrieving emails using the IMAP protocol.
+   \item[Function] This class inherits from the data access object class.
+  \end{my_desc}
+
+
+\paragraph{File system data access object}
+  \begin{my_desc}
+   \item[Purpose] This class is responsible for retrieve emails from the file system.
+   \item[Function] This class inherits from the data access object class.
+  \end{my_desc}
+
+
+\subsection{Interface description}
+The interface description provides everything designers, programmers and 
+testers need to know to correctly use the functions provided by the system 
+entities. This description includes the details of external and internal 
+interfaces not provided in the software requirements specification.
+
+\subsubsection{Module interface}
+\paragraph{Classification module interface}
+\begin{my_itemize}
+  \item Classifier class
+  \begin{my_desc}
+   \item[Purpose] All schemes for documents classification extend this class. Note that a classifier MUST either implement distributionForInstance() or classifyInstance() methods.
+   \item[Function] The Classifier abstarct class defines the following functions:
+	\begin{my_itemize}
+		\item classifyInstance(Instance instance) : classifies a given instance;
+		\item buildClassifier(Instances trainingData) : builds the classification model from the given set of training data;
+		\item getClassifierByName(String name, String[] options) : returns an instance of the classifier given the classifier name;
+		\item distributionForInstance(Instance instance): returns the destribution for each class attribute for the given instance.
+	\end{my_itemize}
+  \end{my_desc}
+
+  \item Preprocessor interface
+  \begin{my_desc}
+   \item[Purpose] Performs some pre-processing actions on the email before classifiaction. Pre-processing may include removing stop words and stemming. 
+   \item[Function] The Preprocessor interface defines the following function:
+	\begin{my_itemize}
+	\item process(Email email): Performs some pre-processing action on the given email such as stemming or removing stop words.
+	\end{my_itemize}
+  \end{my_desc}
+
+  \item Filter class
+  \begin{my_desc}
+   \item[Purpose] Defines an abstract class for filtering an email. A filter is used to extract a set of features from the email such as the email sender, email label and word frequencies in an email.
+   \item[Function] The filter abstract class defines the following set of functions:
+	\begin{my_itemize}
+	\item makeFeatureInstance(Email email): creates a feature instance from the given email.
+	\item getAttributes(): returns the set of attributes for the given filter.
+	\end{my_itemize}
+  \end{my_desc}
+
+  \item FilterCreator interface
+  \begin{my_desc}
+   \item[Purpose] Defines an interface for creating a filter.
+   \item[Function] The FilterCreator interface defines the following function:
+	\begin{my_itemize}
+	\item createFilter(emails:List$\langle$Email$\rangle$): creates a filter given the list of emails.
+	\end{my_itemize}
+  \end{my_desc}
+
+\end{my_itemize}
+
+%-------
+\paragraph{Email Monitoring Web Service Moudle interface}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{account_example.png}
+  \caption[Example for MVC in action handling a user request to view his account]{Example for MVC in action handling a user request to view his account}
+\end{figure}
+
+
+\subsection{Detailed design}
+\subsection{Classification module detailed design}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{design.jpeg}
+  \caption[Detailed Design] {Detailed Design}
+\end{figure}
+
+
+
+\subsubsection{Web service module detailed design}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=15cm]{mvc2.png}
+  \caption[Smart Email MVC Design]{Smart Email MVC Design}
+\end{figure}
+
+
+\subsection{Conclusion}
+In this chapter, the system architecture was introduced and the abstract system design using was illustrated.
+
+In the next chapter, the performance evaluation for the email classifier will be discussed.
