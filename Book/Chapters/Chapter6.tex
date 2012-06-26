@@ -8,18 +8,15 @@
 
 %----------------------------------------------------------------------------------------
 
-%ques: do we need a reference here to the enron dataset?
-
 \section{Introduction}
 In chapter 5, Software Design Description (SDD) was explained. System architecture, main components and their functionalities, as well as components interaction were discussed. In this chapter, experiments of different classification procedures, dataset splits and feature selection are presented. Results are introduced in section 6.3. The discussion and analysis of obtained results are presented in section 6.4.
 
 
 \section{Experimental Setup}
 
-\subsection{Enron Dataset}
+\subsection{Enron Dataset \cite{ENRON}}
 Enron dataset is the most popular email corpus for research. It was released during the legal investigation into the Enron corporation.
-it is an invaluable dataset since it contains uncensored messages from a corporate environment. The dataset consists of employee’s email folders, so it is also an accurate depiction of how users use folders. The majority of email directories in the dataset are small. So seven users with the largest email directories are chosen. Those seven users are chosen in many related papers (e.g. ) %add ref here to automatic email categorization
-Statistics of the seven users are shown in table \ref{enronStatsTable}:
+it is an invaluable dataset since it contains uncensored messages from a corporate environment. The dataset consists of employee’s email folders, so it is also an accurate depiction of how users use folders. The majority of email directories in the dataset are small. So seven users with the largest email directories are chosen. Those seven users are chosen in many related papers (e.g. Huang, Bekkerman and McCallum, 2004\cite{RON04}). \\Statistics of the seven users are shown in table \ref{enronStatsTable}:
 
 \begin{center}
 	\centering
@@ -50,14 +47,14 @@ Statistics of the seven users are shown in table \ref{enronStatsTable}:
 Two types of experiments are reported:
 
 \begin{itemize}
-\item Learning Curves (Timeline): Learning curve is done by calculate the accuracy for each training/test split and plotting the classification accuracy curve over the number of training messages in the splits. %ques: we need a reference to the paper here?
+\item Learning Curves (Timeline): A learning curve is done by calculating the accuracy of each training/test split and plotting the classification accuracy curve over the number of training messages in the splits. 
 
 \item Feature Comparison: Different combinations of possible classification features are selected and the accuracy of each combination is plotted. Each combination is run using both Naive Bayes and SVM algorithms.
 \end{itemize}
 
 \subsection{Training/test Set Splits}
-In practice, the dataset grows over time. So, a natural way of splitting the dataset would be based on time: train on earlier emails and test on later ones. A similar approach is employed in (Klimt and Yang, 2004). %{add ref here}
-The incremental time-based split is done by sorting the emails according to their time stamp, then the classifier is trained on the first N messages and tested against the following N messages, then it is trained on the first 2N messages and tested against the following N messages etc. until we cover the whole dataset. N was chosen to be 100 which is similar to experiments conducted in (Bekkerman, McCallum and Huang 2004)
+In practice, the dataset grows over time. So, a natural way of splitting the dataset would be based on time: train on earlier emails and test on later ones. A similar approach is employed in (Klimt and Yang, 2004)\cite{KY04}. 
+The incremental time-based split is done by sorting the emails according to their time stamp, then the classifier is trained on the first N messages and tested against the following N messages, then it is trained on the first 2N messages and tested against the following N messages etc. until we cover the whole dataset. N was chosen to be 100 which is similar to experiments conducted in (Bekkerman, McCallum and Huang 2004)\cite{RON04}.
 
 \section{Results}
 
@@ -143,7 +140,7 @@ In classification, different combinations of the features affect accuracy. It is
 \end{figure}
 
 \section{Discussion}
-Learning curves show that SVM outperforms Naive Bayes in most of the cases. This is the expected behaviour. It is widely believed that Naive Bayes is not the best algorithm for text categorization (Dumais et al., 1998). %add ref. here
+Learning curves show that SVM outperforms Naive Bayes in most of the cases. This is the expected behaviour. It is widely believed that Naive Bayes is not the best algorithm for text categorization (Dumais et al., 1998)\cite{DHS98}.
 However, the results obtained doesn't reveal significance superiority of SVM over Naive Bayes. In fact, in some cases Naive Bayes was better than SVM (e.g Farmer-d feature selection figure). This is probably due to features selection and how the classifier weights each feature.
 
 
