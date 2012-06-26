@@ -11,39 +11,37 @@
 
 \lhead{Chapter 4. \emph{Smart Email Architecture and Design}} % This is for the header on each page - perhaps a shortened title
 
-\section{Project Conceptualization} % Main chapter title
-\subsection{Introduction}
-In Chapter 3, the main features used for email classification by Smart Email were introduced. At the end of the chapter, At the end of the chapter, the tuple of the classifier features was presented. This tuple is used as an input for the Smart Email classifier.
+\section{Introduction}
+In chapter 3, the logical schema and the features of the smart email classifier
+were presented.
 
-In this chapter, project conceptualization and proposed workflow are to be discussed. In section 4.2, project objectives, assumptions and limitations are discussed. Section 4.2 introduces the proposed workflow together with the proposed user stories. In section 4.3, the business requirements are discussed. 
+In this chapter, software requirements specification and software design
+description were explained in sections 4.2 and 4.3 respectively. The chapter is
+concluded in section 4.4.
 
-\subsection{Overview}
-
+\section{Software Requirements Specification} % Main chapter title
 %==============================================================================
-\subsubsection{Project Objectives}
-The business objectives of this project are listed below. Delivering these 
-objectives will deliver the expected benefits of the application.
-\begin{my_itemize}
-  \item Automatically organizing congested and uncategorized emails into folders.
-  \item Summarizing long email threads into a brief summary describing the 
-	main points in these threads.
-\end{my_itemize}
+\subsection{Overview}
+In this section, a brief overview about the software requirements specification
+is shown, such as, project objective, assumptions, limitations, and open items
+and risks.
 
+\subsubsection{Project Objective}
+The business objective of this project is building a web service that provides
+automatic email categorization into user-defined folders based on machine 
+learning and data mining classification techniques.
 
 %==============================================================================
 
 \subsubsection{Assumptions}
-Some assumptions generally must be made in order to write a succinct definition 
+Some assumptions generally must be made in order to write a brief definition 
 of the application. Some assumptions are technical, while others are business natured.  Assumptions 
 critical to the success of this project are listed below:
 \begin{my_itemize}
-  \item each user will have his own trained classification and summarization 
-	models based on the user supplied training data;
-  \item a web service will be implemented to provide email 
-	classification and summarization support for different mail 
-	servers (Example: Google, Hotmail, Yahoo);
+  \item each user will have his own trained classification model based on the user supplied training data;
+  \item a web service will be implemented to provide email classification support for different email 
+	providers (Example: Google, Hotmail, Yahoo);
   \item english language will be supported by default;
-  \item email summarization will be provided as an on-demand service by the application user;
   \item the servers providing the web service have to provide sufficient 
 	processing power for achieving reasonable response time;
   \item email classification will be based on the email subject and content. 
@@ -59,24 +57,24 @@ or methods for achieving the objectives. The limitations of this project are lis
 \begin{my_itemize}
   \item sufficient number of emails is needed for each email label to achieve 
 	a reasonable classification accuracy;
-  \item emails with size less than a specified threshold cannot be summarized.
+  \item emails with size less than a specified threshold won't be classified with
+  high accuracy.
 \end{my_itemize}
 
 %==============================================================================
 \subsubsection{Open items and Risks}
-During the conceptualization of the project and in the process of writing this document, 
+During the analysis of the project and in the process of writing this document, 
 some issues remain open.
 \begin{my_itemize}
   \item Multi-label classification.
   \item Arabic support.
-  \item The need for a client side application to assist the server side.
-  \item Online training for classification models.
+  \item Securing the communication between the client and the classification web service.
+  \item Improving classification accuracy.
   \item Specifications for the web server providing the web service.
 \end{my_itemize}
 
 
 %==============================================================================
-\newpage
 \subsection{Proposed Workflow}
 %==============================================================================
 \subsubsection{Overview}
@@ -85,20 +83,22 @@ proposed solution. The context and workflow of the proposed solution are defined
 
 Features:
 \begin{my_itemize}
-  \item automatically categorizing incoming emails into predefined categories;
-  \item summarizing long email threads into a brief summary.
+  \item building a classification web service with a REST API \cite{REST};
+  \item building an email monitoring web service that sends every new incoming
+  email to the classification web service and applies the returned label;
+  \item building a browser extension that is injected into the user's email web interface
+  and provides an on-demand email classification using the classification web service.
 \end{my_itemize}
-
 
 %==============================================================================
 \subsubsection{Context Diagram}
-The Context Diagram int figure 4.1 illustrates the modules, business processes, etc that feed 
+The Context Diagram in figure 4.1 illustrates the modules, business processes, ...etc that feed 
 or interact with this proposed application.
-\begin{figure}
+\begin{figure}[H]
   \centering
-  \includegraphics[width=13cm]{context_diagram.jpeg}
-  \caption[The Context Diagram illustrates the modules, business processes, etc that feed 
-or interact with this proposed application.] {The Context Diagram illustrates the modules, business processes, etc that feed 
+  \includegraphics[width=13cm]{context_diagram.png}
+  \caption[The Context Diagram illustrates the modules, business processes, ...etc that feed 
+or interact with this proposed application.] {The Context Diagram illustrates the modules, business processes, ...etc that feed 
 or interact with this proposed application.}
 \end{figure}
 
@@ -115,7 +115,7 @@ Individual tasks in the workflow are described.
 \begin{my_enumerate}
   \item Workflow/Process Map 
 	
-\begin{figure}[!htpd]
+\begin{figure}[H]
   \centering
 \includegraphics[width=13cm]{workflow_process_map.png}
   \caption[Workflow Process] {Workflow Process}
@@ -124,12 +124,6 @@ Individual tasks in the workflow are described.
   \item Workflow Description
   \begin{my_itemize}
     \item Incoming Emails are preprocessed.
-    \item Summarization module checks that email length is greater than a predefined threshold:
-    \begin{my_itemize}
-      \item if the length is greater than the threshold, the email is fed to the 
-	    summarizer which outputs the summary;
-      \item short emails are returned without summarization.
-    \end{my_itemize}
     \item Classification module uses the user model to classify the email into a specific label.
     \item The result is returned by the web service.
   \end{my_itemize}
@@ -153,8 +147,6 @@ of man-days = 4 hours) to finish the story is very good practice.
       Authentication is done with email username and password. \\ \hline
 \end{tabular}
 
-.\\
-
 \begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
 \cellcolor[gray]{0.9} Story Id & \#2 \\ \hline
@@ -166,9 +158,6 @@ of man-days = 4 hours) to finish the story is very good practice.
 \cellcolor[gray]{0.9} Notes & 
 	Authentication is done with email username and password. \\ \hline
 \end{tabular}
-
-
-.\\
 
 \begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
@@ -183,26 +172,9 @@ of man-days = 4 hours) to finish the story is very good practice.
 	Build browser extension to support suggestions in gmail. \\ \hline
 \end{tabular}
 
-.\\
-
 \begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
 \cellcolor[gray]{0.9} Story Id & \#4 \\ \hline
-\cellcolor[gray]{0.9} User Story & Email Summarization\\ \hline
-\cellcolor[gray]{0.9} Priority & High\\ \hline
-\cellcolor[gray]{0.9} Description & 
-	As a \textbf{User}, I can \textbf{summarize long emails}. \\ \hline
-\cellcolor[gray]{0.9} Estimated time & 20 man-days\\ \hline
-\cellcolor[gray]{0.9} Notes & 
-	The summary will be presented in UI integrated with the email client. \\ \hline
-\end{tabular}
-
-
-.\\
-
-\begin{tabular}{|p{3cm}|p{10cm}|}
-\hline
-\cellcolor[gray]{0.9} Story Id & \#5 \\ \hline
 \cellcolor[gray]{0.9} User Story & Data pre-processing \\ \hline
 \cellcolor[gray]{0.9} Priority & High\\ \hline
 \cellcolor[gray]{0.9} Description & 
@@ -214,12 +186,9 @@ of man-days = 4 hours) to finish the story is very good practice.
 	removing stop words and identifying the features. \\ \hline
 \end{tabular}
 
-
-.\\
-
 \begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
-\cellcolor[gray]{0.9} Story Id & \#6 \\ \hline
+\cellcolor[gray]{0.9} Story Id & \#5 \\ \hline
 \cellcolor[gray]{0.9} User Story & Email Classification \\ \hline
 \cellcolor[gray]{0.9} Priority & High\\ \hline
 \cellcolor[gray]{0.9} Description & 
@@ -231,12 +200,9 @@ of man-days = 4 hours) to finish the story is very good practice.
 	the best accuracy. \\ \hline
 \end{tabular}
 
-
-.\\
-
 \begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
-\cellcolor[gray]{0.9} Story Id & \#7 \\ \hline
+\cellcolor[gray]{0.9} Story Id & \#6 \\ \hline
 \cellcolor[gray]{0.9} User Story & User Classification Model \\ \hline
 \cellcolor[gray]{0.9} Priority & High\\ \hline
 \cellcolor[gray]{0.9} Description & 
@@ -248,11 +214,9 @@ of man-days = 4 hours) to finish the story is very good practice.
 	from time to time to enhance the user model. \\ \hline
 \end{tabular}
 
-.\\
-
 \begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
-\cellcolor[gray]{0.9} Story Id & \#8 \\ \hline
+\cellcolor[gray]{0.9} Story Id & \#7 \\ \hline
 \cellcolor[gray]{0.9} User Story & Classification Accuracy test \\ \hline
 \cellcolor[gray]{0.9} Priority & Medium \\ \hline
 \cellcolor[gray]{0.9} Description & 
@@ -261,35 +225,6 @@ of man-days = 4 hours) to finish the story is very good practice.
 \cellcolor[gray]{0.9} Estimated time & 2 man-days\\ \hline
 \cellcolor[gray]{0.9} Notes & 
 	The admin can view the accuracy of the used classification algorithm. \\ \hline
-\end{tabular}
-
-.\\
-
-\begin{tabular}{|p{3cm}|p{10cm}|}
-\hline
-\cellcolor[gray]{0.9} Story Id & \#9 \\ \hline
-\cellcolor[gray]{0.9} User Story & Admin Algorithms Control \\ \hline
-\cellcolor[gray]{0.9} Priority & Medium \\ \hline
-\cellcolor[gray]{0.9} Description & 
-	As an \textbf{Admin}, I can \textbf{change/tune the 
-	classification/summarization algorithms} to
-	\textbf{improve the accuracy}. \\ \hline
-\cellcolor[gray]{0.9} Estimated time & 2 man-days\\ \hline
-\cellcolor[gray]{0.9} Notes & --- \\ \hline
-\end{tabular}
-
-.\\
-
-\begin{tabular}{|p{3cm}|p{10cm}|}
-\hline
-\cellcolor[gray]{0.9} Story Id & \#10 \\ \hline
-\cellcolor[gray]{0.9} User Story & Security \\ \hline
-\cellcolor[gray]{0.9} Priority & Medium \\ \hline
-\cellcolor[gray]{0.9} Description & 
-	As a \textbf{System}, I have to \textbf{ensure a 
-	secure connection between the web-service and the email client}. \\ \hline
-\cellcolor[gray]{0.9} Estimated time & 1 man-days\\ \hline
-\cellcolor[gray]{0.9} Notes & --- \\ \hline
 \end{tabular}
 
 %==============================================================================
@@ -308,15 +243,15 @@ All applications have users and most have several users of different types. This
 section identifies, at a high level, the types of users of the system.
 
 \begin{my_enumerate}
-  \item Application User: requests emails' classification and summarization.
-  \item Admin: tunes classification and summarization algorithms and observes the results.
+  \item Application User: requests emails classification.
+  \item Admin: tunes classification algorithms and observes the results.
 \end{my_enumerate}
 
 %==============================================================================
 \subsubsection{Inputs/Outputs}
 This section identifies and describes the inputs to and outputs from the new 
 application. Inputs can include electronic inputs, like RSS and EDI feeds, 
-updates from external databases, etc, as well as human inputs, like 
+updates from external databases, ...etc, as well as human inputs, like 
 ``user X keys in results from report Y.'' Output can include electronic feeds, 
 printed reports, ...etc. In this section, all electronic inputs and outputs 
 are captured. Human inputs are omitted from this section.
@@ -326,12 +261,10 @@ are captured. Human inputs are omitted from this section.
   \begin{my_itemize}
     \item unclassified Emails;
     \item classified Emails (training data);
-    \item email Threads.
   \end{my_itemize}
   \item Outputs:
   \begin{my_itemize}
     \item classified emails;
-    \item summarized email threads;
     \item classification model.
   \end{my_itemize}
 \end{my_enumerate}
@@ -339,23 +272,22 @@ are captured. Human inputs are omitted from this section.
 
 %==============================================================================
 \subsubsection{Dependencies}
-Human inputs are also categorized as dependencies. List all dependencies.
-
+Human inputs are also categorized as dependencies.
 \begin{my_enumerate}
-  \item Registeration data.
-  \item Request for summarizing an email thread.
+  \item Registration data.
+  \item Request for classifying an email.
 \end{my_enumerate}
 
 
 %==============================================================================
 \subsubsection{Security Requirements}
 This section documents, at a high level, the basic security requirements of the 
-application. For example, does the system require the user to log in?  Should the 
+application. For example, does the system require the user to login?  Should the 
 user’s identity be authenticated on just this system, or against a central authority?  
 Are there any special or unusual security requirements, like fingerprint scanning?
 
 \begin{my_enumerate}
-  \item The system requires every user to log in with a unique identity (email).
+  \item The system requires every user to login with a unique identity (email).
   \item User Data (email) should be transmitted through a secure connection.
   \item Administrators shouldn’t have access to user data (email).
 \end{my_enumerate}
@@ -370,7 +302,7 @@ level, they too are listed below. These requirements will be developed in more d
 the Requirements Specification is written, in a later phase.
 
 \begin{my_enumerate}
-  \item Web service should respond within a reasonable time.
+  \item Classification web service should respond within a reasonable time.
   \item Initial training phase should finish within a reasonable time.
   \item The system will achieve high uptime.
 \end{my_enumerate}
@@ -385,44 +317,33 @@ Any data migration requirements are listed below.
 
 \begin{my_enumerate}
   \item Users' classified emails for training phase as pre-classified emails are needed to build users' models.
-  \item Users' email threads which needed to be summarized.
+  \item Users' feedback on the results of the classification.
 \end{my_enumerate}
-
-\subsection{Conclusion}
-In this chapter the project conceptualization and proposed workflow were presented. At the end of the chapter, the business requirements were introduced. In next chapter, software design description for the project will be discussed.
 
 %==============================================================================
 
 \section{Software Design Description (SDD)}
 
-\subsection{Introduction}
-In Chapter 4, the project conceptualization was introduced as well as the 
-proposed workflow and business requirements.
+%------------------------------------------------------------------------------
 
-In this chapter, system architecture, main components and their functionalities, 
-and how different components interaction is to be discussed in section 5.3. 
-In section 5.4, the module interface for each component will be introduced.
-%----------------------------------------------------------------------------------------
-\subsection{Overview}
-
-\subsubsection{Purpose}
+\subsection{Purpose}
 This chapter shows how the smart email software system will be 
-structured to satisfy the requirements identified in the conceptual 
-design document and software requirements specification. It is 
-a translation of requirements into a description of the software
-structure, software components, interfaces, and data necessary for 
-the implementation phase.
+structured to satisfy the requirements identified in the software
+requirements specification section. It is a translation of 
+requirements into a description of the software structure, software components, 
+interfaces, and data necessary for the implementation phase.
 
-\subsubsection{Scope}
-Smart email will provide automated email classification and foldering 
-service for email clients. This chapter describes how the system will 
-be divided into modules and the design details for each module.
+\subsection{Scope}
+Smart email will provide automated email classification for email clients. 
+This chapter describes how the system will be divided into modules and 
+the design details for each module.
 
 
 \subsection{Decomposition description}
-This project is designed using an incremental approach. There are two
-primary  stages to the design development which consists of Phase 1 
-(Classification Web Service Module) and Phase 2 (Email Monitoring Web Service Module).
+This project is designed using an incremental approach. There are three
+primary  stages to the design development which consists of phase 1 
+(Classification Web Service Module), phase 2 (Email Monitoring Web Service Module),
+and phase 3 (Web Browser Extension).
 
 The classification module can be divided into three layers. The data layer will be 
 responsible for retrieving emails from file systems or using IMAP protocol. The 
@@ -432,13 +353,14 @@ email. The third and last layer will be responsible for classifying emails and
 testing the classifier performance.
 
 The detailed design for each design entity is illustrated in the detailed class 
-diagram at the end of this chapter.
+diagram at the end of this section.
 
 \subsubsection{System decomposition}
 The system is divided into main modules as follows:
 \begin{my_itemize}
-\item classification web service module;
-\item email monitoring web service moudle.
+  \item classification web service module;
+  \item email monitoring web service module;
+  \item web browser extension.
 \end{my_itemize}
 Each of these modules will be described in details in the upcoming subsections.
 
@@ -534,58 +456,69 @@ Each of these modules will be described in details in the upcoming subsections.
 
 \paragraph{Email Monitoring Web Service Module}
 
-Email Monitoring Web Service is a web service implemented in rails \cite{ROR} framework which integrates 
+Email Monitoring Web Service is a web service implemented in RubyOnRails \cite{ROR} framework which integrates 
 with a classification web service for classification of emails. The web service monitors 
-users emails and sends every new email to the classification service through a rest API 
+users emails and sends every new email to the classification service through a REST API \cite{REST}
 which returns a response with the email label, the web service then applies the label to the user’s email.
 
 \begin{itemize}
  \item Features
  \begin{itemize}
-    \item Users registrations.
-    \item Adding more than email account.
+    \item Users registration.
+    \item Adding more than one email account.
     \item Continuous monitoring of emails accounts for new emails.
-    \item Providing statistics about the classification process.
  \end{itemize}
  \item Future Work
   \begin{itemize}
-    \item Support providers other than Gmail: Yahoo, Hotmail, ...etc.
-    \item Classifying users into active and non-active ones based on 
-	  their email account activity to decrease the load and increase 
-	  the performance of the monitoring process.
-    \item Increasing performance and security.
-    \item Authenticating gmail accounts using Oauth.
+    \item Providing statistics about the classification process.
+    \item Support email providers other than Gmail: Yahoo, Hotmail, ...etc.
+    \item Classifying users into active and non-active ones based on their 
+    email account activity to decrease the load and increase the performance 
+    of the monitoring process.
+    \item Improving performance and security.
   \end{itemize}
-
-
 \end{itemize}
 
+\paragraph{Web Browser Extension}
+Web Browser Extension is a client side browser extension that injects a 
+``Classify Me'' button when the user open the email which is an additional 
+UI component injected into the user's email web interface. 
+
+
+\begin{itemize}
+ \item Features
+ \begin{itemize}
+    \item Users registration.
+    \item Sending a classification requests to the classification web service.
+    \item Check the status of the user's training phase at the classification 
+    web service.
+    \item Sending feedback to the classification web service when the user
+    applies labels manually to an email to re-train the model.
+ \end{itemize}
+ \item Future Work
+  \begin{itemize}
+    \item Providing statistics about the classification process.
+    \item Support other web browsers other than Chrome extension: Firefox, 
+    Safari, ...etc.
+    \item Improving performance and security.
+  \end{itemize}
+\end{itemize}
 
 \subsubsection{Data decomposition}
 The data layer is responsible for retrieving emails either from the file system or using 
-the IMAP protocol. The enron data set will be used as the data source for training and 
+the IMAP protocol. The Enron dataset \cite{ENRON} will be used as the data source for training and 
 testing the email classifier.
 
-\paragraph{Data access object}
-  \begin{my_desc}
-   \item[Purpose] This class is responsible for retrieving emails using the IMAP protocol.
-   \item[Function] This class inherits from the data access object class.
-  \end{my_desc}
-
-\paragraph{IMAP data access object}
-  \begin{my_desc}
-   \item[Purpose] This class is responsible for retrieving emails using the IMAP protocol.
-   \item[Function] This class inherits from the data access object class.
-  \end{my_desc}
+\begin{my_desc}
+  \item[Data access object] this class is used to provide an abstract way to retrieve emails.
+  \item[IMAP Data access object] it is responsible for retrieving emails using the IMAP protocol,
+  and it is inherited from the Data access object class.
+  \item[File system data access object] it is responsible for retrieving emails from the file
+  system, and it is inherited from the Data access object class.
+\end{my_desc}
 
 
-\paragraph{File system data access object}
-  \begin{my_desc}
-   \item[Purpose] This class is responsible for retrieve emails from the file system.
-   \item[Function] This class inherits from the data access object class.
-  \end{my_desc}
-
-
+%==============================================================================
 \subsection{Interface description}
 The interface description provides everything designers, programmers and 
 testers need to know to correctly use the functions provided by the system 
@@ -638,16 +571,21 @@ interfaces not provided in the software requirements specification.
 \end{my_itemize}
 
 %-------
-\paragraph{Email Monitoring Web Service Moudle interface}
+\newpage
+\paragraph{Email Monitoring Web Service Module interface}
+.\\
 \begin{figure}[H]
   \centering
   \includegraphics[width=12cm]{account_example.png}
-  \caption[Example for MVC in action handling a user request to view his account]{Example for MVC in action handling a user request to view his account}
+  \caption[Example for MVC in action handling a user request to view his 
+  accounts]{Example for MVC in action handling a user request to view his accounts}
 \end{figure}
 
-
-\subsection{Detailed design}
-\subsection{Classification module detailed design}
+%==============================================================================
+\newpage
+\subsubsection{Detailed design}
+\paragraph{Classification module detailed design}
+.\\
 \begin{figure}[H]
   \centering
   \includegraphics[width=12cm]{design.jpeg}
@@ -656,7 +594,8 @@ interfaces not provided in the software requirements specification.
 
 
 
-\subsubsection{Web service module detailed design}
+\paragraph{Web service module detailed design}
+.\\
 \begin{figure}[H]
   \centering
   \includegraphics[width=15cm]{mvc2.png}
@@ -664,7 +603,7 @@ interfaces not provided in the software requirements specification.
 \end{figure}
 
 
-\subsection{Conclusion}
-In this chapter, the system architecture was introduced and the abstract system design using was illustrated.
-
-In the next chapter, the performance evaluation for the email classifier will be discussed.
+\section{Conclusion}
+In this chapter, the software requirements specification and software design
+description were discussed. While in the next chapter, Environment and 
+Development tools will be discussed.
