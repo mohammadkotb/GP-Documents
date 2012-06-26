@@ -1,284 +1,99 @@
 % Chapter 5
-\newenvironment{my_desc}
-{\begin{description}
-  \setlength{\itemsep}{0cm}
-  \setlength{\parskip}{0cm}}
-{\end{description}}
 
-\chapter{Software Design Description (SDD)} % Main chapter title
+\chapter{Development Process, Environment and Tools} % Main chapter title
 
 \label{Chapter5} % For referencing the chapter elsewhere, use \ref{Chapter5} 
 
-\lhead{Chapter 5. \emph{Classifier Features}} % This is for the header on each page - perhaps a shortened title
+\lhead{Chapter 5. \emph{Development Process, Environment and Tools}} % This is for the header on each page - perhaps a shortened title
 
 \section{Introduction}
-In Chapter 4, the project conceptualization was introduced as well as the 
-proposed workflow and business requirements.
+In Chapter 4 , Smart Email architecture and design was discussed. In This Chapter , the adopted process is examined in details; the stages of work, the tools used and the work environment.
 
-In this chapter, system architecture, main components and their functionalities, 
-and how different components interaction is to be discussed in section 5.3. 
-In section 5.4, the module interface for each component will be introduced.
+The environments needed to be set up are discussed in section 5.2. In section 5.3, the software engineering model followed throughout the project will be explained. In section 5.4, the development process will be described in details. In section 5.5, all the tools used will be explained. In section 5.6 the hardware and software environments will be described in details.
 %----------------------------------------------------------------------------------------
-\section{Overview}
-
-\subsection{Purpose}
-This chapter shows how the smart email software system will be 
-structured to satisfy the requirements identified in the conceptual 
-design document and software requirements specification. It is 
-a translation of requirements into a description of the software
-structure, software components, interfaces, and data necessary for 
-the implementation phase.
-
-\subsection{Scope}
-Smart email will provide automated email classification and foldering 
-service for email clients. This chapter describes how the system will 
-be divided into modules and the design details for each module.
-
-
-\section{Decomposition description}
-This project is designed using an incremental approach. There are two
-primary  stages to the design development which consists of Phase 1 
-(Classification Web Service Module) and Phase 2 (Email Monitoring Web Service Module).
-
-The classification module can be divided into three layers. The data layer will be 
-responsible for retrieving emails from file systems or using IMAP protocol. The 
-second layer is the preprocessing and email filtering layer. This layer is 
-responsible for filtering emails and extracting classification features from the 
-email. The third and last layer will be responsible for classifying emails and 
-testing the classifier performance.
-
-The detailed design for each design entity is illustrated in the detailed class 
-diagram at the end of this chapter.
-
-\subsection{System decomposition}
-The system is divided into main modules as follows:
-\begin{my_itemize}
-\item classification web service module;
-\item email monitoring web service moudle.
-\end{my_itemize}
-Each of these modules will be described in details in the upcoming subsections.
-
-\subsubsection{Classification Web Service Module}
-
-\begin{my_itemize}
-  \item ClassificationManager class
-  \begin{my_desc}
-    \item[Purpose] Used to manage and control the classification process flow
-      with the dataset and classification algorithms.
-% TODO
-%     \item[Functions] TBD
-  \end{my_desc}
-  \item PreprocessingManager class
-  \begin{my_desc}
-    \item[Purpose] Used to manage preprocessing phase by applying selected data preprocessors
-      to given raw emails.
-    \item[Functions] \hfill
-    \begin{my_itemize}
-      \item apply(email:Email) used to apply the selected preprocessors on a given email.
-    \end{my_itemize}
-  \end{my_desc}
-
-  \item FilterManager class
-  \begin{my_desc}
-    \item[Purpose] Used to manage feature extraction phase from preprocessed emails by applying
-      specified set of filters.
-    \item[Functions] \hfill
-    \begin{my_itemize}
-      \item getInstances(emails:List$\langle$Email$\rangle$) given a set of emails returns a prepared dataset (Instances object)
-      \item getInstance(email:Email) given an email return a prepared feature vector (Instance object)
-    \end{my_itemize}
-
-  \end{my_desc}
-
-  \item FilterCreatorManager class
-  \begin{my_desc}
-    \item[Purpose] Used to manage all Filter creators to create specified filters given a list of emails
-    \item[Functions] \hfill
-    \begin{my_itemize}
-      \item getFilters(emails:List$\langle$Email$\rangle$) create all supported filters using given emails
-    \end{my_itemize}
-
-  \end{my_desc}
-
-
-  \item Instances class
-  \begin{my_desc}
-    \item[Purpose] Used to gather all instances of the emails and treated as the classifier
-      dataset.
-    \item[Fuctions] \hfill
-    \begin{my_itemize}
-      \item add(instance:Instance) add new instance to the dataset.
-      \item getAttribute(index:int) get Attribute at given index.
-      \item getAttribute(name:String) get Attribute with the given name.
-      \item checkInstance(instance:Instance) check if the given instance is in the dataset or not.
-      \item getClassAttribute() return the class attribute of the dataset.
-    \end{my_itemize}
-
-  \end{my_desc}
-
-  \item Instance class
-  \begin{my_desc}
-    \item[Purpose] Used to encapsulate the feature vector of a certain email.
-    \item[Functions] \hfill
-    \begin{my_itemize}
-      \item getClassIndex() returns the index of the class attribute
-      \item setClassIndex(index:int) set the index of the class attribute
-      \item isMissingClass() check if the feature vector contains value of the class attribute or not
-      \item getValue(index:int) return the value for the ith attribute
-    \end{my_itemize}
-
-  \end{my_desc}
-
-  \item Attribute class
-  \begin{my_desc}
-    \item[Purpose] Used to encapsulate the dataset attribute with its type
-    \item[Functions] \hfill
-    \begin{my_itemize}
-      \item Attribute(name:String) \\
-      used to create a new Attribute instance with the given name.
-      \item Attribute(name:String,nominals:ArrayList$\langle$String$\rangle$) \\
-      used to create a new Attribute instance with the given name and possible values.
-      \item getValue(int:index): String \\
-      returns the attribute possible value of the given index
-      \item getIndexofValue(value:String): int \\
-      returns the index of the given attribute possible value
-    \end{my_itemize}
-
-  \end{my_desc}
-
-\end{my_itemize}
-
-\subsubsection{Email Monitoring Web Service Module}
-
-Email Monitoring Web Service is a web service implemented in rails framework which integrates 
-with a classification web service for classification of emails. The web service monitors 
-users emails and sends every new email to the classification service through a rest API 
-which returns a response with the email label, the web service then applies  the label to the user’s email.
-
+\section{Setting Up The Environment}
+The needed Environments for the project to run
 \begin{itemize}
- \item Features
- \begin{itemize}
-    \item Users registrations.
-    \item Adding more than email account.
-    \item Continuous monitoring of emails accounts for new emails.
-    \item Providing statistics about the classification process.
- \end{itemize}
- \item Future Work
-  \begin{itemize}
-    \item Support providers other than Gmail: Yahoo, Hotmail, ...etc.
-    \item Classifying users into active and non-active ones based on 
-	  their email account activity to decrease the load and increase 
-	  the performance of the monitoring process.
-    \item Increasing performance and security.
-    \item Authenticating gmail accounts using Oauth.
-  \end{itemize}
-
-
+\item Any operating system that is compatible with java Runtime Environment.
+\item Java runtime environment.
+\item Tomcat 6 server.
+\item MySql database.
 \end{itemize}
 
-
-\subsection{Data decomposition}
-The data layer is responsible for retrieving emails either from the file system or using 
-the IMAP protocol. The enron data set will be used as the data source for training and 
-testing the email classifier.
-
-\subsubsection{Data access object}
-  \begin{my_desc}
-   \item[Purpose] This class is responsible for retrieving emails using the IMAP protocol.
-   \item[Function] This class inherits from the data access object class.
-  \end{my_desc}
-
-\subsubsection{IMAP data access object}
-  \begin{my_desc}
-   \item[Purpose] This class is responsible for retrieving emails using the IMAP protocol.
-   \item[Function] This class inherits from the data access object class.
-  \end{my_desc}
+\section{Software Engineering Process Followed}
+Since the project included many different processes and stages. A long time is spent and multiple team members were working on it. It was critical to follow a standard methodological software engineering model to keep the work organized and fully utilize the effort.
 
 
-\subsubsection{File system data access object}
-  \begin{my_desc}
-   \item[Purpose] This class is responsible for retrieve emails from the file system.
-   \item[Function] This class inherits from the data access object class.
-  \end{my_desc}
+Software Process Improvement (SPI) for Small Medium Enterprises (SMEs)
+model is a model developed by software Engineering Competence Center
+whose goal is to help small and medium enterprise to raise the quality of
+their products by using modern software development processes and practices. It consists of several processes: the management, development, peer-review, quality assurance and configuration management processes. Since
+the SPI model targets mainly enterprise and business, it was required to
+slightly modify it to fit scientific natural of the project. Three of these processes were followed in the work which are the development, peer review and
+configuration management processes.
 
+\begin{itemize}
+\item Development Process: the development processes contained several
+phases so it will be discusses in next section 5.4 .
+\item Peer review Process: peer review allows to detect the errors early and
+almost all team members share their thoughts in the same point and
+look at it from many points of view. Throughout the project, all work
+was reviewed among the team members.
+\item Configuration Management Process: concerned with controlling and
+reporting changes during the project's lifetime. During the implementation phase, the source code was edited frequently and by multiple
+team members. So configuration management was applied by using
+source control system.
+\end{itemize}
 
-\section{Interface description}
-The interface description provides everything designers, programmers and 
-testers need to know to correctly use the functions provided by the system 
-entities. This description includes the details of external and internal 
-interfaces not provided in the software requirements specification.
+\section{Development Process}
 
-\subsection{Module interface}
-\subsubsection{Classification module interface}
-\begin{my_itemize}
-  \item Classifier class
-  \begin{my_desc}
-   \item[Purpose] All schemes for documents classification extend this class. Note that a classifier MUST either implement distributionForInstance() or classifyInstance() methods.
-   \item[Function] The Classifier abstarct class defines the following functions:
-	\begin{my_itemize}
-		\item classifyInstance(Instance instance) : classifies a given instance;
-		\item buildClassifier(Instances trainingData) : builds the classification model from the given set of training data;
-		\item getClassifierByName(String name, String[] options) : returns an instance of the classifier given the classifier name;
-		\item distributionForInstance(Instance instance): returns the destribution for each class attribute for the given instance.
-	\end{my_itemize}
-  \end{my_desc}
+The development process adopted through the project included the following
+phases: requirements specification, planning.
 
-  \item Preprocessor interface
-  \begin{my_desc}
-   \item[Purpose] Performs some pre-processing actions on the email before classifiaction. Pre-processing may include removing stop words and stemming. 
-   \item[Function] The Preprocessor interface defines the following function:
-	\begin{my_itemize}
-	\item process(Email email): Performs some pre-processing action on the given email such as stemming or removing stop words.
-	\end{my_itemize}
-  \end{my_desc}
+\subsection{Requirements Specification}
+Extracting the requirements is considered one of the most important phases
+in any software development. The main requirement was a classification web service with a REST api \cite{REST}.
+\subsection{Planning}
+To achieve the main requirement, several sub-requirements were planned.
+First, it was important to compare between classification algorithms and choose a subset of them to use,
+then choosing the best Email feature combination to give the highest accuracy,
+then choosing the api syntax for the classification web service.
+Finally, building a web monitoring web service and a browser extension to demonstrate the capabilities of the classification web service.
+\subsection{Analysis}
+As stated in the planning phase, Classification algorithms were analyzed and several Email features were compared ,
+the results of this comparisons are discussed in chapter 6.
+Enron dataset was used to do the analysis. The largest 7 users were chosen to do the analysis \cite{RON04}.
 
-  \item Filter class
-  \begin{my_desc}
-   \item[Purpose] Defines an abstract class for filtering an email. A filter is used to extract a set of features from the email such as the email sender, email label and word frequencies in an email.
-   \item[Function] The filter abstract class defines the following set of functions:
-	\begin{my_itemize}
-	\item makeFeatureInstance(Email email): creates a feature instance from the given email.
-	\item getAttributes(): returns the set of attributes for the given filter.
-	\end{my_itemize}
-  \end{my_desc}
+\subsection{Design}
+Since several algorithms and features combinations are analyzed and compared , a flexible design that enables changing
+the classification algorithm or the classification feature were needed.
+Design is described in details in the previous chapter.
 
-  \item FilterCreator interface
-  \begin{my_desc}
-   \item[Purpose] Defines an interface for creating a filter.
-   \item[Function] The FilterCreator interface defines the following function:
-	\begin{my_itemize}
-	\item createFilter(emails:List$\langle$Email$\rangle$): creates a filter given the list of emails.
-	\end{my_itemize}
-  \end{my_desc}
+\subsection{Implementation}
+The implementation phase was the most time demanding phase in the
+project.
+The implementation phase was divided into 3 parts.
+First implementing the classification web service using JavaEE and REST api \cite{REST},
+then implementing the email monitoring web service using ruby on rails \cite{ROR}
+and finally the browser extension using google chrome browser extension api \cite{CHROME}.
+\subsection{Integration}
+After implementing the classification web service,
+it was required to integrate the email monitoring web service and the browser extension with
+the classification web service and make sure they can communicate with the classification web
+service using the REST api.
 
-\end{my_itemize}
-\subsubsection{Email Monitoring Web Service Moudle interface}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=12cm]{account_example.png}
-  \caption[Example for MVC in action handling a user request to view his account]{Example for MVC in action handling a user request to view his account}
-\end{figure}
+\subsection{Testing}
+Several levels and types of testing were applied throughout the project.
+\begin{itemize}
+\item Unit testing was applied on several standalone modules.
+\item Integration testing was applied to the classification service as a whole.
+\end{itemize}
+\subsection{Deployment}
+The classification web service was configured so that it can be deployed on any web server that supports javaEE.
+The email monitoring web service was deployed to heroku \cite{HEROKU}.
+The chrome browser extension can be deployed to chrome extension web store.
+\section{Tools Used}
 
-
-\section{Detailed design}
-\subsection{Classification module detailed design}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=12cm]{design.jpeg}
-  \caption[Detailed Design] {Detailed Design}
-\end{figure}
-
-
-
-\subsection{Web service module detailed design}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=15cm]{mvc2.png}
-  \caption[Smart Email MVC Design]{Smart Email MVC Design}
-\end{figure}
-
+\section{Hardware And Software Environment}
 
 \section{Conclusion}
-In this chapter, the system architecture was introduced and the abstract system design using was illustrated.
-
-In the next chapter, the performance evaluation for the email classifier will be discussed.
