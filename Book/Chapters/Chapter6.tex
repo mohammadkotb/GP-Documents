@@ -90,7 +90,7 @@ Results of the seven Enron users are presented below as the accuracy over the ti
 
 The following table is the accuracies averaged over all training/test splits for all users. It has two columns representing the 2 different classification algorithms: Naive Bayes and SVM.
 
-\begin{table}
+\begin{table} [!htbp]
 	\begin{center}
 
 	    \begin{tabular}{ | l | l | l |}
@@ -152,6 +152,10 @@ Experimental results obtained support the following observations:
 \item Newly created folders negatively affects the classification accuracy. If a new folder is created, the classifier trains on few emails from this folder which may not be enough to build a good classification model. (e.g see the drops in sanders\_r and william-w3 learning curves)
 
 \item The dataset of user williams-w3 is a degenerative case. It has two large folders ("bill williams iii" and "schedule crawler" which contain most of the messages. This explains the high accuracy for this dataset regardless of the features used.
+
+\item Classification using the sender feature alone yields good results.
+
+\item Using both the sender feature and the bag of words (word frequency) achieves best results in most of the cases. Adding more features not necessarily imporves the accuracy.
 
 %TODO add more points (about feature comparison)
 \end{itemize}

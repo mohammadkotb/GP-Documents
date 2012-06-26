@@ -358,22 +358,35 @@ diagram at the end of this section.
 \subsubsection{System decomposition}
 The system is divided into main modules as follows:
 \begin{my_itemize}
-  \item classification web service module;
-  \item email monitoring web service module;
+  \item classification web service;
+  \item email monitoring web service;
   \item web browser extension.
 \end{my_itemize}
 Each of these modules will be described in details in the upcoming subsections.
 
-\paragraph{Classification Web Service Module}
+\paragraph{Classification Web Service}
 
 \begin{my_itemize}
   \item ClassificationManager class
   \begin{my_desc}
-    \item[Purpose] Used to manage and control the classification process flow
-      with the dataset and classification algorithms.
+    \item[Purpose] It holds all the parameters needed for the classification process.
 % TODO
 %     \item[Functions] TBD
   \end{my_desc}
+
+  \item ClassificationResource class
+  \begin{my_desc}
+    \item[Purpose] It implements the REST API for the classification web service
+    \item[Functions] \hfill
+    \begin{my_itemize}
+      \item register(username,password) adds user to database and starts training phase
+      \item remove(username,password) removes user information from database.
+      \item status(username) returns current status of training phase.
+      \item classify(emailContent) returns the best category for this email.
+      \item classify(email\_imap\_id) returns the best category for this email.
+    \end{my_itemize}
+  \end{my_desc}
+
   \item PreprocessingManager class
   \begin{my_desc}
     \item[Purpose] Used to manage preprocessing phase by applying selected data preprocessors
@@ -386,12 +399,12 @@ Each of these modules will be described in details in the upcoming subsections.
 
   \item FilterManager class
   \begin{my_desc}
-    \item[Purpose] Used to manage feature extraction phase from preprocessed emails by applying
+    \item[Purpose] Used to manage features extraction phase from preprocessed emails by applying
       specified set of filters.
     \item[Functions] \hfill
     \begin{my_itemize}
-      \item getInstances(emails:List$\langle$Email$\rangle$) given a set of emails returns a prepared dataset (Instances object)
-      \item getInstance(email:Email) given an email return a prepared feature vector (Instance object)
+      \item getDataset(emails:List$\langle$Email$\rangle$) given a set of emails returns a prepared dataset (Instances object)
+      \item makeInstance(email:Email) given an email return a prepared feature vector (Instance object)
     \end{my_itemize}
 
   \end{my_desc}
@@ -406,55 +419,9 @@ Each of these modules will be described in details in the upcoming subsections.
 
   \end{my_desc}
 
-
-  \item Instances class
-  \begin{my_desc}
-    \item[Purpose] Used to gather all instances of the emails and treated as the classifier
-      dataset.
-    \item[Fuctions] \hfill
-    \begin{my_itemize}
-      \item add(instance:Instance) add new instance to the dataset.
-      \item getAttribute(index:int) get Attribute at given index.
-      \item getAttribute(name:String) get Attribute with the given name.
-      \item checkInstance(instance:Instance) check if the given instance is in the dataset or not.
-      \item getClassAttribute() return the class attribute of the dataset.
-    \end{my_itemize}
-
-  \end{my_desc}
-
-  \item Instance class
-  \begin{my_desc}
-    \item[Purpose] Used to encapsulate the feature vector of a certain email.
-    \item[Functions] \hfill
-    \begin{my_itemize}
-      \item getClassIndex() returns the index of the class attribute
-      \item setClassIndex(index:int) set the index of the class attribute
-      \item isMissingClass() check if the feature vector contains value of the class attribute or not
-      \item getValue(index:int) return the value for the ith attribute
-    \end{my_itemize}
-
-  \end{my_desc}
-
-  \item Attribute class
-  \begin{my_desc}
-    \item[Purpose] Used to encapsulate the dataset attribute with its type
-    \item[Functions] \hfill
-    \begin{my_itemize}
-      \item Attribute(name:String) \\
-      used to create a new Attribute instance with the given name.
-      \item Attribute(name:String,nominals:ArrayList$\langle$String$\rangle$) \\
-      used to create a new Attribute instance with the given name and possible values.
-      \item getValue(int:index): String \\
-      returns the attribute possible value of the given index
-      \item getIndexofValue(value:String): int \\
-      returns the index of the given attribute possible value
-    \end{my_itemize}
-
-  \end{my_desc}
-
 \end{my_itemize}
 
-\paragraph{Email Monitoring Web Service Module}
+\paragraph{Email Monitoring Web Service}
 
 Email Monitoring Web Service is a web service implemented in RubyOnRails \cite{ROR} framework which integrates 
 with a classification web service for classification of emails. The web service monitors 
@@ -549,13 +516,13 @@ interfaces not provided in the software requirements specification.
 	\end{my_itemize}
   \end{my_desc}
 
-  \item Filter class
+  \item Filter interface
   \begin{my_desc}
    \item[Purpose] Defines an abstract class for filtering an email. A filter is used to extract a set of features from the email such as the email sender, email label and word frequencies in an email.
    \item[Function] The filter abstract class defines the following set of functions:
 	\begin{my_itemize}
-	\item makeFeatureInstance(Email email): creates a feature instance from the given email.
 	\item getAttributes(): returns the set of attributes for the given filter.
+	\item getAttValue(Email email): extracts the feature values specified by the filter and returns them
 	\end{my_itemize}
   \end{my_desc}
 
