@@ -183,5 +183,33 @@ number\_of\_attachments\tabularnewline
 \section{Conclusion}
 In this chapter the main features used for email classification was introduced.
 At the end of the chapter, the tuple of the classifier features was presented.
+Also it has been decided to focus on the following features:
+\begin{my_itemize}
+  \item static features;
+  \item dynamic features
+  \item on-line learning;
+  \item server side;
+  \item several algorithms.
+\end{my_itemize}
+And left the remaining features as a feature work, as shown in the following 
+table.
+
 In next chapter, project conceptualization and the proposed workflow will be 
 discussed.
+
+\begin{center}
+    \begin{table}[H]
+      \begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
+        \hline
+        F/P              & Outlook Rules & Gmail Filters & Yahoo Filters & PopFile \cite{POPFILE} & Smart Email\\ \hline
+        Static Features  &    Yes        &    Yes        &    Yes      &    Yes  & \cellcolor[gray]{0.9}Yes \\ \hline     
+        Dynamic Features &    No        &    No         &    No        &    Yes  & \cellcolor[gray]{0.9}Yes  \\ \hline
+        On-line Learning &    No        &    No         &    No        &    Yes  & \cellcolor[gray]{0.9}Yes \\ \hline
+        Server Side      &    No        &    Yes        &    Yes       &    No   & \cellcolor[gray]{0.9}Yes\\ \hline
+        Several Algorithms &    No        &    No &    No       &    No   & \cellcolor[gray]{0.9}Yes\\ \hline
+        Multi-Label support &    No        &    No &    No       &    No  & \cellcolor[gray]{0.9}No \\ \hline
+        Summarization support&    No        &    No &    No       &    No & \cellcolor[gray]{0.9}No  \\ \hline
+      \end{tabular}
+      \caption[Summary of related work]{Summary of related work}
+    \end{table}
+\end{center}  

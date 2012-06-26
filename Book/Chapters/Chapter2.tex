@@ -55,17 +55,27 @@ DPC is thus suitable when documents become available at different moments in tim
 \begin{itemize}
 \item a new category c$_{|C|+1}$ may be added to an existing set C = \{c$_{1}$, . . . , c$_{|C|}$\} after a number of documents have already been classified under C;
 \item these documents need to be reconsidered for classification under c$_{|C|+1}$.
-\end{itemize}. DPC is used more often than CPC, as the former situation is more common than the latter. \cite{Sebastiani2002}
+\end{itemize}
+DPC is used more often than CPC, as the former situation is more common than 
+the latter. \cite{Sebastiani2002}
 
 \section{Applications of Email Categorization}
 \subsection{Spam Detection}
-Spam remains a serious problem today because it continues to be a very profitable business for spammers. Spam takes on various forms from adult content, selling products/services, pharmaceuticals to stock promotions, job offers, etc.
+Spam remains a serious problem today because it continues to be a very 
+profitable business for spammers. Spam takes on various forms from adult 
+content, selling products/services, pharmaceuticals to stock promotions, 
+job offers, etc.
 
-Applying machine learning techniques for spam email detections plays a major role in protecting end users from spam email messages.\cite{peifeng2007}
+Applying machine learning techniques for spam email detections plays a major 
+role in protecting end users from spam email messages.\cite{peifeng2007}
 
 \subsection{Email Organization}
-Email has been an efficient and popular communication mechanism as the number of
-Internet users’ increases. Therefore, email management has become an important and growing problem for individuals and organizations because it is prone to misuse. One of the problems that are most paramount is disordered email message, congested and un-structured emails in mail boxes.
+Email has been an efficient and popular communication mechanism as the 
+number of Internet users’ increases. Therefore, email management has 
+become an important and growing problem for individuals and organizations 
+because it is prone to misuse. One of the problems that are most paramount 
+is disordered email message, congested and un-structured emails in mail 
+boxes.
 
 It may be very hard to find archived email message, search for previous emails with specified contents or features when the mails are not well structured and organized.
 
@@ -358,17 +368,20 @@ In section 2.6 related work was introduced that tries to solve the problem, but 
 \end{my_itemize}
 
 \begin{center}
-    \begin{tabular}{ | l | l | l | l | p{2cm} |}
-    \hline
-    F/P              & Outlook Rules & Gmail Filters & Yahoo Filters & PopFile \cite{POPFILE} \\ \hline
-    Static Features  &    Yes        &    Yes        &    Yes      &    Yes  \\ \hline     
-    Dynamic Features &    No        &    No         &    No        &    Yes  \\ \hline
-    On-line Learning &    No        &    No         &    No        &    Yes  \\ \hline
-    Server Side      &    No        &    Yes        &    Yes       &    No   \\ \hline
-    Several Algorithms &    No        &    No &    No       &    No   \\ \hline
-    Multi-Label support &    No        &    No &    No       &    No   \\ \hline
-    Summarization support&    No        &    No &    No       &    No   \\ \hline
+  \begin{table}
+    \begin{tabular}{ | c | c | c | c | p{2cm} |}
+      \hline
+      F/P              & Outlook Rules & Gmail Filters & Yahoo Filters & PopFile \cite{POPFILE} \\ \hline
+      Static Features  &    Yes        &    Yes        &    Yes      &    Yes  \\ \hline     
+      Dynamic Features &    No        &    No         &    No        &    Yes  \\ \hline
+      On-line Learning &    No        &    No         &    No        &    Yes  \\ \hline
+      Server Side      &    No        &    Yes        &    Yes       &    No   \\ \hline
+      Several Algorithms &    No        &    No &    No       &    No   \\ \hline
+      Multi-Label support &    No        &    No &    No       &    No   \\ \hline
+      Summarization support&    No        &    No &    No       &    No   \\ \hline
     \end{tabular}
+    \caption[Summary of related work]{Summary of related work}
+  \end{table}
 \end{center}  
 
 %=======================================================================================
