@@ -7,16 +7,18 @@
 \lhead{Chapter 5. \emph{Development Process, Environment and Tools}} % This is for the header on each page - perhaps a shortened title
 
 \section{Introduction}
-In Chapter 4, Smart Email architecture and design was discussed. In this chapter, 
+In Chapter \ref{Chapter4}, Smart Email architecture and design was discussed. In this chapter, 
 the adopted process is examined in detail; the stages of work, the tools used 
 and the work environment.
 
-The environments needed to be set up are discussed in section 5.2. In section 5.3, 
+The environments needed to be set up are discussed in section \ref{sec:5_setting_up_env}.
+In section \ref{sec:5_sw_eng_process_followed}, 
 the software engineering model followed throughout the project will be explained. 
-In section 5.4, the development process will be described in detail. In section 5.5, 
-all the tools used will be explained. The chapter is concluded in section 5.6.
+In section \ref{sec:5_dev_process}, the development process will be described in detail. In section \ref{sec:5_tools_used}, 
+all the tools used will be explained. The chapter is concluded in section \ref{sec:conclusion_5}.
 %----------------------------------------------------------------------------------------
 \section{Setting Up The Environment}
+\label{sec:5_setting_up_env}
 The needed environment for the project to run
 \begin{itemize}
   \item Any operating system that is compatible with Java Runtime Environment.
@@ -28,6 +30,7 @@ The needed environment for the project to run
 
 %--------------------------------------------------------
 \section{Software Engineering Process Followed}
+\label{sec:5_sw_eng_process_followed}
 Since the project included many different processes and stages. A long time is 
 spent and multiple team members were working on it. It was critical to follow 
 a standard methodological software engineering model to keep the work organized 
@@ -46,7 +49,7 @@ configuration management processes.
 
 \begin{itemize}
   \item Development Process: the development processes contained several
-  phases so it will be discusses in next section 5.4 .
+  phases so it will be discusses in next section \ref{sec:5_dev_process} .
   \item Peer review Process: peer review allows to detect the errors early and
   almost all team members share their thoughts in the same point and
   look at it from many points of view. Throughout the project, all work
@@ -60,6 +63,7 @@ configuration management processes.
 
 %--------------------------------------------------------
 \section{Development Process}
+\label{sec:5_dev_process}
 
 The development process adopted through the project included the following
 phases: requirements specification, planning.
@@ -67,12 +71,12 @@ phases: requirements specification, planning.
 \subsection{Requirements Specification}
 Extracting the requirements is considered one of the most important phases
 in any software development. The main requirement was a classification web 
-service with a REST api \cite{REST}.
+service with a REST API \cite{REST}.
 \subsection{Planning}
 To achieve the main requirement, several sub-requirements were planned.
 First, it was important to compare between classification algorithms and choose 
 a subset of them to use, then choosing the best Email feature combination to 
-give the highest accuracy, then choosing the api syntax for the classification 
+give the highest accuracy, then choosing the API syntax for the classification 
 web service. Finally, building a web monitoring web service and a browser extension 
 to demonstrate the capabilities of the classification web service.
 \subsection{Analysis}
@@ -90,15 +94,15 @@ chapter.
 \subsection{Implementation}
 The implementation phase was the most time demanding phase in the project. The 
 implementation phase was divided into 3 parts. First implementing the 
-classification web service using JavaEE and REST api \cite{REST},
+classification web service using JavaEE and REST API \cite{REST},
 then implementing the email monitoring web service using ruby on rails \cite{ROR}
-and finally the browser extension using google chrome browser extension api \cite{CHROME}.
+and finally the browser extension using google chrome browser extension API \cite{CHROME}.
 
 \subsection{Integration}
 After implementing the classification web service,
 it was required to integrate the email monitoring web service and the browser extension with
 the classification web service and make sure they can communicate with the classification web
-service using the REST api.
+service using the REST API.
 
 \subsection{Testing}
 Several levels and types of testing were applied throughout the project.
@@ -115,6 +119,7 @@ extension web store.
 
 %--------------------------------------------------------
 \section{Tools Used}
+\label{sec:5_tools_used}
 
 \subsection{Programming Languages Used}
 \begin{itemize}
@@ -158,6 +163,7 @@ git source control system \cite{GIT} was chosen to allow versioning and provide
 the ability to rollback to any version of the project.
 %--------------------------------------------------------
 \section{Conclusion}
+\label{sec:conclusion_5}
 In this chapter, the development process, used tools and project environment were 
 discussed in depth. In the next chapter, an analysis for the classification 
 procedure is provided.

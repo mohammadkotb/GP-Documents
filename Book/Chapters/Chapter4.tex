@@ -12,13 +12,14 @@
 \lhead{Chapter 4. \emph{Smart Email Requirements and Design}} % This is for the header on each page - perhaps a shortened title
 
 \section{Introduction}
-In chapter 3, the features of the smart email classifier were presented.
+In chapter \ref{Chapter3}, the features of the smart email classifier were presented.
 
-In this chapter, software requirements specification and software design
-description are explained in sections 4.2 and 4.3 respectively. The chapter is
-concluded in section 4.4.
+In this chapter, software requirements specification and software design description 
+are explained in sections \ref{sec:4_SRS} and \ref{sec:4_SDD} respectively. The chapter is
+concluded in section \ref{sec:conclusion_4}.
 
 \section{Software Requirements Specification} % Main chapter title
+\label{sec:4_SRS}
 %==============================================================================
 \subsection{Overview}
 In this section, an overview about the software requirements specification
@@ -104,7 +105,6 @@ or interact with this proposed application.}
 
 
 %==============================================================================
-\newpage
 \subsubsection{High Level Workflow}
 The workflow required to complete the primary objectives of the proposed 
 application is described below. The workflow is business-centered, and 
@@ -321,7 +321,7 @@ Any data migration requirements are listed below.
 %==============================================================================
 
 \section{Software Design Description (SDD)}
-
+\label{sec:4_SDD}
 %------------------------------------------------------------------------------
 
 \subsection{Purpose}
@@ -333,13 +333,12 @@ interfaces, and data necessary for the implementation phase.
 
 \subsection{Scope}
 Smart email will provide automated email classification for email clients. 
-This chapter describes how the system will be divided into modules and 
+This section describes how the system will be divided into modules and 
 the design details for each module.
 
 
 \subsection{Decomposition description}
-This project is designed using an incremental approach. There are three
-primary  stages to the design development which consists of phase 1 
+There are three primary stages to the design development which consists of phase 1 
 (Classification Web Service Module), phase 2 (Email Monitoring Web Service Module),
 and phase 3 (Web Browser Extension).
 
@@ -350,7 +349,7 @@ responsible for filtering emails and extracting classification features from the
 email. The third and last layer will be responsible for classifying emails and 
 testing the classifier performance.
 
-The detailed design for each design entity is illustrated in the detailed class 
+The detailed design for each entity is illustrated in the detailed class 
 diagram at the end of this section.
 
 \subsubsection{System decomposition}
@@ -364,62 +363,19 @@ Each of these modules will be described in details in the upcoming subsections.
 
 \paragraph{Classification Web Service}
 
+Classification web service provides an API for the email classification service.
 \begin{my_itemize}
-  \item ClassificationManager class
-  \begin{my_desc}
-    \item[Purpose] It holds all the parameters needed for the classification process.
-% TODO
-%     \item[Functions] TBD
-  \end{my_desc}
+	\item user registeration: A user can register with the service with one or more email accounts. The service trains using the user's email dataset, builds a classification model and stores it in a database.
+	
+	\item unregisteration: The user can remove himself from the service.
 
-  \item ClassificationResource class
-  \begin{my_desc}
-    \item[Purpose] It implements the REST API for the classification web service
-    \item[Functions] \hfill
-    \begin{my_itemize}
-      \item register(username,password) adds user to database and starts training phase
-      \item remove(username,password) removes user information from database.
-      \item status(username) returns current status of training phase.
-      \item classify(emailContent) returns the best category for this email.
-      \item classify(email\_imap\_id) returns the best category for this email.
-    \end{my_itemize}
-  \end{my_desc}
+	\item classification request: The user can send a classification request for any email. The system will retrieve the user model, classify the email and send the classification result back to the user.
 
-  \item PreprocessingManager class
-  \begin{my_desc}
-    \item[Purpose] Used to manage preprocessing phase by applying selected data preprocessors
-      to given raw emails.
-    \item[Functions] \hfill
-    \begin{my_itemize}
-      \item apply(email:Email) used to apply the selected preprocessors on a given email.
-    \end{my_itemize}
-  \end{my_desc}
-
-  \item FilterManager class
-  \begin{my_desc}
-    \item[Purpose] Used to manage features extraction phase from preprocessed emails by applying
-      specified set of filters.
-    \item[Functions] \hfill
-    \begin{my_itemize}
-      \item getDataset(emails:List$\langle$Email$\rangle$) given a set of emails returns a prepared dataset (Instances object)
-      \item makeInstance(email:Email) given an email return a prepared feature vector (Instance object)
-    \end{my_itemize}
-
-  \end{my_desc}
-
-  \item FilterCreatorManager class
-  \begin{my_desc}
-    \item[Purpose] Used to manage all Filter creators to create specified filters given a list of emails
-    \item[Functions] \hfill
-    \begin{my_itemize}
-      \item getFilters(emails:List$\langle$Email$\rangle$) create all supported filters using given emails
-    \end{my_itemize}
-
-  \end{my_desc}
+	\item feedback: In case the system classifies an email to an incorrect folder, the user can send feedback to the system with the correct folder. The system will use this feedback to improve future classification.
 
 \end{my_itemize}
 
-\paragraph{Email Monitoring Web Service}
+\paragraph{Email Monitoring Web Service} 
 
 Email Monitoring Web Service is a web service implemented in RubyOnRails \cite{ROR} framework which integrates 
 with a classification web service for classification of emails. The web service monitors 
@@ -427,12 +383,21 @@ users emails and sends every new email to the classification service through a R
 which returns a response with the email label, the web service then applies the label to the user’s email.
 
 \begin{itemize}
+ \item MVC illustration for the Email Monitoring module
+ \begin{figure}[H]
+   \centering
+   \includegraphics[width=12cm]{account_example.png}
+   \caption[Example for MVC in action handling a user request to view his 
+   accounts]{Example for MVC in action handling a user request to view his accounts}
+ \end{figure}
+
  \item Features
  \begin{itemize}
     \item Users registration.
     \item Adding more than one email account.
     \item Continuous monitoring of emails accounts for new emails.
  \end{itemize}
+ 
  \item Future Work
   \begin{itemize}
     \item Providing statistics about the classification process.
@@ -477,74 +442,54 @@ testing the email classifier.
 \begin{my_desc}
   \item[Data access object] this class is used to provide an abstract way to retrieve emails.
   \item[IMAP Data access object] it is responsible for retrieving emails using the IMAP protocol,
-  and it is inherited from the Data access object class.
+  and it inherits the Data access object class.
   \item[File system data access object] it is responsible for retrieving emails from the file
-  system, and it is inherited from the Data access object class.
+  system, and it inherits the Data access object class.
 \end{my_desc}
 
 
 %==============================================================================
 \subsection{Interface description}
 The interface description provides everything designers, programmers and 
-testers need to know to correctly use the functions provided by the system 
+testers need to know how to correctly use the functions provided by the system 
 entities. This description includes the details of external and internal 
 interfaces not provided in the software requirements specification.
 
 \subsubsection{Module interface}
-\paragraph{Classification module interface}
-\begin{my_itemize}
-  \item Classifier class
-  \begin{my_desc}
-   \item[Purpose] All schemes for documents classification extend this class. Note that a classifier MUST either implement distributionForInstance() or classifyInstance() methods.
-   \item[Function] The Classifier abstarct class defines the following functions:
-	\begin{my_itemize}
-		\item classifyInstance(Instance instance) : classifies a given instance;
-		\item buildClassifier(Instances trainingData) : builds the classification model from the given set of training data;
-		\item getClassifierByName(String name, String[] options) : returns an instance of the classifier given the classifier name;
-		\item distributionForInstance(Instance instance): returns the destribution for each class attribute for the given instance.
-	\end{my_itemize}
-  \end{my_desc}
-
-  \item Preprocessor interface
-  \begin{my_desc}
-   \item[Purpose] Performs some pre-processing actions on the email before classifiaction. Pre-processing may include removing stop words and stemming. 
-   \item[Function] The Preprocessor interface defines the following function:
-	\begin{my_itemize}
-	\item process(Email email): Performs some pre-processing action on the given email such as stemming or removing stop words.
-	\end{my_itemize}
-  \end{my_desc}
-
-  \item Filter interface
-  \begin{my_desc}
-   \item[Purpose] Defines an abstract class for filtering an email. A filter is used to extract a set of features from the email such as the email sender, email label and word frequencies in an email.
-   \item[Function] The filter abstract class defines the following set of functions:
-	\begin{my_itemize}
-	\item getAttributes(): returns the set of attributes for the given filter.
-	\item getAttValue(Email email): extracts the feature values specified by the filter and returns them
-	\end{my_itemize}
-  \end{my_desc}
-
-  \item FilterCreator interface
-  \begin{my_desc}
-   \item[Purpose] Defines an interface for creating a filter.
-   \item[Function] The FilterCreator interface defines the following function:
-	\begin{my_itemize}
-	\item createFilter(emails:List$\langle$Email$\rangle$): creates a filter given the list of emails.
-	\end{my_itemize}
-  \end{my_desc}
-
-\end{my_itemize}
+\paragraph{Classification Web Service API}
+%\begin{itemize}
+    \begin{itemize} %TODO: edit this to the new REST API
+      \item register(username,password) adds user to database and starts training phase
+      \item remove(username,password) removes user information from database.
+      \item status(username) returns current status of training phase.
+      \item classify(emailContent) returns the best category for this email.
+      \item classify(email\_imap\_id) returns the best category for this email.
+      \item feedback(email\_content,correct\_label) retrains the model using the new instance.
+    \end{itemize}
+%\end{itemize}
 
 %-------
 \newpage
-\paragraph{Email Monitoring Web Service Module interface}
-.\\
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=12cm]{account_example.png}
-  \caption[Example for MVC in action handling a user request to view his 
-  accounts]{Example for MVC in action handling a user request to view his accounts}
-\end{figure}
+\paragraph{Email Monitoring Web Service API}
+\begin{itemize}
+	\item API for user registration
+	\begin{itemize}
+		\item Basic URL: http://smart-email.herokuapp.com/
+		\item Endpoint: /users
+		\item Request type: POST
+		\item Parameters: username, password
+		\item Response: Success/Error on creating the new user
+	\end{itemize}
+
+	\item API for email account registration
+	\begin{itemize}
+		\item Basic URL: http://smart-email.herokuapp.com/
+		\item Endpoint: /accounts
+		\item Request type: POST
+		\item Parameters: username, password
+		\item Response: Success/Error on creating the new user
+	\end{itemize}
+\end{itemize}
 
 %==============================================================================
 \newpage
@@ -569,6 +514,7 @@ interfaces not provided in the software requirements specification.
 
 
 \section{Conclusion}
+\label{sec:conclusion_4}
 In this chapter, the software requirements specification and software design
 description were discussed. While in the next chapter, Environment and 
 Development tools will be discussed.

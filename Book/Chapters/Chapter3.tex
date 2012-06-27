@@ -1,3 +1,7 @@
+\label{sec:3_classifier_features}
+\label{sec:3_detailed_classifier_features}
+\label{sec:3_classifier_tuple}
+\label{sec:conclusion_3}
 % Chapter 3
 
 \chapter{The Suggested Features Of Smart Email Classifier} % Main chapter title
@@ -15,13 +19,15 @@ introduced. Some related applications that are similar to Smart Email with their
 features were discussed.
 
 In this chapter, the suggested features for smart email classifier are discussed.
-In section 3.2, the features used for email classification is presented. Section 
-3.3 includes the detailed classifier features. Section 3.4 presents the tuple of 
-classifier features used as an input for the email classifier. The Chapter is 
-concluded in section 3.5.
+In section \ref{sec:3_classifier_features}, the features used for email 
+classification is presented. Section \ref{sec:3_detailed_classifier_features} 
+includes the detailed classifier features. Section \ref{sec:3_classifier_tuple} 
+presents the tuple of classifier features used as an input for the email 
+classifier. The Chapter is concluded in section \ref{sec:conclusion_3}.
 %==============================================================================
 \newpage
 \section {Classifier Features}
+\label{sec:3_classifier_features}
 \begin{longtable}{|>{\centering}p{2.5cm}|>{\centering}p{3cm}|>{\centering}p{3cm}|>{\centering}p{3cm}|}
 \hline
 \multirow{19}{2.5cm}{Features needed for the email classifier (Automatic Categorization
@@ -68,6 +74,7 @@ of emails into folders)}
 \end{longtable}
 %----------------------------------------------------------------------
 \section {Detailed Classifier Features}
+\label{sec:3_detailed_classifier_features}
 
 \begin{longtable}{|>{\centering}p{2cm}|>{\centering}p{2.5cm}|>{\centering}p{3cm}|>{\centering}p{3cm}|>{\centering}p{3cm}|}
 \hline 
@@ -140,6 +147,7 @@ false, else return true
 %-------------------------------------------------------------------------
 \newpage
 \section {Tuple of the classifier Features (Classifier Input)}
+\label{sec:3_classifier_tuple}
 
 \begin{center}
 \begin{tabular}{|c|}
@@ -187,6 +195,7 @@ number\_of\_attachments\tabularnewline
 
 
 \section{Conclusion}
+\label{sec:conclusion_3}
 In this chapter the main features used for email classification was introduced.
 At the end of the chapter, the tuple of the classifier features was presented.
 Also it has been decided to focus on the following features:
@@ -207,7 +216,8 @@ discussed.
     \begin{table}[H]
       \begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
         \hline
-        F/P              & Outlook Rules & Gmail Filters & Yahoo Filters & PopFile \cite{POPFILE} & Smart Email\\ \hline
+        F/P              & Outlook Rules \cite{OUTLOOK_REF} & Gmail Filters \cite{GMAIL_FILTERS} & 
+        Yahoo Filters \cite{YAHOO_FILTERS} & PopFile \cite{POPFILE} & Smart Email\\ \hline
         Static Features  &    Yes        &    Yes        &    Yes      &    Yes  & \cellcolor[gray]{0.9}Yes \\ \hline     
         Dynamic Features &    No        &    No         &    No        &    Yes  & \cellcolor[gray]{0.9}Yes  \\ \hline
         On-line Learning &    No        &    No         &    No        &    Yes  & \cellcolor[gray]{0.9}Yes \\ \hline
@@ -216,6 +226,7 @@ discussed.
         Multi-Label support &    No        &    No &    No       &    No  & \cellcolor[gray]{0.9}No \\ \hline
         Summarization support&    No        &    No &    No       &    No & \cellcolor[gray]{0.9}No  \\ \hline
       \end{tabular}
-      \caption[Summary of related work]{Summary of related work}
+      \caption[Comparison between Smart Email and related applications]
+      {Comparison between Smart Email and related applications}
     \end{table}
 \end{center}  
