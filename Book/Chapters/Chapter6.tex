@@ -41,7 +41,7 @@ This section will discuss the implementation details of the classification web s
     the design of the Smart Email allows the addition of other preprocessors without modification to the existing code.
         \begin{description}
         \item[Stemming] Porter stemmer \cite{STEMMER} is used to stem words of email.
-        \item[Stop words removal] is used to remove stop words like ("the","them",.. etc).
+        \item[Stop words removal] is used to remove stop words like (``the",``them",.. etc).
         \item[Lowercasing] is used to convert all words in subject and body to lowercase.
         \item[Number Normalization] is used to convert all numbers to a specific tag.
         \item[URL Normalization] is used to convert all urls into specific tags.
@@ -84,11 +84,11 @@ This section will discuss the implementation details of the classification web s
     a feedback message with the email and the correct label, then sends it to the classification 
     web service.
 
-    To detect events like manual classification, the extension must intercepts ajax requests made by
+    To detect events like manual classification, the extension must intercepts AJAX requests made by
     Gmail and examines the request body.
 
     The Extension uses the Gmailr library \cite{GMAILR} to detect various events. The library was modified 
-    to be able to detect "apply new label" event.
+    to be able to detect ``apply new label" event.
 
 %--------------------------------------------------------------------------------------
 \section{Results and Discussion}

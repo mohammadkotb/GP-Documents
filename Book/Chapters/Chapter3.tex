@@ -29,6 +29,7 @@ classifier. The Chapter is concluded in section \ref{sec:conclusion_3}.
 \section {Classifier Features}
 \label{sec:3_classifier_features}
 \begin{longtable}{|>{\centering}p{2.5cm}|>{\centering}p{3cm}|>{\centering}p{3cm}|>{\centering}p{3cm}|}
+\caption[Email Classifier Features]{Email Classifier Features} \\
 \hline
 \multirow{19}{2.5cm}{Features needed for the email classifier (Automatic Categorization
 of emails into folders)}
@@ -77,6 +78,7 @@ of emails into folders)}
 \label{sec:3_detailed_classifier_features}
 
 \begin{longtable}{|>{\centering}p{2cm}|>{\centering}p{2.5cm}|>{\centering}p{3cm}|>{\centering}p{3cm}|>{\centering}p{3cm}|}
+\caption[Detailed Email Classifier Features]{Detailed Email Classifier Features} \\
 \hline 
 Category & Feature & Description & Values & Source (preparation)\tabularnewline
 \hline
@@ -150,6 +152,8 @@ false, else return true
 \label{sec:3_classifier_tuple}
 
 \begin{center}
+\begin{table}[H]
+\begin{center}
 \begin{tabular}{|c|}
 \hline 
 email\_id\tabularnewline
@@ -189,6 +193,9 @@ has\_attachments\tabularnewline
 number\_of\_attachments\tabularnewline
 \hline
 \end{tabular}
+\end{center}
+\caption[Tuple of the classifier Features (Classifier Input)]{Tuple of the classifier Features (Classifier Input)}
+\end{table}
 \end{center}
 
 \newpage
