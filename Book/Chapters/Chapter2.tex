@@ -58,11 +58,11 @@ Classification is a very important topic within supervised learning field.
 Although the most popular task for classification usually deals with 
 single-label datasets, where every example is associated with a single label 
 $\lambda$ from a set of disjoint labels L, the multi-label datasets are emerging 
-and gaining interest due to their increasing application to real problems. Multilabel 
+and gaining interest due to their increasing application to real problems. Multi-label 
 datasets are used when the examples are associated with a set of labels Y 
 $\subseteq$ L, as occurs with email classification, image annotation, or genomics.
 
-Two main tasks can be defined when learning from multilabel data: 
+Two main tasks can be defined when learning from multi-label data: 
 \begin{itemize}
   \item multi-label classification (MLC) that returns a subset of labels to be 
   associated with a given example (it can be considered as a bipartition of the 
@@ -105,7 +105,7 @@ Email has been an efficient and popular communication mechanism as the
 number of Internet users’ increases. Therefore, email management has 
 become an important and growing problem for individuals and organizations 
 because it is prone to misuse. One of the problems that are most paramount 
-is disordered email message, congested and un-structured emails in mail 
+is disordered email message, congested and unstructured emails in mail 
 boxes.
 
 It may be very hard to find archived email message, search for previous 
@@ -120,7 +120,7 @@ important words. \cite{taiwo2007}
 \label{sec:ml_approach_text_classification}
 
 In the 80s the most popular approach (at least in operational settings) for the
-creation of automatic document classiﬁers consisted in manually building, by means
+creation of automatic document classifiers consisted in manually building, by means
 of knowledge engineering (KE) techniques, an expert system capable of taking
 Text Categorization (TC) decisions. Such an expert system would typically
 consist of a set of manually defined logical rules.
@@ -132,13 +132,13 @@ process is `supervised' by the knowledge of the categories and of the training
 instances that belong to them.
 
 The advantages of the ML approach over the KE approach are evident. The 
-engineering effort goes towards the construction not of a classiﬁer, 
-but of an automatic builder of classiﬁers (the learner). \cite{Sebastiani2002}
+engineering effort goes towards the construction not of a classifier, 
+but of an automatic builder of classifiers (the learner). \cite{Sebastiani2002}
 
 \subsection{Training Set, Test Set, and Validation Set}
 The ML approach relies on the availability of an initial 
 corpus = \{d$_{1}$, . . . , d$_{|\Omega|}$\} $\subset$ D of documents 
-preclassified under C = \{c$_{1}$, . . . , c$_{|C|}$\}. That is, the values of 
+pre-classified under C = \{c$_{1}$, . . . , c$_{|C|}$\}. That is, the values of 
 the total function $\theta$ : D X C $\rightarrow$ \{T, F\} are known for every 
 pair $\langle$ d$_{j}$ , c$_{i}$ $\rangle$ $\in$   $\Omega$ X C. A document 
 d$_{j}$ is a positive example of c$_{i}$ if (d$_{j}$ , c$_{i}$) = T , a negative 
@@ -214,7 +214,7 @@ find, among all the surfaces $\sigma 1$,$ \sigma 2$, ... in $|T|$ -dimensional
 space that separate the positive from the negative training examples (decision
 surfaces), the $\sigma i$ that separates the positives from the negatives by the 
 widest possible margin, i.e. such that the separation property is invariant with 
-respect to the widest possible traslation of $\sigma i$ .
+respect to the widest possible translation of $\sigma i$ .
 
 This idea is best understood in the case in which the positives and the
 negatives are linearly separable, in which case the decision surfaces are
@@ -230,7 +230,7 @@ determined by only a small set of training examples, called the support vectors.
 Methods for learning linear classifiers are often partitioned in two broad 
 classes, batch methods and on-line methods.
 
-Batch methods build a classifier by analysing the training set all at once. 
+Batch methods build a classifier by analyzing the training set all at once. 
 On-line (aka incremental) methods build a classifier soon after examining 
 the first training document, and incrementally refine it as they examine new ones. 
 This may be an advantage in the applications in which the `meaning' of the 
@@ -422,10 +422,10 @@ From the research papers related to email classification we conclude the followi
     expensive and has the hardest implementation;
     \item the basic form of Na\"{\i}ve Bayes algorithm has the simplest implementation 
     but has very low classification accuracy compared to other algorithms;
-    \item online learning techniques are still under development, they are very 
+    \item on-line learning techniques are still under development, they are very 
     hard to implement but characterized by their ability to classify new coming 
     email without rebuilding the model;
-    \item offline learning techniques are used in most papers;
+    \item off-line learning techniques are used in most papers;
     \item Enron dataset \cite{ENRON} is the most commonly used.
 \end{my_itemize}
 %=======================================================================================

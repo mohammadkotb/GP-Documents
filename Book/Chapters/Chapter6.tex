@@ -15,7 +15,7 @@ In this chapter, implementation details and results are discussed. In section
 \ref{sec:6_imp_details}, implementation details of the classification web service,
 email monitoring web service, and Chrome extension are discussed. While in section
 \ref{sec:6_results_discussion}, experiments of different classification procedures,
-dataset splits, feature selection, and analysis of the obtaind results are presented. 
+dataset splits, feature selection, and analysis of the obtained results are presented. 
 And the chapter is concluded in section \ref{sec:conclusion_6}.
 
 %==============================
@@ -69,15 +69,15 @@ This section will discuss the implementation details of the classification web s
 
 \subsection{Chrome Browser Extension implementation details}
     Chrome Extension is a client side extension for the Google chrome browser \cite{CHROME}.
-    The extension injects a javascript file in the gmail web interface. The extension also manipulates
-    gmail web interface HTML page by injecting a button entitled ``Classify Me''
+    The extension injects a javascript file in the Gmail web interface. The extension also manipulates
+    Gmail web interface HTML page by injecting a button entitled ``Classify Me''
     that appears when the user selects any email to view.
 
     The button is injected by adding a new DOM element to the html page.The extension must waits till
     the page completely loads to do the injection.
 
     When the user clicks the ``Classify Me'' button the extension retrieves the raw email and
-    builds a message using the raw email,an ajax call with the message is made to the 
+    builds a message using the raw email,an AJAX call with the message is made to the 
     classification web service.
 
     The extension also detects when the user tries to manually classify an email, The extension builds
@@ -85,7 +85,7 @@ This section will discuss the implementation details of the classification web s
     web service.
 
     To detect events like manual classification, the extension must intercepts ajax requests made by
-    gmail and examines the request body.
+    Gmail and examines the request body.
 
     The Extension uses the Gmailr library \cite{GMAILR} to detect various events. The library was modified 
     to be able to detect "apply new label" event.
@@ -186,7 +186,7 @@ the timeline for each user.
         \includegraphics[scale=0.3]{williams-w3.png}
     }
     \end{center}
-    \caption{Timeline results (learning curvers)}
+    \caption{Timeline results (learning curves)}
 \end{figure}
 
 The following table is the accuracies averaged over all training/test splits 

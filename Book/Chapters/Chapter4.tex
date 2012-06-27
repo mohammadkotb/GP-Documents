@@ -41,11 +41,11 @@ critical to the success of this project are listed below:
   \item each user will have his own trained classification model based on the user supplied training data;
   \item a web service will be implemented to provide email classification support for different email 
 	providers (for example: Google, Hotmail, Yahoo);
-  \item english language will be supported by default;
+  \item English language will be supported by default;
   \item the servers providing the web service have to provide sufficient 
 	processing power for achieving reasonable response time;
   \item email classification will be based on the email subject and content. 
-	Other features can be used as well, such as the email sender and recepient(s). 
+	Other features can be used as well, such as the email sender and recipient(s). 
 	However, email attachments will not be considered as a classification feature for the email.
 \end{my_itemize}
 
@@ -365,9 +365,9 @@ Each of these modules will be described in details in the upcoming subsections.
 
 Classification web service provides an API for the email classification service.
 \begin{my_itemize}
-	\item user registeration: A user can register with the service with one or more email accounts. The service trains using the user's email dataset, builds a classification model and stores it in a database.
+	\item user registration: A user can register with the service with one or more email accounts. The service trains using the user's email dataset, builds a classification model and stores it in a database.
 	
-	\item unregisteration: The user can remove himself from the service.
+	\item unregistration: The user can remove himself from the service.
 
 	\item classification request: The user can send a classification request for any email. The system will retrieve the user model, classify the email and send the classification result back to the user.
 
