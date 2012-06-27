@@ -81,15 +81,14 @@ give the highest accuracy, then choosing the API syntax for the classification
 web service. Finally, building a web monitoring web service and a browser extension 
 to demonstrate the capabilities of the classification web service.
 \subsection{Analysis}
-As stated in the planning phase, Classification algorithms were analyzed and 
-several Email features were compared, the results of this comparisons are 
-discussed in chapter 6. Enron dataset was used to do the analysis. The largest 7 
-users were chosen to do the analysis \cite{RON04}.
+As stated in the planning phase, classification algorithms were analyzed and 
+several email features were compared. The results of these comparisons are 
+discussed in chapter 6.
 
 \subsection{Design}
 Since several algorithms and features combinations are analyzed and compared, 
 a flexible design that enables changing the classification algorithm or the 
-classification feature were needed. Design is described in detail in the previous 
+classification features was needed. Design is described in detail in the previous 
 chapter.
 
 \subsection{Implementation}
@@ -97,7 +96,7 @@ The implementation phase was the most time demanding phase in the project. The
 implementation phase was divided into 3 parts. First implementing the 
 classification web service using JavaEE and REST API \cite{REST},
 then implementing the email monitoring web service using ruby on rails \cite{ROR}
-and finally the browser extension using Google chrome browser extension API \cite{CHROME}.
+and finally the browser extension using Google Chrome browser extension API \cite{CHROME}.
 
 \subsection{Integration}
 After implementing the classification web service,
@@ -115,7 +114,7 @@ Several levels and types of testing were applied throughout the project.
 \subsection{Deployment}
 The classification web service was configured so that it can be deployed on any 
 web server that supports javaEE. The email monitoring web service was deployed 
-to heroku \cite{HEROKU}. The chrome browser extension can be deployed to chrome 
+to Heroku \cite{HEROKU}. The Chrome browser extension can be deployed to Chrome 
 extension web store.
 
 %--------------------------------------------------------
@@ -126,7 +125,7 @@ extension web store.
 \begin{itemize}
   \item Java Enterprise Edition version 6 was used as the main language in the 
   classification web service.
-  \item Ruby on rails \cite{ROR} was used for developing the email monitoring 
+  \item Ruby on Rails \cite{ROR} was used for developing the email monitoring 
   web service.
   \item Javascript was used for developing the browser extension.
 \end{itemize}
@@ -139,8 +138,8 @@ monitoring web service.
 \subsection{External Libraries}
 The following libraries were used
 \begin{itemize}
-  \item WEKA \cite{WEKA} data-mining library is used to provide implementation for SVM algorithm.
-  \item Jersy \cite{JERSY} is used for building restful web application in java.
+  \item WEKA \cite{WEKA} data-mining library used to provide implementation for different classification algorithms.
+  \item Jersy \cite{JERSY} is used for building RESTful web applications in java.
   \item Gmailr \cite{GMAILR} is used to detect events within the Gmail web interface.
 \end{itemize}
 
@@ -148,8 +147,8 @@ The following libraries were used
 \subsection{Web Servers}
 The following web servers were used
 \begin{itemize}
-  \item Tomcat 6 is used as a java web server for the classification web server.
-  \item Rails web server as a server for the email monitoring web server.
+  \item Tomcat 6 is used as a java web server for the classification web service.
+  \item Rails web server is used for the email monitoring web service.
 \end{itemize}
 
 \subsection{Other Tools}
