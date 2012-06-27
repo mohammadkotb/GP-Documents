@@ -29,13 +29,11 @@ In this chapter, a background about text and email classification is introduced 
 sections \ref{sec:ml_text_categ}, \ref{sec:app_email_categ}, 
 \ref{sec:ml_approach_text_classification}, and \ref{sec:construction_text_classifier} 
 successively. In section \ref{sec:app_email_categ}, applications of email 
-categorization is presented. The machine learning approach for text 
+categorization are presented. The machine learning approach for text 
 classification is discussed in section \ref{sec:ml_approach_text_classification}. 
 In section \ref{sec:construction_text_classifier}, construction of text classifier 
-and different types of classifiers are presented. In section \ref{sec:related_work}
-related work to Smart Email is presented with features of each paper. Then, a comparison
-between related applications will be outlined in section \ref{sec:related_apps}. And
-summarizing the need to extend related applications is explained in section
+and different types of classifiers are presented. Section \ref{sec:related_work} includes the summary of surveying several papers related to email classification. Then, a comparison
+between related applications will be outlined in section \ref{sec:related_apps}. Summarizing the need to extend related applications is explained in section
 \ref{sec:need_to_extend}. The chapter is concluded in section \ref{sec:conclusion_2}.
 
 %==============================================================================
@@ -244,6 +242,8 @@ during the operating phase by exploiting user feedback.
 
 \newpage
 \section{Related Work}
+This section contains the summary of surveying several papers related to automatic email categorization into folders.
+
 \label{sec:related_work}
 
 \subsection{Classification according to the different learning algorithms used in different papers}
@@ -273,7 +273,6 @@ classification according to the different learning algorithms for email classifi
     \caption{Classification according to the different learning algorithms used in different papers.}
   \end{table}
 \end{center}
-\newpage
 
 \subsection{Classification according to the different learning capabilities}
 The following table classifies some recent research papers in the field of email 
@@ -478,6 +477,20 @@ to the categorization. To train POPFile in this mode, the user only needs to
 move the message to the correct folder, i.e. to the folder where POPFile should 
 have moved the message.
 
+\subsection{Desirable Features}
+\label{desirable_features}
+From above, it could be stated that smart email should implement the desirable features enumerated below:
+\begin{enumerate}
+  \item classifying emails based on deterministic rules;
+  \item classifying emails based on dynamic features;
+  \item supporting on-line learning classification algorithms;
+  \item providing server-side web service for email classification;
+  \item supporting several classification algorithms;
+  \item supporting multi-label email classification;
+  \item providing email summarization service.
+\end{enumerate}
+
+
 \subsection{Summary of Related Applications}
 Table \ref{related_applications_summary} summarizes the features of applications related to smart email.
 
@@ -485,7 +498,7 @@ Table \ref{related_applications_summary} summarizes the features of applications
   \begin{table}[H]
     \begin{tabular}{ | p{3cm} | c | c | c | c |}
       \hline
-      F/P              & Outlook Rules \cite{OUTLOOK_REF} & Gmail Filters \cite{GMAIL_FILTERS} & 
+      Feature/Project              & Outlook Rules \cite{OUTLOOK_REF} & Gmail Filters \cite{GMAIL_FILTERS} & 
                         Yahoo Filters \cite{YAHOO_FILTERS} & PopFile \cite{POPFILE} \\ \hline
       Deterministic Rules  &    Yes        &    Yes        &    Yes      &    Yes  \\ \hline     
       Dynamic Features &    No        &    No         &    No        &    Yes  \\ \hline
@@ -504,18 +517,29 @@ Table \ref{related_applications_summary} summarizes the features of applications
 %=======================================================================================
 \section{Need To Extend Related Applications}
 \label{sec:need_to_extend}
-Close study of table \ref{related_applications_summary} reveals the need to extend all existing applications to cover the desirable features enumerated below:
-\begin{enumerate}
-  \item classifying emails based on deterministic rules;
-  \item classifying emails based on dynamic features;
-  \item supporting on-line learning classification algorithms;
-  \item providing server-side web service for email classification;
-  \item supporting several classification algorithms;
-  \item supporting multi-label email classification;
-  \item providing email summarization service.
-\end{enumerate}
+Close study of table \ref{related_applications_summary} reveals the need to extend all existing applications to cover the desirable features enumerated in subsection \ref{desirable_features}
 
 The scope of this project is to design and implement the first five features and the rest will be left for future extensions.
+
+\begin{center}
+    \begin{table}[H]
+      \begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
+        \hline
+        Feature/Project              & Outlook Rules \cite{OUTLOOK_REF} & Gmail Filters \cite{GMAIL_FILTERS} & 
+        Yahoo Filters \cite{YAHOO_FILTERS} & PopFile \cite{POPFILE} & Smart Email\\ \hline
+        Static Features  &    Yes        &    Yes        &    Yes      &    Yes  & \cellcolor[gray]{0.9}Yes \\ \hline     
+        Dynamic Features &    No        &    No         &    No        &    Yes  & \cellcolor[gray]{0.9}Yes  \\ \hline
+        On-line Learning &    No        &    No         &    No        &    Yes  & \cellcolor[gray]{0.9}Yes \\ \hline
+        Server Side      &    No        &    Yes        &    Yes       &    No   & \cellcolor[gray]{0.9}Yes\\ \hline
+        Several Algorithms &    No        &    No &    No       &    No   & \cellcolor[gray]{0.9}Yes\\ \hline
+        Multi-Label support &    No        &    No &    No       &    No  & \cellcolor[gray]{0.9}No \\ \hline
+        Summarization support&    No        &    No &    No       &    No & \cellcolor[gray]{0.9}No  \\ \hline
+      \end{tabular}
+      \caption[Comparison between Smart Email and related applications]
+      {Comparison between Smart Email and related applications}
+    \end{table}
+\end{center}  
+
 %=======================================================================================
 \section{Conclusion}
 \label{sec:conclusion_2}
