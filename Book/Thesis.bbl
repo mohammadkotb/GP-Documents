@@ -173,6 +173,7 @@ Last Accessed 25 June 2012.
 Last Accessed 26 June 2012.
 \newblock Enron Email Dataset.
 \newblock \url{http://www.cs.cmu.edu/~enron}
+
 \bibitem{KY04}
 \newblock B. Klimt and Y. Yang. The enron corpus: A new dataset for email classification research.
 In Proceedings of ECML’04, 15th European Conference on Machine Learning, pages 217–
@@ -185,5 +186,15 @@ representations for text categorization. In Proceedings of CIKM’98, 7th ACM In
 tional Conference on Information and Knowledge Management, pages 148–155, Bethesda,
 US
 \newblock 1998.
+
+\bibitem{WEKA}
+Last Accessed 26 June 2012.
+\newblock WEKA datamining software in java.
+\newblock \url{http://www.cs.waikato.ac.nz}.
+
+\bibitem{JERSY}
+Last Accessed 26 June 2012.
+\newblock  Jersy java REST API library.
+\newblock \url{http://www.jersy.java.net}.
 
 \end{thebibliography}
