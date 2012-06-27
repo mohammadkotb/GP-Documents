@@ -28,7 +28,7 @@ This section will discuss the implementation details of the classification web s
 
 
     \subsubsection{Training Phase}
-    Once the user have registered in the classification web service, Smart Email will start downloading pre-classified emails from
+    Once the user registers in the classification web service, Smart Email will start downloading pre-classified emails from
     user email provider using IMAP protocol.
 
     Smart Email design described in the previous chapter is flexible and enables using different data sources,a file data source was used
@@ -45,19 +45,19 @@ This section will discuss the implementation details of the classification web s
         \item[Lowercasing] is used to convert all words in subject and body to lowercase.
         \item[Number Normalization] is used to convert all numbers to a specific tag.
         \item[URL Normalization] is used to convert all urls into specific tags.
-        \item[HTML tags remover] is used to remove html tags from emails if they exists.
+        \item[HTML tags remover] is used to remove html tags from emails if they exist.
         \end{description}
 
     \subsubsection{Classification phase}
     When a new Incoming Email is sent to the classification web service,
     the email is preprocessed as described above and features (described in details in Chapter \ref{Chapter3}
-    are Extracted to build the input tuple.
+    are extracted to build the input tuple.
 
     The input tuple is then given to WEKA \cite{WEKA} (Naive Bayes or SVM) classifier to 
     perform the classification. The result of the classification is then returned.
 
 \subsection{Email monitoring web service implementation details}
-    Users register in the email monitoring web service by providing user name and passwords,
+    Users register in the email monitoring web service by providing user name and password,
     then the user can add one or more email accounts to be monitored.
     A Job runs in the background opening IMAP-IDLE connection for every user's email account.
     This job sends every new incoming email to the classification web service and
@@ -278,14 +278,18 @@ Experimental results obtained support the following observations
 
   \item Using both the sender feature and the bag of words (word frequency) feature 
   achieves best results in most of the cases. Adding more features doesn't necessarily 
-  imporve the accuracy.
+  improve the accuracy.
 
   %TODO add more points (about feature comparison)
 \end{itemize}
 
 \section{Conclusion}
 \label{sec:conclusion_6}
-In this chapter the experimental results were presented. Analysis of the results were 
-discussed. The results reveal the difficulty of eamil classification. Improving the 
-accuracy is listed as a future work.
+In this chapter the implementation details, results and discussion were presented. In section 
+\label{sec:6_imp_details} The implementation details of the classification web service, 
+email monitoring web service and chrome extension were presented in details.
+
+In section \label{sec:6_results_discussion} the experimental results were presented.
+Analysis of the results were discussed. The results reveal the difficulty of email 
+classification. Improving the accuracy is listed as a future work.
 
