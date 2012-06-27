@@ -296,18 +296,7 @@ Mahmoud} % Your name - this is used in the title page and abstract
   \null\vfil
   \begin{center}
     \setlength{\parskip}{0pt}
-    {\normalsize \UNIVNAME \par} % University name in capitals
-    \bigskip
     {\huge{\textit{Abstract}} \par}
-    \bigskip
-    {\normalsize \facname \par} % Faculty name
-    {\normalsize \deptname \par} % Department name
-    \bigskip
-    {\normalsize \degreename\par} % Degree name
-    \bigskip
-    {\normalsize\bf \@title \par} % Thesis title
-    \medskip
-    {\normalsize by \authornames \par} % Author name
     \bigskip
   \end{center}
 }
