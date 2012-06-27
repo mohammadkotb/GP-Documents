@@ -366,13 +366,13 @@ Table \ref{related_applications_summary} summarizes the features of applications
     \begin{tabular}{ | c | c | c | c | p{2cm} |}
       \hline
       F/P              & Outlook Rules & Gmail Filters & Yahoo Filters & PopFile \cite{POPFILE} \\ \hline
-      1) Static Features  &    Yes        &    Yes        &    Yes      &    Yes  \\ \hline     
-      2) Dynamic Features &    No        &    No         &    No        &    Yes  \\ \hline
-      3) On-line Learning &    No        &    No         &    No        &    Yes  \\ \hline
-      4) Server Side      &    No        &    Yes        &    Yes       &    No   \\ \hline
-      5) Several Algorithms &    No        &    No &    No       &    No   \\ \hline
-      6) Multi-Label support &    No        &    No &    No       &    No   \\ \hline
-      7) Summarization support&    No        &    No &    No       &    No   \\ \hline
+      Static Features  &    Yes        &    Yes        &    Yes      &    Yes  \\ \hline     
+      Dynamic Features &    No        &    No         &    No        &    Yes  \\ \hline
+      On-line Learning &    No        &    No         &    No        &    Yes  \\ \hline
+      Server Side      &    No        &    Yes        &    Yes       &    No   \\ \hline
+      Several Algorithms &    No        &    No &    No       &    No   \\ \hline
+      Multi-Label support &    No        &    No &    No       &    No   \\ \hline
+      Summarization support&    No        &    No &    No       &    No   \\ \hline
     \end{tabular}
     \caption[Summary of related work]{Summary of related applications}
     \label{related_applications_summary}
@@ -382,23 +382,18 @@ Table \ref{related_applications_summary} summarizes the features of applications
 
 %=======================================================================================
 \section{Need To Extend Related Applications}
-Close study of table \ref{related_applications_summary} reveals the need to extend all existing applications to cover the desirable features enumerated int table \ref{related_applications_summary}.
+Close study of table \ref{related_applications_summary} reveals the need to extend all existing applications to cover the desirable features enumerated below:
+\begin{enumerate}
+\item Classifying emails based on deterministic features.
+\item Classifying emails based on dynamic features.
+\item Supporting on-line learning classification algorithms.
+\item Providing server-side web service for email classification.
+\item Supporting several classification algorithms.
+\item Supporting multi-label email classification.
+\item Providing email summarization service.
+\end{enumerate}
 
-\begin{my_itemize}
-    \item Although the problem of email categorization has been studied several
-    times in research literature , there are no widely used convenient
-    applications implemented yet.
-    \item Most available applications are client side which might not be
-    suitable for most of the users' end systems due to the expensive calculations
-    needed by the classifier algorithms.
-    \item Most available applications doesn't offer to the user the ability to 
-    register with several email accounts.
-    \item Smart Email offers a web-service for email end users to register with
-    one or more account and filter emails according to different criteria and
-    it is not only limited to spam detection.
-\end{my_itemize}
-
-
+The scope of this project is to design and implement the first five features and the rest will be left for future extensions.
 %=======================================================================================
 \section{Conclusion}
 In this chapter, text and email classification were explained and many related techniques and technologies were discussed. Also related applications to Smart Email were introduced.
