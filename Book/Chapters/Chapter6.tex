@@ -9,14 +9,15 @@
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
-In chapter 5, Software Design Description (SDD) was explained. System architecture, main components and their functionalities, as well as components interaction were discussed. In this chapter, experiments of different classification procedures, dataset splits and feature selection are presented. Results are introduced in section 6.3. The discussion and analysis of obtained results are presented in section 6.4.
+In Chapter 5, the adopted development process, the tools used and the work environment were examined in details. \\
+In this chapter, experiments of different classification procedures, dataset splits and feature selection are presented. Results are introduced in section 6.3. The discussion and analysis of obtained results are presented in section 6.4.
 
 
 \section{Experimental Setup}
 
 \subsection{Enron Dataset \cite{ENRON}}
 Enron dataset is the most popular email corpus for research. It was released during the legal investigation into the Enron corporation.
-it is an invaluable dataset since it contains uncensored messages from a corporate environment. The dataset consists of employee’s email folders, so it is also an accurate depiction of how users use folders. The majority of email directories in the dataset are small. So seven users with the largest email directories are chosen. Those seven users are chosen in many related papers (e.g. Huang, Bekkerman and McCallum, 2004\cite{RON04}). \\Statistics of the seven users are shown in table \ref{enronStatsTable}:
+It is an invaluable dataset since it contains uncensored messages from a corporate environment. The dataset consists of employee’s email folders, so it is also an accurate depiction of how users use folders. The majority of email directories in the dataset are small, so seven users with the largest email directories are chosen for the experiments. Those seven users are chosen in many related papers (e.g. Huang, Bekkerman and McCallum, 2004\cite{RON04}). \\Statistics on the seven users are shown in table \ref{enronStatsTable}:
 
 \begin{center}
 	\centering
@@ -59,7 +60,7 @@ The incremental time-based split is done by sorting the emails according to thei
 \section{Results}
 
 \subsection{Learning Curves}
-Results of the seven Enron users are presented below as the accuracy over the timeline of each user.
+Results of the seven Enron users are presented below as the accuracy over the timeline for each user.
 
 \begin{figure}[H]
     \begin{center}
@@ -88,7 +89,7 @@ Results of the seven Enron users are presented below as the accuracy over the ti
     \caption{Timeline results (learning curvers)}
 \end{figure}
 
-The following table is the accuracies averaged over all training/test splits for all users. It has two columns representing the 2 different classification algorithms: Naive Bayes and SVM.
+The following table is the accuracies averaged over all training/test splits for all users. It has two columns representing the two different classification algorithms: Naive Bayes and SVM.
 
 \begin{table} [!htbp]
 	\begin{center}
@@ -110,7 +111,7 @@ The following table is the accuracies averaged over all training/test splits for
 \end{table}
 
 \subsection{Feature Comparison}
-In classification, different combinations of the features affect accuracy. It is not necessarily that adding a feature will improve accuracy. So, it was important to test different features combinations to select the best combination. The results for six different combinations are reported below for each user. Each combination is tested under both Naive Bayes and SVM classification algorithms.
+Different combinations of the features affect the accuracy of classifiers. It is not necessarily that adding a feature will improve accuracy. So, it was important to test different features combinations to select the best combination. The results of six different combinations are reported below for each user. Each combination is tested under both Naive Bayes and SVM classification algorithms.
 
 \begin{figure}[H]
     \begin{center}
@@ -140,7 +141,7 @@ In classification, different combinations of the features affect accuracy. It is
 \end{figure}
 
 \section{Discussion}
-Learning curves show that SVM outperforms Naive Bayes in most of the cases. This is the expected behaviour. It is widely believed that Naive Bayes is not the best algorithm for text categorization (Dumais et al., 1998)\cite{DHS98}.
+Learning curves (figure 6.1) show that SVM outperforms Naive Bayes in most of the cases. This is the expected behaviour. It is widely believed that Naive Bayes is not the best algorithm for text categorization (Dumais et al., 1998)\cite{DHS98}.
 However, the results obtained doesn't reveal significance superiority of SVM over Naive Bayes. In fact, in some cases Naive Bayes was better than SVM (e.g Farmer-d feature selection figure). This is probably due to features selection and how the classifier weights each feature.
 
 
@@ -149,13 +150,13 @@ Experimental results obtained support the following observations:
 \item Accuracies are higher when the dataset has one or two dominant folders. As it can be seen from Table \ref{enronStatsTable}
  the size of the largest folder is nearly one half size of the entire dataset (e.g., users lokay\_m and williams-w3).
 
-\item Newly created folders negatively affects the classification accuracy. If a new folder is created, the classifier trains on few emails from this folder which may not be enough to build a good classification model. (e.g see the drops in sanders\_r and william-w3 learning curves)
+\item Newly created folders negatively affect the classification accuracy. If a new folder is created, the classifier trains on few emails from this folder which may not be enough to build a good classification model. (e.g see the drops in figures (6.1-f) and (6.1-g))
 
-\item The dataset of user williams-w3 is a degenerative case. It has two large folders ("bill williams iii" and "schedule crawler" which contain most of the messages. This explains the high accuracy for this dataset regardless of the features used.
+\item The dataset of user williams-w3 (figures (6.1-g) and (6.2-g)) is a degenerative case. It has two large folders (``bill williams iii'' and ``schedule crawler'' which contain most of the messages. This explains the high accuracy for this dataset regardless of features used.
 
-\item Classification using the sender feature alone yields good results.
+\item Classification using the sender feature alone yields good results (figure 6.2).
 
-\item Using both the sender feature and the bag of words (word frequency) achieves best results in most of the cases. Adding more features not necessarily imporves the accuracy.
+\item Using both the sender feature and the bag of words (word frequency) feature achieves best results in most of the cases. Adding more features doesn't necessarily imporve the accuracy.
 
 %TODO add more points (about feature comparison)
 \end{itemize}
