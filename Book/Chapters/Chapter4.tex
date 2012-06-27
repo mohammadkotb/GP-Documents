@@ -117,7 +117,7 @@ Individual tasks in the workflow are described.
 	
 \begin{figure}[H]
   \centering
-\includegraphics[width=13cm]{workflow_process_map.png}
+\includegraphics[scale=0.5]{workflow_process_map.png}
   \caption[Workflow Process] {Workflow Process}
 \end{figure}
 
@@ -458,14 +458,58 @@ interfaces not provided in the software requirements specification.
 \subsubsection{Module interface}
 \paragraph{Classification Web Service API}
 %\begin{itemize}
-    \begin{itemize} %TODO: edit this to the new REST API
-      \item register(username,password) adds user to database and starts training phase
-      \item remove(username,password) removes user information from database.
-      \item status(username) returns current status of training phase.
-      \item classify(emailContent) returns the best category for this email.
-      \item classify(email\_imap\_id) returns the best category for this email.
-      \item feedback(email\_content,correct\_label) retrains the model using the new instance.
-    \end{itemize}
+	\begin{itemize}
+		\item API for user registration
+		\begin{itemize}
+			\item Basic URL: http://localhost:8080/smart\_email/rest/service/provider		
+			\item Endpoint: /register
+			\item Request type: POST
+			\item Parameters: username, password
+			\item Response: 202 Accepted
+			\item Description: adds user to database and starts training phase
+		\end{itemize}
+
+		\item API for un-registration
+		\begin{itemize}
+			\item Basic URL: http://localhost:8080/smart\_email/rest/service/provider		
+			\item Endpoint: /username
+			\item Request type: DELETE
+			\item Parameters: username
+			\item Response: 200-OK / 500- Internal Server Error
+			\item Description: removes user information from database
+		\end{itemize}
+
+		\item API for retrieving classification model status
+		\begin{itemize}
+			\item Basic URL: http://localhost:8080/smart\_email/rest/service/provider		
+			\item Endpoint: /status/username
+			\item Request type: GET
+			\item Parameters: username
+			\item Response: training status of the classification model
+			\item Description: returns current status of training phase
+		\end{itemize}
+
+		\item API for classification request
+		\begin{itemize}
+			\item Basic URL: http://localhost:8080/smart\_email/rest/service/provider		
+			\item Endpoint: /classify
+			\item Request type: POST
+			\item Parameters: username, email content
+			\item Response: predicted folder for the email
+			\item Description: returns the best label for this email
+		\end{itemize}
+
+		\item API for user feedback
+		\begin{itemize}
+			\item Basic URL: http://localhost:8080/smart\_email/rest/service/provider
+			\item Endpoint: /feedback
+			\item Request type: POST
+			\item Parameters: username, email content, correct label
+			\item Response: 200-OK
+			\item Description: retrains the model using the new instance
+		\end{itemize}
+	\end{itemize}
+
 %\end{itemize}
 
 %-------
