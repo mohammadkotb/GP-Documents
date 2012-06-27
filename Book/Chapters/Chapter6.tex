@@ -11,11 +11,16 @@
 \section{Introduction}
 In Chapter \ref{Chapter5}, the adopted development process, the tools used and the work environment were examined in details.
 
-In this chapter, experiments of different classification procedures, dataset 
-splits and feature selection are presented. Results are introduced in section 
-\ref{sec:6_results_disscusion}. The discussion and analysis of obtained results are presented in section 6.4.
+In this chapter, implementation details and results are discussed. In section
+\ref{sec:6_imp_details}, implementation details of the classification web service,
+email monitoring web service, and Chrome extension are discussed. While in section
+\ref{sec:6_results_discussion}, experiments of different classification procedures,
+dataset splits, feature selection, and analysis of the obtaind results are presented. 
+And the chapter is concluded in section \ref{sec:conclusion_6}.
 
+%==============================
 \section{Implementation Details}
+\label{sec:6_imp_details}
 %==============================
 
 \subsection{Classification Web Service implementation details}
@@ -58,20 +63,20 @@ This section will discuss the implementation details of the classification web s
     This job sends every new incoming email to the classification web service and
     applies the returned label to user's email.
 
-    This web service was built using ruby on rails \cite{ROR} framework, MySql database was used
+    This web service was built using Ruby on Rails \cite{ROR} framework, MySQL database was used
     in development environment while postgresql was used in production.
 
 
 \subsection{Chrome Browser Extension implementation details}
     Chrome Extension is a client side extension for the Google chrome browser \cite{CHROME}.
     The extension injects a javascript file in the gmail web interface. The extension also manipulates
-    gmail web interface HTML page by injecting a button entitled "Classify Me"
+    gmail web interface HTML page by injecting a button entitled ``Classify Me''
     that appears when the user selects any email to view.
 
     The button is injected by adding a new DOM element to the html page.The extension must waits till
     the page completely loads to do the injection.
 
-    When the user clicks the "Classify Me" button the extension retrieves the raw email and
+    When the user clicks the ``Classify Me'' button the extension retrieves the raw email and
     builds a message using the raw email,an ajax call with the message is made to the 
     classification web service.
 
@@ -87,12 +92,20 @@ This section will discuss the implementation details of the classification web s
 
 %--------------------------------------------------------------------------------------
 \section{Results and Discussion}
-\label{sec:6_results_disscusion}
+\label{sec:6_results_discussion}
 \subsection{Experimental Setup}
 
 \subsubsection{Enron Dataset \cite{ENRON}}
-Enron dataset is the most popular email corpus for research. It was released during the legal investigation into the Enron corporation.
-It is an invaluable dataset since it contains uncensored messages from a corporate environment. The dataset consists of employee’s email folders, so it is also an accurate depiction of how users use folders. The majority of email directories in the dataset are small, so seven users with the largest email directories are chosen for the experiments. Those seven users are chosen in many related papers (e.g. Huang, Bekkerman and McCallum, 2004\cite{RON04}). \\Statistics on the seven users are shown in table \ref{enronStatsTable}:
+Enron dataset is the most popular email corpus for research. It was released 
+during the legal investigation into the Enron corporation.
+It is an invaluable dataset since it contains uncensored messages from a 
+corporate environment. The dataset consists of employee's email folders, 
+so it is also an accurate depiction of how users use folders. The majority 
+of email directories in the dataset are small, so seven users with the largest 
+email directories are chosen for the experiments. Those seven users are chosen 
+in many related papers (e.g. Huang, Bekkerman and McCallum, 2004\cite{RON04}).
+
+Statistics on the seven users are shown in table \ref{enronStatsTable}:
 
 \begin{center}
 	\centering
@@ -123,19 +136,31 @@ It is an invaluable dataset since it contains uncensored messages from a corpora
 Two types of experiments are reported:
 
 \begin{itemize}
-\item Learning Curves (Timeline): A learning curve is done by calculating the accuracy of each training/test split and plotting the classification accuracy curve over the number of training messages in the splits. 
+  \item learning curves (Timeline): A learning curve is done by calculating the 
+  accuracy of each training/test split and plotting the classification accuracy 
+  curve over the number of training messages in the splits;
 
-\item Feature Comparison: Different combinations of possible classification features are selected and the accuracy of each combination is plotted. Each combination is run using both Naive Bayes and SVM algorithms.
-\end{itemize}
+  \item feature comparison: Different combinations of possible classification 
+  features are selected and the accuracy of each combination is plotted. 
+  Each combination is run using both Naive Bayes and SVM algorithms.
+  \end{itemize}
 
 \subsubsection{Training/test Set Splits}
-In practice, the dataset grows over time. So, a natural way of splitting the dataset would be based on time: train on earlier emails and test on later ones. A similar approach is employed in (Klimt and Yang, 2004)\cite{KY04}. 
-The incremental time-based split is done by sorting the emails according to their time stamp, then the classifier is trained on the first N messages and tested against the following N messages, then it is trained on the first 2N messages and tested against the following N messages etc. until we cover the whole dataset. N was chosen to be 100 which is similar to experiments conducted in (Bekkerman, McCallum and Huang 2004)\cite{RON04}.
+In practice, the dataset grows over time. So, a natural way of splitting the 
+dataset would be based on time: train on earlier emails and test on later 
+ones. A similar approach is employed in (Klimt and Yang, 2004)\cite{KY04}. 
+The incremental time-based split is done by sorting the emails according to 
+their time stamp, then the classifier is trained on the first N messages and 
+tested against the following N messages, then it is trained on the first 2N 
+messages and tested against the following N messages ...etc. until we cover 
+the whole dataset. N was chosen to be 100 which is similar to experiments 
+conducted in (Bekkerman, McCallum and Huang 2004)\cite{RON04}.
 
 \subsection{Results}
 
 \subsubsection{Learning Curves}
-Results of the seven Enron users are presented below as the accuracy over the timeline for each user.
+Results of the seven Enron users are presented below as the accuracy over 
+the timeline for each user.
 
 \begin{figure}[H]
     \begin{center}
@@ -164,7 +189,9 @@ Results of the seven Enron users are presented below as the accuracy over the ti
     \caption{Timeline results (learning curvers)}
 \end{figure}
 
-The following table is the accuracies averaged over all training/test splits for all users. It has two columns representing the two different classification algorithms: Naive Bayes and SVM.
+The following table is the accuracies averaged over all training/test splits 
+for all users. It has two columns representing the two different classification 
+algorithms: Naive Bayes and SVM.
 
 \begin{table} [!htbp]
 	\begin{center}
@@ -186,7 +213,12 @@ The following table is the accuracies averaged over all training/test splits for
 \end{table}
 
 \subsubsection{Feature Comparison}
-Different combinations of the features affect the accuracy of classifiers. It is not necessarily that adding a feature will improve accuracy. So, it was important to test different features combinations to select the best combination. The results of six different combinations are reported below for each user. Each combination is tested under both Naive Bayes and SVM classification algorithms.
+Different combinations of the features affect the accuracy of classifiers. 
+It is not necessarily that adding a feature will improve accuracy. So, it 
+was important to test different features combinations to select the best 
+combination. The results of six different combinations are reported below 
+for each user. Each combination is tested under both Naive Bayes and SVM 
+classification algorithms.
 
 \begin{figure}[H]
     \begin{center}
@@ -217,26 +249,43 @@ Different combinations of the features affect the accuracy of classifiers. It is
 
 %-----------------------------------------------------------------
 \subsection{Discussion}
-Learning curves (figure 6.1) show that SVM outperforms Naive Bayes in most of the cases. This is the expected behaviour. It is widely believed that Naive Bayes is not the best algorithm for text categorization (Dumais et al., 1998)\cite{DHS98}.
-However, the results obtained doesn't reveal significance superiority of SVM over Naive Bayes. In fact, in some cases Naive Bayes was better than SVM (e.g Farmer-d feature selection figure). This is probably due to features selection and how the classifier weights each feature.
+Learning curves (figure 6.1) show that SVM outperforms Naive Bayes in most of 
+the cases. This is the expected behaviour. It is widely believed that Naive Bayes 
+is not the best algorithm for text categorization (Dumais et al., 1998)\cite{DHS98}.
+However, the results obtained doesn't reveal significance superiority of SVM over 
+Naive Bayes. In fact, in some cases Naive Bayes was better than SVM (e.g Farmer-d 
+feature selection figure). This is probably due to features selection and how 
+the classifier weights each feature.
 
 
-Experimental results obtained support the following observations:
+Experimental results obtained support the following observations
 \begin{itemize}
-\item Accuracies are higher when the dataset has one or two dominant folders. As it can be seen from Table \ref{enronStatsTable}
- the size of the largest folder is nearly one half size of the entire dataset (e.g., users lokay\_m and williams-w3).
+  \item Accuracies are higher when the dataset has one or two dominant folders. 
+  As it can be seen from Table \ref{enronStatsTable} the size of the largest folder 
+  is nearly one half size of the entire dataset (e.g., users lokay\_m and williams-w3).
 
-\item Newly created folders negatively affect the classification accuracy. If a new folder is created, the classifier trains on few emails from this folder which may not be enough to build a good classification model. (e.g see the drops in figures (6.1-f) and (6.1-g))
+  \item Newly created folders negatively affect the classification accuracy. If a new 
+  folder is created, the classifier trains on few emails from this folder which may 
+  not be enough to build a good classification model. (e.g see the drops in figures 
+  (6.1-f) and (6.1-g))
 
-\item The dataset of user williams-w3 (figures (6.1-g) and (6.2-g)) is a degenerative case. It has two large folders (``bill williams iii'' and ``schedule crawler'' which contain most of the messages. This explains the high accuracy for this dataset regardless of features used.
+  \item The dataset of user williams-w3 (figures (6.1-g) and (6.2-g)) is a degenerative 
+  case. It has two large folders (``bill williams iii'' and ``schedule crawler'' which 
+  contain most of the messages. This explains the high accuracy for this dataset regardless 
+  of features used.
 
-\item Classification using the sender feature alone yields good results (figure 6.2).
+  \item Classification using the sender feature alone yields good results (figure 6.2).
 
-\item Using both the sender feature and the bag of words (word frequency) feature achieves best results in most of the cases. Adding more features doesn't necessarily imporve the accuracy.
+  \item Using both the sender feature and the bag of words (word frequency) feature 
+  achieves best results in most of the cases. Adding more features doesn't necessarily 
+  imporve the accuracy.
 
-%TODO add more points (about feature comparison)
+  %TODO add more points (about feature comparison)
 \end{itemize}
 
 \section{Conclusion}
-In this chapter the experimental results were presented. Analysis of the results were discussed. The results reveal the difficulty of eamil classification. Improving the accuracy is listed as a future work.
+\label{sec:conclusion_6}
+In this chapter the experimental results were presented. Analysis of the results were 
+discussed. The results reveal the difficulty of eamil classification. Improving the 
+accuracy is listed as a future work.
 
