@@ -159,6 +159,21 @@ Last Accessed 25 June 2012.
 \newblock Google Chrome Browser.
 \newblock \url{http://www.google.com/chrome}.
 
+\bibitem{OUTLOOK_REF}
+Last Accessed 27 June 2012.
+\newblock Outlook Rules.
+\newblock \url{http://office.microsoft.com/en-us/outlook-help/manage-email-messages-by-using-rules-HA010355682.aspx}
+
+\bibitem{GMAIL_FILTERS}
+Last Accessed 27 June 2012.
+\newblock Gmail Filters.
+\newblock \url{http://support.google.com/mail/bin/answer.py?hl=en&answer=6579}
+
+\bibitem{YAHOO_FILTERS}
+Last Accessed 27 June 2012.
+\newblock Yahoo Filters.
+\newblock \url{http://help.yahoo.com/tutorials/mmail/mmail/mm_filter1.html}
+
 \bibitem{POPFILE}
 Last Accessed 25 June 2012.
 \newblock PopFile Application.
@@ -196,5 +211,6 @@ Last Accessed 26 June 2012.
 Last Accessed 26 June 2012.
 \newblock  Jersy java REST API library.
 \newblock \url{http://www.jersy.java.net}.
+
 
 \end{thebibliography}
