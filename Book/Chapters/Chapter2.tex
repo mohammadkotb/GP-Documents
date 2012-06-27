@@ -19,7 +19,7 @@
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
-In chapter 1, a general description of the problem was presented, the motivation 
+In chapter \ref{Chapter1}, a general description of the problem was presented, the motivation 
 to develop Smart Email, and the scope of work were introduced.
 
 In this chapter, a background about text and email classification is introduced in
@@ -166,6 +166,7 @@ Methods for learning linear classifiers are often partitioned in two broad class
 Batch methods build a classifier by analysing the training set all at once. On-line (aka incremental) methods build a classifier soon after examining the first training document, and incrementally refine it as they examine new ones. This may be an advantage in the applications in which the 'meaning' of the category may change in time, as e.g. in adaptive filtering. This is also suitable for applications (e.g. semi-automated classification, adaptive filtering) in which we may expect the user of a classifier to provide feedback on how test documents have been classified, as in this case further training may be performed during the operating phase by exploiting user feedback.
 
 \section{Related Work}
+\label{sec:related_work}
 
 \subsection{Classification according to the different learning algorithms used in different papers}
 The following table classifies some recent research papers in the field of email classification according to the different learning algorithms for email classification.
@@ -338,11 +339,9 @@ From the research papers related to email classification we conclude the followi
     \item Offline learning techniques are used in most papers.
     \item Enron dataset is the most commonly used.
 \end{my_itemize}
-
-In section 2.6 related work was introduced that tries to solve the problem, but most of them targets only enterprises which will not be the case in Smart Email.
-
 %=======================================================================================
 \section{Comparison Between Related Applications}
+\label{sec:related_apps}
 
 \subsection{POPFile}
 POPFile is a free, open source, cross-platform mail filter originally written in Perl by John Graham-Cumming and maintained by a team of volunteers. It uses a naive Bayes classifier to filter mail. This allows the filter to "learn" and classify mail according to the user's preferences. Typically it is used to filter spam mail. It can also be used to sort mail into other user defined "buckets" or categories - for example, the user may define a bucket into which work email is sorted.
@@ -363,14 +362,14 @@ Table \ref{related_applications_summary} summarizes the features of applications
 
 \begin{center}
   \begin{table}
-    \begin{tabular}{ | c | c | c | c | p{2cm} |}
+    \begin{tabular}{ | p{3cm} | c | c | c | p{2cm} |}
       \hline
       F/P              & Outlook Rules & Gmail Filters & Yahoo Filters & PopFile \cite{POPFILE} \\ \hline
-      Static Features  &    Yes        &    Yes        &    Yes      &    Yes  \\ \hline     
+      Deterministic Rules  &    Yes        &    Yes        &    Yes      &    Yes  \\ \hline     
       Dynamic Features &    No        &    No         &    No        &    Yes  \\ \hline
       On-line Learning &    No        &    No         &    No        &    Yes  \\ \hline
       Server Side      &    No        &    Yes        &    Yes       &    No   \\ \hline
-      Several Algorithms &    No        &    No &    No       &    No   \\ \hline
+      Several Classification Algorithms &    No        &    No &    No       &    No   \\ \hline
       Multi-Label support &    No        &    No &    No       &    No   \\ \hline
       Summarization support&    No        &    No &    No       &    No   \\ \hline
     \end{tabular}
@@ -384,13 +383,13 @@ Table \ref{related_applications_summary} summarizes the features of applications
 \section{Need To Extend Related Applications}
 Close study of table \ref{related_applications_summary} reveals the need to extend all existing applications to cover the desirable features enumerated below:
 \begin{enumerate}
-\item Classifying emails based on deterministic features.
-\item Classifying emails based on dynamic features.
-\item Supporting on-line learning classification algorithms.
-\item Providing server-side web service for email classification.
-\item Supporting several classification algorithms.
-\item Supporting multi-label email classification.
-\item Providing email summarization service.
+\item classifying emails based on deterministic rules;
+\item classifying emails based on dynamic features;
+\item supporting on-line learning classification algorithms;
+\item providing server-side web service for email classification;
+\item supporting several classification algorithms;
+\item supporting multi-label email classification;
+\item providing email summarization service.
 \end{enumerate}
 
 The scope of this project is to design and implement the first five features and the rest will be left for future extensions.
