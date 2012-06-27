@@ -197,4 +197,9 @@ Last Accessed 26 June 2012.
 \newblock  Jersy java REST API library.
 \newblock \url{http://www.jersy.java.net}.
 
+\bibitem{STEMMER}
+Last Accessed 26 June 2012.
+\newblock  Porter Stemmer Algorithm.
+\newblock \url{http://tartarus.org/~martin/PorterStemmer}.
+
 \end{thebibliography}

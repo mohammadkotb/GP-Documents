@@ -1,10 +1,10 @@
 % Chapter 6
 
-\chapter{Results and Discussion} % Main chapter title
+\chapter{Implementation, Results and Discussion} % Main chapter title
 
 \label{Chapter6} % For referencing the chapter elsewhere, use \ref{Chapter6} 
 
-\lhead{Chapter 6. \emph{Results and Discussion}} % This is for the header on each page - perhaps a shortened title
+\lhead{Chapter 6. \emph{Implantation, Results and Discussion}} % This is for the header on each page - perhaps a shortened title
 
 %----------------------------------------------------------------------------------------
 
@@ -12,16 +12,66 @@
 In Chapter 5, the adopted development process, the tools used and the work environment were examined in details. \\
 In this chapter, experiments of different classification procedures, dataset splits and feature selection are presented. Results are introduced in section 6.3. The discussion and analysis of obtained results are presented in section 6.4.
 
+\section{Implementation Details}
+%==============================
 
-\section{Experimental Setup}
+\subsection{Classification Web Service implementation details}
+This section will discuss the implementation details of the classification web service.
 
-\subsection{Enron Dataset \cite{ENRON}}
+
+    \subsubsection{Training Phase}
+    Once the user have registered in the classification web service , Smart Email will start downloading pre-classified emails from
+    user email provider using IMAP protocol.
+
+    Smart Email design described in the previous chapter is flexible and enables using different data sources,a File data source was used
+    to read Enron \cite{ENRON} dataset from file system.
+
+    Other protocols can be implemented like POP3.
+
+    \subsubsection{Preprocessing phase}
+    Smart Email uses several preprocessors on incoming emails. The following are the currently implemented preprocessors,
+    the design of the Smart Email allows the addition of other preprocessors without modification to the existing code.
+        \begin{description}
+        \item[Stemming] Porter stemmer \cite{STEMMER} is used to stem words of email.
+        \item[Stop words removal] is used to remove stop words like ("the","them",.. etc).
+        \item[Lowercasing] is used to convert all words in subject and body to lowercase.
+        \item[Number Normalization] is used to convert all numbers to a specific tag.
+        \item[URL Normalization] is used to convert all urls into specific tags.
+        \item[HTML tags remover] is used to remove html tags from emails if they exists.
+        \end{description}
+
+    \subsubsection{Classification phase}
+    When a new Incoming Email is sent to the classification web service,
+    the email is preprocessed as described above and features (described in details in Chapter \ref{Chapter3}
+    are Extracted to build the input tuple.
+
+    The input tuple is then given to WEKA \cite{WEKA} (Naive Bayes or SVM) classifier to 
+    perform the classification. The result of the classification is then returned.
+
+\subsection{Email monitoring web service implementation details}
+    Users register in the email monitoring web service by providing user name and passwords,
+    then the user can add one or more email accounts to be monitored.
+    A Job runs in the background opening IMAP-IDLE connection for every user's email account.
+    This job sends every new incoming email to the classification web service and
+    applies the returned label to user's email.
+
+    This web service was built using ruby on rails \cite{ROR} framework, MySql database was used
+    in development environment while postgresql was used in production.
+
+
+\subsection{Chrome Browser Extension implementation details}
+
+%--------------------------------------------------------------------------------------
+\section{Results and Discussion}
+\subsection{Experimental Setup}
+
+\subsubsection{Enron Dataset \cite{ENRON}}
 Enron dataset is the most popular email corpus for research. It was released during the legal investigation into the Enron corporation.
 It is an invaluable dataset since it contains uncensored messages from a corporate environment. The dataset consists of employee’s email folders, so it is also an accurate depiction of how users use folders. The majority of email directories in the dataset are small, so seven users with the largest email directories are chosen for the experiments. Those seven users are chosen in many related papers (e.g. Huang, Bekkerman and McCallum, 2004\cite{RON04}). \\Statistics on the seven users are shown in table \ref{enronStatsTable}:
 
 \begin{center}
 	\centering
-	\begin{table}
+	\begin{table}[H]
 		\begin{tabular}{ |  >{\centering} l |  >{\centering} p{1.75cm} |  >{\centering} p{1.75cm} |  >{\centering}p{1.75cm} |  >{\centering} p{1.75cm} |  >{\centering} p{1.75cm} | p{1.75cm} <{\centering} | }
 		\hline
 
@@ -44,7 +94,7 @@ It is an invaluable dataset since it contains uncensored messages from a corpora
 
 
 
-\subsection{Experiments}
+\subsubsection{Experiments}
 Two types of experiments are reported:
 
 \begin{itemize}
@@ -53,13 +103,13 @@ Two types of experiments are reported:
 \item Feature Comparison: Different combinations of possible classification features are selected and the accuracy of each combination is plotted. Each combination is run using both Naive Bayes and SVM algorithms.
 \end{itemize}
 
-\subsection{Training/test Set Splits}
+\subsubsection{Training/test Set Splits}
 In practice, the dataset grows over time. So, a natural way of splitting the dataset would be based on time: train on earlier emails and test on later ones. A similar approach is employed in (Klimt and Yang, 2004)\cite{KY04}. 
 The incremental time-based split is done by sorting the emails according to their time stamp, then the classifier is trained on the first N messages and tested against the following N messages, then it is trained on the first 2N messages and tested against the following N messages etc. until we cover the whole dataset. N was chosen to be 100 which is similar to experiments conducted in (Bekkerman, McCallum and Huang 2004)\cite{RON04}.
 
-\section{Results}
+\subsection{Results}
 
-\subsection{Learning Curves}
+\subsubsection{Learning Curves}
 Results of the seven Enron users are presented below as the accuracy over the timeline for each user.
 
 \begin{figure}[H]
@@ -110,7 +160,7 @@ The following table is the accuracies averaged over all training/test splits for
 	\end{center}
 \end{table}
 
-\subsection{Feature Comparison}
+\subsubsection{Feature Comparison}
 Different combinations of the features affect the accuracy of classifiers. It is not necessarily that adding a feature will improve accuracy. So, it was important to test different features combinations to select the best combination. The results of six different combinations are reported below for each user. Each combination is tested under both Naive Bayes and SVM classification algorithms.
 
 \begin{figure}[H]
@@ -140,7 +190,8 @@ Different combinations of the features affect the accuracy of classifiers. It is
     \caption{Results of different features combinations}
 \end{figure}
 
-\section{Discussion}
+%-----------------------------------------------------------------
+\subsection{Discussion}
 Learning curves (figure 6.1) show that SVM outperforms Naive Bayes in most of the cases. This is the expected behaviour. It is widely believed that Naive Bayes is not the best algorithm for text categorization (Dumais et al., 1998)\cite{DHS98}.
 However, the results obtained doesn't reveal significance superiority of SVM over Naive Bayes. In fact, in some cases Naive Bayes was better than SVM (e.g Farmer-d feature selection figure). This is probably due to features selection and how the classifier weights each feature.
 
