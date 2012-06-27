@@ -5,25 +5,24 @@
   \setlength{\parskip}{0cm}}
 {\end{description}}
 
-\chapter{Smart Email Architecture and Design} % Main chapter title
+\chapter{Smart Email Requirements and Design} % Main chapter title
 
 \label{Chapter4} % For referencing the chapter elsewhere, use \ref{Chapter4} 
 
-\lhead{Chapter 4. \emph{Smart Email Architecture and Design}} % This is for the header on each page - perhaps a shortened title
+\lhead{Chapter 4. \emph{Smart Email Requirements and Design}} % This is for the header on each page - perhaps a shortened title
 
 \section{Introduction}
-In chapter 3, the logical schema and the features of the smart email classifier
-were presented.
+In chapter 3, the features of the smart email classifier were presented.
 
 In this chapter, software requirements specification and software design
-description were explained in sections 4.2 and 4.3 respectively. The chapter is
+description are explained in sections 4.2 and 4.3 respectively. The chapter is
 concluded in section 4.4.
 
 \section{Software Requirements Specification} % Main chapter title
 %==============================================================================
 \subsection{Overview}
-In this section, a brief overview about the software requirements specification
-is shown, such as, project objective, assumptions, limitations, and open items
+In this section, an overview about the software requirements specification
+is shown, such as, project objective, assumptions, limitations, open items
 and risks.
 
 \subsubsection{Project Objective}
@@ -34,13 +33,13 @@ learning and data mining classification techniques.
 %==============================================================================
 
 \subsubsection{Assumptions}
-Some assumptions generally must be made in order to write a brief definition 
+Some assumptions must be generally made in order to write a brief definition 
 of the application. Some assumptions are technical, while others are business natured.  Assumptions 
 critical to the success of this project are listed below:
 \begin{my_itemize}
   \item each user will have his own trained classification model based on the user supplied training data;
   \item a web service will be implemented to provide email classification support for different email 
-	providers (Example: Google, Hotmail, Yahoo);
+	providers (for example: Google, Hotmail, Yahoo);
   \item english language will be supported by default;
   \item the servers providing the web service have to provide sufficient 
 	processing power for achieving reasonable response time;
@@ -83,11 +82,12 @@ proposed solution. The context and workflow of the proposed solution are defined
 
 Features:
 \begin{my_itemize}
-  \item building a classification web service with a REST API \cite{REST};
-  \item building an email monitoring web service that sends every new incoming
-  email to the classification web service and applies the returned label;
-  \item building a browser extension that is injected into the user's email web interface
-  and provides an on-demand email classification using the classification web service.
+  \item Register users with the classification web service and build a classification model for each user.
+  \item Automatically classify emails into user-defined folders.
+  \item Monitor email accounts to be classify new incoming emails automatically.
+  \item Provide classification related statistics for the user.
+  \item Accept user feedback on classified emails.
+  \item Re-train the classifier based on user feedback.
 \end{my_itemize}
 
 %==============================================================================
@@ -179,7 +179,7 @@ of man-days = 4 hours) to finish the story is very good practice.
 \cellcolor[gray]{0.9} Priority & High\\ \hline
 \cellcolor[gray]{0.9} Description & 
 	As a \textbf{System}, I can \textbf{preprocess the dataset} to
-	\textbf{make it ready for the classification/summarization process}. \\ \hline
+	\textbf{make it ready for the classification}. \\ \hline
 \cellcolor[gray]{0.9} Estimated time & 4 man-days\\ \hline
 \cellcolor[gray]{0.9} Notes & 
 	Preprocessing includes stemming, checking email length/language,
@@ -239,7 +239,7 @@ required to meet the business objectives.
 
 %==============================================================================
 \subsubsection{Users}
-All applications have users and most have several users of different types. This 
+All applications have users and most of them have several users of different types. This 
 section identifies, at a high level, the types of users of the system.
 
 \begin{my_enumerate}
@@ -250,10 +250,7 @@ section identifies, at a high level, the types of users of the system.
 %==============================================================================
 \subsubsection{Inputs/Outputs}
 This section identifies and describes the inputs to and outputs from the new 
-application. Inputs can include electronic inputs, like RSS and EDI feeds, 
-updates from external databases, ...etc, as well as human inputs, like 
-``user X keys in results from report Y.'' Output can include electronic feeds, 
-printed reports, ...etc. In this section, all electronic inputs and outputs 
+application. In this section, all electronic inputs and outputs 
 are captured. Human inputs are omitted from this section.
 
 \begin{my_enumerate}
@@ -274,8 +271,9 @@ are captured. Human inputs are omitted from this section.
 \subsubsection{Dependencies}
 Human inputs are also categorized as dependencies.
 \begin{my_enumerate}
+  \item IMAP service in the email provider.
   \item Registration data.
-  \item Request for classifying an email.
+  \item Number of emails in each user-defined label (affects classification model)
 \end{my_enumerate}
 
 
@@ -327,7 +325,7 @@ Any data migration requirements are listed below.
 %------------------------------------------------------------------------------
 
 \subsection{Purpose}
-This chapter shows how the smart email software system will be 
+This section shows how the Smart Email software system will be 
 structured to satisfy the requirements identified in the software
 requirements specification section. It is a translation of 
 requirements into a description of the software structure, software components, 
