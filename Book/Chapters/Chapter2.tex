@@ -341,7 +341,8 @@ From the research papers related to email classification we conclude the followi
 
 In section 2.6 related work was introduced that tries to solve the problem, but most of them targets only enterprises which will not be the case in Smart Email.
 
-\section{Comparison between related applications}
+%=======================================================================================
+\section{Comparison Between Related Applications}
 
 \subsection{POPFile}
 POPFile is a free, open source, cross-platform mail filter originally written in Perl by John Graham-Cumming and maintained by a team of volunteers. It uses a naive Bayes classifier to filter mail. This allows the filter to "learn" and classify mail according to the user's preferences. Typically it is used to filter spam mail. It can also be used to sort mail into other user defined "buckets" or categories - for example, the user may define a bucket into which work email is sorted.
@@ -357,9 +358,32 @@ Gmail priority inbox is an algorithmic-based filtering system that predicts whic
 
 Gmail uses a variety of signals to identify important email, including which messages the user opens and which messages he replies to.
 
+\subsection{Summary of Related Applications}
+Table \ref{related_applications_summary} summarizes the features of applications related to smart email.
+
+\begin{center}
+  \begin{table}
+    \begin{tabular}{ | c | c | c | c | p{2cm} |}
+      \hline
+      F/P              & Outlook Rules & Gmail Filters & Yahoo Filters & PopFile \cite{POPFILE} \\ \hline
+      1) Static Features  &    Yes        &    Yes        &    Yes      &    Yes  \\ \hline     
+      2) Dynamic Features &    No        &    No         &    No        &    Yes  \\ \hline
+      3) On-line Learning &    No        &    No         &    No        &    Yes  \\ \hline
+      4) Server Side      &    No        &    Yes        &    Yes       &    No   \\ \hline
+      5) Several Algorithms &    No        &    No &    No       &    No   \\ \hline
+      6) Multi-Label support &    No        &    No &    No       &    No   \\ \hline
+      7) Summarization support&    No        &    No &    No       &    No   \\ \hline
+    \end{tabular}
+    \caption[Summary of related work]{Summary of related applications}
+    \label{related_applications_summary}
+  \end{table}
+\end{center}  
+
 
 %=======================================================================================
-\section{Need To Extend Related Work}
+\section{Need To Extend Related Applications}
+Close study of table \ref{related_applications_summary} reveals the need to extend all existing applications to cover the desirable features enumerated int table \ref{related_applications_summary}.
+
 \begin{my_itemize}
     \item Although the problem of email categorization has been studied several
     times in research literature , there are no widely used convenient
@@ -374,22 +398,6 @@ Gmail uses a variety of signals to identify important email, including which mes
     it is not only limited to spam detection.
 \end{my_itemize}
 
-\begin{center}
-  \begin{table}
-    \begin{tabular}{ | c | c | c | c | p{2cm} |}
-      \hline
-      F/P              & Outlook Rules & Gmail Filters & Yahoo Filters & PopFile \cite{POPFILE} \\ \hline
-      Static Features  &    Yes        &    Yes        &    Yes      &    Yes  \\ \hline     
-      Dynamic Features &    No        &    No         &    No        &    Yes  \\ \hline
-      On-line Learning &    No        &    No         &    No        &    Yes  \\ \hline
-      Server Side      &    No        &    Yes        &    Yes       &    No   \\ \hline
-      Several Algorithms &    No        &    No &    No       &    No   \\ \hline
-      Multi-Label support &    No        &    No &    No       &    No   \\ \hline
-      Summarization support&    No        &    No &    No       &    No   \\ \hline
-    \end{tabular}
-    \caption[Summary of related work]{Summary of related work}
-  \end{table}
-\end{center}  
 
 %=======================================================================================
 \section{Conclusion}
