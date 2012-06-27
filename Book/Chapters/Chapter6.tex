@@ -20,10 +20,10 @@ This section will discuss the implementation details of the classification web s
 
 
     \subsubsection{Training Phase}
-    Once the user have registered in the classification web service , Smart Email will start downloading pre-classified emails from
+    Once the user have registered in the classification web service, Smart Email will start downloading pre-classified emails from
     user email provider using IMAP protocol.
 
-    Smart Email design described in the previous chapter is flexible and enables using different data sources,a File data source was used
+    Smart Email design described in the previous chapter is flexible and enables using different data sources,a file data source was used
     to read Enron \cite{ENRON} dataset from file system.
 
     Other protocols can be implemented like POP3.
@@ -60,6 +60,27 @@ This section will discuss the implementation details of the classification web s
 
 
 \subsection{Chrome Browser Extension implementation details}
+    Chrome Extension is a client side extension for the Google chrome browser \cite{CHROME}.
+    The extension injects a javascript file in the gmail web interface. The extension also manipulates
+    gmail web interface HTML page by injecting a button entitled "Classify Me"
+    that appears when the user selects any email to view.
+
+    The button is injected by adding a new DOM element to the html page.The extension must waits till
+    the page completely loads to do the injection.
+
+    When the user clicks the "Classify Me" button the extension retrieves the raw email and
+    builds a message using the raw email,an ajax call with the message is made to the 
+    classification web service.
+
+    The extension also detects when the user tries to manually classify an email, The extension builds
+    a feedback message with the email and the correct label, then sends it to the classification 
+    web service.
+
+    To detect events like manual classification, the extension must intercepts ajax requests made by
+    gmail and examines the request body.
+
+    The Extension uses the Gmailr library \cite{GMAILR} to detect various events. The library was modified 
+    to be able to detect "apply new label" event.
 
 %--------------------------------------------------------------------------------------
 \section{Results and Discussion}
