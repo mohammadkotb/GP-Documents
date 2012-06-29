@@ -67,45 +67,30 @@ S. Matwin S. Kiritchenko., ``Email classification using semantic feature space.,
 J. Campo-Avila, R. Morales-Bueno, A. Bifet, J. Carmona-Cejudo., ``Gnusmail: Open framework for on-line email classification.,'' 19th European Conference on Artificial Intelligence, 2010.
 
 \bibitem{CHAO08}
-Junzhong~Gu Chao~Zeng, Zhao~Lu.
-\newblock A new approach to email classification using concept vector space
-  model.
-\newblock 2009.
+G. Junzhong, C. Zeng, Z. Lu., ``A new approach to email classification using concept vector space model.,'' Second International Conference on Future Generation Communication and Networking Symposia, pages: 162-166, 2008.
 
 \bibitem{BALAKUMAR08}
-V.Vaidehi M.Balakumar.
-\newblock Ontology based classification and categorization of email.
-\newblock 2008.
+V.Vaidehi M.Balakumar., ``Ontology based classification and categorization of email.,'' International Conference on Signal Processing, Communications and Networking, pages: 199-202, 2008.
 
 \bibitem{mous03}
-Shikun~Zhou Taiwo~Ayodele.
-\newblock Applying machine learning algorithms for email management.
-\newblock 2008.
+S. Zhou T. Ayodele., ``Applying machine learning algorithms for email management.,'' Third International Conference on Pervasive Computing and Applications, pages: 339-344, 2008.
 
 \bibitem{WENQING05}
-Zili~Zhang Wenqing~Zhao.
-\newblock An email classification model based on rough set theory.
-\newblock 2005.
+Z. Zhang W. Zhao., ``An email classification model based on rough set theory.,'' International Conference on Active Media Technology, pages: 403-408, 2005.
 
 \bibitem{mous04}
-Josiah~Poon Jason~Chan, Irena~Koprinska.
-\newblock Co-training with a single natural feature set applied to email
-  classification.
-\newblock 2004.
+J. Poon, J. Chan, I. Koprinska., ``Co-training with a single natural feature set applied to email.,'' In Proceedings of the 2004 IEEE/WIC/ACM International Conference on Web Intelligence, pages 586 - 589, 2004.
 
 \bibitem{Anatomy00}
-http://www.rickconner.net/spamweb/anatomy.html.
+Last Accessed 29 June 2012.
 \newblock Anatomy of an email message.
+\newblock \url{http://www.rickconner.net/spamweb/anatomy.html}.
 
 \bibitem{KIRI2004}
-S~Matwin S~Kiritchenko.
-\newblock Email classification with temporal features.
-\newblock 2004.
+S. Matwin S. Kiritchenko., ``Email classification with temporal features.,'' Intelligent Information Systems, 2004.
 
 \bibitem{REST}
-Fielding, Roy T.; Taylor, Richard N.
-\newblock Principled Design of the Modern Web Architecture.
-\newblock 2002.
+Roy T.; Taylor, Richard N., ``Principled Design of the Modern Web Architecture,'' ACM Transactions on Internet Technology (TOIT), pp. 115-150, May 2005. 
 
 \bibitem{ROR}
 Last Accessed 22 June 2012.
