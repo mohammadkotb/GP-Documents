@@ -1,27 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{RON04}
-Bekkerman, R.,  McCallum, A. and Huang, G., ``Automatic Categorization of Email into Folders: Benchmark Experiments on Enron and SRI Corpora,'' CIIR Technical Report, 2004.
-
-\bibitem{ANI03}
-Ani Nenkova, Amit Bagga., ``Email classiﬁcation for contact centers.,'' In Proceedings of the 2003 ACM Symposium on Applied Computing, pages 789-792, Melbourne, FL, USA, March 2003.
-
-
-
-\bibitem{JOSE11}
-José M. Carmona-Cejudo, Manuel Baena-García, Rafael Morales 
-Bueno, João Gama, Albert Bifet, ``Using GNUsmail to Compare Data Stream Mining Methods for On-line Email Classification,'' Journal of Machine Learning Research - Proceedings Track 17: 12-18, 2011.
-
-
-
-\bibitem{BASKARAN09}
-S. Baskaran, ``Content based email classification system by applying conceptual maps,'' Intelligent and Multi-Agent Systems, 2009.
-
-
-\bibitem{sift01}
-Aery, M. a., ``eMailSift: Email Classification Based on Structure and Content.,'' In Proceedings of the Fifth IEEE international Conference on Data Mining
-(pp. 18-25). Washington, DC: IEEE Computer Society, 2005.
-
 \bibitem{Sebastiani2002}
 F. Sebastiani, ``Machine learning in automated text categorization,''  ACM Computing Surveys (CSUR) Surveys, vol. 34,  no. 1, pp. 1-47, March 2002.
 
@@ -34,8 +12,18 @@ Jinhui~LI Peifeng~LI., ``An approach to email categorization with the ME model.,
 \bibitem{taiwo2007}
 S. Zhou, R. Khusainov, ``Email classification using back propagation technique.,'' In Proceedings of the International Conference and Workshop on Emerging Trends in Technology, Pages 212-217, 2010.
 
+\bibitem{RON04}
+Bekkerman, R.,  McCallum, A. and Huang, G., ``Automatic Categorization of Email into Folders: Benchmark Experiments on Enron and SRI Corpora,'' CIIR Technical Report, 2004.
+
 \bibitem{NARESH10}
 Naresh kumar Nagwani and Ashok Bhansali, ``An Object Oriented Email Clustering Model Using Weighted Similarities between Emails Attributes,'' International Journal of Research and Reviews in Computer science (IJRRCS), Vol. 1, No. 2, June 2010.
+
+\bibitem{JOSE11}
+José M. Carmona-Cejudo, Manuel Baena-García, Rafael Morales 
+Bueno, João Gama, Albert Bifet, ``Using GNUsmail to Compare Data Stream Mining Methods for On-line Email Classification,'' Journal of Machine Learning Research - Proceedings Track 17: 12-18, 2011.
+
+\bibitem{ANI03}
+Ani Nenkova, Amit Bagga., ``Email classiﬁcation for contact centers.,'' In Proceedings of the 2003 ACM Symposium on Applied Computing, pages 789-792, Melbourne, FL, USA, March 2003.
 
 \bibitem{MIN11}
 Min-Feng Wang, Sie-Long Jheng, Meng-Feng Tsai, Cheng-Hsien Tang, ``Enterprise Email Classification Based on Social Network Features,'' International Conference on Advances in Social Networks Analysis and Mining, pp.532-536, 2011.
@@ -63,6 +51,15 @@ Data Mining (ICDM), December 2010.
 \bibitem{YUN08}
 S. Matwin S. Kiritchenko., ``Email classification using semantic feature space.,'' International Conference on Advanced Language Processing and Web Information Technology, 2008.
 
+
+\bibitem{BASKARAN09}
+S. Baskaran, ``Content based email classification system by applying conceptual maps,'' Intelligent and Multi-Agent Systems, 2009.
+
+
+\bibitem{sift01}
+Aery, M. a., ``eMailSift: Email Classification Based on Structure and Content.,'' In Proceedings of the Fifth IEEE international Conference on Data Mining
+(pp. 18-25). Washington, DC: IEEE Computer Society, 2005.
+
 \bibitem{MANUEL11}
 J. Campo-Avila, R. Morales-Bueno, A. Bifet, J. Carmona-Cejudo., ``Gnusmail: Open framework for on-line email classification.,'' 19th European Conference on Artificial Intelligence, 2010.
 
@@ -88,24 +85,6 @@ Last Accessed 29 June 2012.
 
 \bibitem{KIRI2004}
 S. Matwin S. Kiritchenko., ``Email classification with temporal features.,'' Intelligent Information Systems, 2004.
-
-\bibitem{REST}
-Roy T.; Taylor, Richard N., ``Principled Design of the Modern Web Architecture,'' ACM Transactions on Internet Technology (TOIT), pp. 115-150, May 2005. 
-
-\bibitem{ROR}
-Last Accessed 22 June 2012.
-\newblock Ruby On Rails Framework.
-\newblock \url{http://rubyonrails.org/}.
-
-\bibitem{HEROKU}
-Last Accessed 22 June 2012.
-\newblock Heroku.
-\newblock \url{http://www.heroku.com/}.
-
-\bibitem{CHROME}
-Last Accessed 25 June 2012.
-\newblock Google Chrome Browser.
-\newblock \url{http://www.google.com/chrome}.
 
 \bibitem{OUTLOOK_REF}
 Last Accessed 27 June 2012.
@@ -136,6 +115,24 @@ Last Accessed 25 June 2012.
 Last Accessed 26 June 2012.
 \newblock Enron Email Dataset.
 \newblock \url{http://www.cs.cmu.edu/~enron}
+
+\bibitem{REST}
+Roy T.; Taylor, Richard N., ``Principled Design of the Modern Web Architecture,'' ACM Transactions on Internet Technology (TOIT), pp. 115-150, May 2005. 
+
+\bibitem{ROR}
+Last Accessed 22 June 2012.
+\newblock Ruby On Rails Framework.
+\newblock \url{http://rubyonrails.org/}.
+
+\bibitem{HEROKU}
+Last Accessed 22 June 2012.
+\newblock Heroku.
+\newblock \url{http://www.heroku.com/}.
+
+\bibitem{CHROME}
+Last Accessed 25 June 2012.
+\newblock Google Chrome Browser.
+\newblock \url{http://www.google.com/chrome}.
 
 \bibitem{KY04}
 Bryan Klimt and Yiming Yang., ``The Enron corpus: A new dataset for email classification research.,'' In Proceedings of ECML04, 15th European Conference on Machine Learning, pages 217-226, 2004.
