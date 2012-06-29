@@ -1,44 +1,32 @@
 \begin{thebibliography}{10}
 
 \bibitem{RON04}
-Gary~Huang Ron~Bekkerman, Andrew~McCallum.
-\newblock Automatic categorization of email into folders: Benchmark experiments
-  on enron and sri corpora.
-\newblock 2004.
+Bekkerman, R.,  McCallum, A. and Huang, G., ``Automatic Categorization of Email into Folders: Benchmark Experiments on Enron and SRI Corpora,'' CIIR Technical Report, 2004.
 
 \bibitem{ANI03}
-Amit~Bagga Ani~Nenkova.
-\newblock Email classification for contact centers.
-\newblock 2003.
+Ani Nenkova, Amit Bagga., ``Email classiﬁcation for contact centers.,'' In Proceedings of the 2003 ACM Symposium on Applied Computing, pages 789-792, Melbourne, FL, USA, March 2003.
+
+
 
 \bibitem{JOSE11}
-Jose del Campo-Avila Rafael Morales-Bueno Joao Gama Albert~Bifet Jose M.
-  Carmona-Cejudo, Manuel Baena-Garcia.
-\newblock Using gnusmail to compare data stream mining methods for on-line
-  email classification.
-\newblock 2011.
+José M. Carmona-Cejudo, Manuel Baena-García, Rafael Morales 
+Bueno, João Gama, Albert Bifet, ``Using GNUsmail to Compare Data Stream Mining Methods for On-line Email Classification,'' Journal of Machine Learning Research - Proceedings Track 17: 12-18, 2011.
+
+
 
 \bibitem{BASKARAN09}
-S.~Baskaran.
-\newblock Content based email classification system by applying conceptual
-  maps.
-\newblock 2009.
+S. Baskaran, ``Content based email classification system by applying conceptual maps,'' Intelligent and Multi-Agent Systems, 2009.
+
 
 \bibitem{sift01}
-Kathleen~McKeown Lokesh~Shrestha.
-\newblock emailsift: Email classification based on structure and content.
-\newblock 2004.
+Aery, M. a., ``eMailSift: Email Classification Based on Structure and Content.,'' In Proceedings of the Fifth IEEE international Conference on Data Mining
+(pp. 18-25). Washington, DC: IEEE Computer Society, 2005.
 
 \bibitem{Sebastiani2002}
-F~Sebastiani.
-\newblock Machine learning in automated text categorization.
-\newblock 2002.
+F. Sebastiani, ``Machine learning in automated text categorization,''  ACM Computing Surveys (CSUR) Surveys, vol. 34,  no. 1, pp. 1-47, March 2002.
 
 \bibitem{Carmona2011}
-M.~; del Campo-Avila J. ; Morales-Bueno~R. Carmona-Cejudo, J.M. ; Baena-Garcia.
-\newblock Feature extraction for multi-label learning in the domain of email
-  classification.
-\newblock {\em Computational Intelligence and Data Mining (CIDM), IEEE}, 2011.
+Carmona-Cejudo, J.M., ``Feature extraction for multi-label learning in the domain of email classification.,'' Computational Intelligence and Data Mining (CIDM), IEEE, 2011.
 
 \bibitem{peifeng2007}
 Jinhui~LI Peifeng~LI.
@@ -190,10 +178,8 @@ Last Accessed 26 June 2012.
 \newblock \url{http://www.cs.cmu.edu/~enron}
 
 \bibitem{KY04}
-\newblock B. Klimt and Y. Yang. The enron corpus: A new dataset for email classification research.
-In Proceedings of ECML’04, 15th European Conference on Machine Learning, pages 217–
-226
-\newblock 2004.
+Bryan Klimt and Yiming Yang., ``The Enron corpus: A new dataset for email classification research.,'' In Proceedings of ECML04, 15th European Conference on Machine Learning, pages 217-226, 2004.
+
 
 \bibitem{DHS98}
 \newblock S. T. Dumais, J. Platt, D. Heckerman, and M. Sahami. Inductive learning algorithms and

@@ -42,7 +42,7 @@ between related applications will be outlined in section \ref{sec:related_apps}.
 \label{sec:ml_text_categ}
 
 \subsection{Definition of Text Categorization}
-Text categorization is the task of assigning a Boolean value to each pair 
+``Text categorization is the task of assigning a Boolean value to each pair 
 $\langle$ d$_{j}$,c$_{i}$ $\rangle$ $\in$ D X C,  where D is a domain of documents 
 and C = \{c$_{1}$, . . . , c $_{|C|}$\} is a set of predefined categories. A value 
 of T assigned to $\langle$ d$_{j}$,c$_{i}$ $\rangle$ indicates a decision to 
@@ -51,7 +51,7 @@ file d$_{j}$ under c$_{i}$. More formally, the task is to approximate the unknow
 target function $\theta$ : D ×C $\rightarrow$ \{T, F\} (that describes how documents 
 ought to be classified) by means of a function $\phi$ : D × C $\rightarrow$ \{T, F\} 
 called the classifier (also known as rule, or hypothesis, or model ) such that $\theta$ and 
-$\phi$ coincide as much as possible.\cite{Sebastiani2002}
+$\phi$ coincide as much as possible.''\cite{Sebastiani2002}
 
 \subsection{Single-label vs Multi-label Text Categorization}
 Classification is a very important topic within supervised learning field. 
@@ -64,15 +64,15 @@ $\subseteq$ L, as occurs with email classification, image annotation, or genomic
 
 Two main tasks can be defined when learning from multi-label data: 
 \begin{itemize}
-  \item multi-label classification (MLC) that returns a subset of labels to be 
+  \item ``multi-label classification (MLC) that returns a subset of labels to be 
   associated with a given example (it can be considered as a bipartition of the 
-  label set considering relevant and irrelevant elements);
-  \item label ranking (LR) that returns an ordering of the labels according to 
-  their relation with the example. \cite{Carmona2011}
+  label set considering relevant and irrelevant elements);''  \cite{Carmona2011}
+  \item ``label ranking (LR) that returns an ordering of the labels according to 
+  their relation with the example.'' \cite{Carmona2011}
 \end{itemize}
 
 \subsection{Category Pivoted vs Document Pivoted Text Categorization}
-There are two different ways of using a text classifier. Given d$_{j}$ $\in$ D, 
+``There are two different ways of using a text classifier. Given d$_{j}$ $\in$ D, 
 we might want to find all the c$_{i}$ $\in$ C under which it should be filed 
 (document-pivoted categorization – DPC); alternatively, given c$_{i}$ $\in$ C, 
 we might want to find all the d$_{j}$ $\in$ D that should be filed under it 
@@ -86,22 +86,22 @@ is instead suitable when:
   \item these documents need to be reconsidered for classification under c$_{|C|+1}$.
 \end{itemize}
 DPC is used more often than CPC, as the former situation is more common than 
-the latter. \cite{Sebastiani2002}
+the latter.'' \cite{Sebastiani2002}
 
 \section{Applications of Email Categorization}
 \label{sec:app_email_categ}
 
 \subsection{Spam Detection}
-Spam remains a serious problem today because it continues to be a very 
+``Spam remains a serious problem today because it continues to be a very 
 profitable business for spammers. Spam takes on various forms from adult 
 content, selling products/services, pharmaceuticals to stock promotions, 
 job offers, etc.
 
 Applying machine learning techniques for spam email detections plays a major 
-role in protecting end users from spam email messages.\cite{peifeng2007}
+role in protecting end users from spam email messages.''\cite{peifeng2007}
 
 \subsection{Email Organization}
-Email has been an efficient and popular communication mechanism as the 
+``Email has been an efficient and popular communication mechanism as the 
 number of Internet users’ increases. Therefore, email management has 
 become an important and growing problem for individuals and organizations 
 because it is prone to misuse. One of the problems that are most paramount 
@@ -114,12 +114,12 @@ structured and organized.
 
 At this stage new effective method for managing information in email, 
 reducing email overloads is developed by classifying emails based on 
-important words. \cite{taiwo2007}
+important words.'' \cite{taiwo2007}
 
 \section{The Machine Learning Approach for Text Classification}
 \label{sec:ml_approach_text_classification}
 
-In the 80s the most popular approach (at least in operational settings) for the
+``In the 80s the most popular approach (at least in operational settings) for the
 creation of automatic document classifiers consisted in manually building, by means
 of knowledge engineering (KE) techniques, an expert system capable of taking
 Text Categorization (TC) decisions. Such an expert system would typically
@@ -133,7 +133,7 @@ instances that belong to them.
 
 The advantages of the ML approach over the KE approach are evident. The 
 engineering effort goes towards the construction not of a classifier, 
-but of an automatic builder of classifiers (the learner). \cite{Sebastiani2002}
+but of an automatic builder of classifiers (the learner).'' \cite{Sebastiani2002}
 
 \subsection{Training Set, Test Set, and Validation Set}
 The ML approach relies on the availability of an initial 
@@ -181,10 +181,10 @@ classifier has.  In subsections 2.5.1 to 2.5.3 we discuss number of approaches
 that have been applied in the text classification literature. In general we 
 will assume the presentation of the algorithms will focus on the methods for 
 classifier learning rather than on the effectiveness and efficiency of the 
-classifiers built by means of them.\cite{Sebastiani2002}
+classifiers built by means of them.
 
 \subsection{Probabilistic classifiers}
-The construction of a ranking classifier for category c$_{i}$ $\in$ C usually
+``The construction of a ranking classifier for category c$_{i}$ $\in$ C usually
 consists in the definition of a function CSV$_{i}$ : D $\rightarrow$ [0, 1] 
 that, given a document d$_{j}$ , returns a categorization status value for it, 
 i.e. a number between 0 and 1 that, roughly speaking, represents the evidence 
@@ -202,10 +202,10 @@ encoded by the equation
 \[ P(d_{j}|c_{i}) = \prod_{k=1}^{|\tau|} P(w_{kj}|c_{i}) \]
 
 Probabilistic classifiers that use this assumption are called Naive Bayes classifiers, 
-and account for most of the probabilistic approaches to TC in the literature.
+and account for most of the probabilistic approaches to TC in the literature.''\cite{Sebastiani2002}
 
 \subsection{Building classifiers by support vector machines}
-The support vector machine (SVM) method has been introduced in TC by Joachims 
+``The support vector machine (SVM) method has been introduced in TC by Joachims 
 [1998, 1999] and subsequently used in [Drucker et al. 1999; Dumais et al. 1998; 
 Du- mais and Chen 2000; Klinkenberg and Joachims 2000; Taira and Haruno 1999;
 
@@ -224,7 +224,7 @@ In the 2-dimensional case , various lines may be chosen as decision surfaces.
 The SVM method chooses the middle element from the ``widest'' set of parallel 
 lines, i.e. from the set in which the maximum distance between two elements in 
 the set is highest. It is noteworthy that this ``best'' decision surface is 
-determined by only a small set of training examples, called the support vectors.
+determined by only a small set of training examples, called the support vectors.''\cite{Sebastiani2002}
 
 \subsection{On-line Methods}
 Methods for learning linear classifiers are often partitioned in two broad 
