@@ -29,67 +29,42 @@ F. Sebastiani, ``Machine learning in automated text categorization,''  ACM Compu
 Carmona-Cejudo, J.M., ``Feature extraction for multi-label learning in the domain of email classification.,'' Computational Intelligence and Data Mining (CIDM), IEEE, 2011.
 
 \bibitem{peifeng2007}
-Jinhui~LI Peifeng~LI.
-\newblock An approach to email categorization with the me model.
-\newblock 2007.
+Jinhui~LI Peifeng~LI., ``An approach to email categorization with the ME model.,'', 2007.
 
 \bibitem{taiwo2007}
-Rinat~Khusainov Taiwo~Ayodele, Shikun~Zhou.
-\newblock Email classification: Solution with back propagation technique.
-\newblock 2007.
+S. Zhou, R. Khusainov, ``Email classification using back propagation technique.,'' In Proceedings of the International Conference and Workshop on Emerging Trends in Technology, Pages 212-217, 2010.
 
 \bibitem{NARESH10}
-Ashok~Bhansali Naresh Kumar~Nagwani.
-\newblock An object oriented email clustering model using weighted similarities
-  between emails attributes.
-\newblock 2010.
+Naresh kumar Nagwani and Ashok Bhansali, ``An Object Oriented Email Clustering Model Using Weighted Similarities between Emails Attributes,'' International Journal of Research and Reviews in Computer science (IJRRCS), Vol. 1, No. 2, June 2010.
 
 \bibitem{MIN11}
-Meng-Feng Tsai Cheng-Hsien~Tang Min-Feng~Wang, Sie-Long~Jheng.
-\newblock Enterprise email classification based on social network features.
-\newblock 2011.
+Min-Feng Wang, Sie-Long Jheng, Meng-Feng Tsai, Cheng-Hsien Tang, ``Enterprise Email Classification Based on Social Network Features,'' International Conference on Advances in Social Networks Analysis and Mining, pp.532-536, 2011.
 
 \bibitem{NOUF08}
-Asma Al Zaid Mashael Al Duwais Mona Al Sheddi Nora Al khamees Nouf Al~Drees
-  Nouf Al~Fe'ar, Einas Al~Turki.
-\newblock E-classifier: A bi-lingual email classification system.
-\newblock 2008.
+Al Fe'ar, N. Al Turki, E. Al Zaid, A. Duwais, M. Al Sheddi, M. Al khamees and N, Al Dree., ``EClassifier: A bi-lingual email classification
+system,'' ITSim. (2): 1-4, 2008.
 
 \bibitem{YEHUDA11}
-Yoelle Maarek Roman~Sandler Yehuda~Koren, Edo~Liberty.
-\newblock Automatically tagging email by leveraging other users' folders.
-\newblock 2011.
+E. Liberty, Y. Maarek, R. Sandler., ``Automatically tagging email by leveraging other users' folders.,'' In proceedings of the 17th ACM SIGKDD international conference on Knowledge discovery and data mining, Pages 913-921, 2011. 
 
 \bibitem{MD07}
-Wanlei~Zhou Md~Rafiqul~Islam.
-\newblock Email categorization using multi-stage classification technique.
-\newblock 2007.
+W. Zhou M. Islam., ``Email categorization using multi-stage classification technique.,'' Parallel and Distributed Computing, Applications and Technologies, PDCAT '07. Eighth International Conference, Pages 51-58 , 2007. 
 
 \bibitem{SVETLANA01}
-Stan~Matwin Svetlana~Kiritchenko.
-\newblock Email classification with co-training.
-\newblock 2001.
+S. Matwin S. Kiritchenko., ``Email classification with co-training.,'' Proceedings of the 2001 conference of the Centre for Advanced Studies on Collaborative research, Page 8, 2001. 
 
 \bibitem{mous05}
-Josiah~Poon Jason~Chan, Irena~Koprinska.
-\newblock Email classification: Solution with back propagation technique.
-\newblock 2009.
+J. Poon, J.Chan, I. Koprinska., ``Email classification: Solution with back propagation technique.,'' International Conference for Internet Technology and Secured Transactions, 2009.
 
 \bibitem{sift02}
-Aditya~Telang Sharma~Chakravarthy, Aravind~Venkatachalam.
-\newblock A graph-based approach for multi-folder email classification.
-\newblock 2010.
+A. Telang S. Chakravarthy, A. Venkatachalam., ``A graph-based approach for multi-folder email classification.,'' IEEE 10th International Conference on
+Data Mining (ICDM), December 2010.
 
 \bibitem{YUN08}
-Stan~Matwin Svetlana~Kiritchenko.
-\newblock Email classification using semantic feature space.
-\newblock 2008.
+S. Matwin S. Kiritchenko., ``Email classification using semantic feature space.,'' International Conference on Advanced Language Processing and Web Information Technology, 2008.
 
 \bibitem{MANUEL11}
-Jose del Campo-Avila Rafael Morales-Bueno Albert~Bifet Jose M. Carmona-Cejudo,
-  Manuel Baena-Garcia.
-\newblock Gnusmail: Open framework for on-line email classification.
-\newblock 2011.
+J. Campo-Avila, R. Morales-Bueno, A. Bifet, J. Carmona-Cejudo., ``Gnusmail: Open framework for on-line email classification.,'' 19th European Conference on Artificial Intelligence, 2010.
 
 \bibitem{CHAO08}
 Junzhong~Gu Chao~Zeng, Zhao~Lu.
