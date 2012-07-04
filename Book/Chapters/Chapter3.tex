@@ -20,14 +20,12 @@ features were discussed.
 
 In this chapter, the suggested features for smart email classifier are discussed.
 In section \ref{sec:3_classifier_features}, the features used for email 
-classification are presented. Section \ref{sec:3_detailed_classifier_features} 
-includes the detailed classifier features. Section \ref{sec:3_classifier_tuple} 
-presents the tuple of classifier features used as an input for the email 
-classifier. The Chapter is concluded in section \ref{sec:conclusion_3}.
+classification are presented. Detailed classifier features are included in section \ref{sec:3_detailed_classifier_features} . The tuple of classifier features used as an input for the email  classifier is presented in  section \ref{sec:3_classifier_tuple}. The Chapter is concluded in section \ref{sec:conclusion_3}.
 %==============================================================================
 \newpage
 \section {Classifier Features}
 \label{sec:3_classifier_features}
+The following table illustrates the features used for email classification. These features are extracted from the papers surveyed in section \ref{sec:related_work}.
 \begin{longtable}{|>{\centering}p{2.5cm}|>{\centering}p{3cm}|>{\centering}p{3cm}|>{\centering}p{3cm}|}
 \caption[Email Classifier Features]{Email Classifier Features} \\
 \hline
@@ -75,6 +73,7 @@ of emails into folders)}
 \end{longtable}
 %----------------------------------------------------------------------
 \section {Detailed Classifier Features}
+Close study of table 3.1 suggests using the detailed classification features listed in the table blow.
 \label{sec:3_detailed_classifier_features}
 
 \begin{longtable}{|>{\centering}p{2cm}|>{\centering}p{2.5cm}|>{\centering}p{3cm}|>{\centering}p{3cm}|>{\centering}p{3cm}|}
@@ -149,6 +148,7 @@ false, else return true
 %-------------------------------------------------------------------------
 \newpage
 \section {Tuple of the classifier Features (Classifier Input)}
+Close study of the detailed classification features listed in section \ref{sec:3_detailed_classifier_features} suggests using the following classification tuple as an input for the email classifier.
 \label{sec:3_classifier_tuple}
 
 \begin{center}

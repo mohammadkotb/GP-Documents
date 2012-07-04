@@ -242,9 +242,8 @@ during the operating phase by exploiting user feedback.
 
 \newpage
 \section{Related Work}
-This section contains the summary of surveying several papers related to automatic email categorization into folders.
-
 \label{sec:related_work}
+The previous background presented in sections \ref{sec:ml_text_categ} to \ref{sec:construction_text_classifier} was necessary to understand the related work in section \ref{sec:related_work}. This section contains the summary of surveying several papers related to automatic email categorization into folders.
 
 \subsection{Taxonomy of research papers according to the different learning algorithms used in different papers}
 The following table classifies some recent research papers in the field of email 
@@ -414,9 +413,21 @@ in different research papers
   \item Email Classifications For Contact Centers \cite{ANI03}.
 \end{my_itemize}
 
+\subsection{Desirable Features}
+\label{desirable_features}
+From the above surveyed litterature, it could be stated that smart email should implement the desirable features listed below:
+\begin{my_itemize}
+  \item classifying emails based on deterministic rules;
+  \item classifying emails based on dynamic features;
+  \item supporting on-line learning classification algorithms;
+  \item providing server-side web service for email classification;
+  \item supporting several classification algorithms;
+  \item supporting multi-label email classification;
+  \item providing email summarization service.
+\end{my_itemize}
 
-\subsection{Conclusion}
-From the research papers related to email classification we conclude the following:
+\subsection{Summary of Related Work}
+From the above surveyed litterature in section \ref{sec:related_work} the following may be concluded:
 \begin{my_itemize}
     \item SVM Achieved the best results in most papers, but it is computationally 
     expensive and has the hardest implementation;
@@ -428,8 +439,9 @@ From the research papers related to email classification we conclude the followi
     \item off-line learning techniques are used in most papers;
     \item Enron dataset \cite{ENRON} is the most commonly used.
 \end{my_itemize}
+
 %=======================================================================================
-\section{Comparison Between Related Applications}
+\section{Related Applications}
 \label{sec:related_apps}
 
 \subsection{Outlook rules}
@@ -477,22 +489,8 @@ to the categorization. To train POPFile in this mode, the user only needs to
 move the message to the correct folder, i.e. to the folder where POPFile should 
 have moved the message.
 
-\subsection{Desirable Features}
-\label{desirable_features}
-From above, it could be stated that smart email should implement the desirable features enumerated below:
-\begin{enumerate}
-  \item classifying emails based on deterministic rules;
-  \item classifying emails based on dynamic features;
-  \item supporting on-line learning classification algorithms;
-  \item providing server-side web service for email classification;
-  \item supporting several classification algorithms;
-  \item supporting multi-label email classification;
-  \item providing email summarization service.
-\end{enumerate}
-
-
-\subsection{Summary of Related Applications}
-Table \ref{related_applications_summary} summarizes the features of applications related to smart email.
+\section{Comparison Between Related Applications}
+Table \ref{related_applications_summary} summarizes the features of applications related to smart email with respect to the desirable features listed in section \ref{desirable_features}.
 
 \begin{center}
   \begin{table}[H]
@@ -517,7 +515,7 @@ Table \ref{related_applications_summary} summarizes the features of applications
 %=======================================================================================
 \section{Need To Extend Related Applications}
 \label{sec:need_to_extend}
-Close study of table \ref{related_applications_summary} reveals the need to extend all existing applications to cover the desirable features enumerated in subsection \ref{desirable_features}
+Close study of table \ref{related_applications_summary} reveals the need to extend all existing applications to cover the desirable features listed in subsection \ref{desirable_features}
 
 The scope of this project is to design and implement the first five features and the rest will be left for future extensions.
 

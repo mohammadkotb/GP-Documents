@@ -57,19 +57,19 @@ S. Baskaran, ``Content based email classification system by applying conceptual 
 Aery, M. a., ``eMailSift: Email Classification Based on Structure and Content,'' Fifth IEEE international Conference on Data Mining, pp. 18-25, November 2005.
 
 \bibitem{MANUEL11}
-J. Campo-Avila, R. Morales-Bueno, A. Bifet, J. Carmona-Cejudo., ``Gnusmail: Open framework for on-line email classification,'' 19th European Conference on Artificial Intelligence, 2010.
+J. Campo-Avila, R. Morales-Bueno, A. Bifet, J. Carmona-Cejudo., ``Gnusmail: Open framework for on-line email classification,'' 19th European Conference on Artificial Intelligence, pp. 1141-1142, 2010.
 
 \bibitem{CHAO08}
-G. Junzhong, C. Zeng, Z. Lu., ``A new approach to email classification using concept vector space model,'' Second International Conference on Future Generation Communication and Networking Symposia, pp. 162-166, 2008.
+G. Junzhong, C. Zeng, Z. Lu., ``A new approach to email classification using concept vector space model,'' Second International Conference on Future Generation Communication and Networking Symposia, pp. 162-166, December 2008.
 
 \bibitem{BALAKUMAR08}
-V.Vaidehi M.Balakumar., ``Ontology based classification and categorization of email,'' International Conference on Signal Processing, Communications and Networking, pp. 199-202, 2008.
+V.Vaidehi M.Balakumar., ``Ontology based classification and categorization of email,'' International Conference on Signal Processing, Communications and Networking, pp. 199-202, January 2008.
 
 \bibitem{mous03}
-S. Zhou T. Ayodele., ``Applying machine learning algorithms for email management,'' Third International Conference on Pervasive Computing and Applications, pp. 339-344, 2008.
+S. Zhou T. Ayodele., ``Applying machine learning algorithms for email management,'' Third International Conference on Pervasive Computing and Applications, pp. 339-344, October 2008.
 
 \bibitem{WENQING05}
-Z. Zhang W. Zhao., ``An email classification model based on rough set theory,'' International Conference on Active Media Technology, pp.: 403-408, 2005.
+Z. Zhang W. Zhao., ``An email classification model based on rough set theory,'' International Conference on Active Media Technology, pp.: 403-408, May 2005.
 
 \bibitem{mous04}
 J. Poon, J. Chan, I. Koprinska., ``Co-training with a single natural feature set applied to email,'' In Proceedings of the 2004 IEEE/WIC/ACM International Conference on Web Intelligence, pp. 586 - 589, 2004.
@@ -137,9 +137,7 @@ Bryan Klimt and Yiming Yang., ``The Enron corpus: A new dataset for email classi
 \bibitem{DHS98}
 \newblock S. T. Dumais, J. Platt, D. Heckerman, and M. Sahami. Inductive learning algorithms and
 representations for text categorization. In Proceedings of CIKM’98, 7th ACM Interna-
-tional Conference on Information and Knowledge Management, pp. 148–155, Bethesda,
-US
-\newblock 1998.
+tional Conference on Information and Knowledge Management, pp. 148-155, 1998.
 
 \bibitem{WEKA}
 Last Accessed 26 June 2012.
