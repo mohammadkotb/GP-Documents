@@ -240,7 +240,6 @@ which we may expect the user of a classifier to provide feedback on how test
 documents have been classified, as in this case further training may be performed 
 during the operating phase by exploiting user feedback.
 
-\newpage
 \section{Related Work}
 \label{sec:related_work}
 The previous background presented in sections \ref{sec:ml_text_categ} to \ref{sec:construction_text_classifier} was necessary to understand the related work in section \ref{sec:related_work}. This section contains the summary of surveying several papers related to automatic email categorization into folders.
@@ -362,7 +361,6 @@ in different research papers
   recipients and counts of particular characters.
 \end{my_itemize}
 
-\newpage
 \subsection{Chronological sort of classification papers}
 \subparagraph*{2011}
 \begin{my_itemize}
@@ -417,12 +415,12 @@ in different research papers
 \label{desirable_features}
 From the above surveyed litterature, it could be stated that smart email should implement the desirable features listed below:
 \begin{my_itemize}
-  \item classifying emails based on deterministic rules;
-  \item classifying emails based on dynamic features;
-  \item supporting on-line learning classification algorithms;
+  \item classifying emails based on deterministic rules; \cite{YAHOO_FILTERS} \cite{GMAIL_FILTERS}
+  \item classifying emails based on dynamic features; \cite{Sebastiani2002} \cite{RON04}
+  \item supporting on-line learning classification algorithms; \cite{JOSE11}
   \item providing server-side web service for email classification;
-  \item supporting several classification algorithms;
-  \item supporting multi-label email classification;
+  \item supporting several classification algorithms; \cite{Sebastiani2002}
+  \item supporting multi-label email classification; \cite{sift02} \cite{Carmona2011}
   \item providing email summarization service.
 \end{my_itemize}
 
@@ -443,6 +441,7 @@ From the above surveyed litterature in section \ref{sec:related_work} the follow
 %=======================================================================================
 \section{Related Applications}
 \label{sec:related_apps}
+Some of the applications related to Smart Email are presented in this section. A comparison between the related applications with respect to the desirable features listed in subsection \ref{desirable_features} will be presented in section \ref{comparison_sec}.
 
 \subsection{Outlook rules}
 ``A rule is an action that Microsoft Outlook performs automatically upon incoming or outgoing 
@@ -490,6 +489,7 @@ move the message to the correct folder, i.e. to the folder where POPFile should
 have moved the message.
 
 \section{Comparison Between Related Applications}
+\label{comparison_sec}
 Table \ref{related_applications_summary} summarizes the features of applications related to smart email with respect to the desirable features listed in section \ref{desirable_features}.
 
 \begin{center}
@@ -498,12 +498,12 @@ Table \ref{related_applications_summary} summarizes the features of applications
       \hline
       Feature/Project              & Outlook Rules \cite{OUTLOOK_REF} & Gmail Filters \cite{GMAIL_FILTERS} & 
                         Yahoo Filters \cite{YAHOO_FILTERS} & PopFile \cite{POPFILE} \\ \hline
-      Deterministic Rules  &    Yes        &    Yes        &    Yes      &    Yes  \\ \hline     
-      Dynamic Features &    No        &    No         &    No        &    Yes  \\ \hline
-      On-line Learning &    No        &    No         &    No        &    Yes  \\ \hline
+      Deterministic Rules \cite{YAHOO_FILTERS} \cite{GMAIL_FILTERS}  &    Yes        &    Yes        &    Yes      &    Yes  \\ \hline     
+      Dynamic Features  \cite{Sebastiani2002} \cite{RON04} &    No        &    No         &    No        &    Yes  \\ \hline
+      On-line Learning \cite{JOSE11} &    No        &    No         &    No        &    Yes  \\ \hline
       Server Side      &    No        &    Yes        &    Yes       &    No   \\ \hline
-      Several Classification Algorithms &    No        &    No &    No       &    No   \\ \hline
-      Multi-Label support &    No        &    No &    No       &    No   \\ \hline
+      Several Classification Algorithms \cite{Sebastiani2002} &    No        &    No &    No       &    No   \\ \hline
+      Multi-Label support  \cite{sift02} \cite{Carmona2011} &    No        &    No &    No       &    No   \\ \hline
       Summarization support&    No        &    No &    No       &    No   \\ \hline
     \end{tabular}
     \caption[Summary of related work]{Summary of related applications}
@@ -525,12 +525,12 @@ The scope of this project is to design and implement the first five features and
         \hline
         Feature/Project              & Outlook Rules \cite{OUTLOOK_REF} & Gmail Filters \cite{GMAIL_FILTERS} & 
         Yahoo Filters \cite{YAHOO_FILTERS} & PopFile \cite{POPFILE} & Smart Email\\ \hline
-        Static Features  &    Yes        &    Yes        &    Yes      &    Yes  & \cellcolor[gray]{0.9}Yes \\ \hline     
-        Dynamic Features &    No        &    No         &    No        &    Yes  & \cellcolor[gray]{0.9}Yes  \\ \hline
-        On-line Learning &    No        &    No         &    No        &    Yes  & \cellcolor[gray]{0.9}Yes \\ \hline
+        Static Features \cite{YAHOO_FILTERS} \cite{GMAIL_FILTERS}  &    Yes        &    Yes        &    Yes      &    Yes  & \cellcolor[gray]{0.9}Yes \\ \hline     
+        Dynamic Features  \cite{Sebastiani2002} \cite{RON04} &    No        &    No         &    No        &    Yes  & \cellcolor[gray]{0.9}Yes  \\ \hline
+        On-line Learning \cite{JOSE11} &    No        &    No         &    No        &    Yes  & \cellcolor[gray]{0.9}Yes \\ \hline
         Server Side      &    No        &    Yes        &    Yes       &    No   & \cellcolor[gray]{0.9}Yes\\ \hline
-        Several Algorithms &    No        &    No &    No       &    No   & \cellcolor[gray]{0.9}Yes\\ \hline
-        Multi-Label support &    No        &    No &    No       &    No  & \cellcolor[gray]{0.9}No \\ \hline
+        Several Algorithms \cite{Sebastiani2002} &    No        &    No &    No       &    No   & \cellcolor[gray]{0.9}Yes\\ \hline
+        Multi-Label support \cite{sift02} \cite{Carmona2011} &    No        &    No &    No       &    No  & \cellcolor[gray]{0.9}No \\ \hline
         Summarization support&    No        &    No &    No       &    No & \cellcolor[gray]{0.9}No  \\ \hline
       \end{tabular}
       \caption[Comparison between Smart Email and related applications]
